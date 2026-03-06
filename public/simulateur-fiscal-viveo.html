@@ -26,4 +26,384 @@ body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--navy)
 }
 .sim-header h1 {
   font-family:'Cormorant Garamond',serif;
-:
+  font-size:clamp(28px,4vw,44px); font-weight:300;
+  color:var(--white); margin-bottom:10px;
+}
+.sim-header h1 em { font-style:italic; color:var(--bronze); }
+.sim-header p { font-size:14px; font-weight:300; color:rgba(255,255,255,.55); }
+
+.sim-body {
+  max-width:960px; margin:0 auto; padding:40px 24px;
+  display:grid; grid-template-columns:1fr 1fr; gap:32px;
+}
+@media(max-width:700px){ .sim-body{ grid-template-columns:1fr; } }
+
+.sim-panel {
+  background:var(--white);
+  border:1px solid var(--border);
+  padding:32px;
+}
+
+.sim-panel h2 {
+  font-size:13px; font-weight:600; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--bronze);
+  margin-bottom:24px; padding-bottom:12px;
+  border-bottom:1px solid var(--border);
+}
+
+.field { margin-bottom:20px; }
+.field label {
+  display:block; font-size:12px; font-weight:500;
+  letter-spacing:.08em; text-transform:uppercase;
+  color:var(--grey); margin-bottom:8px;
+}
+.field input, .field select {
+  width:100%; padding:12px 16px;
+  border:1px solid var(--border);
+  background:var(--cream); color:var(--navy);
+  font-family:'Jost',sans-serif; font-size:14px;
+  outline:none; transition:border-color .2s;
+}
+.field input:focus, .field select:focus { border-color:var(--bronze); }
+.field .hint { font-size:11px; color:var(--grey); margin-top:4px; font-style:italic; }
+
+.dispositifs { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:24px; }
+.dispositif-btn {
+  padding:10px 8px; border:1px solid var(--border);
+  background:var(--cream); color:var(--navy);
+  font-family:'Jost',sans-serif; font-size:12px; font-weight:500;
+  cursor:pointer; transition:all .2s; text-align:center;
+}
+.dispositif-btn:hover { border-color:var(--bronze); background:var(--white); }
+.dispositif-btn.active {
+  background:var(--navy); color:var(--white); border-color:var(--navy);
+}
+
+.sim-btn {
+  width:100%; padding:16px; background:var(--bronze);
+  color:var(--white); border:none; cursor:pointer;
+  font-family:'Jost',sans-serif; font-size:13px;
+  font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+  transition:background .2s; margin-top:8px;
+}
+.sim-btn:hover { background:#8B6440; }
+
+/* RÉSULTATS */
+.results { display:none; }
+.results.visible { display:block; }
+
+.result-hero {
+  background:var(--navy); padding:28px 32px;
+  margin-bottom:16px; text-align:center;
+}
+.result-hero-label {
+  font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(255,255,255,.5); margin-bottom:8px;
+}
+.result-hero-amount {
+  font-family:'Cormorant Garamond',serif;
+  font-size:52px; font-weight:300; color:var(--bronze);
+  line-height:1;
+}
+.result-hero-sub { font-size:13px; color:rgba(255,255,255,.55); margin-top:6px; }
+
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; }
+.result-card {
+  background:var(--light); padding:16px 20px;
+  border-left:3px solid var(--bronze);
+}
+.result-card-label { font-size:11px; color:var(--grey); margin-bottom:4px; }
+.result-card-value {
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px; font-weight:300; color:var(--navy);
+}
+.result-card-value span { font-size:13px; font-family:'Jost',sans-serif; }
+
+.result-bar { margin-bottom:16px; }
+.result-bar-label {
+  display:flex; justify-content:space-between;
+  font-size:12px; color:var(--grey); margin-bottom:6px;
+}
+.bar-track {
+  height:6px; background:var(--light); position:relative; overflow:hidden;
+}
+.bar-fill {
+  height:100%; background:var(--bronze);
+  transition:width .8s ease; width:0%;
+}
+
+.cta-box {
+  background:var(--lightgreen);
+  border:1px solid #1E8449;
+  padding:20px 24px; margin-top:16px;
+}
+.cta-box p { font-size:13px; color:#155724; margin-bottom:12px; line-height:1.5; }
+.cta-box a {
+  display:inline-block; padding:10px 24px;
+  background:var(--navy); color:var(--white);
+  font-size:12px; font-weight:600; letter-spacing:.08em;
+  text-transform:uppercase; text-decoration:none;
+  transition:background .2s;
+}
+.cta-box a:hover { background:var(--bronze); }
+
+.result-detail {
+  background:var(--cream); border:1px solid var(--border);
+  padding:16px 20px; font-size:13px; color:var(--grey);
+  line-height:1.7; margin-bottom:16px;
+}
+
+.disclaimer {
+  font-size:11px; color:var(--grey); font-style:italic;
+  line-height:1.6; padding:12px 0;
+  border-top:1px solid var(--border); margin-top:8px;
+}
+</style>
+</head>
+<body>
+
+<div class="sim-header">
+  <p class="sim-header-eyebrow">Outil gratuit — VIVEO Patrimoine</p>
+  <h1>Simulateur d'<em>économie fiscale</em></h1>
+  <p>Estimez votre réduction d'impôt selon votre profil et le dispositif choisi</p>
+</div>
+
+<div class="sim-body">
+
+  <!-- PARAMÈTRES -->
+  <div class="sim-panel">
+    <h2>Vos paramètres</h2>
+
+    <div class="field">
+      <label>Revenus nets annuels du foyer</label>
+      <input type="number" id="revenus" placeholder="ex : 80000" min="0" step="1000">
+    </div>
+
+    <div class="field">
+      <label>Nombre de parts fiscales</label>
+      <select id="parts">
+        <option value="1">1 part (célibataire)</option>
+        <option value="1.5">1,5 parts (célibataire + 1 enfant)</option>
+        <option value="2" selected>2 parts (couple)</option>
+        <option value="2.5">2,5 parts (couple + 1 enfant)</option>
+        <option value="3">3 parts (couple + 2 enfants)</option>
+        <option value="3.5">3,5 parts (couple + 3 enfants)</option>
+        <option value="4">4 parts (couple + 4 enfants)</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Montant de l'investissement</label>
+      <input type="number" id="montant" placeholder="ex : 200000" min="0" step="5000">
+    </div>
+
+    <div class="field">
+      <label>Dispositif fiscal</label>
+      <div class="dispositifs">
+        <button class="dispositif-btn active" data-id="lmnp">LMNP géré</button>
+        <button class="dispositif-btn" data-id="deficitfoncier">Déficit foncier</button>
+        <button class="dispositif-btn" data-id="malraux">Loi Malraux</button>
+        <button class="dispositif-btn" data-id="monuments">Monuments Hist.</button>
+        <button class="dispositif-btn" data-id="nuepropriete">Nue-propriété</button>
+        <button class="dispositif-btn" data-id="demembrement">Démembrement</button>
+      </div>
+    </div>
+
+    <div class="field" id="field-travaux" style="display:none">
+      <label>Montant des travaux</label>
+      <input type="number" id="travaux" placeholder="ex : 120000" min="0" step="5000">
+      <p class="hint">Pour Malraux et Monuments Historiques</p>
+    </div>
+
+    <div class="field" id="field-zone" style="display:none">
+      <label>Zone Malraux</label>
+      <select id="zone">
+        <option value="0.30">PSMV (30%)</option>
+        <option value="0.22">PVAP (22%)</option>
+      </select>
+    </div>
+
+    <button class="sim-btn" onclick="calculer()">Calculer mon économie fiscale</button>
+  </div>
+
+  <!-- RÉSULTATS -->
+  <div class="sim-panel results" id="results">
+    <h2>Votre simulation</h2>
+
+    <div class="result-hero">
+      <div class="result-hero-label">Économie fiscale totale estimée</div>
+      <div class="result-hero-amount" id="res-total">—</div>
+      <div class="result-hero-sub" id="res-duree">sur la durée du dispositif</div>
+    </div>
+
+    <div class="result-grid">
+      <div class="result-card">
+        <div class="result-card-label">TMI actuel</div>
+        <div class="result-card-value" id="res-tmi">—</div>
+      </div>
+      <div class="result-card">
+        <div class="result-card-label">Impôt actuel</div>
+        <div class="result-card-value" id="res-impot">—</div>
+      </div>
+      <div class="result-card">
+        <div class="result-card-label">Économie annuelle</div>
+        <div class="result-card-value" id="res-annuel">—</div>
+      </div>
+      <div class="result-card">
+        <div class="result-card-label">Effort réel</div>
+        <div class="result-card-value" id="res-effort">—</div>
+      </div>
+    </div>
+
+    <div class="result-bar">
+      <div class="result-bar-label">
+        <span>Réduction impôt</span>
+        <span id="res-pct">—</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" id="bar-fill"></div></div>
+    </div>
+
+    <div class="result-detail" id="res-detail"></div>
+
+    <div class="cta-box">
+      <p>Cette simulation est indicative. Un conseiller VIVEO peut affiner ce calcul selon votre situation exacte et vous proposer le dispositif le plus adapté.</p>
+      <a href="/rdv-decouverte">Prendre rendez-vous — gratuit</a>
+    </div>
+
+    <p class="disclaimer">Simulation à titre indicatif basée sur le barème fiscal 2024. Les résultats peuvent varier selon votre situation personnelle. VIVEO Patrimoine ne saurait être tenu responsable des décisions prises sur la base de cet outil.</p>
+  </div>
+
+</div>
+
+<script>
+const BAREME = [
+  { max: 11294, taux: 0 },
+  { max: 28797, taux: 0.11 },
+  { max: 82341, taux: 0.30 },
+  { max: 177106, taux: 0.41 },
+  { max: Infinity, taux: 0.45 }
+];
+
+function calculerImpot(revenuNet, parts) {
+  const qi = revenuNet / parts;
+  let impot = 0;
+  let prev = 0;
+  for (const t of BAREME) {
+    if (qi <= prev) break;
+    impot += (Math.min(qi, t.max) - prev) * t.taux;
+    prev = t.max;
+  }
+  return Math.round(impot * parts);
+}
+
+function getTMI(revenuNet, parts) {
+  const qi = revenuNet / parts;
+  for (const t of BAREME) { if (qi <= t.max) return t.taux; }
+  return 0.45;
+}
+
+function fmt(n) { return Math.round(n).toLocaleString('fr-FR') + ' €'; }
+function fmtPct(n) { return Math.round(n * 100) + '%'; }
+
+let dispositifActuel = 'lmnp';
+
+document.querySelectorAll('.dispositif-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.dispositif-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    dispositifActuel = btn.dataset.id;
+    const needsTravaux = ['malraux','monuments','deficitfoncier'].includes(dispositifActuel);
+    document.getElementById('field-travaux').style.display = needsTravaux ? 'block' : 'none';
+    document.getElementById('field-zone').style.display = dispositifActuel === 'malraux' ? 'block' : 'none';
+  });
+});
+
+function calculer() {
+  const revenus = parseFloat(document.getElementById('revenus').value) || 0;
+  const parts = parseFloat(document.getElementById('parts').value) || 2;
+  const montant = parseFloat(document.getElementById('montant').value) || 0;
+  const travaux = parseFloat(document.getElementById('travaux').value) || 0;
+  const zone = parseFloat(document.getElementById('zone').value) || 0.30;
+
+  if (!revenus || !montant) { alert('Veuillez renseigner vos revenus et le montant de l\'investissement.'); return; }
+
+  const impotActuel = calculerImpot(revenus, parts);
+  const tmi = getTMI(revenus, parts);
+
+  let economieTotale = 0, economieAnnuelle = 0, dureeLabel = '', detail = '';
+
+  switch(dispositifActuel) {
+    case 'lmnp':
+      // Amortissement LMNP : réduction base imposable ~70% du loyer pendant 20 ans
+      const loyerAnnuel = montant * 0.045;
+      const amortAnnuel = montant * 0.04;
+      economieAnnuelle = Math.min(amortAnnuel * tmi, impotActuel);
+      economieTotale = economieAnnuelle * 20;
+      dureeLabel = 'sur 20 ans (amortissement)';
+      detail = `En LMNP, vous amortissez comptablement votre bien (environ 4% par an). Sur un investissement de ${fmt(montant)}, l'amortissement annuel est de ${fmt(amortAnnuel)}, ce qui réduit votre base imposable et génère une économie fiscale estimée à ${fmt(economieAnnuelle)} par an.`;
+      break;
+    case 'deficitfoncier':
+      const montantTravaux = travaux || montant * 0.4;
+      economieAnnuelle = Math.min(10700 * tmi, impotActuel);
+      economieTotale = economieAnnuelle * Math.ceil(montantTravaux / 10700);
+      dureeLabel = `sur ${Math.ceil(montantTravaux / 10700)} ans`;
+      detail = `Le déficit foncier est imputable sur le revenu global dans la limite de 10 700 €/an. Sur ${fmt(montantTravaux)} de travaux, l'économie annuelle est de ${fmt(economieAnnuelle)} pendant ${Math.ceil(montantTravaux/10700)} ans.`;
+      break;
+    case 'malraux':
+      const montantTrMalraux = travaux || montant * 0.5;
+      const plafondMalraux = 400000;
+      const baseMalraux = Math.min(montantTrMalraux, plafondMalraux);
+      economieTotale = baseMalraux * zone;
+      economieAnnuelle = economieTotale / 4;
+      dureeLabel = 'sur 4 ans de travaux';
+      detail = `Loi Malraux : réduction d'impôt de ${fmtPct(zone)} sur ${fmt(baseMalraux)} de travaux (plafond 400 000 € sur 4 ans). Économie totale de ${fmt(economieTotale)}, soit ${fmt(economieAnnuelle)} par an.`;
+      break;
+    case 'monuments':
+      const montantTrMH = travaux || montant * 0.6;
+      economieAnnuelle = montantTrMH * tmi;
+      economieTotale = economieAnnuelle;
+      dureeLabel = 'déduction totale des travaux';
+      detail = `Monuments Historiques : déduction totale des travaux sans plafond sur le revenu global. Sur ${fmt(montantTrMH)} de travaux, l'économie fiscale estimée est de ${fmt(economieTotale)} à votre TMI de ${fmtPct(tmi)}.`;
+      break;
+    case 'nuepropriete':
+      const decote = 0.35;
+      const prixNue = montant * (1 - decote);
+      const gainPatrimonial = montant - prixNue;
+      economieTotale = gainPatrimonial;
+      economieAnnuelle = gainPatrimonial / 15;
+      dureeLabel = 'gain patrimonial sur 15 ans';
+      detail = `En nue-propriété, vous achetez avec une décote de ${fmtPct(decote)} (prix : ${fmt(prixNue)} au lieu de ${fmt(montant)}). Vous récupérez la pleine propriété au bout de 15 ans sans avoir payé d'impôts sur les revenus locatifs. Gain patrimonial estimé : ${fmt(gainPatrimonial)}.`;
+      break;
+    case 'demembrement':
+      const decoteDem = 0.30;
+      const prixDem = montant * (1 - decoteDem);
+      const gainDem = montant - prixDem;
+      economieTotale = gainDem + gainDem * tmi;
+      economieAnnuelle = economieTotale / 10;
+      dureeLabel = 'gain patrimonial + fiscal sur 10 ans';
+      detail = `Le démembrement permet d'acquérir la nue-propriété avec ${fmtPct(decoteDem)} de décote et de récupérer la pleine propriété à terme. Gain estimé : ${fmt(gainDem)} en plus-value latente, ${fmt(gainDem * tmi)} en économie fiscale sur les revenus.`;
+      break;
+  }
+
+  const pctReduction = impotActuel > 0 ? Math.min(economieAnnuelle / impotActuel, 1) : 0;
+  const effortReel = (montant * 0.045) - economieAnnuelle;
+
+  document.getElementById('res-total').textContent = fmt(economieTotale);
+  document.getElementById('res-duree').textContent = dureeLabel;
+  document.getElementById('res-tmi').innerHTML = fmtPct(tmi) + '<span></span>';
+  document.getElementById('res-impot').innerHTML = fmt(impotActuel) + '<span>/an</span>';
+  document.getElementById('res-annuel').innerHTML = fmt(economieAnnuelle) + '<span>/an</span>';
+  document.getElementById('res-effort').innerHTML = fmt(Math.max(effortReel, 0)) + '<span>/an</span>';
+  document.getElementById('res-pct').textContent = fmtPct(pctReduction) + ' de votre impôt';
+  document.getElementById('res-detail').textContent = detail;
+
+  const results = document.getElementById('results');
+  results.classList.add('visible');
+  setTimeout(() => {
+    document.getElementById('bar-fill').style.width = (pctReduction * 100) + '%';
+  }, 100);
+  results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+</body>
+</html>
