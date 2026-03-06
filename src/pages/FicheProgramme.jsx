@@ -73,7 +73,7 @@ export default function FicheProgramme() {
 
       {/* Hero image */}
       <div style={{ height: 300, background: 'var(--gris-chaud)', borderRadius: 16, overflow: 'hidden', marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        {p.image_url ? <img src={p.image_url} alt={p.nom} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <span style={{ fontSize: '4rem' }}>\ud83c\udfe2</span>}
+                {p.image_url ? <img src={p.image_url} alt={p.nom} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <span style={{ fontSize: '4rem' }}>{String.fromCodePoint(0x1F3E2)}</span>}
       </div>
 
       {/* Titre */}
@@ -129,7 +129,7 @@ export default function FicheProgramme() {
           <div style={{ background: '#fff', borderRadius: 16, padding: '2rem', maxWidth: 440, width: '90%', boxShadow: '0 8px 32px rgba(26,39,68,0.2)' }} onClick={e => e.stopPropagation()}>
             {sent ? (
               <div style={{ textAlign: 'center', padding: '2rem 0' }}>
-                <p style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>\u2705</p>
+                                <p style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{String.fromCodePoint(0x2705)}</p>
                 <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1.2rem', color: 'var(--navy)' }}>Demande envoyee !</p>
                 <p style={{ color: 'var(--gris-texte)', fontSize: '0.9rem' }}>Nous vous recontacterons rapidement.</p>
               </div>
