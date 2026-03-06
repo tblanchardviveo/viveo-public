@@ -1,206 +1,251 @@
-<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'approche VIVEO — Conseil indépendant en immobilier neuf</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-.viveo-page { font-family: 'Segoe UI', Arial, sans-serif; color: #1A2744; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-.viveo-hero { background: #1A2744; padding: 64px 40px; text-align: center; margin-bottom: 48px; }
-.viveo-hero-eyebrow { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #A67C52; margin-bottom: 16px; }
-.viveo-hero h1 { font-size: clamp(26px, 4vw, 46px); font-weight: 300; color: #fff; margin: 0 0 16px; line-height: 1.2; }
-.viveo-hero h1 em { font-style: italic; color: #A67C52; }
-.viveo-hero p { font-size: 16px; color: rgba(255,255,255,0.6); font-weight: 300; margin: 0; }
-.viveo-section-title { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #A67C52; margin-bottom: 8px; }
-.viveo-h2 { font-size: clamp(22px, 3vw, 34px); font-weight: 300; color: #1A2744; margin: 0 0 20px; line-height: 1.3; }
-.viveo-h2 em { font-style: italic; color: #A67C52; }
-.viveo-separator { height: 1px; background: rgba(166,124,82,0.2); margin: 40px 0; }
-.viveo-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 48px; align-items: start; }
-.viveo-body-text p { font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 16px; }
-.viveo-comparatif { width: 100%; border-collapse: collapse; margin-bottom: 32px; font-size: 14px; }
-.viveo-comparatif th { background: #1A2744; color: #fff; padding: 14px 16px; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
-.viveo-comparatif th.viveo-col { color: #A67C52; }
-.viveo-comparatif td { padding: 12px 16px; border-bottom: 1px solid rgba(166,124,82,0.15); vertical-align: top; color: #444; }
-.viveo-comparatif tr:nth-child(even) td { background: #F7F4EF; }
-.viveo-comparatif td.viveo-col { color: #1A2744; font-weight: 600; background: #F0EDE8 !important; }
-.viveo-check { color: #1E8449; font-weight: 600; }
-.viveo-cross { color: #C0392B; }
-.viveo-warn { color: #D35400; }
-.viveo-engagements { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 48px; }
-.viveo-engagement { background: #F7F4EF; border-left: 3px solid #A67C52; padding: 20px 24px; }
-.viveo-engagement-num { font-size: 32px; font-weight: 300; color: #A67C52; line-height: 1; margin-bottom: 8px; }
-.viveo-engagement h3 { font-size: 14px; font-weight: 600; color: #1A2744; margin: 0 0 8px; }
-.viveo-engagement p { font-size: 13px; color: #666; margin: 0; line-height: 1.6; }
-.viveo-temoignage { background: #1A2744; padding: 32px 40px; margin-bottom: 48px; }
-.viveo-temoignage blockquote { font-size: 17px; font-weight: 300; color: #fff; font-style: italic; margin: 0 0 16px; line-height: 1.7; border: none; padding: 0; }
-.viveo-temoignage cite { font-size: 13px; color: #A67C52; font-style: normal; }
-.viveo-cta { background: #F7F4EF; border: 1px solid rgba(166,124,82,0.3); padding: 40px; text-align: center; }
-.viveo-cta h2 { font-size: 24px; font-weight: 300; color: #1A2744; margin: 0 0 12px; }
-.viveo-cta p { font-size: 15px; color: #666; margin: 0 0 24px; }
-.viveo-btn { display: inline-block; padding: 14px 36px; background: #A67C52; color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
-.viveo-btn:hover { background: #8B6440; color: #fff; }
-@media(max-width:768px){ .viveo-2col{ grid-template-columns:1fr; } .viveo-hero{ padding:40px 20px; } }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #1A2744;
+  --bronze: #A67C52;
+  --bronze-light: rgba(166,124,82,0.15);
+  --cream: #F7F4EF;
+  --text: #444;
+  --white: #fff;
+}
+body { font-family: 'Raleway', sans-serif; color: var(--navy); background: var(--white); }
+
+/* HERO */
+.hero { position: relative; min-height: 480px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: url('/images/IMG_0603.png') center/cover no-repeat; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(26,39,68,0.82); }
+.hero-content { position: relative; z-index: 2; padding: 80px 24px; max-width: 800px; }
+.hero-eyebrow { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--bronze); margin-bottom: 20px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 52px); font-weight: 400; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+.hero h1 em { font-style: italic; color: var(--bronze); }
+.hero p { font-family: 'Raleway', sans-serif; font-size: 16px; color: rgba(255,255,255,0.6); font-weight: 300; }
+
+/* SECTION */
+.section { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
+.section-title { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bronze); margin-bottom: 8px; }
+.section h2 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3.5vw, 38px); font-weight: 400; color: var(--navy); line-height: 1.3; margin-bottom: 24px; }
+.section h2 em { font-style: italic; color: var(--bronze); }
+.separator { height: 1px; background: var(--bronze-light); margin: 0 auto; max-width: 1100px; }
+
+/* 2 COLONNES */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.body-text p { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 16px; }
+
+/* CHIFFRES */
+.stats-box { background: var(--cream); border: 1px solid var(--bronze-light); padding: 32px; border-radius: 4px; }
+.stats-box .label { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bronze); margin-bottom: 20px; text-align: center; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.stat { text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--bronze); line-height: 1; margin-bottom: 4px; }
+.stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
+
+/* COMPARATIF */
+.table-wrap { overflow-x: auto; margin-bottom: 32px; }
+table.comparatif { width: 100%; border-collapse: collapse; font-size: 14px; }
+.comparatif th { background: var(--navy); color: var(--white); padding: 14px 16px; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.comparatif th.col-viveo { color: var(--bronze); }
+.comparatif td { padding: 12px 16px; border-bottom: 1px solid var(--bronze-light); vertical-align: top; color: var(--text); }
+.comparatif tr:nth-child(even) td { background: var(--cream); }
+.comparatif td.col-viveo { color: var(--navy); font-weight: 600; background: #F0EDE8 !important; }
+.check { color: #1E8449; font-weight: 600; }
+.cross { color: #C0392B; }
+.warn { color: #D35400; }
+
+/* ENGAGEMENTS 4x2 */
+.engagements-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 48px; }
+.engagement-card { background: var(--cream); border-left: 3px solid var(--bronze); padding: 24px; }
+.engagement-num { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--bronze); line-height: 1; margin-bottom: 8px; }
+.engagement-card h3 { font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+.engagement-card p { font-size: 13px; color: #666; line-height: 1.6; }
+
+/* TEMOIGNAGE */
+.temoignage { background: var(--navy); padding: 40px 48px; margin-bottom: 48px; }
+.temoignage blockquote { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--white); font-style: italic; margin: 0 0 16px; line-height: 1.7; border: none; padding: 0; }
+.temoignage cite { font-family: 'Raleway', sans-serif; font-size: 13px; color: var(--bronze); font-style: normal; }
+
+/* ETAPES */
+.etapes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 48px; }
+.etape { text-align: center; padding: 24px 16px; }
+.etape-num { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bronze); margin-bottom: 12px; }
+.etape h3 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--navy); margin-bottom: 8px; }
+.etape p { font-size: 13px; color: #666; line-height: 1.6; }
+
+/* CTA */
+.cta-box { background: var(--cream); border: 1px solid var(--bronze-light); padding: 48px; text-align: center; margin-bottom: 48px; }
+.cta-box h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--navy); margin-bottom: 12px; }
+.cta-box p { font-size: 15px; color: #666; margin-bottom: 24px; }
+.btn { display: inline-block; padding: 14px 36px; background: var(--bronze); color: var(--white); text-decoration: none; font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.3s; }
+.btn:hover { background: #8B6440; }
+
+/* RESPONSIVE */
+@media(max-width:1024px) { .engagements-grid { grid-template-columns: repeat(2, 1fr); } .etapes { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:768px) { .two-col { grid-template-columns: 1fr; } .engagements-grid { grid-template-columns: 1fr; } .etapes { grid-template-columns: 1fr; } .hero { min-height: 380px; } .hero-content { padding: 48px 20px; } .temoignage { padding: 28px 24px; } .cta-box { padding: 32px 20px; } }
 </style>
+</head>
+<body>
 
-<div class="viveo-page">
-
-  <div class="viveo-hero">
-    <p class="viveo-hero-eyebrow">Notre philosophie</p>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Notre philosophie</p>
     <h1>L'approche <em>VIVEO</em> :<br>un conseil indépendant et engagé</h1>
     <p>Pourquoi choisir un conseil indépendant plutôt qu'une banque ou un CGP généraliste ?</p>
   </div>
+</div>
 
-  <!-- INTRO -->
-  <div class="viveo-2col">
-    <div class="viveo-body-text">
-      <p class="viveo-section-title">Notre positionnement</p>
-      <h2 class="viveo-h2">Un interlocuteur unique,<br><em>sans conflit d'intérêts</em></h2>
+<!-- INTRO -->
+<div class="section">
+  <div class="two-col">
+    <div class="body-text">
+      <p class="section-title">Notre positionnement</p>
+      <h2>Un interlocuteur unique,<br><em>sans conflit d'intérêts</em></h2>
       <p>VIVEO Patrimoine est un cabinet de conseil spécialisé en immobilier neuf depuis 27 ans. Nous ne sommes pas filiale d'un promoteur, pas liés à un réseau bancaire, pas rémunérés par les produits que nous vous recommandons.</p>
       <p>Notre modèle est simple : nous sommes rémunérés par les promoteurs immobiliers sur les programmes que vous réservez. Cette rémunération ne vous coûte rien — elle est incluse dans le prix de vente que le promoteur affiche à tous ses canaux de distribution.</p>
       <p>Ce qui change tout : nous sélectionnons les programmes sur leurs mérites, pas sur leurs marges.</p>
     </div>
-    <div>
-      <div style="background:#1A2744;padding:32px;margin-bottom:16px;">
-        <div style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#A67C52;margin-bottom:16px;">En chiffres</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div style="text-align:center;"><div style="font-size:40px;font-weight:300;color:#A67C52;line-height:1;">27</div><div style="font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;">ans d'expertise</div></div>
-          <div style="text-align:center;"><div style="font-size:40px;font-weight:300;color:#A67C52;line-height:1;">0€</div><div style="font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;">frais conseiller</div></div>
-          <div style="text-align:center;"><div style="font-size:40px;font-weight:300;color:#A67C52;line-height:1;">1</div><div style="font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;">interlocuteur</div></div>
-          <div style="text-align:center;"><div style="font-size:40px;font-weight:300;color:#A67C52;line-height:1;">A–Z</div><div style="font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;">suivi complet</div></div>
-        </div>
+    <div class="stats-box">
+      <div class="label">En chiffres</div>
+      <div class="stats-grid">
+        <div class="stat"><div class="stat-num">27</div><div class="stat-label">ans d'expertise</div></div>
+        <div class="stat"><div class="stat-num">0€</div><div class="stat-label">frais conseiller</div></div>
+        <div class="stat"><div class="stat-num">1</div><div class="stat-label">interlocuteur</div></div>
+        <div class="stat"><div class="stat-num">A–Z</div><div class="stat-label">suivi complet</div></div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="viveo-separator"></div>
+<div class="separator"></div>
 
-  <!-- COMPARATIF -->
-  <p class="viveo-section-title" style="text-align:center;margin-bottom:8px;">Comparatif</p>
-  <h2 class="viveo-h2" style="text-align:center;margin-bottom:32px;">VIVEO vs <em>les autres canaux</em></h2>
+<!-- COMPARATIF -->
+<div class="section">
+  <p class="section-title">Comparatif</p>
+  <h2>VIVEO vs <em>les autres canaux</em></h2>
+  <div class="table-wrap">
+    <table class="comparatif">
+      <thead><tr><th>Critère</th><th>Réseau bancaire</th><th>CGP généraliste</th><th class="col-viveo">VIVEO Patrimoine</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Spécialisation immobilier</strong></td><td><span class="cross">✗</span> Produits financiers en priorité</td><td><span class="warn">~</span> Variable selon le conseiller</td><td class="col-viveo"><span class="check">✓</span> Immobilier neuf exclusivement — 27 ans</td></tr>
+        <tr><td><strong>Indépendance</strong></td><td><span class="cross">✗</span> Filiale d'un groupe bancaire</td><td><span class="warn">~</span> Souvent lié à des réseaux promoteurs</td><td class="col-viveo"><span class="check">✓</span> Indépendant — sélection libre des programmes</td></tr>
+        <tr><td><strong>Interlocuteur</strong></td><td><span class="cross">✗</span> Conseiller tournant, souvent junior</td><td><span class="warn">~</span> 1 conseiller mais multi-produits</td><td class="col-viveo"><span class="check">✓</span> 1 conseiller dédié de A à Z</td></tr>
+        <tr><td><strong>Suivi après réservation</strong></td><td><span class="cross">✗</span> Absent ou minimal</td><td><span class="warn">~</span> Limité à la signature</td><td class="col-viveo"><span class="check">✓</span> Suivi jusqu'à la livraison et au-delà</td></tr>
+        <tr><td><strong>Simulation fiscale</strong></td><td><span class="cross">✗</span> Outil générique, peu adapté</td><td><span class="warn">~</span> Possible mais non spécialisé VEFA</td><td class="col-viveo"><span class="check">✓</span> Simulation sur-mesure par dispositif</td></tr>
+        <tr><td><strong>Médiation promoteur</strong></td><td><span class="cross">✗</span> Aucun rôle</td><td><span class="cross">✗</span> Aucun rôle</td><td class="col-viveo"><span class="check">✓</span> VIVEO intervient en cas de litige</td></tr>
+        <tr><td><strong>Frais pour le client</strong></td><td><span class="cross">✗</span> Frais de dossier parfois facturés</td><td><span class="warn">~</span> Honoraires variables</td><td class="col-viveo"><span class="check">✓</span> Zéro frais — rémunération promoteur uniquement</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-  <table class="viveo-comparatif">
-    <thead>
-      <tr>
-        <th style="width:35%">Critère</th>
-        <th>Réseau bancaire</th>
-        <th>CGP généraliste</th>
-        <th class="viveo-col">VIVEO Patrimoine</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Spécialisation immobilier</strong></td>
-        <td class="viveo-cross">✗ Produits financiers en priorité</td>
-        <td class="viveo-warn">~ Variable selon le conseiller</td>
-        <td class="viveo-col viveo-check">✓ Immobilier neuf exclusivement — 27 ans</td>
-      </tr>
-      <tr>
-        <td><strong>Indépendance</strong></td>
-        <td class="viveo-cross">✗ Filiale d'un groupe bancaire</td>
-        <td class="viveo-warn">~ Souvent lié à des réseaux promoteurs</td>
-        <td class="viveo-col viveo-check">✓ Indépendant — sélection libre des programmes</td>
-      </tr>
-      <tr>
-        <td><strong>Interlocuteur</strong></td>
-        <td class="viveo-cross">✗ Conseiller tournant, souvent junior</td>
-        <td class="viveo-warn">~ 1 conseiller mais multi-produits</td>
-        <td class="viveo-col viveo-check">✓ 1 conseiller dédié de A à Z</td>
-      </tr>
-      <tr>
-        <td><strong>Suivi après réservation</strong></td>
-        <td class="viveo-cross">✗ Absent ou minimal</td>
-        <td class="viveo-warn">~ Limité à la signature</td>
-        <td class="viveo-col viveo-check">✓ Suivi jusqu'à la livraison et au-delà</td>
-      </tr>
-      <tr>
-        <td><strong>Simulation fiscale personnalisée</strong></td>
-        <td class="viveo-cross">✗ Outil générique, peu adapté</td>
-        <td class="viveo-warn">~ Possible mais non spécialisé VEFA</td>
-        <td class="viveo-col viveo-check">✓ Simulation sur-mesure par dispositif</td>
-      </tr>
-      <tr>
-        <td><strong>Médiation promoteur</strong></td>
-        <td class="viveo-cross">✗ Aucun rôle</td>
-        <td class="viveo-cross">✗ Aucun rôle</td>
-        <td class="viveo-col viveo-check">✓ VIVEO intervient en cas de litige promoteur</td>
-      </tr>
-      <tr>
-        <td><strong>Frais pour le client</strong></td>
-        <td class="viveo-cross">✗ Frais de dossier parfois facturés</td>
-        <td class="viveo-warn">~ Honoraires variables</td>
-        <td class="viveo-col viveo-check">✓ Zéro frais — rémunération promoteur uniquement</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="separator"></div>
 
-  <div class="viveo-separator"></div>
-
-  <!-- NOS ENGAGEMENTS -->
-  <p class="viveo-section-title" style="text-align:center;margin-bottom:8px;">Nos engagements</p>
-  <h2 class="viveo-h2" style="text-align:center;margin-bottom:32px;">Ce que vous pouvez <em>attendre de nous</em></h2>
-
-  <div class="viveo-engagements">
-    <div class="viveo-engagement">
-      <div class="viveo-engagement-num">01</div>
+<!-- ENGAGEMENTS 8 CARDS -->
+<div class="section">
+  <p class="section-title">Nos engagements</p>
+  <h2>Ce que vous pouvez <em>attendre de nous</em></h2>
+  <div class="engagements-grid">
+    <div class="engagement-card">
+      <div class="engagement-num">01</div>
       <h3>Écoute & analyse</h3>
-      <p>Nous prenons le temps de comprendre votre situation fiscale, familiale et patrimoniale avant toute recommandation. Pas de précipitation, pas de solution générique.</p>
+      <p>Nous prenons le temps de comprendre votre situation fiscale, familiale et patrimoniale avant toute recommandation.</p>
     </div>
-    <div class="viveo-engagement">
-      <div class="viveo-engagement-num">02</div>
+    <div class="engagement-card">
+      <div class="engagement-num">02</div>
       <h3>Sélection rigoureuse</h3>
-      <p>Nous ne présentons que des programmes que nous avons validés : qualité du promoteur, localisation, prix de marché, potentiel locatif et liquidité à terme.</p>
+      <p>Nous ne présentons que des programmes validés : qualité du promoteur, localisation, prix de marché, potentiel locatif.</p>
     </div>
-    <div class="viveo-engagement">
-      <div class="viveo-engagement-num">03</div>
+    <div class="engagement-card">
+      <div class="engagement-num">03</div>
       <h3>Transparence totale</h3>
-      <p>Nous vous expliquons exactement comment nous sommes rémunérés, quels sont les risques de chaque investissement, et ce que nous ne savons pas prévoir.</p>
+      <p>Nous vous expliquons comment nous sommes rémunérés, quels sont les risques, et ce que nous ne savons pas prévoir.</p>
     </div>
-    <div class="viveo-engagement">
-      <div class="viveo-engagement-num">04</div>
+    <div class="engagement-card">
+      <div class="engagement-num">04</div>
       <h3>Suivi de A à Z</h3>
-      <p>De la réservation à la livraison, puis jusqu'aux garanties (GPA, biennale, décennale), votre conseiller VIVEO reste votre interlocuteur unique.</p>
+      <p>De la réservation à la livraison, puis jusqu'aux garanties, votre conseiller VIVEO reste votre interlocuteur unique.</p>
     </div>
-    <div class="viveo-engagement">
-      <div class="viveo-engagement-num">05</div>
+    <div class="engagement-card">
+      <div class="engagement-num">05</div>
       <h3>Médiation promoteur</h3>
-      <p>En cas de difficulté avec le promoteur (retard, malfaçon, réserves), VIVEO intervient en tant qu'intermédiaire pour défendre vos intérêts.</p>
+      <p>En cas de difficulté avec le promoteur (retard, malfacon, réserves), VIVEO intervient pour défendre vos intérêts.</p>
     </div>
-    <div class="viveo-engagement">
-      <div class="viveo-engagement-num">06</div>
+    <div class="engagement-card">
+      <div class="engagement-num">06</div>
       <h3>Zéro frais</h3>
-      <p>Notre conseil est gratuit pour vous. Nous sommes rémunérés par le promoteur sur les programmes réservés — ce coût est inclus dans le prix affiché à tous.</p>
+      <p>Notre conseil est gratuit pour vous. Nous sommes rémunérés par le promoteur — ce coût est inclus dans le prix affiché à tous.</p>
+    </div>
+    <div class="engagement-card">
+      <div class="engagement-num">07</div>
+      <h3>Prix promoteur garanti</h3>
+      <p>Chez VIVEO, vous bénéficiez du même tarif que directement chez le promoteur. Les offres commerciales en cours sont appliquées naturellement — aucun surcoût, aucune différence.</p>
+    </div>
+    <div class="engagement-card">
+      <div class="engagement-num">08</div>
+      <h3>Disponibilité & réactivité</h3>
+      <p>Votre conseiller VIVEO est joignable directement, sans standard ni délai. Une question sur votre dossier, un doute avant signature — vous obtenez une réponse rapide, pas un numéro de ticket.</p>
     </div>
   </div>
+</div>
 
-  <div class="viveo-separator"></div>
+<div class="separator"></div>
 
-  <!-- PROCESSUS -->
-  <p class="viveo-section-title" style="text-align:center;margin-bottom:8px;">Notre méthode</p>
-  <h2 class="viveo-h2" style="text-align:center;margin-bottom:32px;">Votre projet en <em>4 étapes</em></h2>
+<!-- TEMOIGNAGE -->
+<div class="section">
+  <div class="temoignage">
+    <blockquote>« On nous avait dit d'aller voir notre banque. Avec VIVEO, on a eu un vrai conseiller, disponible, qui nous a expliqué chaque étape. On referait le même choix sans hésiter. »</blockquote>
+    <cite>— Sophie & Julien, investisseurs à Lille</cite>
+  </div>
+</div>
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;margin-bottom:48px;">
-    <div style="background:#1A2744;padding:28px 24px;border-right:1px solid rgba(255,255,255,0.1);">
-      <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#A67C52;margin-bottom:12px;">Étape 1</div>
-      <div style="font-size:18px;font-weight:600;color:#fff;margin-bottom:10px;">RDV Découverte</div>
-      <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;margin:0;">En visio ou en présentiel — 45 min pour analyser votre situation et définir votre stratégie.</p>
+<div class="separator"></div>
+
+<!-- ETAPES -->
+<div class="section">
+  <p class="section-title">Notre méthode</p>
+  <h2>Votre projet en <em>4 étapes</em></h2>
+  <div class="etapes">
+    <div class="etape">
+      <div class="etape-num">Étape 1</div>
+      <h3>RDV Découverte</h3>
+      <p>En visio ou en présentiel — 45 min pour analyser votre situation et définir votre stratégie.</p>
     </div>
-    <div style="background:#1E2D4E;padding:28px 24px;border-right:1px solid rgba(255,255,255,0.1);">
-      <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#A67C52;margin-bottom:12px;">Étape 2</div>
-      <div style="font-size:18px;font-weight:600;color:#fff;margin-bottom:10px;">Analyse & sélection</div>
-      <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;margin:0;">Nous analysons votre dossier et sélectionnons 1 à 2 programmes adaptés à votre profil exact.</p>
+    <div class="etape">
+      <div class="etape-num">Étape 2</div>
+      <h3>Analyse & sélection</h3>
+      <p>Nous analysons votre dossier et sélectionnons 1 à 2 programmes adaptés à votre profil exact.</p>
     </div>
-    <div style="background:#1A2744;padding:28px 24px;border-right:1px solid rgba(255,255,255,0.1);">
-      <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#A67C52;margin-bottom:12px;">Étape 3</div>
-      <div style="font-size:18px;font-weight:600;color:#fff;margin-bottom:10px;">RDV Proposition</div>
-      <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;margin:0;">Présentation du dossier complet : simulation fiscale, plans, plaquette, financement.</p>
+    <div class="etape">
+      <div class="etape-num">Étape 3</div>
+      <h3>RDV Proposition</h3>
+      <p>Présentation du dossier complet : simulation fiscale, plans, plaquette, financement.</p>
     </div>
-    <div style="background:#1E2D4E;padding:28px 24px;">
-      <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#A67C52;margin-bottom:12px;">Étape 4</div>
-      <div style="font-size:18px;font-weight:600;color:#fff;margin-bottom:10px;">Suivi jusqu'à la clé</div>
-      <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;margin:0;">Réservation, financement, acte, livraison — un seul interlocuteur de bout en bout.</p>
+    <div class="etape">
+      <div class="etape-num">Étape 4</div>
+      <h3>Suivi jusqu'à la clé</h3>
+      <p>Réservation, financement, acte, livraison — un seul interlocuteur de bout en bout.</p>
     </div>
   </div>
+</div>
 
-  <div class="viveo-cta">
+<div class="separator"></div>
+
+<!-- CTA -->
+<div class="section">
+  <div class="cta-box">
     <h2>Rencontrons-nous</h2>
     <p>Un premier entretien de 45 minutes suffit pour savoir si VIVEO peut vous apporter de la valeur. Gratuit, sans engagement, en visio ou à notre cabinet.</p>
-    <a href="/rdv-decouverte" class="viveo-btn">Prendre rendez-vous</a>
+    <a href="/rdv-decouverte" class="btn">Prendre rendez-vous</a>
   </div>
-
 </div>
-<!-- /wp:html -->
+
+</body>
+</html>
