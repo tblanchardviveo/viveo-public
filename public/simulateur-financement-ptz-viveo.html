@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulateur de Financement — VIVEO Patrimoine</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1A2744; --bronze: #A67C52; --cream: #F7F4EF;
+  --white: #fff; --grey: #6B6B6B; --light: #F0EDE8;
+  --green: #1E8449; --lightgreen: #EAFAF1; --red: #C0392B;
+  --border: rgba(166,124,82,0.2);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--navy); }
+
+.sim-header { background:var(--navy); padding:48px 40px 40px; text-align:center; }
+.sim-eyebrow { font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--bronze); margin-bottom:12px; }
+.sim-header h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,44px); font-weight:300; color:var(--white); margin-bottom:10px; }
+.sim-header h1 em { font-style:italic; color:var(--bronze); }
+.sim-header p { font-size:14px; font-weight:300; color:rgba(255,255,255,.55); }
+
+.tabs { display:flex; background:var(--light); border-bottom:2px solid var(--border); }
+.tab { flex:1; padding:16px; text-align:center; cursor:pointer; font-size:13px; font-weight:500; letter-spacing:.05em; color:var(--grey); transition:all .2s; border:none; background:none; font-family:'Jost',sans-serif; }
+.tab.active { color:var(--navy); background:var(--white); border-bottom:2px solid var(--bronze); margin-bottom:-2px; }
+
+.tab-content { display:none; }
+.tab-content.active { display:block; }
+
+.sim-body { max-width:960px; margin:0 auto; padding:40px 24px; display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+@media(max-width:700px){ .sim-body{ grid-template-columns:1fr; } }
+
+.sim-panel { background:var(--white); border:1px solid var(--border); padding:32px; }
+.sim-panel h2 { font-size:13px; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:var(--bronze); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+
+.field { margin-bottom:20px; }
+.field label { display:block; font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:var(--grey); margin-bottom:8px; }
+.field input, .field select { width:100%; padding:12px 16px; border:1px solid var(--border); background:var(--cream); color:var(--navy); font-family:'Jost',sans-serif; font-size:14px; outline:none; transition:border-color .2s; }
+.field input:focus, .field select:focus { border-color:var(--bronze); }
+.field .hint { font-size:11px; color:var(--grey); margin-top:4px; font-style:italic; }
+
+.durees { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.duree-btn { padding:10px; border:1px solid var(--border); background:var(--cream); color:var(--navy); font-family:'Jost',sans-serif; font-size:13px; font-weight:500; cursor:pointer; transition:all .2s; text-align:center; }
+.duree-btn:hover { border-color:var(--bronze); }
+.duree-btn.active { background:var(--navy); color:var(--white); border-color:var(--navy); }
+
+.sim-btn { width:100%; padding:16px; background:var(--bronze); color:var(--white); border:none; cursor:pointer; font-family:'Jost',sans-serif; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; transition:background .2s; margin-top:8px; }
+.sim-btn:hover { background:#8B6440; }
+
+/* résultats */
+.results { display:none; }
+.results.visible { display:block; }
+
+.result-hero { background:var(--navy); padding:24px 28px; margin-bottom:16px; }
+.result-hero-label { font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:6px; }
+.result-hero-amount { font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:300; color:var(--bronze); line-height:1; }
+.result-hero-sub { font-size:12px; color:rgba(255,255,255,.45); margin-top:4px; }
+
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; }
+.result-card { background:var(--light); padding:14px 18px; border-left:3px solid var(--bronze); }
+.rc-label { font-size:11px; color:var(--grey); margin-bottom:3px; }
+.rc-value { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; color:var(--navy); }
+.rc-value span { font-size:12px; font-family:'Jost',sans-serif; }
+
+.endettement-bar { margin-bottom:16px; }
+.eb-header { display:flex; justify-content:space-between; font-size:12px; margin-bottom:6px; }
+.eb-label { color:var(--grey); }
+.eb-value { font-weight:600; }
+.bar-track { height:8px; background:var(--light); position:relative; border-radius:4px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:4px; transition:width .8s ease; width:0%; }
+.bar-fill.ok { background:var(--green); }
+.bar-fill.warn { background:#D35400; }
+.bar-fill.danger { background:var(--red); }
+
+.comparatif { margin-bottom:16px; }
+.comp-row { display:grid; grid-template-columns:80px 1fr 1fr 1fr; gap:4px; margin-bottom:4px; align-items:center; }
+.comp-header { font-size:11px; font-weight:600; color:var(--grey); letter-spacing:.05em; text-transform:uppercase; }
+.comp-label { font-size:12px; color:var(--grey); }
+.comp-val { font-size:13px; font-weight:500; color:var(--navy); background:var(--light); padding:8px 10px; text-align:center; }
+.comp-val.highlight { background:var(--navy); color:var(--white); }
+
+/* PTZ */
+.ptz-eligible { background:var(--lightgreen); border:1px solid var(--green); padding:20px 24px; margin-bottom:16px; }
+.ptz-non { background:#FFF3F3; border:1px solid var(--red); padding:20px 24px; margin-bottom:16px; }
+.ptz-title { font-size:14px; font-weight:600; margin-bottom:8px; }
+.ptz-eligible .ptz-title { color:var(--green); }
+.ptz-non .ptz-title { color:var(--red); }
+.ptz-detail { font-size:13px; color:var(--grey); line-height:1.6; }
+
+.cta-box { background:var(--lightgreen); border:1px solid #1E8449; padding:20px 24px; margin-top:16px; }
+.cta-box p { font-size:13px; color:#155724; margin-bottom:12px; line-height:1.5; }
+.cta-box a { display:inline-block; padding:10px 24px; background:var(--navy); color:var(--white); font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; transition:background .2s; }
+.cta-box a:hover { background:var(--bronze); }
+
+.disclaimer { font-size:11px; color:var(--grey); font-style:italic; line-height:1.6; padding:12px 0; border-top:1px solid var(--border); margin-top:8px; }
+</style>
+</head>
+<body>
+
+<div class="sim-header">
+  <p class="sim-eyebrow">Outil gratuit — VIVEO Patrimoine</p>
+  <h1>Simulateur de <em>financement</em></h1>
+  <p>Capacité d'emprunt, mensualités, PTZ — en 30 secondes</p>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('financement',this)">💳 Financement & capacité</button>
+  <button class="tab" onclick="switchTab('ptz',this)">🏠 Éligibilité PTZ</button>
+</div>
+
+<!-- ═══ TAB FINANCEMENT ═══ -->
+<div class="tab-content active" id="tab-financement">
+<div class="sim-body">
+  <div class="sim-panel">
+    <h2>Vos paramètres</h2>
+    <div class="field">
+      <label>Revenus nets mensuels du foyer</label>
+      <input type="number" id="f-revenus" placeholder="ex : 5000" min="0" step="100">
+    </div>
+    <div class="field">
+      <label>Apport personnel</label>
+      <input type="number" id="f-apport" placeholder="ex : 30000" min="0" step="1000">
+    </div>
+    <div class="field">
+      <label>Prix du bien visé (optionnel)</label>
+      <input type="number" id="f-prix" placeholder="ex : 250000" min="0" step="5000">
+      <p class="hint">Laissez vide pour calculer votre capacité maximale</p>
+    </div>
+    <div class="field">
+      <label>Crédits en cours (mensualités)</label>
+      <input type="number" id="f-credits" placeholder="ex : 300" min="0" step="50">
+      <p class="hint">Voiture, consommation, etc.</p>
+    </div>
+    <div class="field">
+      <label>Taux d'intérêt annuel (%)</label>
+      <input type="number" id="f-taux" value="3.5" min="0" max="15" step="0.1">
+    </div>
+    <div class="field">
+      <label>Durée souhaitée</label>
+      <div class="durees">
+        <button class="duree-btn" data-duree="15" onclick="selectDuree(this)">15 ans</button>
+        <button class="duree-btn" data-duree="20" onclick="selectDuree(this)">20 ans</button>
+        <button class="duree-btn active" data-duree="25" onclick="selectDuree(this)">25 ans</button>
+      </div>
+    </div>
+    <button class="sim-btn" onclick="calculerFinancement()">Calculer mon financement</button>
+  </div>
+
+  <div class="sim-panel results" id="f-results">
+    <h2>Votre simulation</h2>
+    <div class="result-hero">
+      <div class="result-hero-label">Capacité d'emprunt maximale</div>
+      <div class="result-hero-amount" id="f-capacite">—</div>
+      <div class="result-hero-sub" id="f-capacite-sub">—</div>
+    </div>
+    <div class="result-grid">
+      <div class="result-card">
+        <div class="rc-label">Mensualité estimée</div>
+        <div class="rc-value" id="f-mensualite">—<span>/mois</span></div>
+      </div>
+      <div class="result-card">
+        <div class="rc-label">Taux d'endettement</div>
+        <div class="rc-value" id="f-endettement">—</div>
+      </div>
+      <div class="result-card">
+        <div class="rc-label">Coût total du crédit</div>
+        <div class="rc-value" id="f-coutcredit">—</div>
+      </div>
+      <div class="result-card">
+        <div class="rc-label">Budget total avec apport</div>
+        <div class="rc-value" id="f-budget">—</div>
+      </div>
+    </div>
+    <div class="endettement-bar">
+      <div class="eb-header">
+        <span class="eb-label">Taux d'endettement</span>
+        <span class="eb-value" id="f-end-pct">—</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" id="f-bar"></div></div>
+    </div>
+    <div id="f-endettement-msg" style="font-size:12px;margin-bottom:16px;"></div>
+    <div class="comparatif" id="f-comparatif"></div>
+    <div class="cta-box">
+      <p>Nos conseillers peuvent vous accompagner pour optimiser votre plan de financement et obtenir les meilleures conditions.</p>
+      <a href="/rdv-decouverte">Parler à un conseiller</a>
+    </div>
+    <p class="disclaimer">Simulation indicative. Le taux réel dépend de votre profil et de l'établissement prêteur. L'assurance emprunteur n'est pas incluse (compter 0,2 à 0,4% du capital).</p>
+  </div>
+</div>
+</div>
+
+<!-- ═══ TAB PTZ ═══ -->
+<div class="tab-content" id="tab-ptz">
+<div class="sim-body">
+  <div class="sim-panel">
+    <h2>Votre éligibilité PTZ</h2>
+    <div class="field">
+      <label>Revenus nets annuels du foyer (N-2)</label>
+      <input type="number" id="p-revenus" placeholder="ex : 60000" min="0" step="1000">
+      <p class="hint">Revenus de l'année N-2 (avis d'imposition)</p>
+    </div>
+    <div class="field">
+      <label>Composition du foyer</label>
+      <select id="p-foyer">
+        <option value="1">1 personne</option>
+        <option value="2" selected>2 personnes</option>
+        <option value="3">3 personnes</option>
+        <option value="4">4 personnes</option>
+        <option value="5">5 personnes et plus</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Zone géographique du bien</label>
+      <select id="p-zone">
+        <option value="A">Zone A / Abis — Paris, Côte d'Azur, Genevois</option>
+        <option value="B1">Zone B1 — Grandes agglomérations +250 000 hab.</option>
+        <option value="B2" selected>Zone B2 — Villes moyennes</option>
+        <option value="C">Zone C — Reste du territoire</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Prix du bien neuf</label>
+      <input type="number" id="p-prix" placeholder="ex : 220000" min="0" step="5000">
+    </div>
+    <div class="field">
+      <label>Primo-accédant ?</label>
+      <select id="p-primo">
+        <option value="1">Oui — je n'ai pas été propriétaire depuis 2 ans</option>
+        <option value="0">Non — je suis déjà propriétaire</option>
+      </select>
+    </div>
+    <button class="sim-btn" onclick="calculerPTZ()">Vérifier mon éligibilité PTZ</button>
+  </div>
+
+  <div class="sim-panel results" id="p-results">
+    <h2>Votre éligibilité PTZ</h2>
+    <div id="p-eligible-block"></div>
+    <div id="p-detail-block"></div>
+    <div class="cta-box">
+      <p>Le PTZ peut financer jusqu'à 40% de votre acquisition sans intérêts. Nos conseillers intègrent le PTZ dans votre plan de financement global.</p>
+      <a href="/rdv-decouverte">Optimiser mon financement</a>
+    </div>
+    <p class="disclaimer">Barème PTZ 2024. Les plafonds sont susceptibles d'évoluer. Vérification définitive par votre banque.</p>
+  </div>
+</div>
+</div>
+
+<script>
+// ── ONGLETS ──
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── DURÉE ──
+let dureeActuelle = 25;
+function selectDuree(btn) {
+  document.querySelectorAll('.duree-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  dureeActuelle = parseInt(btn.dataset.duree);
+}
+
+function fmt(n) { return Math.round(n).toLocaleString('fr-FR') + ' €'; }
+function fmtPct(n) { return n.toFixed(1) + '%'; }
+
+// ── FINANCEMENT ──
+function mensualite(capital, tauxAnnuel, dureeAns) {
+  const tm = tauxAnnuel / 100 / 12;
+  const n = dureeAns * 12;
+  if (tm === 0) return capital / n;
+  return capital * tm * Math.pow(1+tm, n) / (Math.pow(1+tm, n) - 1);
+}
+
+function capaciteEmprunt(mensMax, tauxAnnuel, dureeAns) {
+  const tm = tauxAnnuel / 100 / 12;
+  const n = dureeAns * 12;
+  if (tm === 0) return mensMax * n;
+  return mensMax * (1 - Math.pow(1+tm, -n)) / tm;
+}
+
+function calculerFinancement() {
+  const revenus = parseFloat(document.getElementById('f-revenus').value) || 0;
+  const apport = parseFloat(document.getElementById('f-apport').value) || 0;
+  const prix = parseFloat(document.getElementById('f-prix').value) || 0;
+  const credits = parseFloat(document.getElementById('f-credits').value) || 0;
+  const taux = parseFloat(document.getElementById('f-taux').value) || 3.5;
+
+  if (!revenus) { alert('Veuillez renseigner vos revenus mensuels.'); return; }
+
+  const mensMax = revenus * 0.35 - credits;
+  const capMax = capaciteEmprunt(mensMax, taux, dureeActuelle);
+  const budgetTotal = capMax + apport;
+
+  let montantEmprunte, mensualiteCalc, endettement;
+  if (prix > 0) {
+    montantEmprunte = Math.max(prix - apport, 0);
+    mensualiteCalc = mensualite(montantEmprunte, taux, dureeActuelle);
+    endettement = (mensualiteCalc + credits) / revenus * 100;
+  } else {
+    montantEmprunte = capMax;
+    mensualiteCalc = mensMax;
+    endettement = 35;
+  }
+
+  const coutCredit = mensualiteCalc * dureeActuelle * 12 - montantEmprunte;
+
+  document.getElementById('f-capacite').textContent = fmt(capMax);
+  document.getElementById('f-capacite-sub').textContent = `avec ${dureeActuelle} ans à ${taux}% — budget total avec apport : ${fmt(budgetTotal)}`;
+  document.getElementById('f-mensualite').innerHTML = fmt(mensualiteCalc).replace(' €','') + '<span> €/mois</span>';
+  document.getElementById('f-endettement').innerHTML = fmtPct(endettement) + '<span></span>';
+  document.getElementById('f-coutcredit').innerHTML = fmt(coutCredit) + '<span></span>';
+  document.getElementById('f-budget').innerHTML = fmt(budgetTotal) + '<span></span>';
+  document.getElementById('f-end-pct').textContent = fmtPct(endettement);
+
+  const bar = document.getElementById('f-bar');
+  bar.style.width = Math.min(endettement / 50 * 100, 100) + '%';
+  bar.className = 'bar-fill ' + (endettement <= 33 ? 'ok' : endettement <= 35 ? 'warn' : 'danger');
+
+  const msg = document.getElementById('f-endettement-msg');
+  if (endettement <= 33) msg.innerHTML = '<span style="color:var(--green)">✓ Taux d\'endettement confortable — dossier favorable</span>';
+  else if (endettement <= 35) msg.innerHTML = '<span style="color:#D35400">⚠ Taux d\'endettement à la limite des 35% — dossier examinable</span>';
+  else msg.innerHTML = '<span style="color:var(--red)">✗ Taux d\'endettement supérieur à 35% — financement difficile sans apport supplémentaire</span>';
+
+  // Comparatif durées
+  const durees = [15, 20, 25];
+  let comp = '<div class="comparatif"><div class="comp-row"><div class="comp-label"></div>';
+  durees.forEach(d => comp += `<div class="comp-header">${d} ans</div>`);
+  comp += '</div>';
+  [['Capacité max', d => fmt(capaciteEmprunt(mensMax, taux, d))],
+   ['Mensualité', d => fmt(mensualite(capMax, taux, d))],
+   ['Coût crédit', d => fmt(mensualite(capMax, taux, d)*d*12 - capMax)],
+  ].forEach(([label, fn]) => {
+    comp += `<div class="comp-row"><div class="comp-label">${label}</div>`;
+    durees.forEach(d => comp += `<div class="comp-val ${d===dureeActuelle?'highlight':''}">${fn(d)}</div>`);
+    comp += '</div>';
+  });
+  comp += '</div>';
+  document.getElementById('f-comparatif').innerHTML = comp;
+
+  document.getElementById('f-results').classList.add('visible');
+  document.getElementById('f-results').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// ── PTZ ──
+// Plafonds revenus PTZ 2024 par zone et composition
+const PTZ_PLAFONDS = {
+  A:  [37000, 51800, 62900, 74000, 85000, 96000, 107000, 118000],
+  B1: [30000, 42000, 51000, 60000, 69000, 78000, 87000, 96000],
+  B2: [27000, 37800, 45900, 54000, 62100, 70200, 78300, 86400],
+  C:  [24000, 33600, 40800, 48000, 55200, 62400, 69600, 76800],
+};
+const PTZ_QUOTITES = { A: 0.40, B1: 0.40, B2: 0.20, C: 0.20 };
+const PTZ_PLAFONDS_OP = { A: 150000, B1: 135000, B2: 110000, C: 100000 };
+
+function calculerPTZ() {
+  const revenus = parseFloat(document.getElementById('p-revenus').value) || 0;
+  const foyer = parseInt(document.getElementById('p-foyer').value) || 2;
+  const zone = document.getElementById('p-zone').value;
+  const prix = parseFloat(document.getElementById('p-prix').value) || 0;
+  const primo = parseInt(document.getElementById('p-primo').value);
+
+  if (!revenus || !prix) { alert('Veuillez renseigner vos revenus et le prix du bien.'); return; }
+
+  const plafondRevenu = PTZ_PLAFONDS[zone][Math.min(foyer, 8) - 1];
+  const eligible = primo === 1 && revenus <= plafondRevenu;
+  const quotite = PTZ_QUOTITES[zone];
+  const plafondOp = PTZ_PLAFONDS_OP[zone];
+  const basePTZ = Math.min(prix, plafondOp);
+  const montantPTZ = eligible ? Math.round(basePTZ * quotite) : 0;
+
+  const eligBlock = document.getElementById('p-eligible-block');
+  const detailBlock = document.getElementById('p-detail-block');
+
+  if (!primo) {
+    eligBlock.innerHTML = `<div class="ptz-non"><div class="ptz-title">✗ Non éligible — déjà propriétaire</div><div class="ptz-detail">Le PTZ est réservé aux primo-accédants n'ayant pas été propriétaires de leur résidence principale au cours des 2 dernières années.</div></div>`;
+  } else if (revenus > plafondRevenu) {
+    eligBlock.innerHTML = `<div class="ptz-non"><div class="ptz-title">✗ Revenus supérieurs au plafond</div><div class="ptz-detail">Plafond pour ${foyer} personne(s) en zone ${zone} : ${fmt(plafondRevenu)}/an. Vos revenus de ${fmt(revenus)}/an dépassent ce plafond.</div></div>`;
+  } else {
+    eligBlock.innerHTML = `<div class="ptz-eligible"><div class="ptz-title">✓ Vous êtes éligible au PTZ !</div><div class="ptz-detail">Montant PTZ estimé : <strong>${fmt(montantPTZ)}</strong><br>Soit ${Math.round(quotite*100)}% de ${fmt(basePTZ)} (plafond opération zone ${zone})<br>Ce prêt est sans intérêts — économie estimée sur la durée : <strong>${fmt(montantPTZ * 0.30)}</strong></div></div>`;
+    detailBlock.innerHTML = `<div class="result-grid">
+      <div class="result-card"><div class="rc-label">Montant PTZ</div><div class="rc-value">${fmt(montantPTZ)}</div></div>
+      <div class="result-card"><div class="rc-label">Quotité zone ${zone}</div><div class="rc-value">${Math.round(quotite*100)}<span>%</span></div></div>
+      <div class="result-card"><div class="rc-label">Plafond revenus</div><div class="rc-value" style="font-size:16px">${fmt(plafondRevenu)}<span>/an</span></div></div>
+      <div class="result-card"><div class="rc-label">Vos revenus N-2</div><div class="rc-value" style="font-size:16px;color:var(--green)">${fmt(revenus)}<span>/an</span></div></div>
+    </div>`;
+  }
+
+  document.getElementById('p-results').classList.add('visible');
+  document.getElementById('p-results').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+</script>
+</body>
+</html>
