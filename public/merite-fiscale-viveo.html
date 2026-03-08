@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimisation Fiscale Immobilière | VIVEO Patrimoine</title>
-    <meta name="description" content="Découvrez les dispositifs fiscaux immobiliers pour réduire vos impôts : Denormandie, Déficit Foncier, Malraux. VIVEO vous accompagne.">
+    <meta name="description" content="Découvrez les dispositifs fiscaux immobiliers : Denormandie, Déficit Foncier, Malraux, LMNP, Monuments Historiques, Nue-propriété. VIVEO vous accompagne.">
     <link rel="stylesheet" href="/src/style.css">
     <style>
         :root { --gold: #C9A84C; --dark: #1a1a2e; --text: #333; }
@@ -23,11 +23,11 @@
         .stat-label { font-size: 0.85rem; opacity: 0.7; margin-top: 4px; }
         .section { padding: 70px 20px; }
         .section-dark { background: #f8f9fa; }
-        .section-inner { max-width: 900px; margin: 0 auto; }
+        .section-inner { max-width: 1100px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-header h2 { font-size: 2rem; color: var(--dark); margin-bottom: 12px; }
         .section-header p { color: #666; font-size: 1rem; line-height: 1.7; }
-        .intro-block { background: white; border-left: 4px solid var(--gold); padding: 30px; border-radius: 0 12px 12px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 30px; }
+        .intro-block { background: white; border-left: 4px solid var(--gold); padding: 30px; border-radius: 0 12px 12px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto; }
         .intro-block p { line-height: 1.8; color: #555; font-size: 1rem; }
         .device-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
         .device-card { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-top: 3px solid var(--gold); transition: transform 0.3s; }
@@ -37,11 +37,11 @@
         .device-text { font-size: 0.9rem; color: #666; line-height: 1.6; margin-bottom: 12px; }
         .device-link { color: var(--gold); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
         .device-link:hover { text-decoration: underline; }
-        .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
         .compare-table th { background: var(--dark); color: white; padding: 14px; text-align: left; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
         .compare-table td { padding: 14px; border-bottom: 1px solid #eee; font-size: 0.9rem; color: #555; }
         .compare-table tr:hover { background: #f8f9fa; }
-        .profil-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); margin-bottom: 15px; }
+        .profil-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); margin-bottom: 15px; max-width: 900px; margin-left: auto; margin-right: auto; }
         .profil-label { font-size: 0.8rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; min-width: 100px; }
         .profil-tags { display: flex; gap: 8px; flex-wrap: wrap; }
         .profil-tag { background: #f0f0f0; border-radius: 20px; padding: 5px 14px; font-size: 0.85rem; color: var(--dark); }
@@ -66,18 +66,9 @@
     <h1>Optimisation <em>Fiscale</em> Immobilière</h1>
     <p class="hero-subtitle">Investir dans l'immobilier permet de réduire significativement votre impôt sur le revenu. Découvrez les dispositifs adaptés à votre situation.</p>
     <div class="hero-stats">
-        <div class="stat">
-            <div class="stat-value">5+</div>
-            <div class="stat-label">Dispositifs fiscaux</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">21%</div>
-            <div class="stat-label">Réduction max</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">100%</div>
-            <div class="stat-label">Accompagnement VIVEO</div>
-        </div>
+        <div class="stat"><div class="stat-value">7</div><div class="stat-label">Dispositifs fiscaux</div></div>
+        <div class="stat"><div class="stat-value">30%</div><div class="stat-label">Réduction max</div></div>
+        <div class="stat"><div class="stat-value">100%</div><div class="stat-label">Accompagnement VIVEO</div></div>
     </div>
 </section>
 
@@ -106,25 +97,43 @@
                 <div class="device-label">Ancien rénové</div>
                 <div class="device-title">Loi Denormandie</div>
                 <div class="device-text">Réduction d'impôt de 12% à 21% pour la rénovation de logements anciens en centre-ville dégradé.</div>
-                <a href="/loi-denormandie-viveo.html" class="device-link">En savoir plus →</a>
+                <a href="/loi-denormandie-viveo.html" class="device-link">En savoir plus &rarr;</a>
             </div>
             <div class="device-card">
                 <div class="device-label">Travaux déductibles</div>
                 <div class="device-title">Déficit Foncier</div>
                 <div class="device-text">Déduisez vos travaux de rénovation de vos revenus fonciers et de votre revenu global jusqu'à 10 700€/an.</div>
-                <a href="/deficit-foncier-viveo.html" class="device-link">En savoir plus →</a>
+                <a href="/deficit-foncier-viveo.html" class="device-link">En savoir plus &rarr;</a>
             </div>
             <div class="device-card">
                 <div class="device-label">Patrimoine remarquable</div>
                 <div class="device-title">Loi Malraux</div>
                 <div class="device-text">Jusqu'à 30% de réduction d'impôt pour la restauration d'immeubles situés en secteur sauvegardé.</div>
-                <a href="#" class="device-link">Bientôt disponible</a>
+                <a href="https://viveopromotion-t3jrcqwfw3.live-website.com/loi-malraux/" class="device-link">En savoir plus &rarr;</a>
             </div>
             <div class="device-card">
-                <div class="device-label">Résidence de tourisme</div>
+                <div class="device-label">Meublé géré</div>
                 <div class="device-title">LMNP / LMP</div>
-                <div class="device-text">Statut de loueur meublé permettant d'amortir le bien et de générer des revenus peu ou pas fiscalisés.</div>
-                <a href="/residence-secondaire-viveo.html" class="device-link">En savoir plus →</a>
+                <div class="device-text">Investissez en résidence étudiante, résidence seniors ou résidence de tourisme. Amortissement du bien et revenus peu ou pas fiscalisés.</div>
+                <a href="/residence-secondaire-viveo.html" class="device-link">En savoir plus &rarr;</a>
+            </div>
+            <div class="device-card">
+                <div class="device-label">Démembrement</div>
+                <div class="device-title">Nue-propriété</div>
+                <div class="device-text">Acquérez un bien avec une décote de 30% à 40%. Aucune fiscalité pendant la période de démembrement, puis récupération de la pleine propriété.</div>
+                <a href="https://viveopromotion-t3jrcqwfw3.live-website.com/nue-propriete/" class="device-link">En savoir plus &rarr;</a>
+            </div>
+            <div class="device-card">
+                <div class="device-label">Patrimoine classé</div>
+                <div class="device-title">Monuments Historiques</div>
+                <div class="device-text">Déduisez 100% des travaux de restauration de votre revenu global, sans plafond. Réservé aux immeubles classés ou inscrits.</div>
+                <a href="https://viveopromotion-t3jrcqwfw3.live-website.com/monuments-historiques/" class="device-link">En savoir plus &rarr;</a>
+            </div>
+            <div class="device-card">
+                <div class="device-label">Neuf à réhabiliter</div>
+                <div class="device-title">Loi Jeanbrun</div>
+                <div class="device-text">Nouveau dispositif de réduction d'impôt pour l'investissement locatif dans le neuf, successeur du Pinel.</div>
+                <a href="/loi-jeanbrun-viveo.html" class="device-link">En savoir plus &rarr;</a>
             </div>
         </div>
     </div>
@@ -139,38 +148,16 @@
         </div>
         <table class="compare-table">
             <thead>
-                <tr>
-                    <th>Dispositif</th>
-                    <th>Avantage fiscal</th>
-                    <th>Durée min.</th>
-                    <th>Type de bien</th>
-                </tr>
+                <tr><th>Dispositif</th><th>Avantage fiscal</th><th>Durée min.</th><th>Type de bien</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><strong>Denormandie</strong></td>
-                    <td>12% à 21%</td>
-                    <td>6 ans</td>
-                    <td>Ancien à rénover</td>
-                </tr>
-                <tr>
-                    <td><strong>Déficit Foncier</strong></td>
-                    <td>Déduction travaux</td>
-                    <td>3 ans</td>
-                    <td>Ancien avec travaux</td>
-                </tr>
-                <tr>
-                    <td><strong>Malraux</strong></td>
-                    <td>22% à 30%</td>
-                    <td>9 ans</td>
-                    <td>Secteur sauvegardé</td>
-                </tr>
-                <tr>
-                    <td><strong>LMNP</strong></td>
-                    <td>Amortissement</td>
-                    <td>Libre</td>
-                    <td>Meublé / Résidence</td>
-                </tr>
+                <tr><td><strong>Denormandie</strong></td><td>12% à 21%</td><td>6 ans</td><td>Ancien à rénover</td></tr>
+                <tr><td><strong>Déficit Foncier</strong></td><td>Déduction travaux</td><td>3 ans</td><td>Ancien avec travaux</td></tr>
+                <tr><td><strong>Malraux</strong></td><td>22% à 30%</td><td>9 ans</td><td>Secteur sauvegardé</td></tr>
+                <tr><td><strong>LMNP / LMP</strong></td><td>Amortissement</td><td>Libre</td><td>Rés. étudiante / seniors / tourisme</td></tr>
+                <tr><td><strong>Nue-propriété</strong></td><td>Décote 30-40%</td><td>15 ans</td><td>Neuf ou ancien</td></tr>
+                <tr><td><strong>Monuments Historiques</strong></td><td>100% déductible</td><td>3 ans</td><td>Immeubles classés</td></tr>
+                <tr><td><strong>Loi Jeanbrun</strong></td><td>Réduction d'impôt</td><td>6 ans</td><td>Neuf</td></tr>
             </tbody>
         </table>
     </div>
@@ -185,26 +172,15 @@
         </div>
         <div class="profil-bar">
             <span class="profil-label">TMI</span>
-            <div class="profil-tags">
-                <span class="profil-tag">30%</span>
-                <span class="profil-tag">41%</span>
-                <span class="profil-tag">45%</span>
-            </div>
+            <div class="profil-tags"><span class="profil-tag">30%</span><span class="profil-tag">41%</span><span class="profil-tag">45%</span></div>
         </div>
         <div class="profil-bar">
             <span class="profil-label">Objectif</span>
-            <div class="profil-tags">
-                <span class="profil-tag">Réduire ses impôts</span>
-                <span class="profil-tag">Construire un patrimoine</span>
-                <span class="profil-tag">Préparer la retraite</span>
-            </div>
+            <div class="profil-tags"><span class="profil-tag">Réduire ses impôts</span><span class="profil-tag">Construire un patrimoine</span><span class="profil-tag">Préparer la retraite</span></div>
         </div>
         <div class="profil-bar">
             <span class="profil-label">Budget</span>
-            <div class="profil-tags">
-                <span class="profil-tag">À partir de 100 000€</span>
-                <span class="profil-tag">Financement possible</span>
-            </div>
+            <div class="profil-tags"><span class="profil-tag">À partir de 100 000€</span><span class="profil-tag">Financement possible</span></div>
         </div>
     </div>
 </section>
@@ -212,16 +188,9 @@
 <!-- CTA -->
 <section class="cta-section">
     <div class="cta-inner">
-        <div class="eyebrow" style="justify-content:center;margin-bottom:20px;">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Votre stratégie</span>
-        </div>
         <h2 class="cta-title">Optimisez votre fiscalité ?<br><em>Parlons-en.</em></h2>
         <p class="cta-subtitle">VIVEO analyse votre situation fiscale et vous propose le dispositif le plus adapté à vos objectifs patrimoniaux.</p>
-        <a href="/rdv-decouverte" class="cta-btn">
-            Demander mon RDV Découverte
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
+        <a href="/rdv-decouverte" class="cta-btn">Demander mon RDV Découverte</a>
     </div>
 </section>
 
