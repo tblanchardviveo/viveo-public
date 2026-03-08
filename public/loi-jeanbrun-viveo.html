@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loi Jeanbrun — Amortissement Immobilier Neuf | VIVEO Patrimoine</title>
+    <meta name="description" content="La Loi Jeanbrun permet un amortissement de 3,5% par an pendant 9 ans sur l'immobilier neuf, réduisant votre base imposable.">
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        :root { --gold: #C9A84C; --dark: #1a1a2e; --text: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: var(--text); background: #fff; }
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 80px 20px; text-align: center; }
+        .hero-eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 24px; }
+        .eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+        .eyebrow-text { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 20px; }
+        .hero h1 em { color: var(--gold); font-style: normal; }
+        .hero-subtitle { font-size: 1.1rem; opacity: 0.85; max-width: 600px; margin: 0 auto 40px; line-height: 1.7; }
+        .hero-stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .stat { text-align: center; }
+        .stat-value { font-size: 2.5rem; font-weight: 700; color: var(--gold); }
+        .stat-label { font-size: 0.85rem; opacity: 0.7; margin-top: 4px; }
+        .section { padding: 70px 20px; }
+        .section-dark { background: #f8f9fa; }
+        .section-inner { max-width: 900px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2rem; color: var(--dark); margin-bottom: 12px; }
+        .section-header p { color: #666; font-size: 1rem; line-height: 1.7; }
+        .intro-block { background: white; border-left: 4px solid var(--gold); padding: 30px; border-radius: 0 12px 12px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 30px; }
+        .intro-block p { line-height: 1.8; color: #555; font-size: 1rem; }
+        .points-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .point-card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-top: 3px solid var(--gold); }
+        .point-label { font-size: 0.75rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .point-title { font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 10px; }
+        .point-text { font-size: 0.9rem; color: #666; line-height: 1.6; }
+        .profil-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); margin-bottom: 15px; }
+        .profil-label { font-size: 0.8rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; min-width: 100px; }
+        .profil-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .profil-tag { background: #f0f0f0; border-radius: 20px; padding: 5px 14px; font-size: 0.85rem; color: var(--dark); }
+        .cta-section { background: var(--dark); color: white; padding: 70px 20px; text-align: center; }
+        .cta-inner { max-width: 600px; margin: 0 auto; }
+        .cta-title { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+        .cta-title em { color: var(--gold); font-style: normal; }
+        .cta-subtitle { opacity: 0.8; margin-bottom: 35px; line-height: 1.7; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--dark); padding: 16px 35px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1rem; transition: all 0.3s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(201,168,76,0.4); }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Dispositif fiscal</span>
+        <div class="eyebrow-line"></div>
+    </div>
+    <h1>Loi <em>Jeanbrun</em></h1>
+    <p class="hero-subtitle">Amortissez votre investissement immobilier neuf et réduisez significativement votre base imposable sur vos revenus locatifs.</p>
+    <div class="hero-stats">
+        <div class="stat">
+            <div class="stat-value">31,5%</div>
+            <div class="stat-label">Amortissement total</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">9 ans</div>
+            <div class="stat-label">Durée d'amortissement</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">300K€</div>
+            <div class="stat-label">Plafond d'investissement/an</div>
+        </div>
+    </div>
+</section>
+
+<!-- CE QUE C'EST -->
+<section class="section">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Ce que c'est</h2>
+        </div>
+        <div class="intro-block">
+            <p>La Loi Jeanbrun est un dispositif d'amortissement fiscal permettant de déduire 3,5% du prix d'acquisition de votre bien immobilier neuf pendant 9 ans. Ce mécanisme réduit votre base imposable sur vos revenus locatifs, offrant une optimisation fiscale progressive et durable.</p>
+        </div>
+    </div>
+</section>
+
+<!-- AVANTAGES -->
+<section class="section section-dark">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Avantages fiscaux</h2>
+            <p>Un mécanisme d'amortissement puissant pour l'immobilier neuf.</p>
+        </div>
+        <div class="points-grid">
+            <div class="point-card">
+                <span class="point-label">Amortissement</span>
+                <div class="point-title">3,5% par an pendant 9 ans</div>
+                <p class="point-text">Soit 31,5% du prix d'acquisition amortis au total sur la durée de l'engagement.</p>
+            </div>
+            <div class="point-card">
+                <span class="point-label">Plafond</span>
+                <div class="point-title">300 000€ par an</div>
+                <p class="point-text">Un plafond d'investissement généreux pour maximiser votre stratégie patrimoniale.</p>
+            </div>
+            <div class="point-card">
+                <span class="point-label">Engagement</span>
+                <div class="point-title">9 ans de location minimum</div>
+                <p class="point-text">Engagement locatif de 9 ans pour bénéficier pleinement de l'amortissement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROFIL -->
+<section class="section">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Profil idéal</h2>
+            <p>Ce dispositif s'adresse aux investisseurs cherchant à construire un patrimoine immobilier neuf tout en optimisant leur fiscalité.</p>
+        </div>
+        <div class="profil-bar">
+            <span class="profil-label">Fiscalité</span>
+            <div class="profil-tags">
+                <span class="profil-tag">TMI 30% et plus</span>
+                <span class="profil-tag">Fortement imposé</span>
+            </div>
+        </div>
+        <div class="profil-bar">
+            <span class="profil-label">Objectif</span>
+            <div class="profil-tags">
+                <span class="profil-tag">Constitution de patrimoine</span>
+                <span class="profil-tag">Revenus locatifs</span>
+            </div>
+        </div>
+        <div class="profil-bar">
+            <span class="profil-label">Recherche</span>
+            <div class="profil-tags">
+                <span class="profil-tag">Immobilier neuf</span>
+                <span class="profil-tag">Revenus sécurisés</span>
+                <span class="profil-tag">Vision long terme</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="cta-inner">
+        <div class="eyebrow" style="justify-content:center;margin-bottom:20px;">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Votre projet</span>
+        </div>
+        <h2 class="cta-title">Un projet Loi Jeanbrun ?<br><em>Parlons-en.</em></h2>
+        <p class="cta-subtitle">VIVEO sélectionne des programmes neufs éligibles Jeanbrun avec des emplacements stratégiques et un rendement locatif optimal.</p>
+        <a href="/rdv-decouverte" class="cta-btn">
+            Demander mon RDV Découverte
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+    </div>
+</section>
+
+<script src="/viveo-nav.js"></script>
+</body>
+</html>

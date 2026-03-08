@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loi Denormandie — Rénovation Immobilière | VIVEO Patrimoine</title>
+    <meta name="description" content="La Loi Denormandie encourage la rénovation de logements anciens en centres-villes dégradés avec une réduction d'impôt de 12 à 21%.">
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        :root { --gold: #C9A84C; --dark: #1a1a2e; --text: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: var(--text); background: #fff; }
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 80px 20px; text-align: center; }
+        .hero-eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 24px; }
+        .eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+        .eyebrow-text { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 20px; }
+        .hero h1 em { color: var(--gold); font-style: normal; }
+        .hero-subtitle { font-size: 1.1rem; opacity: 0.85; max-width: 600px; margin: 0 auto 40px; line-height: 1.7; }
+        .hero-stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .stat { text-align: center; }
+        .stat-value { font-size: 2.5rem; font-weight: 700; color: var(--gold); }
+        .stat-label { font-size: 0.85rem; opacity: 0.7; margin-top: 4px; }
+        .section { padding: 70px 20px; }
+        .section-dark { background: #f8f9fa; }
+        .section-inner { max-width: 900px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2rem; color: var(--dark); margin-bottom: 12px; }
+        .section-header p { color: #666; font-size: 1rem; line-height: 1.7; }
+        .intro-block { background: white; border-left: 4px solid var(--gold); padding: 30px; border-radius: 0 12px 12px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 30px; }
+        .intro-block p { line-height: 1.8; color: #555; font-size: 1rem; }
+        .points-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .point-card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-top: 3px solid var(--gold); }
+        .point-label { font-size: 0.75rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .point-title { font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 10px; }
+        .point-text { font-size: 0.9rem; color: #666; line-height: 1.6; }
+        .profil-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); margin-bottom: 15px; }
+        .profil-label { font-size: 0.8rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; min-width: 100px; }
+        .profil-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .profil-tag { background: #f0f0f0; border-radius: 20px; padding: 5px 14px; font-size: 0.85rem; color: var(--dark); }
+        .contraintes-list { list-style: none; padding: 0; }
+        .contraintes-list li { padding: 14px 18px; border-bottom: 1px solid #eee; display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: #555; }
+        .contraintes-list li:last-child { border-bottom: none; }
+        .contraintes-list li::before { content: '\26A0'; color: var(--gold); flex-shrink: 0; }
+        .cta-section { background: var(--dark); color: white; padding: 70px 20px; text-align: center; }
+        .cta-inner { max-width: 600px; margin: 0 auto; }
+        .cta-title { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+        .cta-title em { color: var(--gold); font-style: normal; }
+        .cta-subtitle { opacity: 0.8; margin-bottom: 35px; line-height: 1.7; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--dark); padding: 16px 35px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1rem; transition: all 0.3s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(201,168,76,0.4); }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Dispositif fiscal</span>
+        <div class="eyebrow-line"></div>
+    </div>
+    <h1>Loi <em>Denormandie</em></h1>
+    <p class="hero-subtitle">Investissez dans la rénovation de logements anciens en centre-ville et bénéficiez d'une réduction d'impôt significative.</p>
+    <div class="hero-stats">
+        <div class="stat">
+            <div class="stat-value">21%</div>
+            <div class="stat-label">Réduction d'impôt max</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">12 ans</div>
+            <div class="stat-label">Durée max d'engagement</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">245</div>
+            <div class="stat-label">Villes éligibles</div>
+        </div>
+    </div>
+</section>
+
+<!-- CE QUE C'EST -->
+<section class="section">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Ce que c'est</h2>
+        </div>
+        <div class="intro-block">
+            <p>La Loi Denormandie est un dispositif fiscal qui encourage la rénovation de logements anciens dans les centres-villes dégradés. En contrepartie de travaux représentant au moins 25% du coût total, vous bénéficiez d'une réduction d'impôt significative allant de 12% à 21% selon la durée de location.</p>
+        </div>
+    </div>
+</section>
+
+<!-- AVANTAGES -->
+<section class="section section-dark">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Avantages fiscaux</h2>
+            <p>Un dispositif attractif pour optimiser votre fiscalité via l'immobilier ancien rénové.</p>
+        </div>
+        <div class="points-grid">
+            <div class="point-card">
+                <span class="point-label">Réduction d'impôt</span>
+                <div class="point-title">12% à 21% selon l'engagement</div>
+                <p class="point-text">12% pour 6 ans, 18% pour 9 ans, 21% pour 12 ans de location.</p>
+            </div>
+            <div class="point-card">
+                <span class="point-label">Flexibilité</span>
+                <div class="point-title">Engagement de 6, 9 ou 12 ans</div>
+                <p class="point-text">Choisissez la durée qui correspond à votre stratégie patrimoniale.</p>
+            </div>
+            <div class="point-card">
+                <span class="point-label">Cumul</span>
+                <div class="point-title">Possible avec le déficit foncier</div>
+                <p class="point-text">Optimisez encore plus votre situation fiscale en combinant les dispositifs.</p>
+            </div>
+            <div class="point-card">
+                <span class="point-label">Couverture</span>
+                <div class="point-title">245 villes éligibles</div>
+                <p class="point-text">Applicable dans les communes ayant signé une convention ORT (Opération de Revitalisation).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROFIL -->
+<section class="section">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Profil idéal</h2>
+            <p>Ce dispositif s'adresse aux investisseurs souhaitant allier réduction fiscale et valorisation du patrimoine.</p>
+        </div>
+        <div class="profil-bar">
+            <span class="profil-label">Objectif</span>
+            <div class="profil-tags">
+                <span class="profil-tag">Réduire ses impôts</span>
+                <span class="profil-tag">Immobilier ancien</span>
+                <span class="profil-tag">Rénovation</span>
+            </div>
+        </div>
+        <div class="profil-bar">
+            <span class="profil-label">Profil</span>
+            <div class="profil-tags">
+                <span class="profil-tag">TMI 30-45%</span>
+                <span class="profil-tag">Investisseur patient</span>
+                <span class="profil-tag">Sensible au patrimoine</span>
+            </div>
+        </div>
+        <div class="profil-bar">
+            <span class="profil-label">Recherche</span>
+            <div class="profil-tags">
+                <span class="profil-tag">Fort potentiel locatif</span>
+                <span class="profil-tag">Centre-ville</span>
+                <span class="profil-tag">Valorisation long terme</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTRAINTES -->
+<section class="section section-dark">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Contraintes à connaître</h2>
+            <p>Ce dispositif est encadré par des conditions strictes à respecter pour en bénéficier.</p>
+        </div>
+        <ul class="contraintes-list">
+            <li>Travaux minimum de 25% du coût total de l'opération</li>
+            <li>Communes éligibles uniquement (coeur de ville, ORT)</li>
+            <li>Plafonds de loyers et de ressources des locataires</li>
+            <li>Engagement de location de 6 à 12 ans obligatoire</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="cta-inner">
+        <div class="eyebrow" style="justify-content:center;margin-bottom:20px;">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Votre projet</span>
+        </div>
+        <h2 class="cta-title">Un projet en Loi Denormandie ?<br><em>Parlons-en.</em></h2>
+        <p class="cta-subtitle">VIVEO sélectionne des biens anciens éligibles Denormandie avec un fort potentiel de rénovation et de rendement locatif.</p>
+        <a href="/rdv-decouverte" class="cta-btn">
+            Demander mon RDV Découverte
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+    </div>
+</section>
+
+<script src="/viveo-nav.js"></script>
+</body>
+</html>

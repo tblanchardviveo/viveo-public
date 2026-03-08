@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Déficit Foncier — VIVEO Patrimoine</title>
+<meta name="description" content="Le déficit foncier permet de déduire les charges de travaux de rénovation de vos revenus fonciers. Découvrez ce dispositif avec VIVEO Patrimoine.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --navy: #1A2744; --navy-deep: #111C33; --bronze: #A67C52; --bronze-light: #C4976A; --bronze-pale: rgba(166,124,82,0.12); --cream: #F7F5F1; --white: #FFFFFF; --ease: cubic-bezier(0.4, 0, 0.2, 1); }
+body { font-family: 'Raleway', sans-serif; background: var(--cream); -webkit-font-smoothing: antialiased; }
+.eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.eyebrow-line { width: 32px; height: 1px; background: var(--bronze); }
+.eyebrow-text { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bronze); }
+.section { padding: 100px 40px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-dark { background: var(--navy-deep); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.hero { background: var(--navy-deep); padding: 120px 40px 80px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 80% 20%, rgba(166,124,82,0.10) 0%, transparent 60%); pointer-events: none; }
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(38px, 5vw, 64px); font-weight: 400; line-height: 1.1; color: var(--white); margin-bottom: 24px; animation: fadeUp 0.6s var(--ease) 0.1s both; }
+.hero-title em { font-style: italic; color: var(--bronze-light); }
+.hero-intro { font-size: 17px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.55); max-width: 620px; animation: fadeUp 0.6s var(--ease) 0.2s both; }
+.points-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; margin-bottom: 24px; }
+.point-card { background: rgba(255,255,255,0.03); padding: 28px 24px; transition: background 0.3s var(--ease); }
+.point-card:hover { background: rgba(255,255,255,0.06); }
+.point-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bronze); margin-bottom: 8px; display: block; }
+.point-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 400; color: var(--white); margin-bottom: 8px; }
+.point-text { font-size: 13px; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.48); }
+.point-text strong { color: rgba(255,255,255,0.78); font-weight: 500; }
+.profil-bar { display: flex; align-items: center; gap: 16px; background: rgba(166,124,82,0.08); border: 1px solid rgba(166,124,82,0.18); border-radius: 12px; padding: 16px 24px; margin-top: 24px; flex-wrap: wrap; }
+.profil-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bronze); white-space: nowrap; }
+.profil-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.profil-tag { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.70); background: rgba(255,255,255,0.06); border-radius: 99px; padding: 4px 12px; }
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(166,124,82,0.15); border-radius: 16px; overflow: hidden; margin: 40px 0; }
+.stat-card { background: rgba(166,124,82,0.06); padding: 32px 24px; text-align: center; }
+.stat-number { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--white); line-height: 1; margin-bottom: 8px; }
+.stat-number span { color: var(--bronze-light); font-size: 20px; }
+.stat-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.40); line-height: 1.4; }
+.cta-section { background: var(--cream); padding: 100px 40px; text-align: center; }
+.cta-inner { max-width: 680px; margin: 0 auto; }
+.cta-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 400; color: var(--navy-deep); line-height: 1.2; margin-bottom: 16px; }
+.cta-title em { font-style: italic; color: var(--bronze); }
+.cta-subtitle { font-size: 15px; font-weight: 300; color: #666; line-height: 1.7; margin-bottom: 40px; }
+.cta-btn { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, var(--bronze) 0%, var(--bronze-light) 100%); color: var(--white); text-decoration: none; border-radius: 50px; padding: 18px 40px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; transition: all 0.3s var(--ease); }
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(166,124,82,0.35); }
+@media (max-width: 900px) { .section { padding: 64px 24px; } .hero { padding: 80px 24px 60px; } .points-grid, .stat-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Déficit Foncier</span></div>
+    <h1 class="hero-title">Réduisez vos impôts<br><em>par la rénovation.</em></h1>
+    <p class="hero-intro">Le déficit foncier permet de déduire les charges de travaux de rénovation de vos revenus fonciers, voire de votre revenu global dans certaines limites. Un mécanisme puissant, hors plafonnement des niches fiscales.</p>
+  </div>
+</section>
+
+<!-- CHIFFRES CLÉS -->
+<section class="section section-dark">
+  <div class="section-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Chiffres clés</span></div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-number">10 700<span>€</span></div>
+        <div class="stat-label">Déduction max / an sur le revenu global</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10 <span>ans</span></div>
+        <div class="stat-label">Report du déficit</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">0 <span>€</span></div>
+        <div class="stat-label">Plafonnement niches fiscales</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANTAGES -->
+<section class="section section-dark">
+  <div class="section-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Avantages fiscaux</span></div>
+    <div class="points-grid">
+      <div class="point-card">
+        <span class="point-label">Déduction</span>
+        <div class="point-title">Jusqu'à 10 700€/an</div>
+        <p class="point-text">Déduisez les <strong>charges de travaux de rénovation</strong> directement de votre revenu global, au-delà de vos seuls revenus fonciers.</p>
+      </div>
+      <div class="point-card">
+        <span class="point-label">Report</span>
+        <div class="point-title">10 ans de report</div>
+        <p class="point-text">Le déficit non imputé est <strong>reportable sur les revenus fonciers des 10 années suivantes</strong>. Un levier fiscal durable.</p>
+      </div>
+      <div class="point-card">
+        <span class="point-label">Hors plafond</span>
+        <div class="point-title">Pas de plafonnement</div>
+        <p class="point-text">Contrairement à la plupart des dispositifs fiscaux, le déficit foncier <strong>n'entre pas dans le plafonnement des niches fiscales</strong>.</p>
+      </div>
+    </div>
+
+    <div class="profil-bar">
+      <span class="profil-label">Profil idéal</span>
+      <div class="profil-tags">
+        <span class="profil-tag">Propriétaires de biens anciens</span>
+        <span class="profil-tag">Revenus fonciers existants</span>
+        <span class="profil-tag">TMI 30-45%</span>
+        <span class="profil-tag">Optimisation fiscale durable</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="eyebrow" style="justify-content:center;margin-bottom:20px;">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Votre projet</span>
+    </div>
+    <h2 class="cta-title">Un projet de déficit foncier ?<br><em>Parlons-en.</em></h2>
+    <p class="cta-subtitle">VIVEO sélectionne des opérations de rénovation éligibles au déficit foncier avec des promoteurs solides. 45 minutes pour faire le point sur votre situation.</p>
+    <a href="/rdv-decouverte" class="cta-btn">
+      Demander mon RDV Découverte
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<script src="/viveo-nav.js"></script>
+</body>
+</html>
