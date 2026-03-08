@@ -1,0 +1,53 @@
+name: Charte VIVEO - Verification
+
+on:
+  pull_request:
+    paths:
+      - 'public/**/*.html'
+  push:
+    branches: [main]
+    paths:
+      - 'public/**/*.html'
+
+jobs:
+  check-charte:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verifier viveo-charte.css dans les fichiers HTML
+        run: |
+          echo "=== Verification Charte VIVEO ==="
+          ERRORS=0
+          for file in public/*.html; do
+            if [ "$file" = "public/viveo-template.html" ]; then
+              continue
+            fi
+            if [ "$file" = "public/approche-gutenberg.html" ]; then
+              continue
+            fi
+            # Verifier la presence de viveo-charte.css
+            if ! grep -q 'viveo-charte.css' "$file"; then
+              echo "ERREUR: $file ne reference pas viveo-charte.css"
+              ERRORS=$((ERRORS+1))
+            fi
+            # Verifier la presence du meta viewport
+            if ! grep -q 'viewport' "$file"; then
+              echo "ERREUR: $file n'a pas de meta viewport"
+              ERRORS=$((ERRORS+1))
+            fi
+            # Verifier charset UTF-8
+            if ! grep -q 'UTF-8' "$file"; then
+              echo "ERREUR: $file n'a pas charset UTF-8"
+              ERRORS=$((ERRORS+1))
+            fi
+            # Verifier lang=fr
+            if ! grep -q 'lang="fr"' "$file"; then
+              echo "AVERTISSEMENT: $file n'a pas lang=fr"
+            fi
+          done
+          if [ $ERRORS -gt 0 ]; then
+            echo "$ERRORS erreur(s) trouvee(s). Les fichiers HTML doivent respecter la charte VIVEO."
+            exit 1
+          fi
+          echo "Tous les fichiers respectent la charte VIVEO."
