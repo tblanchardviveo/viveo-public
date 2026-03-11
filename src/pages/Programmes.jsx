@@ -70,8 +70,8 @@ export default function Programmes() {
                       onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 8px 40px rgba(26,39,68,0.14)' }}
                       onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 24px rgba(26,39,68,0.08)' }}
                     >
-                      {p.photo ? (
-                        <img src={p.photo} alt={p.nom} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+                      {p.photo_url ? (
+                        <img src={p.photo_url} alt={p.nom} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
                       ) : (
                         <div style={{ width: '100%', height: 200, background: 'var(--navy-deep)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                           <span style={{ fontSize: 48, color: 'var(--bronze)', opacity: 0.4 }}>{"\u2302"}</span>
