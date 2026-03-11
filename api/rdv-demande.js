@@ -196,7 +196,7 @@ export default async function handler(req, res) {
     });
 
     await resend.emails.send({
-      from: 'VIVEO Patrimoine <onboarding@resend.dev>',
+      from: 'VIVEO Patrimoine <rdv@viveo-patrimoine.fr>',
       to: 'tblanchard@viveo-patrimoine.fr',
             subject: `Nouvelle demande RDV — ${prenom} ${nom}`,
       html: emailThomas
@@ -210,7 +210,7 @@ export default async function handler(req, res) {
     });
 
     await resend.emails.send({
-      from: 'VIVEO Patrimoine <onboarding@resend.dev>',
+      from: 'VIVEO Patrimoine <rdv@viveo-patrimoine.fr>',
       to: email,
       subject: 'Votre demande de rendez-vous VIVEO',
       html: emailProspect
