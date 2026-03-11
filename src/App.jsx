@@ -2,28 +2,83 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Programmes from './pages/Programmes'
 import FicheProgramme from './pages/FicheProgramme'
 
+const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
+
 function Header() {
   return (
-    <header style={{ background: 'var(--navy)', padding: '0.75rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 100, boxShadow: '0 2px 12px rgba(26,39,68,0.15)' }}>
-      <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <span style={{ color: 'var(--bronze)', fontFamily: 'var(--font-heading)', fontSize: '1.5rem', fontWeight: 700, letterSpacing: 1 }}>VIVEO</span>
-        <span style={{ color: 'var(--blanc-casse)', fontFamily: 'var(--font-body)', fontSize: '0.85rem', fontWeight: 300, letterSpacing: 2, textTransform: 'uppercase' }}>Patrimoine</span>
-      </Link>
-      <nav style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-        <Link to="/" style={{ color: 'var(--gris-chaud)', textDecoration: 'none', fontSize: '0.9rem', fontFamily: 'var(--font-body)', fontWeight: 500, letterSpacing: 0.5, transition: 'color 0.2s' }}>Programmes</Link>
-        <a href="mailto:contact@viveo-patrimoine.fr" style={{ background: 'var(--gradient-btn)', color: '#fff', padding: '0.5rem 1.2rem', borderRadius: 6, textDecoration: 'none', fontSize: '0.85rem', fontFamily: 'var(--font-body)', fontWeight: 600, letterSpacing: 0.5, transition: 'opacity 0.2s' }}>Contact</a>
-      </nav>
+    <header style={{
+      position: 'sticky', top: 0, zIndex: 100,
+      background: 'var(--navy-deep)',
+      backdropFilter: 'blur(12px)',
+      borderBottom: '1px solid rgba(255,255,255,0.06)',
+      height: 72
+    }}>
+      <div style={{
+        maxWidth: 1100, margin: '0 auto', padding: '0 32px',
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        height: '100%'
+      }}>
+        <Link to="/" style={{ display: 'flex', alignItems: 'baseline', gap: 0, textDecoration: 'none' }}>
+          <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 22, color: '#fff', fontWeight: 400 }}>VIVEO</span>
+          <span style={{ color: 'var(--bronze)', margin: '0 8px', fontSize: 18 }}>&middot;</span>
+          <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 500 }}>Patrimoine</span>
+        </Link>
+        <nav style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+          <Link to="/" style={{ fontFamily: "'Raleway', sans-serif", fontSize: 12, color: 'rgba(255,255,255,0.6)', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 500, transition: 'color 0.2s' }}>Programmes</Link>
+          <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
+            background: 'var(--bronze)', color: '#fff', borderRadius: 50,
+            padding: '10px 24px', fontSize: 12, fontWeight: 600,
+            letterSpacing: '0.06em', textTransform: 'uppercase',
+            fontFamily: "'Raleway', sans-serif",
+            transition: 'all 0.3s var(--ease)'
+          }}>Prendre RDV &rarr;</a>
+        </nav>
+      </div>
     </header>
   )
 }
 
 function Footer() {
   return (
-    <footer style={{ background: 'var(--navy)', color: 'var(--gris-texte)', padding: '2.5rem 2rem', textAlign: 'center', marginTop: '4rem' }}>
-      <p style={{ margin: '0 0 0.4rem', color: 'var(--bronze)', fontFamily: 'var(--font-heading)', fontSize: '1.1rem', fontWeight: 600 }}>VIVEO Patrimoine</p>
-      <p style={{ margin: 0, fontSize: '0.85rem', fontFamily: 'var(--font-body)', color: 'var(--gris-chaud)' }}>Investissement immobilier neuf</p>
-      <div style={{ width: 40, height: 2, background: 'var(--bronze)', margin: '1rem auto' }}></div>
-      <p style={{ margin: '0.5rem 0 0', fontSize: '0.75rem', fontFamily: 'var(--font-body)' }}>&copy; {new Date().getFullYear()} VIVEO Patrimoine. Tous droits reserves.</p>
+    <footer style={{ background: 'var(--navy-deep)', padding: '80px 40px 48px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 60 }}>
+        <div style={{ flex: '1 1 55%', minWidth: 280 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 0 }}>
+            <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: '#fff', fontWeight: 400 }}>VIVEO</span>
+            <span style={{ color: 'var(--bronze)', margin: '0 8px', fontSize: 20 }}>&middot;</span>
+            <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 500 }}>Patrimoine</span>
+          </div>
+          <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.4)', marginTop: 8 }}>L'immobilier, l'esprit libre.</p>
+          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', marginTop: 24, fontFamily: "'Raleway', sans-serif" }}>06 98 63 97 83</p>
+          <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.30)', marginTop: 4, fontFamily: "'Raleway', sans-serif" }}>3 bis rue du Général de Gaulle, 59253 La Gorgue</p>
+        </div>
+        <div style={{ flex: '1 1 35%', minWidth: 220 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+            <span style={{ width: 32, height: 1, background: 'var(--bronze)', display: 'block' }}></span>
+            <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--bronze)', fontFamily: "'Raleway', sans-serif" }}>INVESTIR</span>
+          </div>
+          {[
+            { label: 'LMNP', href: '/lmnp-viveo.html' },
+            { label: 'Déficit Foncier', href: '/deficit-foncier-viveo.html' },
+            { label: 'Nue-propriété', href: `${WP}/nue-propriete/` },
+            { label: 'Monuments Historiques', href: `${WP}/monuments-historiques/` },
+            { label: 'Loi Malraux', href: `${WP}/loi-malraux/` },
+            { label: 'Loi Jeanbrun', href: '/loi-jeanbrun-viveo.html' },
+            { label: 'Loi Denormandie', href: '/loi-denormandie-viveo.html' },
+          ].map(l => (
+            <a key={l.label} href={l.href} style={{ display: 'block', margin: '8px 0', fontSize: 13, color: 'rgba(255,255,255,0.45)', fontFamily: "'Raleway', sans-serif", transition: 'color 0.2s' }}>{l.label}</a>
+          ))}
+        </div>
+      </div>
+      <div style={{ maxWidth: 1100, margin: '48px auto 0', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 24 }}>
+        <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif" }}>
+          &copy; 2026 VIVEO Patrimoine
+          <span style={{ margin: '0 8px' }}>&middot;</span>
+          <a href={`${WP}/mentions-legales/`} style={{ color: 'rgba(255,255,255,0.35)', transition: 'color 0.2s' }}>Mentions légales</a>
+          <span style={{ margin: '0 8px' }}>&middot;</span>
+          <a href={`${WP}/politique-de-confidentialite/`} style={{ color: 'rgba(255,255,255,0.35)', transition: 'color 0.2s' }}>Politique de confidentialité</a>
+        </p>
+      </div>
     </footer>
   )
 }
