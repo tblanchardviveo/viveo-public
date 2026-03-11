@@ -249,5 +249,15 @@ export default function SearchEngine({ mode = 'public', onResults }) {
         </div>
       )}
 
-      {(projet || loc) && (
-        <div style
+            {(projet || loc) && (
+        <div style={{ textAlign: 'right', marginTop: 8 }}>
+          <button onClick={resetFilters} style={{
+            background: 'none', border: 'none', color: BRONZE,
+            fontSize: 12, fontWeight: 600, cursor: 'pointer',
+            textDecoration: 'underline', fontFamily: 'Raleway, sans-serif'
+          }}>Réinitialiser les filtres</button>
+        </div>
+      )}
+    </div>
+  )
+}
