@@ -170,7 +170,7 @@ export default async function handler(req, res) {
   try {
     // ── 1. Insert Supabase ──
     const { data: inserted, error: dbError } = await supabase
-      .from('rdv_demandes')
+      .from('demandes_rdv')
       .insert({
         prenom, nom, email, telephone,
         adresse, ville, code_postal,
