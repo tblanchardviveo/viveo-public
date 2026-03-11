@@ -53,7 +53,6 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
   const toggleTypo = (t) => {
     setTypologies(prev => prev.includes(t) ? prev.filter(x => x !== t) : [...prev, t])
   }
-
   const fmtBudget = (v) => new Intl.NumberFormat('fr-FR').format(v) + ' \u20ac'
 
   const handleSearch = async () => {
@@ -61,12 +60,14 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
     setError(null)
     try {
       let query = supabase.from('programmes').select('*')
-      if (projet) query = query.contains('type_projet', [projet])
-      if (secteur) query = query.eq('secteur_viveo', secteur)
+        .in('statut', ['Disponible', 'Bientot disponible'])
+      if (projet) query = query.eq('type_projet', projet)
+      if (secteur) query = query.eq('secteur', secteur)
       if (ville) query = query.or(`ville.ilike.%${ville}%,code_postal.ilike.%${ville}%`)
-      // TODO: rayon geographique - requires geodata column
-      if (typologies.length > 0) query = query.contains('typologies', typologies)
-      query = query.gte('prix_min', budget[0]).lte('prix_min', budget[1])
+      if (typologies.length > 0) query = query.contains('typologies_disponibles', typologies)
+      if (budget[0] > 100000 || budget[1] < 800000) {
+        query = query.gte('prix_min', budget[0]).lte('prix_min', budget[1])
+      }
       if (dispositif) query = query.contains('dispositifs_fiscaux', [dispositif])
       const { data, error: err } = await query
       if (err) throw err
@@ -84,7 +85,6 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
 
   return (
     <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: 20, padding: 32 }}>
-
       {/* LIGNE 1: PROJET */}
       <div style={{ marginBottom: 24 }}>
         <span style={labelStyle}>PROJET</span>
@@ -101,12 +101,12 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
             <span style={labelStyle}>SECTEUR</span>
             <select value={secteur} onChange={e => setSecteur(e.target.value)} style={{ ...inputStyle, cursor: 'pointer' }}>
               <option value="">Tous les secteurs</option>
-              <option value="nord">Nord {"\u2014"} Hauts-de-France</option>
-              <option value="idf">{"\u00cele-de-France"}</option>
-              <option value="grand_ouest">Grand Ouest</option>
-              <option value="rhone_alpes">{"Rh\u00f4ne-Alpes"}</option>
-              <option value="sud_est">Sud-Est</option>
-              <option value="sud_ouest">Sud-Ouest</option>
+              <option value="HDF">Nord {"\u2014"} Hauts-de-France</option>
+              <option value="IDF">{"\u00cele-de-France"}</option>
+              <option value="GO">Grand Ouest</option>
+              <option value="RA">{"Rh\u00f4ne-Alpes"}</option>
+              <option value="SE">Sud-Est</option>
+              <option value="SO">Sud-Ouest</option>
             </select>
           </div>
           <div style={{ flex: 1, minWidth: 200 }}>
@@ -158,8 +158,8 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
           <select value={dispositif} onChange={e => setDispositif(e.target.value)} style={{ ...inputStyle, cursor: 'pointer' }}>
             <option value="">Tous les dispositifs</option>
             <option value="LMNP">LMNP</option>
-            <option value="Déficit Foncier">{"D\u00e9ficit Foncier"}</option>
-            <option value="Nue-propriété">{"Nue-propri\u00e9t\u00e9"}</option>
+            <option value="D\u00e9ficit Foncier">{"\u0044\u00e9ficit Foncier"}</option>
+            <option value="Nue-propri\u00e9t\u00e9">{"Nue-propri\u00e9t\u00e9"}</option>
             <option value="Monuments Historiques">Monuments Historiques</option>
             <option value="Loi Malraux">Loi Malraux</option>
             <option value="Loi Jeanbrun">Loi Jeanbrun</option>
@@ -173,7 +173,6 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
         onMouseEnter={e => { if (!disabled) { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 12px 40px rgba(166,124,82,0.35)' } }}
         onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = 'none' }}
       >{loading ? 'Recherche en cours...' : 'Rechercher les programmes \u2192'}</button>
-
       {error && <p style={{ marginTop: 12, fontFamily: "'Raleway', sans-serif", fontSize: 13, color: 'rgba(255,80,80,0.8)', textAlign: 'center' }}>{error}</p>}
     </div>
   )
