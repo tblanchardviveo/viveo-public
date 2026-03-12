@@ -25,7 +25,7 @@ export default function Programmes() {
   return (
     <>
       {/* HERO */}
-      <section style={{ background: 'var(--navy-deep)', backgroundImage: 'url(/images/IMG_0603.png)', backgroundSize: 'cover', backgroundPosition: 'center', padding: '120px 40px 0', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--navy-deep)', backgroundImage: 'url(/images/IMG_0603.png)', backgroundSize: 'cover', backgroundPosition: 'center', padding: 'clamp(80px, 12vw, 120px) clamp(20px, 4vw, 40px) 0', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 75% 30%, rgba(166,124,82,0.10) 0%, transparent 60%)', pointerEvents: 'none', zIndex: 0 }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto' }}>
           <Eyebrow>CATALOGUE VIVEO</Eyebrow>
@@ -33,7 +33,7 @@ export default function Programmes() {
             Trouvez votre programme {"—"}<br />
             <em style={{ fontStyle: 'italic', color: '#C4976A' }}>au bon endroit.</em>
           </h1>
-          <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 17, color: 'rgba(255,255,255,0.55)', maxWidth: 600, marginTop: 24, lineHeight: 1.6, animation: 'fadeUp 0.6s ease 0.2s both' }}>
+          <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 'clamp(14px, 2.5vw, 17px)', color: 'rgba(255,255,255,0.55)', maxWidth: 600, marginTop: 24, lineHeight: 1.6, animation: 'fadeUp 0.6s ease 0.2s both' }}>
             27 ans d'expertise promoteur. Des programmes vérifiés, négociés. Pas un catalogue — une sélection d'expert.
           </p>
           <div style={{ display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap', animation: 'fadeUp 0.6s ease 0.3s both' }}>
@@ -56,7 +56,7 @@ export default function Programmes() {
 
       {/* RESULTS GRID */}
       {rechercheEffectuee && (
-        <section style={{ background: 'var(--cream)', padding: '80px 40px' }}>
+        <section style={{ background: 'var(--cream)', padding: 'clamp(40px, 6vw, 80px) clamp(16px, 4vw, 40px)' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             {programmes.length === 0 ? (
               <p style={{ textAlign: 'center', fontFamily: "'Raleway', sans-serif", fontSize: 15, color: '#666' }}>Aucun programme ne correspond à cette recherche.</p>
@@ -64,7 +64,7 @@ export default function Programmes() {
               <>
                 <Eyebrow>RÉSULTATS</Eyebrow>
                 <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(24px, 3.5vw, 38px)', fontWeight: 400, color: 'var(--navy-deep)', marginBottom: 40 }}>Programmes sélectionnés</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: 24 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(340px, 100%), 1fr))', gap: 24 }}>
                   {paginated.map((p, i) => (
                     <div key={p.id || i} style={{ background: '#fff', borderRadius: 16, overflow: 'hidden', boxShadow: '0 2px 24px rgba(26,39,68,0.08)', transition: 'all 0.3s ease' }}
                       onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 8px 40px rgba(26,39,68,0.14)' }}
