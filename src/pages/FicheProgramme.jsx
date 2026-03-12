@@ -107,7 +107,7 @@ export default function FicheProgramme() {
                       { val: formatPrix(p.prix_min), label: 'À partir de', bronze: true },
                       { val: p.date_livraison || '—', label: 'Livraison' },
         ].map((item, i) => (
-          <div key={i} style={{ flex: '1 1 140px', textAlign: 'center', padding: '12px 20px' }}>
+          <div key={i} style={{ flex: '1 1 45%', textAlign: 'center', padding: '12px 20px' }}>
             <p style={{ fontSize: 22, fontWeight: 700, color: item.bronze ? 'var(--bronze)' : '#fff', fontFamily: '"Playfair Display", serif', margin: '0 0 4px' }}>{item.val}</p>
             <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.12em', fontFamily: '"Raleway", sans-serif', margin: 0 }}>{item.label}</p>
           </div>
@@ -135,7 +135,7 @@ export default function FicheProgramme() {
             </div>)}
         </div>
         {/* SIDEBAR */}
-        <div style={{ flex: '0 0 320px' }}>
+        <div style={{ flex: '1 1 300px', minWidth: 280 }}>
           <div style={{ background: 'var(--navy)', borderRadius: 16, padding: 32, color: '#fff', position: 'sticky', top: 32 }}>
             <p style={{ fontFamily: '"Playfair Display", serif', fontSize: 20, margin: '0 0 8px' }}>Vous êtes intéressé ?</p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, fontFamily: '"Raleway", sans-serif', margin: '0 0 24px' }}>Nous vous rappelons dans les 24h pour organiser votre RDV Découverte — 45 min en visio, gratuit et sans engagement.</p>
