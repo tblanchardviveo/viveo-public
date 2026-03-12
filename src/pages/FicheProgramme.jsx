@@ -80,6 +80,9 @@ export default function FicheProgramme() {
             .replace(/\n\n/g, '<br/><br/>')
             .replace(/\n/g, '<br/>')
         }
+      const formatTypologies = (t) => (!t || !t.length) ? '—' : [...t].sort().join(' · ')
+      const formatSurface = (min, max) => (!min && !max) ? '—' : (min && max && min !== max) ? `${Math.round(min)} — ${Math.round(max)} m²` : `${Math.round(min || max)} m²`
+      const formatPrix = (n) => n ? fmt(n) : '—'
   const dispoLinks = { 'LMNP': '/lmnp-viveo.html', 'Deficit Foncier': '/deficit-foncier-viveo.html', 'Loi Denormandie': '/loi-denormandie-viveo.html', 'Loi Jeanbrun': '/loi-jeanbrun-viveo.html', 'Monuments Historiques': `${WP}/monuments-historiques/`, 'Loi Malraux': `${WP}/loi-malraux/`, 'Nue-propriete': `${WP}/nue-propriete/` }
 
   return (
@@ -99,10 +102,10 @@ export default function FicheProgramme() {
       {/* BARRE 4 CHIFFRES */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: 0, background: 'var(--navy)', padding: '28px 24px', flexWrap: 'wrap' }}>
         {[
-          { val: p.typo_min ? `T${p.typo_min}${p.typo_max && p.typo_max !== p.typo_min ? ` → T${p.typo_max}` : ''}` : '—', label: 'Typologies' },
-          { val: p.surface_min ? `${p.surface_min}${p.surface_max ? `–${p.surface_max}` : ''} m²` : '—', label: 'Surfaces' },
-          { val: p.prix_min ? fmt(p.prix_min) : '—', label: 'À partir de', bronze: true },
-          { val: p.livraison || '—', label: 'Livraison' },
+                      { val: formatTypologies(p.typologies), label: 'Typologies' },
+                      { val: formatSurface(p.surface_min, p.surface_max), label: 'Surfaces' },
+                      { val: formatPrix(p.prix_min), label: 'À partir de', bronze: true },
+                      { val: p.date_livraison || '—', label: 'Livraison' },
         ].map((item, i) => (
           <div key={i} style={{ flex: '1 1 140px', textAlign: 'center', padding: '12px 20px' }}>
             <p style={{ fontSize: 22, fontWeight: 700, color: item.bronze ? 'var(--bronze)' : '#fff', fontFamily: '"Playfair Display", serif', margin: '0 0 4px' }}>{item.val}</p>
