@@ -71,7 +71,10 @@ export default function FicheProgramme() {
   if (!programme) return <div style={{ maxWidth: 900, margin: '0 auto', padding: '80px 40px', textAlign: 'center' }}><p style={{ fontFamily: '"Playfair Display", serif', fontSize: 24, color: 'var(--navy)' }}>Programme introuvable.</p><p style={{ color: 'var(--bronze)', fontSize: 14, marginTop: 16, display: 'inline-block' }}><Link to="/">&larr; Retour</Link></p></div>
 
   const p = programme
-  const dispoLinks = { 'LMNP': '/lmnp-viveo.html', 'Deficit Foncier': '/deficit-foncier-viveo.html', 'Loi Denormandie': '/loi-denormandie-viveo.html', 'Loi Jeanbrun': '/loi-jeanbrun-viveo.html', 'Monuments Historiques': `${WP}/monuments-historiques/`, 'Loi Malraux': `${WP}/loi-malraux/`, 'Nue-propriete': `${WP}/nue-propriete/` }
+  const parseMarkdown = (text) => {     if (!text) return ''     return text       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')       .replace(/\*(.+?)\*/g, '<em>$1</em>')       .replace(/
+
+/g, '<br/><br/>')       .replace(/
+/g, '<br/>')   }    const dispoLinks = { 'LMNP': '/lmnp-viveo.html', 'Deficit Foncier': '/deficit-foncier-viveo.html', 'Loi Denormandie': '/loi-denormandie-viveo.html', 'Loi Jeanbrun': '/loi-jeanbrun-viveo.html', 'Monuments Historiques': `${WP}/monuments-historiques/`, 'Loi Malraux': `${WP}/loi-malraux/`, 'Nue-propriete': `${WP}/nue-propriete/` }
 
   return (
     <div>
@@ -106,7 +109,7 @@ export default function FicheProgramme() {
       <div style={{ display: 'flex', maxWidth: 1100, margin: '0 auto', padding: '60px 32px', gap: 48, flexWrap: 'wrap' }}>
         {/* GAUCHE */}
         <div style={{ flex: '1 1 500px' }}>
-          {p.description && <><Eyebrow>LE PROGRAMME</Eyebrow><p style={{ fontSize: 15, lineHeight: 1.8, color: 'var(--navy)', fontFamily: '"Raleway", sans-serif' }}>{p.description}</p></>}
+          {p.description && <><Eyebrow>LE PROGRAMME</Eyebrow><p style={{ fontSize: 15, lineHeight: 1.8, color: 'var(--navy)', fontFamily: '"Raleway", sans-serif' }} dangerouslySetInnerHTML={{ __html: parseMarkdown(p.description) }} /></>}
           {p.points_forts && p.points_forts.length > 0 && (
             <div style={{ marginTop: 40 }}><Eyebrow>POINTS FORTS</Eyebrow>
               {p.points_forts.map((pt, i) => <p key={i} style={{ fontSize: 14, lineHeight: 2, color: 'var(--navy)', fontFamily: '"Raleway", sans-serif' }}><span style={{ color: 'var(--bronze)', marginRight: 8 }}>✓</span> {pt}</p>)}
