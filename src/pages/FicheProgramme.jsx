@@ -71,6 +71,15 @@ export default function FicheProgramme() {
   if (!programme) return <div style={{ maxWidth: 900, margin: '0 auto', padding: '80px 40px', textAlign: 'center' }}><p style={{ fontFamily: '"Playfair Display", serif', fontSize: 24, color: 'var(--navy)' }}>Programme introuvable.</p><p style={{ color: 'var(--bronze)', fontSize: 14, marginTop: 16, display: 'inline-block' }}><Link to="/">&larr; Retour</Link></p></div>
 
   const p = programme
+
+    const parseMarkdown = (text) => {
+          if (!text) return ''
+          return text
+            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.+?)\*/g, '<em>$1</em>')
+            .replace(/\n\n/g, '<br/><br/>')
+            .replace(/\n/g, '<br/>')
+        }
   const dispoLinks = { 'LMNP': '/lmnp-viveo.html', 'Deficit Foncier': '/deficit-foncier-viveo.html', 'Loi Denormandie': '/loi-denormandie-viveo.html', 'Loi Jeanbrun': '/loi-jeanbrun-viveo.html', 'Monuments Historiques': `${WP}/monuments-historiques/`, 'Loi Malraux': `${WP}/loi-malraux/`, 'Nue-propriete': `${WP}/nue-propriete/` }
 
   return (
