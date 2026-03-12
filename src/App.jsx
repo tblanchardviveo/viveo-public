@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Programmes from './pages/Programmes'
 import FicheProgramme from './pages/FicheProgramme'
@@ -15,7 +16,15 @@ function Header() {
     textDecoration: 'none',
     transition: 'color 0.2s'
   }
+    const [menuOpen, setMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
   return (
+        <>
     <header style={{ position: 'sticky', top: 0, zIndex: 100, background: 'var(--navy-deep)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.06)', height: 72 }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%' }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'baseline', gap: 0, textDecoration: 'none' }}>
@@ -29,9 +38,18 @@ function Header() {
           <a href={`${WP}/investir/`} style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Investir</a>
           <a href={`${WP}/approche-viveo/`} style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>L'Approche</a>
           <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{ background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 50, padding: '10px 24px', fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif", textDecoration: 'none', transition: 'all 0.3s var(--ease)' }}>{"Prendre RDV \u2192"}</a>
+                    {isMobile && <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4, marginLeft: 8, display: 'flex', alignItems: 'center' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A67C52" strokeWidth="2" strokeLinecap="round">{menuOpen ? <><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></> : <><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></>}</svg></button>}
         </nav>
       </div>
     </header>
+          {isMobile && menuOpen && (
+        <div style={{ position: 'fixed', top: 72, left: 0, right: 0, background: 'var(--navy-deep)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '16px 24px', zIndex: 99, display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <a href={`${WP}/se-loger/`} onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Se Loger</a>
+          <a href={`${WP}/investir/`} onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Investir</a>
+          <a href={`${WP}/approche-viveo/`} onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>L'Approche</a>
+        </div>
+      )}
+              </>
   )
 }
 
