@@ -26,14 +26,14 @@ export default function Programmes() {
     <>
       {/* HERO */}
       <section style={{ background: 'var(--navy-deep)', backgroundImage: 'url(/images/IMG_0602.png)', backgroundSize: 'cover', backgroundPosition: 'center', padding: 'clamp(80px, 12vw, 120px) clamp(20px, 4vw, 40px) 0', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 75% 30%, rgba(166,124,82,0.10) 0%, transparent 60%)', pointerEvents: 'none', zIndex: 0 }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(17,28,51,0.45) 0%, rgba(17,28,51,0.65) 60%, rgba(17,28,51,0.80) 100%)', pointerEvents: 'none', zIndex: 0 }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto' }}>
           <Eyebrow>CATALOGUE VIVEO</Eyebrow>
           <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(38px, 5vw, 64px)', fontWeight: 400, color: '#fff', lineHeight: 1.1, animation: 'fadeUp 0.6s ease 0.1s both' }}>
             Trouvez votre programme {"—"}<br />
             <em style={{ fontStyle: 'italic', color: '#C4976A' }}>au bon endroit.</em>
           </h1>
-          <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 'clamp(14px, 2.5vw, 17px)', color: 'rgba(255,255,255,0.55)', maxWidth: 600, marginTop: 24, lineHeight: 1.6, animation: 'fadeUp 0.6s ease 0.2s both' }}>
+          <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 'clamp(14px, 2.5vw, 17px)', color: 'rgba(255,255,255,0.55)', maxWidth: 600, marginTop: 24, lineHeight: 1.6, textShadow: '0 1px 8px rgba(0,0,0,0.5)', animation: 'fadeUp 0.6s ease 0.2s both' }}>
             27 ans d'expertise promoteur. Des programmes vérifiés, négociés. Pas un catalogue — une sélection d'expert.
           </p>
           <div style={{ display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap', animation: 'fadeUp 0.6s ease 0.3s both' }}>
