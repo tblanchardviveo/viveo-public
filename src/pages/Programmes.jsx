@@ -12,7 +12,7 @@ const Eyebrow = ({ children }) => (
   </div>
 )
 
-const fmt = (n) => n ? new Intl.NumberFormat('fr-FR').format(Math.round(n)) + ' \u20ac' : ''
+const fmt = (n) => n ? new Intl.NumberFormat('fr-FR').format(Math.round(n)) + ' €' : ''
 
 export default function Programmes() {
   const [programmes, setProgrammes] = useState([])
@@ -25,12 +25,12 @@ export default function Programmes() {
   return (
     <>
       {/* HERO */}
-      <section style={{ background: 'var(--navy-deep)', padding: '120px 40px 0', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--navy-deep)', backgroundImage: 'url(/images/IMG_0603.png)', backgroundSize: 'cover', backgroundPosition: 'center', padding: '120px 40px 0', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 75% 30%, rgba(166,124,82,0.10) 0%, transparent 60%)', pointerEvents: 'none', zIndex: 0 }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto' }}>
           <Eyebrow>CATALOGUE VIVEO</Eyebrow>
           <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(38px, 5vw, 64px)', fontWeight: 400, color: '#fff', lineHeight: 1.1, animation: 'fadeUp 0.6s ease 0.1s both' }}>
-            Trouvez votre programme {"\u2014"}<br />
+            Trouvez votre programme {"—"}<br />
             <em style={{ fontStyle: 'italic', color: '#C4976A' }}>au bon endroit.</em>
           </h1>
           <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 17, color: 'rgba(255,255,255,0.55)', maxWidth: 600, marginTop: 24, lineHeight: 1.6, animation: 'fadeUp 0.6s ease 0.2s both' }}>
@@ -74,7 +74,7 @@ export default function Programmes() {
                         <img src={p.photo_url} alt={p.nom} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
                       ) : (
                         <div style={{ width: '100%', height: 200, background: 'var(--navy-deep)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                          <span style={{ fontSize: 48, color: 'var(--bronze)', opacity: 0.4 }}>{"\u2302"}</span>
+                          <span style={{ fontSize: 48, color: 'var(--bronze)', opacity: 0.4 }}>{"⌂"}</span>
                         </div>
                       )}
                       <div style={{ padding: 24 }}>
@@ -88,20 +88,20 @@ export default function Programmes() {
                           </div>
                         )}
                         {p.prix_min && (
-                          <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 14, color: 'var(--bronze)', fontWeight: 600, marginBottom: 16 }}>{"\u00c0 partir de "}{fmt(p.prix_min)}</p>
+                          <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 14, color: 'var(--bronze)', fontWeight: 600, marginBottom: 16 }}>{"À partir de "}{fmt(p.prix_min)}</p>
                         )}
                         <Link to={`/programme/${p.slug}`} style={{ display: 'inline-block', background: 'var(--navy-deep)', color: '#fff', borderRadius: 50, padding: '10px 24px', fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif", textDecoration: 'none', transition: 'background 0.3s' }}
                           onMouseEnter={e => e.target.style.background = 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)'}
                           onMouseLeave={e => e.target.style.background = 'var(--navy-deep)'}
-                        >{"D\u00e9couvrir \u2192"}</Link>
+                        >{"Découvrir →"}</Link>
                       </div>
                     </div>
                   ))}
                 </div>
                 {totalPages > 1 && (
                   <div style={{ display: 'flex', justifyContent: 'center', gap: 12, marginTop: 48 }}>
-                    <button disabled={page === 0} onClick={() => setPage(page - 1)} style={{ padding: '10px 24px', borderRadius: 50, border: '1px solid rgba(26,39,68,0.15)', background: '#fff', fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 500, color: 'var(--navy-deep)', cursor: page === 0 ? 'default' : 'pointer', opacity: page === 0 ? 0.4 : 1 }}>{"\u2190 Pr\u00e9c\u00e9dent"}</button>
-                    <button disabled={page >= totalPages - 1} onClick={() => setPage(page + 1)} style={{ padding: '10px 24px', borderRadius: 50, border: '1px solid rgba(26,39,68,0.15)', background: '#fff', fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 500, color: 'var(--navy-deep)', cursor: page >= totalPages - 1 ? 'default' : 'pointer', opacity: page >= totalPages - 1 ? 0.4 : 1 }}>{"Suivant \u2192"}</button>
+                    <button disabled={page === 0} onClick={() => setPage(page - 1)} style={{ padding: '10px 24px', borderRadius: 50, border: '1px solid rgba(26,39,68,0.15)', background: '#fff', fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 500, color: 'var(--navy-deep)', cursor: page === 0 ? 'default' : 'pointer', opacity: page === 0 ? 0.4 : 1 }}>{"← Précédent"}</button>
+                    <button disabled={page >= totalPages - 1} onClick={() => setPage(page + 1)} style={{ padding: '10px 24px', borderRadius: 50, border: '1px solid rgba(26,39,68,0.15)', background: '#fff', fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 500, color: 'var(--navy-deep)', cursor: page >= totalPages - 1 ? 'default' : 'pointer', opacity: page >= totalPages - 1 ? 0.4 : 1 }}>{"Suivant →"}</button>
                   </div>
                 )}
               </>
@@ -119,9 +119,9 @@ export default function Programmes() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 1, background: 'rgba(255,255,255,0.06)', borderRadius: 20, overflow: 'hidden' }}>
             {[
-              { badge: "27 ANS D'EXPÉRIENCE", title: "L'\u0153il du professionnel c\u00f4t\u00e9 promoteur", text: "Thomas Blanchard a travaill\u00e9 pour Bouygues Immobilier, Nexity, Promogim, Demathieu & Bard. Il conna\u00eet les programmes de l'int\u00e9rieur." },
-              { badge: "INDÉPENDANCE TOTALE", title: "Aucune exclusivit\u00e9, aucun conflit d'int\u00e9r\u00eat", text: "VIVEO n'est li\u00e9 \u00e0 aucun promoteur. Nous s\u00e9lectionnons les programmes selon leur qualit\u00e9 r\u00e9elle, pas selon les commissions propos\u00e9es." },
-              { badge: "ACCOMPAGNEMENT COMPLET", title: "De la recherche \u00e0 la remise des cl\u00e9s", text: "Financement, fiscalit\u00e9, suivi chantier, livraison \u2014 VIVEO reste \u00e0 vos c\u00f4t\u00e9s \u00e0 chaque \u00e9tape, sans dispara\u00eetre apr\u00e8s la signature." }
+              { badge: "27 ANS D'EXPÉRIENCE", title: "L'œil du professionnel côté promoteur", text: "Thomas Blanchard a travaillé pour Bouygues Immobilier, Nexity, Promogim, Demathieu & Bard. Il connaît les programmes de l'intérieur." },
+              { badge: "INDÉPENDANCE TOTALE", title: "Aucune exclusivité, aucun conflit d'intérêt", text: "VIVEO n'est lié à aucun promoteur. Nous sélectionnons les programmes selon leur qualité réelle, pas selon les commissions proposées." },
+              { badge: "ACCOMPAGNEMENT COMPLET", title: "De la recherche à la remise des clés", text: "Financement, fiscalité, suivi chantier, livraison — VIVEO reste à vos côtés à chaque étape, sans disparaître après la signature." }
             ].map((c, i) => (
               <div key={i} style={{ background: 'rgba(255,255,255,0.03)', padding: '40px 32px', transition: 'background 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.06)'}
@@ -144,7 +144,7 @@ export default function Programmes() {
             <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--bronze)', fontFamily: "'Raleway', sans-serif" }}>VOTRE PROJET</span>
           </div>
           <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 400, color: 'var(--navy-deep)', marginBottom: 20, lineHeight: 1.2 }}>
-            Premier achat ou investissement {"\u2014"}<br />
+            Premier achat ou investissement {"—"}<br />
             <em style={{ fontStyle: 'italic', color: '#C4976A' }}>parlons de votre projet.</em>
           </h2>
           <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 15, color: '#666', lineHeight: 1.7, marginBottom: 40 }}>
@@ -153,7 +153,7 @@ export default function Programmes() {
           <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 50, padding: '18px 40px', fontSize: 14, fontWeight: 600, letterSpacing: '0.04em', fontFamily: "'Raleway', sans-serif", textDecoration: 'none', transition: 'all 0.3s' }}
             onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 12px 40px rgba(166,124,82,0.35)' }}
             onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = 'none' }}
-          >{"Demander mon RDV D\u00e9couverte \u2192"}</a>
+          >{"Demander mon RDV Découverte →"}</a>
         </div>
       </section>
     </>
