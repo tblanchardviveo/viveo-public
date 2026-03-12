@@ -76,6 +76,10 @@ export default function FicheProgramme() {
 /g, '<br/><br/>')       .replace(/
 /g, '<br/>')   }    const dispoLinks = { 'LMNP': '/lmnp-viveo.html', 'Deficit Foncier': '/deficit-foncier-viveo.html', 'Loi Denormandie': '/loi-denormandie-viveo.html', 'Loi Jeanbrun': '/loi-jeanbrun-viveo.html', 'Monuments Historiques': `${WP}/monuments-historiques/`, 'Loi Malraux': `${WP}/loi-malraux/`, 'Nue-propriete': `${WP}/nue-propriete/` }
 
+
+    const formatTypologies = (t) => { if (!t || !t.length) return '—'; const sorted = [...t].sort(); return sorted.length === 1 ? sorted[0] : `${sorted[0]} – ${sorted[sorted.length - 1]}` }
+  const formatSurface = (min, max) => { if (!min && !max) return '—'; if (min && max && min !== max) return `${Math.round(min)} – ${Math.round(max)} m²`; return `${Math.round(min || max)} m²` }
+  const formatPrix = (n) => n ? fmt(n) : '—'
   return (
     <div>
       {/* HERO */}
