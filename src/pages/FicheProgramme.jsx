@@ -125,9 +125,9 @@ export default function FicheProgramme() {
         {/* SIDEBAR */}
         <div style={{ flex: '0 0 320px' }}>
           <div style={{ background: 'var(--navy)', borderRadius: 16, padding: 32, color: '#fff', position: 'sticky', top: 32 }}>
-            <p style={{ fontFamily: '"Playfair Display", serif', fontSize: 20, margin: '0 0 8px' }}>Intéressé(e) ?</p>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, fontFamily: '"Raleway", sans-serif', margin: '0 0 24px' }}>Réservez un RDV Découverte gratuit de 45 min en visio avec Thomas Blanchard.</p>
-            <button onClick={() => setShowModal(true)} style={{ width: '100%', padding: 16, background: 'linear-gradient(135deg, var(--bronze) 0%, var(--bronze-light) 100%)', color: '#fff', border: 'none', borderRadius: 50, fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: '"Raleway", sans-serif' }}>Prendre rendez-vous</button>
+            <p style={{ fontFamily: '"Playfair Display", serif', fontSize: 20, margin: '0 0 8px' }}>Vous êtes intéressé ?</p>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, fontFamily: '"Raleway", sans-serif', margin: '0 0 24px' }}>Nous vous rappelons dans les 24h pour organiser votre RDV Découverte — 45 min en visio, gratuit et sans engagement.</p>
+            <button onClick={() => setShowModal(true)} style={{ width: '100%', padding: 16, background: 'linear-gradient(135deg, var(--bronze) 0%, var(--bronze-light) 100%)', color: '#fff', border: 'none', borderRadius: 50, fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: '"Raleway", sans-serif' }}>Demander mon RDV Découverte</button>
           </div>
         </div>
       </div>
@@ -140,7 +140,7 @@ export default function FicheProgramme() {
               <div style={{ textAlign: 'center', padding: 40 }}>
                 <p style={{ fontSize: 48 }}>{String.fromCharCode(9989)}</p>
                 <h3 style={{ fontFamily: '"Playfair Display", serif', fontSize: 22, color: 'var(--navy)', margin: '16px 0 8px' }}>Demande envoyée !</h3>
-                <p style={{ color: 'var(--muted)', fontSize: 14 }}>Thomas vous recontacte sous 24h.</p>
+                <p style={{ color: 'var(--muted)', fontSize: 14 }}>Notre équipe vous contacte dans les 24h pour confirmer votre rendez-vous.</p>
               </div>
             ) : (
               <>
@@ -149,8 +149,8 @@ export default function FicheProgramme() {
                   <span style={{ width: 32, height: 1, background: 'var(--bronze)', display: 'block' }} />
                   <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--bronze)', fontFamily: '"Raleway", sans-serif' }}>RDV Découverte</span>
                 </div>
-                <h3 style={{ fontFamily: '"Playfair Display", serif', fontSize: 26, color: 'var(--navy)', margin: '0 0 6px' }}>Recevoir un appel</h3>
-                <p style={{ fontWeight: 300, fontSize: 14, color: 'var(--muted)', marginBottom: 28 }}>Un conseiller VIVEO vous contacte pour un RDV gratuit de 45 min en visio.</p>
+                <h3 style={{ fontFamily: '"Playfair Display", serif', fontSize: 26, color: 'var(--navy)', margin: '0 0 6px' }}>Demander mon RDV Découverte</h3>
+                <p style={{ fontWeight: 300, fontSize: 14, color: 'var(--muted)', marginBottom: 28 }}>Notre équipe vous rappelle dans les 24h pour organiser votre rendez-vous en visioconférence.</p>
                 <form onSubmit={handleSubmit}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                     {/* Prénom / Nom */}
