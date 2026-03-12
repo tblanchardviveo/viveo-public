@@ -25,7 +25,7 @@ export default function Programmes() {
   return (
     <>
       {/* HERO */}
-      <section style={{ background: 'var(--navy-deep)', backgroundImage: 'url(/images/IMG_0603.png)', backgroundSize: 'cover', backgroundPosition: 'center', padding: 'clamp(80px, 12vw, 120px) clamp(20px, 4vw, 40px) 0', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--navy-deep)', backgroundImage: 'url(/hero.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', padding: 'clamp(80px, 12vw, 120px) clamp(20px, 4vw, 40px) 0', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 75% 30%, rgba(166,124,82,0.10) 0%, transparent 60%)', pointerEvents: 'none', zIndex: 0 }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto' }}>
           <Eyebrow>CATALOGUE VIVEO</Eyebrow>
