@@ -84,11 +84,11 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
   }
 
   return (
-    <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: 20, padding: 32 }}>
+    <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: 20, padding: 'clamp(16px, 4vw, 32px)' }}>
       {/* LIGNE 1: PROJET */}
       <div style={{ marginBottom: 24 }}>
         <span style={labelStyle}>PROJET</span>
-        <div style={{ display: 'flex', gap: 12, marginTop: 4 }}>
+        <div style={{ display: 'flex', gap: 12, marginTop: 4, flexWrap: 'wrap' }}>
           <button style={projet === 'se_loger' ? pillOn : pillOff} onClick={() => setProjet(projet === 'se_loger' ? null : 'se_loger')}>Se loger</button>
           <button style={projet === 'investir' ? pillOn : pillOff} onClick={() => setProjet(projet === 'investir' ? null : 'investir')}>Investir</button>
         </div>
@@ -169,7 +169,7 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
       )}
 
       {/* BOUTON RECHERCHE */}
-      <button onClick={handleSearch} disabled={disabled || loading} style={{ width: '100%', background: disabled ? 'rgba(255,255,255,0.1)' : 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 50, padding: '16px 48px', fontSize: 14, fontWeight: 600, letterSpacing: '0.04em', fontFamily: "'Raleway', sans-serif", cursor: disabled ? 'default' : 'pointer', opacity: disabled ? 0.4 : 1, transition: 'all 0.3s', border: 'none' }}
+      <button onClick={handleSearch} disabled={disabled || loading} style={{ width: '100%', background: disabled ? 'rgba(255,255,255,0.1)' : 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 50, padding: '16px 48px', fontSize: 14, fontWeight: 600, letterSpacing: '0.04em', fontFamily: "'Raleway', sans-serif", cursor: disabled ? 'default' : 'pointer', opacity: disabled ? 0.4 : 1, transition: 'all 0.3s', border: 'none', padding: '16px 24px', fontSize: 14 }}
         onMouseEnter={e => { if (!disabled) { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 12px 40px rgba(166,124,82,0.35)' } }}
         onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = 'none' }}
       >{loading ? 'Recherche en cours...' : 'Rechercher les programmes \u2192'}</button>
