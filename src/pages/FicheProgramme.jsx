@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { supabase } from '../supabase'
+import CarteQuartier from '../components/CarteQuartier'
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 const Eyebrow = ({ children }) => (
@@ -133,6 +134,21 @@ export default function FicheProgramme() {
             <div style={{ marginTop: 40 }}><Eyebrow>LOCALISATION</Eyebrow>
               <iframe title="carte" src={`https://www.openstreetmap.org/export/embed.html?bbox=${p.longitude-0.01},${p.latitude-0.007},${p.longitude+0.01},${p.latitude+0.007}&layer=mapnik&marker=${p.latitude},${p.longitude}`} style={{ width: '100%', height: 300, border: '1.5px solid #E5E3E0', borderRadius: 12 }} />
             </div>)}
+
+                    {p.ville && (
+            <section style={{ padding: '48px 0', borderTop: '1px solid rgba(26,39,68,0.08)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
+                <span style={{ width: 32, height: 1, background: 'var(--bronze)', display: 'block' }}/>
+                <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--bronze)', fontFamily: "'Raleway', sans-serif" }}>LE QUARTIER</span>
+              </div>
+              <CarteQuartier
+                latitude={p.latitude}
+                longitude={p.longitude}
+                nom_programme={p.nom}
+                poi={{ poi_ecoles: p.poi_ecoles, poi_transports: p.poi_transports, poi_commerces: p.poi_commerces, poi_sante: p.poi_sante, poi_loisirs: p.poi_loisirs, poi_alimentation: p.poi_alimentation, poi_creches: p.poi_creches, poi_services: p.poi_services }}
+              />
+            </section>
+          )}
         </div>
         {/* SIDEBAR */}
         <div style={{ flex: '1 1 300px', minWidth: 280 }}>
