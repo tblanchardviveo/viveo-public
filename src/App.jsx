@@ -7,6 +7,11 @@ import Calculateur from './pages/Calculateur'
 import NewsletterPage from './pages/NewsletterPage'
 import AvisPage from './pages/AvisPage'
 import HomePage from './pages/HomePage'
+import SeLoger from './pages/SeLoger'
+import Investir from './pages/Investir'
+import ApprocheViveo from './pages/ApprocheViveo'
+import Financement from './pages/Financement'
+import International from './pages/International'
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
@@ -39,9 +44,9 @@ function Header() {
           </Link>
           <nav style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
             <Link to="/programmes" style={linkStyle} onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Programmes</Link>
-            <Link to="/calculateur" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Simulateur</Link>
-            <Link to="/parrainage" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Parrainage</Link>
-            <a href={`${WP}/approche-viveo/`} style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>{"L'Approche"}</a>
+            <Link to="/se-loger" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Se Loger</Link>
+            <Link to="/investir" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Investir</Link>
+            <Link to="/approche" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Notre Approche</Link>
             <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{ background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 50, padding: '10px 24px', fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif", textDecoration: 'none', transition: 'all 0.3s var(--ease)' }}>{"Prendre RDV \u2192"}</a>
             {isMobile && <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4, marginLeft: 8, display: 'flex', alignItems: 'center' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A67C52" strokeWidth="2" strokeLinecap="round">{menuOpen ? <><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></> : <><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></>}</svg></button>}
           </nav>
@@ -50,9 +55,11 @@ function Header() {
       {isMobile && menuOpen && (
         <div style={{ position: 'fixed', top: 72, left: 0, right: 0, background: 'var(--navy-deep)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '16px 24px', zIndex: 99, display: 'flex', flexDirection: 'column', gap: 16 }}>
           <Link to="/programmes" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Programmes</Link>
-          <Link to="/calculateur" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Simulateur</Link>
-          <Link to="/parrainage" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Parrainage</Link>
-          <a href={`${WP}/approche-viveo/`} onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>{"L'Approche"}</a>
+          <Link to="/se-loger" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Se Loger</Link>
+          <Link to="/investir" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Investir</Link>
+          <Link to="/approche" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Notre Approche</Link>
+          <Link to="/financement" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Financement</Link>
+          <Link to="/international" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>International</Link>
         </div>
       )}
     </>
@@ -81,13 +88,13 @@ function Footer() {
             <span style={{ width: 32, height: 1, background: 'var(--bronze)', display: 'block' }} />
             <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--bronze)', fontFamily: "'Raleway', sans-serif" }}>INVESTIR</span>
           </div>
-          <a href={`${WP}/lmnp/`} style={fl} onMouseEnter={ho} onMouseLeave={hl}>LMNP</a>
-          <a href={`${WP}/deficit-foncier/`} style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"D\u00e9ficit Foncier"}</a>
-          <a href={`${WP}/nue-propriete/`} style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Nue-propri\u00e9t\u00e9"}</a>
-          <a href={`${WP}/monuments-historiques/`} style={fl} onMouseEnter={ho} onMouseLeave={hl}>Monuments Historiques</a>
-          <a href={`${WP}/loi-malraux/`} style={fl} onMouseEnter={ho} onMouseLeave={hl}>Loi Malraux</a>
-          <a href={`${WP}/loi-jeanbrun/`} style={fl} onMouseEnter={ho} onMouseLeave={hl}>Loi Jeanbrun</a>
-          <a href={`${WP}/loi-denormandie/`} style={fl} onMouseEnter={ho} onMouseLeave={hl}>Loi Denormandie</a>
+          <Link to="/investir" style={fl} onMouseEnter={ho} onMouseLeave={hl}>LMNP</Link>
+          <Link to="/investir" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"D\u00e9ficit Foncier"}</Link>
+          <Link to="/investir" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Nue-propri\u00e9t\u00e9"}</Link>
+          <Link to="/se-loger" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Se Loger</Link>
+          <Link to="/financement" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Financement</Link>
+          <Link to="/international" style={fl} onMouseEnter={ho} onMouseLeave={hl}>International</Link>
+          <Link to="/approche" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Notre Approche</Link>
         </div>
       </div>
       <div style={{ maxWidth: 1100, margin: '0 auto', marginTop: 48, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
@@ -117,6 +124,11 @@ export default function App() {
           <Route path="/calculateur" element={<Calculateur />} />
           <Route path="/newsletter" element={<NewsletterPage />} />
           <Route path="/avis" element={<AvisPage />} />
+          <Route path="/se-loger" element={<SeLoger />} />
+          <Route path="/investir" element={<Investir />} />
+          <Route path="/approche" element={<ApprocheViveo />} />
+          <Route path="/financement" element={<Financement />} />
+          <Route path="/international" element={<International />} />
         </Routes>
       </main>
       <Footer />
