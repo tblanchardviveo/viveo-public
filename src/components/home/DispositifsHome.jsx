@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom'
 import { useReveal } from '../../hooks/useReveal'
 
 const dispos = [
-  'LMNP', 'D\u00e9ficit Foncier', 'Nue-propri\u00e9t\u00e9',
-  'Monuments Historiques', 'Loi Malraux', 'Loi Jeanbrun', 'Loi Denormandie'
+  { label: 'LMNP', to: '/lmnp' },
+  { label: 'Déficit Foncier', to: '/deficit-foncier' },
+  { label: 'Nue-propriété', to: '/nue-propriete' },
+  { label: 'Monuments Historiques', to: '/monuments-historiques' },
+  { label: 'Loi Malraux', to: '/loi-malraux' },
+  { label: 'Loi Jeanbrun', to: '/loi-jeanbrun' },
+  { label: 'Loi Denormandie', to: '/loi-denormandie' },
 ]
 
 export default function DispositifsHome() {
@@ -32,7 +37,7 @@ export default function DispositifsHome() {
         <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: 80, alignItems: 'flex-start', marginTop: 48 }}>
           <div style={{ flex: '0 0 45%' }}>
             <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 17, color: 'rgba(255,255,255,0.55)', lineHeight: 1.8, maxWidth: 440 }}>
-              {"LMNP, D\u00e9ficit Foncier, Monuments Historiques, Nue-propri\u00e9t\u00e9, Loi Malraux, Loi Jeanbrun, Loi Denormandie. Selon votre TMI, vos objectifs et votre situation, nous identifions le cadre le plus adapt\u00e9."}
+              {'LMNP, Déficit Foncier, Monuments Historiques, Nue-propriété, Loi Malraux, Loi Jeanbrun, Loi Denormandie. Selon votre TMI, vos objectifs et votre situation, nous identifions le cadre le plus adapté.'}
             </p>
             <Link to="/calculateur" style={{
               display: 'inline-block', marginTop: 32,
@@ -41,11 +46,11 @@ export default function DispositifsHome() {
               fontFamily: "'Raleway', sans-serif", fontWeight: 500,
               fontSize: 13, letterSpacing: '0.08em',
               textTransform: 'uppercase', textDecoration: 'none'
-            }}>{"Simuler mon investissement \u2192"}</Link>
+            }}>{'Simuler mon investissement →'}</Link>
           </div>
           <div style={{ flex: '0 0 55%' }}>
             {dispos.map((d, i) => (
-              <div key={i}
+              <Link key={i} to={d.to}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
@@ -53,7 +58,8 @@ export default function DispositifsHome() {
                   padding: '20px 0',
                   borderBottom: '1px solid rgba(255,255,255,0.08)',
                   borderTop: i === 0 ? '1px solid rgba(255,255,255,0.08)' : 'none',
-                  cursor: 'default',
+                  cursor: 'pointer',
+                  textDecoration: 'none',
                   transition: 'transform 0.2s ease',
                   transform: hovered === i ? 'translateX(8px)' : 'none'
                 }}>
@@ -64,8 +70,9 @@ export default function DispositifsHome() {
                   fontFamily: "'Playfair Display', Georgia, serif", fontSize: 20,
                   color: hovered === i ? '#C4976A' : '#fff',
                   transition: 'color 0.2s ease'
-                }}>{d}</span>
-              </div>
+                }}>{d.label}</span>
+                <span style={{ marginLeft: 'auto', color: hovered === i ? '#C4976A' : 'rgba(255,255,255,0.2)', fontSize: 18, transition: 'color 0.2s ease' }}>→</span>
+              </Link>
             ))}
           </div>
         </div>
