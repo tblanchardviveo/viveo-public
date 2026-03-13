@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Programmes from './pages/Programmes'
 import FicheProgramme from './pages/FicheProgramme'
+import Parrainage from './pages/Parrainage'        
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
@@ -106,6 +107,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Programmes />} />
           <Route path="/programme/:slug" element={<FicheProgramme />} />
+                    <Route path="/parrainage" element={<Parrainage />} />
         </Routes>
       </main>
       <Footer />
