@@ -110,7 +110,7 @@ export default function FicheProgramme() {
         ].map((item, i) => (
           <div key={i} style={{ flex: '1 1 45%', textAlign: 'center', padding: '12px 20px' }}>
             <p style={{ fontSize: 22, fontWeight: 700, color: item.bronze ? 'var(--bronze)' : '#fff', fontFamily: '"Playfair Display", serif', margin: '0 0 4px' }}>{item.val}</p>
-            <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.12em', fontFamily: '"Raleway", sans-serif', margin: 0 }}>{item.label}</p>
+            <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.85)', textTransform: 'uppercase', letterSpacing: '0.12em', fontFamily: '"Raleway", sans-serif', margin: 0 }}>{item.label}</p>
           </div>
         ))}
       </div>
@@ -154,7 +154,7 @@ export default function FicheProgramme() {
         <div style={{ flex: '1 1 300px', minWidth: 280 }}>
           <div style={{ background: 'var(--navy)', borderRadius: 16, padding: 32, color: '#fff', position: 'sticky', top: 32 }}>
             <p style={{ fontFamily: '"Playfair Display", serif', fontSize: 20, margin: '0 0 8px' }}>Vous êtes intéressé ?</p>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, fontFamily: '"Raleway", sans-serif', margin: '0 0 24px' }}>Nous vous rappelons dans les 24h pour organiser votre RDV Découverte — 45 min en visio, gratuit et sans engagement.</p>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.9)', lineHeight: 1.6, fontFamily: '"Raleway", sans-serif', margin: '0 0 24px' }}>Nous vous rappelons dans les 24h pour organiser votre RDV Découverte — 45 min en visio, gratuit et sans engagement.</p>
             <button onClick={() => setShowModal(true)} style={{ width: '100%', padding: 16, background: 'linear-gradient(135deg, var(--bronze) 0%, var(--bronze-light) 100%)', color: '#fff', border: 'none', borderRadius: 50, fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: '"Raleway", sans-serif' }}>Demander mon RDV Découverte</button>
           </div>
         </div>
