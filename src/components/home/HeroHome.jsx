@@ -23,7 +23,7 @@ export default function HeroHome() {
       {/* BG with parallax */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: "url('/hero.jpg') center 30% / cover no-repeat",
+                  background: "url('/images/Firefly_GeminiFlash.png') center 30% / cover no-repeat",
         backgroundPositionY: `calc(30% + ${scrollY * 0.4}px)`
       }} />
       {/* Overlay gradient */}
