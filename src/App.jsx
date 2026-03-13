@@ -12,6 +12,13 @@ import Investir from './pages/Investir'
 import ApprocheViveo from './pages/ApprocheViveo'
 import Financement from './pages/Financement'
 import International from './pages/International'
+import Lmnp from './pages/fiscal/Lmnp'
+import DeficitFoncier from './pages/fiscal/DeficitFoncier'
+import NuePropriete from './pages/fiscal/NuePropriete'
+import LoiMalraux from './pages/fiscal/LoiMalraux'
+import MonumentsHistoriques from './pages/fiscal/MonumentsHistoriques'
+import LoiDenormandie from './pages/fiscal/LoiDenormandie'
+import LoiJeanbrun from './pages/fiscal/LoiJeanbrun'
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
@@ -129,6 +136,13 @@ export default function App() {
           <Route path="/approche" element={<ApprocheViveo />} />
           <Route path="/financement" element={<Financement />} />
           <Route path="/international" element={<International />} />
+                      <Route path="/investir/lmnp" element={<Lmnp />} />
+            <Route path="/investir/deficit-foncier" element={<DeficitFoncier />} />
+            <Route path="/investir/nue-propriete" element={<NuePropriete />} />
+            <Route path="/investir/loi-malraux" element={<LoiMalraux />} />
+            <Route path="/investir/monuments-historiques" element={<MonumentsHistoriques />} />
+            <Route path="/investir/loi-denormandie" element={<LoiDenormandie />} />
+            <Route path="/investir/loi-jeanbrun" element={<LoiJeanbrun />} />
         </Routes>
       </main>
       <Footer />
