@@ -2,7 +2,11 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Programmes from './pages/Programmes'
 import FicheProgramme from './pages/FicheProgramme'
-import Parrainage from './pages/Parrainage'        
+import Parrainage from './pages/Parrainage'
+import Calculateur from './pages/Calculateur'
+import NewsletterPage from './pages/NewsletterPage'
+import AvisPage from './pages/AvisPage'
+import HomePage from './pages/HomePage'
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
@@ -17,7 +21,7 @@ function Header() {
     textDecoration: 'none',
     transition: 'color 0.2s'
   }
-    const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth < 768)
@@ -25,32 +29,33 @@ function Header() {
     return () => window.removeEventListener('resize', onResize)
   }, [])
   return (
-        <>
-    <header style={{ position: 'sticky', top: 0, zIndex: 100, background: 'var(--navy-deep)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.06)', height: 72 }}>
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%' }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'baseline', gap: 0, textDecoration: 'none' }}>
-          <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 22, color: '#fff', fontWeight: 400 }}>VIVEO</span>
-          <span style={{ color: 'var(--bronze)', margin: '0 8px', fontSize: 18 }}>{"\u00b7"}</span>
-          <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 500 }}>Patrimoine</span>
-        </Link>
-        <nav style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-          <Link to="/" style={linkStyle} onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Programmes</Link>
-          <a href={`${WP}/se-loger/`} style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Se Loger</a>
-          <a href={`${WP}/investir/`} style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Investir</a>
-          <a href={`${WP}/approche-viveo/`} style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>L'Approche</a>
-          <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{ background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 50, padding: '10px 24px', fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif", textDecoration: 'none', transition: 'all 0.3s var(--ease)' }}>{"Prendre RDV \u2192"}</a>
-                    {isMobile && <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4, marginLeft: 8, display: 'flex', alignItems: 'center' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A67C52" strokeWidth="2" strokeLinecap="round">{menuOpen ? <><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></> : <><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></>}</svg></button>}
-        </nav>
-      </div>
-    </header>
-          {isMobile && menuOpen && (
+    <>
+      <header style={{ position: 'sticky', top: 0, zIndex: 100, background: 'var(--navy-deep)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.06)', height: 72 }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%' }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'baseline', gap: 0, textDecoration: 'none' }}>
+            <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 22, color: '#fff', fontWeight: 400 }}>VIVEO</span>
+            <span style={{ color: 'var(--bronze)', margin: '0 8px', fontSize: 18 }}>{"\u00b7"}</span>
+            <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 500 }}>Patrimoine</span>
+          </Link>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+            <Link to="/programmes" style={linkStyle} onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Programmes</Link>
+            <Link to="/calculateur" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Simulateur</Link>
+            <Link to="/parrainage" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Parrainage</Link>
+            <a href={`${WP}/approche-viveo/`} style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>{"L'Approche"}</a>
+            <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{ background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 50, padding: '10px 24px', fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif", textDecoration: 'none', transition: 'all 0.3s var(--ease)' }}>{"Prendre RDV \u2192"}</a>
+            {isMobile && <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4, marginLeft: 8, display: 'flex', alignItems: 'center' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A67C52" strokeWidth="2" strokeLinecap="round">{menuOpen ? <><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></> : <><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></>}</svg></button>}
+          </nav>
+        </div>
+      </header>
+      {isMobile && menuOpen && (
         <div style={{ position: 'fixed', top: 72, left: 0, right: 0, background: 'var(--navy-deep)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '16px 24px', zIndex: 99, display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <a href={`${WP}/se-loger/`} onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Se Loger</a>
-          <a href={`${WP}/investir/`} onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Investir</a>
-          <a href={`${WP}/approche-viveo/`} onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>L'Approche</a>
+          <Link to="/programmes" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Programmes</Link>
+          <Link to="/calculateur" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Simulateur</Link>
+          <Link to="/parrainage" onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>Parrainage</Link>
+          <a href={`${WP}/approche-viveo/`} onClick={() => setMenuOpen(false)} style={{ ...linkStyle, fontSize: 13, color: '#fff' }}>{"L'Approche"}</a>
         </div>
       )}
-              </>
+    </>
   )
 }
 
@@ -86,7 +91,7 @@ function Footer() {
         </div>
       </div>
       <div style={{ maxWidth: 1100, margin: '0 auto', marginTop: 48, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
-        <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif" }}>{"\u00a9 2026 VIVEO Patrimoine"}</span>
+        <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif" }}>{"\u00a9 2025 VIVEO Patrimoine"}</span>
         <a href={`${WP}/mentions-legales/`} style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif", textDecoration: 'none' }}>{"Mentions l\u00e9gales"}</a>
         <a href={`${WP}/politique-de-confidentialite/`} style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif", textDecoration: 'none' }}>{"Politique de confidentialit\u00e9"}</a>
       </div>
@@ -105,9 +110,13 @@ export default function App() {
       <Header />
       <main style={{ minHeight: '60vh' }}>
         <Routes>
-          <Route path="/" element={<Programmes />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/programmes" element={<Programmes />} />
           <Route path="/programme/:slug" element={<FicheProgramme />} />
-                    <Route path="/parrainage" element={<Parrainage />} />
+          <Route path="/parrainage" element={<Parrainage />} />
+          <Route path="/calculateur" element={<Calculateur />} />
+          <Route path="/newsletter" element={<NewsletterPage />} />
+          <Route path="/avis" element={<AvisPage />} />
         </Routes>
       </main>
       <Footer />
