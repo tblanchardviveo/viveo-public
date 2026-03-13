@@ -136,13 +136,13 @@ export default function App() {
           <Route path="/approche" element={<ApprocheViveo />} />
           <Route path="/financement" element={<Financement />} />
           <Route path="/international" element={<International />} />
-                      <Route path="/investir/lmnp" element={<Lmnp />} />
-            <Route path="/investir/deficit-foncier" element={<DeficitFoncier />} />
-            <Route path="/investir/nue-propriete" element={<NuePropriete />} />
-            <Route path="/investir/loi-malraux" element={<LoiMalraux />} />
-            <Route path="/investir/monuments-historiques" element={<MonumentsHistoriques />} />
-            <Route path="/investir/loi-denormandie" element={<LoiDenormandie />} />
-            <Route path="/investir/loi-jeanbrun" element={<LoiJeanbrun />} />
+                                  <Route path="/lmnp" element={<Lmnp />} />
+                        <Route path="/deficit-foncier" element={<DeficitFoncier />} />
+                        <Route path="/nue-propriete" element={<NuePropriete />} />
+                        <Route path="/loi-malraux" element={<LoiMalraux />} />
+                        <Route path="/monuments-historiques" element={<MonumentsHistoriques />} />
+                        <Route path="/loi-denormandie" element={<LoiDenormandie />} />
+                        <Route path="/loi-jeanbrun" element={<LoiJeanbrun />} />
         </Routes>
       </main>
       <Footer />
