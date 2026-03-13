@@ -61,7 +61,7 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
     try {
       let query = supabase.from('programmes').select('*')
         .in('statut', ['Disponible', 'Bientot disponible'])
-      if (projet) query = query.eq('type_projet', projet)
+      if (projet) query = query.contains('type_projet', [projet])
       if (secteur) query = query.eq('secteur', secteur)
       if (ville) query = query.or(`ville.ilike.%${ville}%,code_postal.ilike.%${ville}%`)
       if (typologies.length > 0) query = query.contains('typologies_disponibles', typologies)
