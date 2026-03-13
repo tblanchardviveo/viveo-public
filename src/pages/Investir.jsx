@@ -10,6 +10,7 @@ const pStyle = (c) => ({ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fo
 const cta = { display: 'inline-block', background: 'linear-gradient(135deg,#A67C52,#C4976A)', color: '#fff', borderRadius: 2, padding: '18px 40px', fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 14, letterSpacing: '0.06em', textTransform: 'uppercase', textDecoration: 'none', marginTop: 32 }
 const pill = { padding: '8px 20px', borderRadius: 20, fontSize: 12, fontFamily: "'Raleway',sans-serif", fontWeight: 500, letterSpacing: '0.06em', color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.15)', textDecoration: 'none', textTransform: 'uppercase' }
 const card = (bg) => ({ background: bg || 'rgba(255,255,255,0.04)', borderRadius: 8, padding: 28, border: '1px solid rgba(255,255,255,0.06)' })
+const heroOverlay = 'linear-gradient(160deg,rgba(17,28,51,0.15) 0%,rgba(17,28,51,0.55) 45%,rgba(17,28,51,0.92) 75%,rgba(17,28,51,1.00) 100%)'
 
 function Sec({ children, bg, style }) {
   const [ref, vis] = useReveal()
@@ -20,7 +21,9 @@ export default function Investir() {
   return (
     <>
       {/* Hero */}
-      <section style={{ background: '#111C33', padding: '120px 6vw 80px' }}>
+            <section style={{ position: 'relative', backgroundImage: "url('/images/IMG_0602.png')", backgroundSize: 'cover', backgroundPosition: 'center', padding: '120px 6vw 80px' }}>
+                      <div style={{ position: 'absolute', inset: 0, background: heroOverlay }} />
+                      <div style={{ position: 'relative', zIndex: 1 }}>
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>INVESTIR</span></div>
         <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{'Construire un patrimoine \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'intelligemment.'}</em></h1>
         <p style={pStyle()}>{'LMNP, Nue-propri\u00e9t\u00e9, D\u00e9ficit foncier \u2014 nous structurons chaque investissement pour maximiser rendement et avantage fiscal, en toute s\u00e9r\u00e9nit\u00e9.'}</p>
@@ -29,7 +32,8 @@ export default function Investir() {
           <span style={pill}>{'Nue-propri\u00e9t\u00e9'}</span>
           <span style={pill}>{'D\u00e9ficit foncier'}</span>
         </div>
-      </section>
+              </div>
+                      </section>
 
       {/* Section 2 - LMNP */}
       <Sec bg="#1A2744">
