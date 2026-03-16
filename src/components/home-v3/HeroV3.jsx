@@ -21,9 +21,9 @@ export default function HeroV3() {
       {/* Background parallax */}
       <div style={{
         position: 'absolute', inset: 0,
-        backgroundImage: `url(${WP}/wp-content/uploads/2026/03/IMG_0668.png), url(${WP}/wp-content/uploads/2026/03/IMG_0602.png)`,
+        backgroundImage: `url(/images/IMG_0602.png)`,
         backgroundSize: 'cover',
-        backgroundPosition: `center calc(35% + ${scrollY * 0.35}px)`
+        backgroundPosition: `center calc(25% + ${scrollY * 0.35}px)`
       }} />
       {/* Overlay 1 */}
       <div style={{
@@ -38,7 +38,7 @@ export default function HeroV3() {
       {/* Overlay 3 */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(to right, rgba(17,28,51,0.30) 0%, transparent 50%)'
+        background: 'linear-gradient(to right, rgba(17,28,51,0.85) 0%, rgba(17,28,51,0.40) 40%, transparent 70%)'
       }} />
 
       {/* Content */}
