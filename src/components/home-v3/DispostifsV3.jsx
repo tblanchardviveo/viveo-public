@@ -34,40 +34,38 @@ export default function DispostifsV3() {
             {"LMNP, D\u00e9ficit Foncier, Nue-propri\u00e9t\u00e9, Monuments Historiques, Malraux, Jeanbrun, Denormandie. Selon votre TMI, vos revenus et vos objectifs, nous identifions le seul dispositif qui a du sens pour vous."}
           </p>
           <Link to="/calculateur" style={{
-            display: 'inline-block', marginTop: 32,
-            background: 'linear-gradient(135deg, #A67C52, #C4976A)',
-            borderRadius: 2, padding: '14px 32px',
-            fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 13,
-            textTransform: 'uppercase', letterSpacing: '0.08em',
-            color: '#fff', textDecoration: 'none'
-          }}>{"Simuler mon investissement \u2192"}</Link>
+            display: 'inline-block', marginTop: 32, padding: '14px 32px',
+            background: 'linear-gradient(135deg,#A67C52,#C4976A)',
+            color: '#fff', fontFamily: "'Raleway',sans-serif",
+            fontWeight: 600, fontSize: 13, letterSpacing: '0.08em',
+            textTransform: 'uppercase', textDecoration: 'none',
+            borderRadius: 2, transition: 'transform 0.2s'
+          }} onMouseEnter={e => e.target.style.transform = 'translateY(-2px)'} onMouseLeave={e => e.target.style.transform = 'none'}
+          >{"Simuler mon investissement \u2192"}</Link>
         </div>
 
-        {/* RIGHT - List */}
-        <div style={{ flex: 1, minWidth: 300 }}>
+        {/* RIGHT */}
+        <div style={{ flex: 1 }}>
           {dispositifs.map((d, i) => (
             <div key={i}
-              onMouseEnter={() => setHov(i)}
-              onMouseLeave={() => setHov(null)}
+              onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(null)}
               onClick={() => nav(d.route)}
               style={{
+                display: 'flex', alignItems: 'center', gap: 24,
                 padding: '22px 0', borderBottom: '1px solid rgba(255,255,255,0.06)',
                 cursor: 'pointer', position: 'relative', overflow: 'hidden',
-                display: 'flex', alignItems: 'center', gap: 24,
+                transition: 'all 0.3s ease',
                 transform: hov === i ? 'translateX(12px)' : 'none',
-                transition: 'transform 0.3s ease'
+                background: hov === i ? 'rgba(166,124,82,0.04)' : 'transparent'
               }}>
-              {hov === i && <div style={{ position: 'absolute', inset: 0, background: 'rgba(166,124,82,0.04)', transition: 'opacity 0.3s' }} />}
-              <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, color: 'rgba(255,255,255,0.20)', minWidth: 28 }}>{d.num}</span>
+              <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, color: 'rgba(255,255,255,0.20)', minWidth: 24 }}>{d.num}</span>
               <span style={{
                 fontFamily: "'Playfair Display',Georgia,serif", fontSize: 22, fontWeight: 400,
-                color: hov === i ? '#C4976A' : '#fff',
-                transition: 'color 0.3s', flex: 1
+                color: hov === i ? '#C4976A' : '#fff', transition: 'color 0.3s'
               }}>{d.nom}</span>
               <span style={{
-                fontFamily: "'Raleway',sans-serif", fontSize: 16,
-                color: '#C4976A',
-                opacity: hov === i ? 1 : 0,
+                position: 'absolute', right: 0, fontFamily: "'Raleway',sans-serif", fontSize: 16,
+                color: '#C4976A', opacity: hov === i ? 1 : 0,
                 transform: hov === i ? 'translateX(0)' : 'translateX(-8px)',
                 transition: 'opacity 0.3s, transform 0.3s'
               }}>{"\u2192"}</span>
