@@ -21,6 +21,7 @@ import MonumentsHistoriques from './pages/fiscal/MonumentsHistoriques'
 import LoiDenormandie from './pages/fiscal/LoiDenormandie'
 import LoiJeanbrun from './pages/fiscal/LoiJeanbrun'
 import LmnpGere from './pages/fiscal/LmnpGere'
+import Retraite from './pages/Retraite'
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
@@ -145,7 +146,7 @@ export default function App() {
                         <Route path="/monuments-historiques" element={<MonumentsHistoriques />} />
                         <Route path="/loi-denormandie" element={<LoiDenormandie />} />
                         <Route path="/loi-jeanbrun" element={<LoiJeanbrun />} />
-                      <Route path="/lmnp-gere" element={<LmnpGere />} />
+                      <Route path="/lmnp-gere" element={<LmnpGere />} />               <Route path="/retraite" element={<Retraite />} />
         </Routes>
       </main>
       <Footer />
