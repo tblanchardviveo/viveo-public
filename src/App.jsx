@@ -7,6 +7,7 @@ import Calculateur from './pages/Calculateur'
 import NewsletterPage from './pages/NewsletterPage'
 import AvisPage from './pages/AvisPage'
 import HomePage from './pages/HomePage'
+import HomePageV3 from './pages/HomePageV3'
 import SeLoger from './pages/SeLoger'
 import Investir from './pages/Investir'
 import ApprocheViveo from './pages/ApprocheViveo'
@@ -125,7 +126,7 @@ export default function App() {
       <Header />
       <main style={{ minHeight: '60vh' }}>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+                    <Route path="/" element={<HomePageV3 />} />
           <Route path="/programmes" element={<Programmes />} />
           <Route path="/programme/:slug" element={<FicheProgramme />} />
           <Route path="/parrainage" element={<Parrainage />} />
