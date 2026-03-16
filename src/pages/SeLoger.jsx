@@ -13,11 +13,19 @@ const pill = { padding: '8px 20px', borderRadius: 20, fontSize: 12, fontFamily: 
 const pillActive = { ...pill, background: 'rgba(166,124,82,0.2)', border: '1px solid rgba(166,124,82,0.5)', color: '#C4976A' }
 const card = (bg) => ({ background: bg || 'rgba(255,255,255,0.04)', borderRadius: 8, padding: 28, border: '1px solid rgba(255,255,255,0.06)' })
 const heroOverlay = 'linear-gradient(160deg,rgba(17,28,51,0.15) 0%,rgba(17,28,51,0.55) 45%,rgba(17,28,51,0.92) 75%,rgba(17,28,51,1.00) 100%)'
+const imgCard = { width: '100%', height: 200, objectFit: 'cover', borderRadius: '8px 8px 0 0' }
 
 const tabsData = [
   { id: 'premier-achat', title: 'Premier achat', subtitle: 'PTZ, dispositifs primo-accédants, accompagnement financement.', content: "Vous achetez pour la première fois ? VIVEO vous guide à chaque étape : identification du programme idéal, montage du dossier PTZ (Prêt à Taux Zéro), simulation de financement et coordination avec nos partenaires bancaires. Bénéficiez de frais de notaire réduits (2 à 3\u00a0%) et d'un accompagnement personnalisé jusqu'à la remise des clés.", points: ['Éligibilité PTZ vérifiée et optimisée', 'Frais de notaire réduits dans le neuf', 'Accompagnement financement de A à Z', 'Choix des matériaux et personnalisation'] },
   { id: 'changement-vie', title: 'Changement de vie', subtitle: 'Vente + achat simultané, bridge loan, coordination notaires.', content: "Vous changez de région, agrandissez votre famille ou souhaitez un cadre de vie différent ? VIVEO coordonne la vente de votre bien actuel et l'acquisition de votre nouveau logement neuf. Nous gérons le calendrier, le prêt-relais et la synchronisation entre notaires pour une transition fluide et sans stress.", points: ['Coordination vente / achat simultané', 'Prêt-relais et bridge loan optimisés', 'Synchronisation des notaires', 'Zéro période sans logement'] },
   { id: 'construction-neuve', title: 'Construction neuve', subtitle: 'VEFA, garanties, suivi chantier, appels de fonds, livraison.', content: "Acheter en VEFA (Vente en l'État Futur d'Achèvement), c'est bénéficier d'un logement aux dernières normes énergétiques avec des garanties solides. VIVEO vous accompagne dans le suivi du chantier, le calendrier des appels de fonds et les étapes clés jusqu'à la livraison et la levée de réserves.", points: ['Garantie décennale et parfait achèvement', 'Suivi chantier et appels de fonds', 'Normes RT2020, basse consommation', 'Personnalisation des finitions'] }
+]
+
+const destinations = [
+  { title: 'En bord de mer', desc: "Côte d'Opale, Atlantique, Méditerranée — réveillez-vous face à l'horizon.", img: `${WP}/wp-content/uploads/2026/03/IMG_0463.png` },
+  { title: 'À la montagne', desc: 'Alpes, Pyrénées, Vosges — un chalet ou un appartement au pied des sommets.', img: `${WP}/wp-content/uploads/2026/02/IMG_0462.png` },
+  { title: 'À la campagne', desc: "Provence, Périgord, Normandie — le charme d'une vie au vert, en toute sérénité.", img: `${WP}/wp-content/uploads/2026/02/IMG_0466.png` },
+  { title: 'En ville', desc: "Paris, Lyon, Bordeaux, Lille — un pied-à-terre urbain pour vos escapades.", img: `${WP}/wp-content/uploads/2026/03/IMG_0633.png` }
 ]
 
 const Sec = ({ bg, children, id }) => { const ref = useReveal(); return <section ref={ref} id={id} style={{ background: bg || '#111C33', padding: 'clamp(60px,10vw,120px) clamp(20px,5vw,80px)' }}>{children}</section> }
@@ -70,15 +78,25 @@ export default function SeLoger() {
       <Sec bg="#F7F5F1" id="residence-secondaire">
         <div ref={secSecondaireRef} style={{ marginTop: -20 }} />
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'RÉSIDENCE SECONDAIRE'}</span></div>
-        <h2 style={h2Style('#111C33')}>{"Votre pied-à-terre."}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{"Mer, montagne, campagne\u2026 ou en ville."}</em></h2>
-        <p style={pStyle('#555')}>{"Envie d'un refuge face à la mer sur la Côte d'Opale, d'un chalet au pied des pistes dans les Alpes, d'une maison de charme à la campagne ou d'un appartement vibrant en centre-ville ? VIVEO vous accompagne dans la recherche de votre résidence secondaire idéale, quel que soit le cadre de vie qui vous fait rêver."}</p>
-        <p style={{ ...pStyle('#555'), marginTop: 12 }}>{"Nous sélectionnons des programmes neufs dans les destinations les plus prisées de France : littoral atlantique et méditerranéen, stations de montagne, villages de caractère et métropoles dynamiques. Chaque projet est étudié pour allier plaisir d'usage, confort au quotidien et valorisation patrimoniale à long terme."}</p>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', marginTop: 16 }}>
+          <div>
+            <h2 style={h2Style('#111C33')}>{"Votre pied-à-terre."}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{"Mer, montagne, campagne\u2026 ou en ville."}</em></h2>
+            <p style={pStyle('#555')}>{"Envie d'un refuge face à la mer sur la Côte d'Opale, d'un chalet au pied des pistes dans les Alpes, d'une maison de charme à la campagne ou d'un appartement vibrant en centre-ville ? VIVEO vous accompagne dans la recherche de votre résidence secondaire idéale, quel que soit le cadre de vie qui vous fait rêver."}</p>
+            <p style={{ ...pStyle('#555'), marginTop: 12 }}>{"Nous sélectionnons des programmes neufs dans les destinations les plus prisées de France : littoral atlantique et méditerranéen, stations de montagne, villages de caractère et métropoles dynamiques. Chaque projet est étudié pour allier plaisir d'usage, confort au quotidien et valorisation patrimoniale à long terme."}</p>
+          </div>
+          <div style={{ borderRadius: 12, overflow: 'hidden' }}>
+            <img src={`${WP}/wp-content/uploads/2026/03/IMG_0489.png`} alt="Vue mer résidence secondaire" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 12 }} />
+          </div>
+        </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 20, marginTop: 48 }}>
-          {[['En bord de mer', 'Côte d\u2019Opale, Atlantique, Méditerranée \u2014 réveillez-vous face à l\u2019horizon.'],['À la montagne', 'Alpes, Pyrénées, Vosges \u2014 un chalet ou un appartement au pied des sommets.'],['À la campagne', 'Provence, Périgord, Normandie \u2014 le charme d\u2019une vie au vert, en toute sérénité.'],['En ville', 'Paris, Lyon, Bordeaux, Lille \u2014 un pied-à-terre urbain pour vos escapades.']].map(([t,d],i) => (
-            <div key={i} style={{ background: '#fff', borderRadius: 8, padding: 28, border: '1px solid rgba(0,0,0,0.08)' }}>
-              <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{t}</h3>
-              <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 20, marginTop: 48 }}>
+          {destinations.map((d, i) => (
+            <div key={i} style={{ background: '#fff', borderRadius: 8, border: '1px solid rgba(0,0,0,0.08)', overflow: 'hidden' }}>
+              <img src={d.img} alt={d.title} style={imgCard} />
+              <div style={{ padding: 20 }}>
+                <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{d.title}</h3>
+                <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d.desc}</p>
+              </div>
             </div>
           ))}
         </div>
