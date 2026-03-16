@@ -28,14 +28,14 @@ export default function Investir() {
         <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{'Construire un patrimoine \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'intelligemment.'}</em></h1>
         <p style={pStyle()}>{'LMNP, Nue-propri\u00e9t\u00e9, D\u00e9ficit foncier \u2014 nous structurons chaque investissement pour maximiser rendement et avantage fiscal, en toute s\u00e9r\u00e9nit\u00e9.'}</p>
         <div style={{ display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap' }}>
-          <Link to="/investir/lmnp" style={pill}>LMNP</Link>
-          <Link to="/investir/nue-propriete" style={pill}>{'Nue-propri\u00e9t\u00e9'}</Link>
-          <Link to="/investir/deficit-foncier" style={pill}>{'D\u00e9ficit foncier'}</Link>
-                      <Link to="/investir/lmnp-gere" style={pill}>LMNP Géré</Link>
-            <Link to="/investir/jeanbrun" style={pill}>Jeanbrun</Link>
-            <Link to="/investir/malraux" style={pill}>Malraux</Link>
-            <Link to="/investir/monument-historique" style={pill}>Monument historique</Link>
-            <Link to="/investir/denormandie" style={pill}>Denormandie</Link>
+          <Link to="/lmnp" style={pill}>LMNP</Link>
+          <Link to="/nue-propriete" style={pill}>{'Nue-propri\u00e9t\u00e9'}</Link>
+          <Link to="/deficit-foncier" style={pill}>{'D\u00e9ficit foncier'}</Link>
+                      <Link to="/lmnp" style={pill}>LMNP Géré</Link>
+            <Link to="/loi-jeanbrun" style={pill}>Jeanbrun</Link>
+            <Link to="/loi-malraux" style={pill}>Malraux</Link>
+            <Link to="/monuments-historiques" style={pill}>Monument historique</Link>
+            <Link to="/loi-denormandie" style={pill}>Denormandie</Link>
         </div>
               </div>
                       </section>
