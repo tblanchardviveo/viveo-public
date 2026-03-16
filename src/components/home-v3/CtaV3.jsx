@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
 export default function CtaV3() {
@@ -18,6 +16,7 @@ export default function CtaV3() {
       <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 200, fontSize: 20, color: '#888', marginTop: 32 }}>
         45 minutes. En visio. Gratuit.
       </p>
+
       <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 200, fontSize: 13, color: '#bbb', marginTop: 8, marginBottom: 56 }}>
         {"Teams ou FaceTime \u00b7 R\u00e9ponse sous 24h \u00b7 Sans engagement"}
       </p>
@@ -30,21 +29,10 @@ export default function CtaV3() {
         textTransform: 'uppercase', letterSpacing: '0.08em',
         color: '#fff', textDecoration: 'none',
         boxShadow: '0 8px 40px rgba(166,124,82,0.22)',
-        transition: 'transform 0.3s, box-shadow 0.3s'
-      }}
-        onMouseEnter={e => { e.target.style.transform = 'translateY(-3px)'; e.target.style.boxShadow = '0 16px 60px rgba(166,124,82,0.32)' }}
-        onMouseLeave={e => { e.target.style.transform = 'none'; e.target.style.boxShadow = '0 8px 40px rgba(166,124,82,0.22)' }}
-      >{"Demander mon RDV D\u00e9couverte"}</a>
-
-      <div style={{ marginTop: 24 }}>
-        <Link to="/programmes" style={{
-          fontFamily: "'Raleway',sans-serif", fontWeight: 400, fontSize: 14,
-          color: '#999', textDecoration: 'none', transition: 'color 0.2s'
-        }}
-          onMouseEnter={e => e.target.style.color = '#A67C52'}
-          onMouseLeave={e => e.target.style.color = '#999'}
-        >{"ou parcourir nos programmes \u2192"}</Link>
-      </div>
+        transition: 'transform 0.2s'
+      }}>
+        R\u00e9server mon appel d\u00e9couverte
+      </a>
     </section>
   )
 }
