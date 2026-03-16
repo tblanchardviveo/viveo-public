@@ -12,7 +12,6 @@ const cta = { display: 'inline-block', background: 'linear-gradient(135deg,#A67C
 const pill = { padding: '8px 20px', borderRadius: 20, fontSize: 12, fontFamily: "'Raleway',sans-serif", fontWeight: 500, letterSpacing: '0.06em', color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.15)', textDecoration: 'none', textTransform: 'uppercase', cursor: 'pointer' }
 const pillActive = { ...pill, background: 'rgba(166,124,82,0.2)', border: '1px solid rgba(166,124,82,0.5)', color: '#C4976A' }
 const card = (bg) => ({ background: bg || 'rgba(255,255,255,0.04)', borderRadius: 8, padding: 28, border: '1px solid rgba(255,255,255,0.06)' })
-const cardLight = (bg) => ({ background: bg || '#fff', borderRadius: 8, padding: 28, border: '1px solid rgba(0,0,0,0.08)' })
 const heroOverlay = 'linear-gradient(160deg,rgba(17,28,51,0.15) 0%,rgba(17,28,51,0.55) 45%,rgba(17,28,51,0.92) 75%,rgba(17,28,51,1.00) 100%)'
 
 const tabsData = [
@@ -21,17 +20,10 @@ const tabsData = [
   { id: 'construction-neuve', title: 'Construction neuve', subtitle: 'VEFA, garanties, suivi chantier, appels de fonds, livraison.', content: "Acheter en VEFA (Vente en l'État Futur d'Achèvement), c'est bénéficier d'un logement aux dernières normes énergétiques avec des garanties solides. VIVEO vous accompagne dans le suivi du chantier, le calendrier des appels de fonds et les étapes clés jusqu'à la livraison et la levée de réserves.", points: ['Garantie décennale et parfait achèvement', 'Suivi chantier et appels de fonds', 'Normes RT2020, basse consommation', 'Personnalisation des finitions'] }
 ]
 
-const tabsSecondaire = [
-  { id: 'pied-a-terre', title: 'Pied-à-terre', subtitle: "Côte d'Opale, Méditerranée, Alpes — investissement plaisir.", content: "Vous rêvez d'un pied-à-terre sur la Côte d'Opale, en Méditerranée ou dans les Alpes ? VIVEO identifie les programmes qui allient plaisir d'usage et valorisation patrimoniale. À 2h de Bruxelles, 1h30 de Londres via l'Eurotunnel.", points: ['Programmes en zones touristiques premium', 'Dispositifs fiscaux adaptés (LMNP, Nue-propriété)', 'Accompagnement financement et gestion locative', 'Valorisation patrimoniale à long terme'] },
-  { id: 'investissement-locatif', title: 'Investissement locatif', subtitle: 'Rendement, fiscalité, gestion locative clé en main.', content: "Investir dans une résidence secondaire à vocation locative, c'est allier rendement et plaisir. VIVEO vous accompagne dans le choix du programme, l'optimisation fiscale et la mise en place d'une gestion locative professionnelle.", points: ['Sélection de programmes à fort potentiel locatif', 'Optimisation fiscale personnalisée', 'Gestion locative clé en main', 'Rendement net optimisé'] },
-  { id: 'resid-services', title: 'Résidences services', subtitle: 'Tourisme, seniors, étudiants — bail commercial sécurisé.', content: "Les résidences services (tourisme, seniors, étudiants) offrent un cadre d'investissement sécurisé avec bail commercial. VIVEO sélectionne les meilleurs exploitants et emplacements pour vous garantir des revenus réguliers.", points: ['Bail commercial avec exploitant professionnel', 'Revenus locatifs garantis', 'Récupération de TVA possible', 'Aucune gestion locative à assurer'] }
-]
-
 const Sec = ({ bg, children, id }) => { const ref = useReveal(); return <section ref={ref} id={id} style={{ background: bg || '#111C33', padding: 'clamp(60px,10vw,120px) clamp(20px,5vw,80px)' }}>{children}</section> }
 
 export default function SeLoger() {
   const [activeTab, setActiveTab] = useState(0)
-  const [activeTabSec, setActiveTabSec] = useState(0)
   const secPrincipaleRef = useRef(null)
   const secSecondaireRef = useRef(null)
   const scrollTo = (ref) => { if (ref.current) ref.current.scrollIntoView({ behavior: 'smooth' }) }
@@ -74,24 +66,31 @@ export default function SeLoger() {
         </div>
       </Sec>
 
-      {/* Section Résidence Secondaire */}
+      {/* Section Résidence Secondaire — Pied-à-terre */}
       <Sec bg="#F7F5F1" id="residence-secondaire">
         <div ref={secSecondaireRef} style={{ marginTop: -20 }} />
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'RÉSIDENCE SECONDAIRE'}</span></div>
-        <h2 style={h2Style('#111C33')}>{"Un pied-à-terre."}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>Un investissement.</em></h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, marginTop: 48 }}>
-          {tabsSecondaire.map((tab, i) => (
-            <div key={tab.id} onClick={() => setActiveTabSec(i)} style={{ ...cardLight(activeTabSec === i ? 'rgba(166,124,82,0.08)' : undefined), border: activeTabSec === i ? '1px solid rgba(166,124,82,0.3)' : '1px solid rgba(0,0,0,0.08)', cursor: 'pointer', transition: 'all 0.3s ease' }}>
-              <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: activeTabSec === i ? '#A67C52' : '#111C33', marginBottom: 12, transition: 'color 0.3s ease' }}>{tab.title}</h3>
-              <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{tab.subtitle}</p>
+        <h2 style={h2Style('#111C33')}>{"Votre pied-à-terre."}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{"Mer, montagne, campagne\u2026 ou en ville."}</em></h2>
+        <p style={pStyle('#555')}>{"Envie d'un refuge face à la mer sur la Côte d'Opale, d'un chalet au pied des pistes dans les Alpes, d'une maison de charme à la campagne ou d'un appartement vibrant en centre-ville ? VIVEO vous accompagne dans la recherche de votre résidence secondaire idéale, quel que soit le cadre de vie qui vous fait rêver."}</p>
+        <p style={{ ...pStyle('#555'), marginTop: 12 }}>{"Nous sélectionnons des programmes neufs dans les destinations les plus prisées de France : littoral atlantique et méditerranéen, stations de montagne, villages de caractère et métropoles dynamiques. Chaque projet est étudié pour allier plaisir d'usage, confort au quotidien et valorisation patrimoniale à long terme."}</p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 20, marginTop: 48 }}>
+          {[['En bord de mer', 'Côte d\u2019Opale, Atlantique, Méditerranée \u2014 réveillez-vous face à l\u2019horizon.'],['À la montagne', 'Alpes, Pyrénées, Vosges \u2014 un chalet ou un appartement au pied des sommets.'],['À la campagne', 'Provence, Périgord, Normandie \u2014 le charme d\u2019une vie au vert, en toute sérénité.'],['En ville', 'Paris, Lyon, Bordeaux, Lille \u2014 un pied-à-terre urbain pour vos escapades.']].map(([t,d],i) => (
+            <div key={i} style={{ background: '#fff', borderRadius: 8, padding: 28, border: '1px solid rgba(0,0,0,0.08)' }}>
+              <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{t}</h3>
+              <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p>
             </div>
           ))}
         </div>
+
         <div style={{ marginTop: 40, padding: 36, background: '#fff', borderRadius: 12, border: '1px solid rgba(166,124,82,0.15)' }}>
-          <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(22px,3vw,28px)', color: '#A67C52', marginBottom: 16 }}>{tabsSecondaire[activeTabSec].title}</h3>
-          <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 15, color: '#555', lineHeight: 1.8, maxWidth: 700 }}>{tabsSecondaire[activeTabSec].content}</p>
-          <div style={{ marginTop: 24 }}>{tabsSecondaire[activeTabSec].points.map((pt, i) => (<p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>{'\u2713'} {pt}</p>))}</div>
-          <Link to="/programmes" style={cta}>{'Voir les programmes \u2192'}</Link>
+          <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(22px,3vw,28px)', color: '#A67C52', marginBottom: 16 }}>{"Pourquoi acheter dans le neuf pour votre résidence secondaire ?"}</h3>
+          <div style={{ marginTop: 16 }}>
+            {['Frais de notaire réduits (2 à 3\u00a0% vs 7-8\u00a0% dans l\u2019ancien)', 'Garanties constructeur : décennale, parfait achèvement, biennale', 'Performances énergétiques aux dernières normes (RE2020)', 'Personnalisation des finitions et des matériaux avant livraison', 'Aucun travaux à prévoir pendant des années', 'Possibilité de louer en saisonnier pour amortir votre investissement'].map((pt, i) => (
+              <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>{'\u2713'} {pt}</p>
+            ))}
+          </div>
+          <Link to="/programmes" style={cta}>{'Découvrir nos programmes \u2192'}</Link>
         </div>
       </Sec>
 
