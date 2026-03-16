@@ -25,7 +25,7 @@ const destinations = [
   { title: 'En bord de mer', desc: "Côte d'Opale, Atlantique, Méditerranée — réveillez-vous face à l'horizon.", img: `${WP}/wp-content/uploads/2026/03/IMG_0463.png` },
   { title: 'À la montagne', desc: 'Alpes, Pyrénées, Vosges — un chalet ou un appartement au pied des sommets.', img: `${WP}/wp-content/uploads/2026/02/IMG_0462.png` },
   { title: 'À la campagne', desc: "Provence, Périgord, Normandie — le charme d'une vie au vert, en toute sérénité.", img: `${WP}/wp-content/uploads/2026/02/IMG_0466.png` },
-  { title: 'En ville', desc: "Paris, Lyon, Bordeaux, Lille — un pied-à-terre urbain pour vos escapades.", img: `${WP}/wp-content/uploads/2026/03/IMG_0633.png` }
+  { title: 'En ville', desc: "Paris, Lyon, Bordeaux, Lille — un pied-à-terre urbain pour vos escapades.", img: `${WP}/wp-content/uploads/2026/03/IMG_0505.png` }
 ]
 
 const Sec = ({ bg, children, id }) => { const ref = useReveal(); return <section ref={ref} id={id} style={{ background: bg || '#111C33', padding: 'clamp(60px,10vw,120px) clamp(20px,5vw,80px)' }}>{children}</section> }
