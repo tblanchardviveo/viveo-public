@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 
-const lines = [
-  'Nous avons pass\u00e9 27\u00a0ans',
-  '\u00e0 construire vos programmes.',
-  "Aujourd'hui, nous construisons",
-  null // italic bronze line
+const allLines = [
+  { text: 'Nous avons pass\u00e9 27\u00a0ans', italic: false },
+  { text: '\u00e0 construire vos programmes.', italic: false },
+  { text: "Aujourd'hui, nous construisons", italic: false },
+  { text: 'votre patrimoine.', italic: true }
 ]
 
 export default function ManifestoV3() {
@@ -16,13 +16,6 @@ export default function ManifestoV3() {
     if (ref.current) obs.observe(ref.current)
     return () => obs.disconnect()
   }, [])
-
-  const allLines = [
-    { text: 'Nous avons pass\u00e9 27\u00a0ans', italic: false },
-    { text: '\u00e0 construire vos programmes.', italic: false },
-    { text: "Aujourd'hui, nous construisons", italic: false },
-    { text: 'votre patrimoine.', italic: true }
-  ]
 
   return (
     <section ref={ref} data-bg="#F7F5F1" style={{
@@ -36,30 +29,30 @@ export default function ManifestoV3() {
         background: 'linear-gradient(to bottom, transparent, #A67C52, transparent)'
       }} />
 
-      <div style={{ maxWidth: 820, marginLeft: '6vw' }}>
+      <div style={{ maxWidth: 820, marginLeft: 48 }}>
+        {/* Text lines */}
         {allLines.map((line, i) => (
           <div key={i} style={{ overflow: 'hidden' }}>
-            {line.italic ? (
-              <em style={{
-                fontFamily: "'Playfair Display',Georgia,serif",
-                fontSize: 'clamp(28px, 4.5vw, 62px)',
-                fontWeight: 300, fontStyle: 'italic',
-                lineHeight: 1.15, letterSpacing: '-0.02em',
-                color: '#A67C52', display: 'block',
-                transform: visible ? 'translateY(0)' : 'translateY(100%)',
-                transition: `transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94) ${0.12 * i}s`
-              }}>{line.text}</em>
-            ) : (
-              <span style={{
-                fontFamily: "'Playfair Display',Georgia,serif",
-                fontSize: 'clamp(28px, 4.5vw, 62px)',
-                fontWeight: 300, lineHeight: 1.15,
-                letterSpacing: '-0.02em', color: '#111C33',
-                display: 'block',
-                transform: visible ? 'translateY(0)' : 'translateY(100%)',
-                transition: `transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94) ${0.12 * i}s`
-              }}>{line.text}</span>
-            )}
+            <div style={{
+              transform: visible ? 'translateY(0)' : 'translateY(100%)',
+              transition: `transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94) ${i * 0.12}s`
+            }}>
+              {line.italic ? (
+                <em style={{
+                  fontFamily: "'Playfair Display',Georgia,serif",
+                  fontSize: 'clamp(28px, 4.5vw, 62px)', fontWeight: 300,
+                  lineHeight: 1.15, letterSpacing: '-0.02em',
+                  color: '#A67C52', fontStyle: 'italic', display: 'block'
+                }}>{line.text}</em>
+              ) : (
+                <span style={{
+                  fontFamily: "'Playfair Display',Georgia,serif",
+                  fontSize: 'clamp(28px, 4.5vw, 62px)', fontWeight: 300,
+                  lineHeight: 1.15, letterSpacing: '-0.02em',
+                  color: '#111C33', display: 'block'
+                }}>{line.text}</span>
+              )}
+            </div>
           </div>
         ))}
 
@@ -68,7 +61,7 @@ export default function ManifestoV3() {
           fontFamily: "'Raleway',sans-serif", fontWeight: 200, fontSize: 13,
           color: 'rgba(166,124,82,0.50)', letterSpacing: '0.15em',
           marginTop: 48, textAlign: 'right',
-          opacity: visible ? 1 : 0, transition: 'opacity 1s ease 0.7s'
+          opacity: visible ? 1 : 0, transition: 'opacity 0.8s ease 0.6s'
         }}>{"\u2014 L'\u00e9quipe VIVEO Patrimoine"}</p>
       </div>
     </section>
