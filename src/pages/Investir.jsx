@@ -28,9 +28,9 @@ export default function Investir() {
         <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{'Construire un patrimoine \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'intelligemment.'}</em></h1>
         <p style={pStyle()}>{'LMNP, Nue-propri\u00e9t\u00e9, D\u00e9ficit foncier \u2014 nous structurons chaque investissement pour maximiser rendement et avantage fiscal, en toute s\u00e9r\u00e9nit\u00e9.'}</p>
         <div style={{ display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap' }}>
-          <span style={pill}>LMNP</span>
-          <span style={pill}>{'Nue-propri\u00e9t\u00e9'}</span>
-          <span style={pill}>{'D\u00e9ficit foncier'}</span>
+          <Link to="/investir/lmnp" style={pill}>LMNP</Link>
+          <Link to="/investir/nue-propriete" style={pill}>{'Nue-propri\u00e9t\u00e9'}</Link>
+          <Link to="/investir/deficit-foncier" style={pill}>{'D\u00e9ficit foncier'}</Link>
         </div>
               </div>
                       </section>
