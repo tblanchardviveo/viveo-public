@@ -31,7 +31,7 @@ export default function CtaV3() {
         boxShadow: '0 8px 40px rgba(166,124,82,0.22)',
         transition: 'transform 0.2s'
       }}>
-        R\u00e9server mon appel d\u00e9couverte
+        {"R\u00e9server mon appel d\u00e9couverte"}
       </a>
     </section>
   )
