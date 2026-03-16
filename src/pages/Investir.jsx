@@ -31,6 +31,11 @@ export default function Investir() {
           <Link to="/investir/lmnp" style={pill}>LMNP</Link>
           <Link to="/investir/nue-propriete" style={pill}>{'Nue-propri\u00e9t\u00e9'}</Link>
           <Link to="/investir/deficit-foncier" style={pill}>{'D\u00e9ficit foncier'}</Link>
+                      <Link to="/investir/lmnp-gere" style={pill}>LMNP Géré</Link>
+            <Link to="/investir/jeanbrun" style={pill}>Jeanbrun</Link>
+            <Link to="/investir/malraux" style={pill}>Malraux</Link>
+            <Link to="/investir/monument-historique" style={pill}>Monument historique</Link>
+            <Link to="/investir/denormandie" style={pill}>Denormandie</Link>
         </div>
               </div>
                       </section>
