@@ -10,12 +10,12 @@ export default function ProcessusV3() {
     <section data-bg="#111C33" style={{ background: '#111C33', padding: '15vh 6vw' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
         <span style={{ width: 32, height: 1, background: '#A67C52' }} />
-        <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.28em', color: '#A67C52' }}>NOTRE M\u00c9THODE</span>
+        <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.28em', color: '#A67C52' }}>{"NOTRE M\u00c9THODE"}</span>
       </div>
 
       <h2 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 300, fontSize: 'clamp(32px,4.5vw,58px)', color: '#fff', lineHeight: 1.1, margin: '0 0 64px' }}>
         Un parcours simple.<br />
-        <em style={{ color: '#C4976A', fontStyle: 'italic' }}>Un r\u00e9sultat sur mesure.</em>
+        <em style={{ color: '#C4976A', fontStyle: 'italic' }}>{"Un r\u00e9sultat sur mesure."}</em>
       </h2>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 2 }}>
