@@ -9,7 +9,7 @@ import CtaEtudes from '../components/etudes/CtaEtudes'
 export default function EtudesEnfants() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Financer les \u00e9tudes de vos enfants | VIVEO Patrimoine'
+    document.title = 'Financer les études de vos enfants | VIVEO Patrimoine'
   }, [])
 
   return (
