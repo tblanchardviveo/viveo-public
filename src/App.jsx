@@ -103,7 +103,7 @@ function Footer() {
           <Link to="/se-loger" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Se Loger</Link>
           <Link to="/financement" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Financement</Link>
           <Link to="/international" style={fl} onMouseEnter={ho} onMouseLeave={hl}>International</Link>
-          <Link to="/approche" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Notre Approche</Link><Link to="/parrainage" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Parrainage</Link><Link to="/calculateur" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Simulateur</Link>
+          <Link to="/approche" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Notre Approche</Link><Link to="/parrainage" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Parrainage</Link><Link to="/calculateur" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Simulateur</Link><Link to="/retraite" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Pr\u00e9parer ma retraite"}</Link><Link to="/retraite" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Pr\u00e9parer ma retraite"}</Link><Link to="/retraite" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Pr\u00e9parer ma retraite"}</Link>
         </div>
       </div>
       <div style={{ maxWidth: 1100, margin: '0 auto', marginTop: 48, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
