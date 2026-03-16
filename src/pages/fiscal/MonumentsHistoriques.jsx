@@ -20,7 +20,7 @@ export default function MonumentsHistoriques() {
   return (
     <>
       {/* Hero */}
-      <section style={{ background: '#111C33', padding: '120px 6vw 80px' }}>
+      <section style={{ background: `linear-gradient(160deg,rgba(17,28,51,0.55) 0%,rgba(17,28,51,0.75) 45%,rgba(17,28,51,0.92) 75%,rgba(17,28,51,1) 100%), url(${WP}/wp-content/uploads/2026/03/IMG_0490.png) center/cover`, padding: '120px 6vw 80px' }}>
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>MONUMENTS HISTORIQUES</span></div>
         <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>
           {'Restaurer l’exception —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'déduire sans plafond.'}</em>
