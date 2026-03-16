@@ -28,6 +28,13 @@ const destinations = [
   { title: 'En ville', desc: "Paris, Lyon, Bordeaux, Lille — un pied-à-terre urbain pour vos escapades.", img: `${WP}/wp-content/uploads/2026/03/IMG_0505.png` }
 ]
 
+const neufCards = [
+  { title: 'Garanties', desc: 'Décennale + parfait achèvement', img: `${WP}/wp-content/uploads/2026/03/IMG_0644.png` },
+  { title: 'Frais réduits', desc: 'Frais de notaire 2-3% vs 7-8%', img: `${WP}/wp-content/uploads/2026/03/IMG_0645.png` },
+  { title: 'Performance', desc: 'RT2020, basse consommation', img: `${WP}/wp-content/uploads/2026/03/IMG_0646.png` },
+  { title: 'Personnalisation', desc: 'Choix des matériaux avant construction', img: `${WP}/wp-content/uploads/2026/03/IMG_0647.png` }
+]
+
 const Sec = ({ bg, children, id }) => { const ref = useReveal(); return <section ref={ref} id={id} style={{ background: bg || '#111C33', padding: 'clamp(60px,10vw,120px) clamp(20px,5vw,80px)' }}>{children}</section> }
 
 export default function SeLoger() {
@@ -53,7 +60,7 @@ export default function SeLoger() {
         </div>
       </section>
 
-      {/* Section Résidence Principale */}
+      {/* Résidence Principale */}
       <Sec bg="#1A2744" id="residence-principale">
         <div ref={secPrincipaleRef} style={{ marginTop: -20 }} />
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'RÉSIDENCE PRINCIPALE'}</span></div>
@@ -74,7 +81,7 @@ export default function SeLoger() {
         </div>
       </Sec>
 
-      {/* Section Résidence Secondaire — Pied-à-terre */}
+      {/* Résidence Secondaire */}
       <Sec bg="#F7F5F1" id="residence-secondaire">
         <div ref={secSecondaireRef} style={{ marginTop: -20 }} />
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'RÉSIDENCE SECONDAIRE'}</span></div>
@@ -88,7 +95,6 @@ export default function SeLoger() {
             <img src={`${WP}/wp-content/uploads/2026/03/IMG_0489.png`} alt="Vue mer résidence secondaire" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 12 }} />
           </div>
         </div>
-
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 20, marginTop: 48 }}>
           {destinations.map((d, i) => (
             <div key={i} style={{ background: '#fff', borderRadius: 8, border: '1px solid rgba(0,0,0,0.08)', overflow: 'hidden' }}>
@@ -100,7 +106,6 @@ export default function SeLoger() {
             </div>
           ))}
         </div>
-
         <div style={{ marginTop: 40, padding: 36, background: '#fff', borderRadius: 12, border: '1px solid rgba(166,124,82,0.15)' }}>
           <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(22px,3vw,28px)', color: '#A67C52', marginBottom: 16 }}>{"Pourquoi acheter dans le neuf pour votre résidence secondaire ?"}</h3>
           <div style={{ marginTop: 16 }}>
@@ -115,8 +120,16 @@ export default function SeLoger() {
       {/* Pourquoi le neuf */}
       <Sec bg="#111C33">
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'POURQUOI LE NEUF ?'}</span></div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 20, marginTop: 32 }}>
-          {[['Garanties','Décennale + parfait achèvement'],['Frais réduits','Frais de notaire 2-3% vs 7-8%'],['Performance','RT2020, basse consommation'],['Personnalisation','Choix des matériaux avant construction']].map(([t,d],i) => <div key={i} style={{ background: '#F7F5F1', borderRadius: 8, padding: 28 }}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{t}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p></div>)}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 20, marginTop: 32 }}>
+          {neufCards.map((c, i) => (
+            <div key={i} style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <img src={c.img} alt={c.title} style={imgCard} />
+              <div style={{ background: '#F7F5F1', padding: 24 }}>
+                <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{c.title}</h3>
+                <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{c.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </Sec>
 
