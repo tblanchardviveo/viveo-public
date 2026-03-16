@@ -20,7 +20,7 @@ export default function LoiMalraux() {
   return (
     <>
       {/* Hero */}
-      <section style={{ background: '#111C33', padding: '120px 6vw 80px' }}>
+      <section style={{ background: `linear-gradient(160deg,rgba(17,28,51,0.55) 0%,rgba(17,28,51,0.75) 45%,rgba(17,28,51,0.92) 75%,rgba(17,28,51,1) 100%), url(${WP}/wp-content/uploads/2026/03/IMG_0633.png) center/cover`, padding: '120px 6vw 80px' }}>
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>LOI MALRAUX</span></div>
         <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>
           {'Rénover l’exception —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'réduire jusqu’à 30 %.'}</em>
