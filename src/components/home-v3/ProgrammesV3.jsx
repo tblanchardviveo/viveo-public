@@ -73,7 +73,7 @@ export default function ProgrammesV3() {
             </div>
           )) : (
             <div style={{ background: '#111C33', borderRadius: 3, padding: '80px 40px', textAlign: 'center' }}>
-              <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontStyle: 'italic', fontSize: 20, color: 'rgba(255,255,255,0.30)' }}>Nouveau programme bient\u00f4t disponible</p>
+              <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontStyle: 'italic', fontSize: 20, color: 'rgba(255,255,255,0.30)' }}>{"Nouveau programme bient\u00f4t disponible"}</p>
             </div>
           )}
         </div>
