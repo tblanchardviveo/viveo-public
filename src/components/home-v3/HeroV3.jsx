@@ -14,37 +14,38 @@ export default function HeroV3() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const pills = ['✓ Ind\u00e9pendant', '✓ 27 ans promoteur', '✓ A\u2192Z']
+  const pills = ['\u2713 Ind\u00e9pendant', '\u2713 27 ans promoteur', '\u2713 A\u2192Z']
 
   return (
     <section style={{ height: '100vh', overflow: 'hidden', position: 'relative' }}>
       {/* Background parallax */}
       <div style={{
         position: 'absolute', inset: 0,
-        backgroundImage: `url(${WP}/wp-content/uploads/2026/03/IMG_0668.png), url(${WP}/wp-content/uploads/2026/03/IMG_0602.png)`,
+        backgroundImage: "url('/images/IMG_0602.png')",
         backgroundSize: 'cover',
-        backgroundPosition: `center calc(35% + ${scrollY * 0.35}px)`
+        backgroundPosition: `center calc(25% + ${scrollY * 0.35}px)`
       }} />
       {/* Overlay 1 */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(170deg, rgba(17,28,51,0.05) 0%, rgba(17,28,51,0.20) 25%, rgba(17,28,51,0.70) 55%, rgba(17,28,51,0.97) 80%, rgba(17,28,51,1.00) 100%)'
+        background: 'linear-gradient(170deg, rgba(17,28,51,0.0) 0%, rgba(17,28,51,0.15) 20%, rgba(17,28,51,0.65) 55%, rgba(17,28,51,0.95) 80%, rgba(17,28,51,1.00) 100%)'
       }} />
       {/* Overlay 2 */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse 60% 40% at 75% 25%, rgba(166,124,82,0.08) 0%, transparent 65%)'
+        background: 'linear-gradient(to right, rgba(17,28,51,0.85) 0%, rgba(17,28,51,0.40) 40%, transparent 70%)'
       }} />
       {/* Overlay 3 */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(to right, rgba(17,28,51,0.30) 0%, transparent 50%)'
+        background: 'radial-gradient(ellipse 50% 60% at 80% 30%, rgba(166,124,82,0.12) 0%, transparent 60%)'
       }} />
 
       {/* Content */}
       <div style={{
         position: 'absolute', bottom: 0, left: 0, right: 0,
-        padding: '0 6vw 10vh', zIndex: 2
+        padding: '0 6vw 10vh',
+        zIndex: 2
       }}>
         {/* Eyebrow */}
         <div style={{
@@ -61,36 +62,27 @@ export default function HeroV3() {
 
         {/* H1 */}
         <h1 style={{
-          margin: 0,
-          fontSize: 'clamp(56px, 10vw, 120px)',
-          lineHeight: 0.90,
-          letterSpacing: '-0.025em',
-          opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(24px)',
-          transition: 'opacity 0.9s ease 0.2s, transform 0.9s ease 0.2s'
+          fontFamily: "'Playfair Display',Georgia,serif",
+          fontSize: 'clamp(36px,5.5vw,72px)', fontWeight: 300, lineHeight: 1.1,
+          color: '#fff', letterSpacing: '-0.02em', margin: 0,
+          opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(20px)',
+          transition: 'opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s'
         }}>
-          <span style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 300, color: '#fff', display: 'block' }}>
-            {"L'immobilier,"}
-          </span>
-          <em style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 400, fontStyle: 'italic', color: '#C4976A', display: 'block' }}>
-            {"l'esprit libre."}
-          </em>
+          {"L'immobilier,"}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{"l'esprit libre."}</em>
         </h1>
 
         {/* Separator */}
         <div style={{
-          width: loaded ? 48 : 0, height: 1, background: '#A67C52',
-          marginTop: 28, marginBottom: 24,
-          transition: 'width 0.8s ease 0.5s'
+          width: 48, height: 2, background: '#A67C52', margin: '28px 0',
+          opacity: loaded ? 1 : 0, transition: 'opacity 0.8s ease 0.4s'
         }} />
 
         {/* Subtitle */}
         <p style={{
-          fontFamily: "'Raleway',sans-serif", fontWeight: 200,
-          fontSize: 'clamp(16px,2vw,22px)',
-          color: 'rgba(255,255,255,0.55)', maxWidth: 560, lineHeight: 1.65,
-          margin: 0,
-          opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(20px)',
-          transition: 'opacity 0.9s ease 0.5s, transform 0.9s ease 0.5s'
+          fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 'clamp(14px,1.2vw,17px)',
+          lineHeight: 1.7, color: 'rgba(255,255,255,0.70)', maxWidth: 520, margin: '0 0 28px',
+          opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(12px)',
+          transition: 'opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s'
         }}>
           {"27 ans d'exp\u00e9rience c\u00f4t\u00e9 promoteur."}<br />
           {"Un conseil ind\u00e9pendant, sans exclusivit\u00e9,"}<br />
@@ -99,76 +91,65 @@ export default function HeroV3() {
 
         {/* Pills */}
         <div style={{
-          display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap',
-          opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(16px)',
-          transition: 'opacity 0.8s ease 0.65s, transform 0.8s ease 0.65s'
+          display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 32,
+          opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(10px)',
+          transition: 'opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s'
         }}>
           {pills.map((p, i) => (
             <span key={i} style={{
-              background: 'rgba(255,255,255,0.06)',
-              border: '1px solid rgba(166,124,82,0.25)',
-              borderRadius: 2, padding: '10px 18px',
-              fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11,
-              color: '#fff', textTransform: 'uppercase', letterSpacing: '0.10em',
-              transition: `opacity 0.6s ease ${0.65 + i * 0.08}s`
+              padding: '6px 16px', borderRadius: 20, fontSize: 12,
+              fontFamily: "'Raleway',sans-serif", fontWeight: 500,
+              letterSpacing: '0.06em', textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.6)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              background: 'rgba(255,255,255,0.04)'
             }}>{p}</span>
           ))}
         </div>
 
         {/* CTAs */}
         <div style={{
-          display: 'flex', gap: 40, alignItems: 'center', marginTop: 44,
-          opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(16px)',
-          transition: 'opacity 0.8s ease 0.75s, transform 0.8s ease 0.75s'
+          display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap',
+          opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(10px)',
+          transition: 'opacity 0.8s ease 0.7s, transform 0.8s ease 0.7s'
         }}>
           <Link to="/programmes" style={{
-            background: 'linear-gradient(135deg, #A67C52, #C4976A)',
-            borderRadius: 2, padding: '16px 36px',
-            fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 13,
-            textTransform: 'uppercase', letterSpacing: '0.08em',
-            color: '#fff', textDecoration: 'none',
-            transition: 'transform 0.3s, filter 0.3s'
+            display: 'inline-block',
+            padding: '14px 32px',
+            background: 'linear-gradient(135deg,#A67C52,#C4976A)',
+            color: '#fff', fontFamily: "'Raleway',sans-serif",
+            fontWeight: 600, fontSize: 13, letterSpacing: '0.06em',
+            textTransform: 'uppercase', textDecoration: 'none',
+            borderRadius: 2, transition: 'transform 0.2s, filter 0.2s'
           }}
-            onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.filter = 'brightness(1.08)' }}
-            onMouseLeave={e => { e.target.style.transform = 'none'; e.target.style.filter = 'none' }}
+          onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.filter = 'brightness(1.08)' }}
+          onMouseLeave={e => { e.target.style.transform = 'none'; e.target.style.filter = 'none' }}
           >{"D\u00e9couvrir nos programmes"}</Link>
-          <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
-            fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 13,
-            textTransform: 'uppercase', letterSpacing: '0.08em',
-            color: 'rgba(255,255,255,0.60)', textDecoration: 'none',
-            transition: 'color 0.2s'
+          <a href={`${WP}/rdv-decouverte/`} style={{
+            color: 'rgba(255,255,255,0.60)', fontFamily: "'Raleway',sans-serif",
+            fontWeight: 500, fontSize: 13, letterSpacing: '0.04em',
+            textDecoration: 'none', transition: 'color 0.2s'
           }}
-            onMouseEnter={e => e.target.style.color = '#C4976A'}
-            onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.60)'}
+          onMouseEnter={e => e.target.style.color = '#C4976A'}
+          onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.60)'}
           >{"RDV D\u00e9couverte \u2192"}</a>
         </div>
       </div>
 
       {/* Scroll indicator */}
       <div style={{
-        position: 'absolute', bottom: 32, right: '6vw', zIndex: 2,
+        position: 'absolute', bottom: 24, right: 40, zIndex: 2,
         display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8,
-        opacity: loaded ? 1 : 0, transition: 'opacity 1s ease 1s'
+        opacity: loaded ? 0.5 : 0, transition: 'opacity 1s ease 1s'
       }}>
-        <span style={{
-          fontFamily: "'Raleway',sans-serif", fontWeight: 200, fontSize: 10,
-          textTransform: 'uppercase', letterSpacing: '0.30em',
-          color: 'rgba(255,255,255,0.25)'
-        }}>{"D\u00c9FILER"}</span>
-        <div style={{ width: 1, height: 40, background: 'rgba(166,124,82,0.30)', position: 'relative', overflow: 'hidden' }}>
-          <div style={{
-            width: 1, height: 16, background: '#A67C52',
-            position: 'absolute', top: -16,
-            animation: 'scrollLine 1.8s ease-in-out infinite'
-          }} />
+        <div style={{ width: 1, height: 40, background: 'rgba(255,255,255,0.15)', borderRadius: 1, overflow: 'hidden', position: 'relative' }}>
+          <div style={{ width: 1, height: 16, background: '#A67C52', position: 'absolute', animation: 'scrollLine 1.8s ease-in-out infinite' }} />
         </div>
+        <span style={{ fontFamily: "'Raleway',sans-serif", fontSize: 9, letterSpacing: '0.22em', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase' }}>{"D\u00c9FILER"}</span>
       </div>
 
       <style>{`
-        @keyframes scrollLine {
-          0% { top: -16px; }
-          100% { top: 40px; }
-        }
+        @keyframes scrollLine { 0% { top: -16px; } 100% { top: 40px; } }
       `}</style>
     </section>
   )
