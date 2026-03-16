@@ -50,7 +50,7 @@ function Header() {
             <span style={{ color: 'var(--bronze)', margin: '0 8px', fontSize: 18 }}>{"\u00b7"}</span>
             <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 500 }}>Patrimoine</span>
           </Link>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 28, marginLeft: 40 }}>
             <Link to="/programmes" style={linkStyle} onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Programmes</Link>
             <Link to="/se-loger" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Se Loger</Link>
             <Link to="/investir" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Investir</Link>
