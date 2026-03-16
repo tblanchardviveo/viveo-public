@@ -3,23 +3,23 @@ import { Link } from 'react-router-dom'
 const avantages = [
   {
     icon: '\ud83c\udfe0',
-    title: 'Revenus locatifs d\u00e8s la rentr\u00e9e',
-    desc: 'Un bien mis en location g\u00e9n\u00e8re des loyers qui couvrent directement les frais de scolarit\u00e9.'
+    title: 'Revenus locatifs dès la rentrée',
+    desc: 'Un bien mis en location génère des loyers qui couvrent directement les frais de scolarité.'
   },
   {
     icon: '\ud83d\udcc8',
     title: 'Capital qui se construit',
-    desc: 'En 15\u00a0ans, votre bien se valorise. Vous pouvez le revendre ou le transmettre au moment des \u00e9tudes.'
+    desc: 'En 15 ans, votre bien se valorise. Vous pouvez le revendre ou le transmettre au moment des études.'
   },
   {
     icon: '\ud83c\udf93',
-    title: 'Logement \u00e9tudiant int\u00e9gr\u00e9',
-    desc: 'Studio ou T2 en r\u00e9sidence \u00e9tudiante : votre enfant y habite, vous \u00e9conomisez le loyer.'
+    title: 'Logement étudiant intégré',
+    desc: 'Studio ou T2 en résidence étudiante : votre enfant y habite, vous économisez le loyer.'
   },
   {
     icon: '\u2696\ufe0f',
-    title: 'Fiscalit\u00e9 optimis\u00e9e',
-    desc: 'LMNP, d\u00e9ficit foncier, nue-propri\u00e9t\u00e9 : des leviers puissants pour r\u00e9duire l\u2019effort r\u00e9el.'
+    title: 'Fiscalité optimisée',
+    desc: 'LMNP, déficit foncier, nue-propriété : des leviers puissants pour réduire l’effort réel.'
   }
 ]
 
@@ -49,14 +49,14 @@ export default function SolutionEtudes() {
           fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 300,
           color: '#fff', lineHeight: 1.2, marginBottom: 20, maxWidth: 600
         }}>
-          {'L\u2019immobilier comme '}<em style={{ fontStyle: 'italic', color: 'var(--bronze)' }}>bourse d'\u00e9tudes</em>
+          {'L’immobilier comme '}<em style={{ fontStyle: 'italic', color: 'var(--bronze)' }}>bourse d'études</em>
         </h2>
 
         <p style={{
           fontFamily: "'Raleway', sans-serif", fontSize: 16, fontWeight: 300,
           color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: 560, marginBottom: 56
         }}>
-          {'Chez VIVEO, nous aidons les parents \u00e0 transformer un investissement immobilier en solution concr\u00e8te pour financer les \u00e9tudes de leurs enfants.'}
+          {'Chez VIVEO, nous aidons les parents à transformer un investissement immobilier en solution concrète pour financer les études de leurs enfants.'}
         </p>
 
         <div style={{
@@ -92,7 +92,7 @@ export default function SolutionEtudes() {
           color: 'var(--bronze)', textTransform: 'uppercase',
           letterSpacing: '0.08em', textDecoration: 'none',
           transition: 'transform 0.3s'
-        }}>{"D\u00e9couvrir nos programmes \u2192"}</Link>
+        }}>{"Découvrir nos programmes →"}</Link>
       </div>
     </section>
   )
