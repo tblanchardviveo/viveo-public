@@ -22,7 +22,7 @@ export default function SimulateurEtudes() {
     cursor: 'pointer'
   }
 
-  const labels = ['', 'Universit\u00e9 publique', '\u00c9cole de commerce / ing\u00e9nieur', 'Grande \u00e9cole + logement Paris']
+  const labels = ['', 'Université publique', 'École de commerce / ingénieur', 'Grande école + logement Paris']
 
   return (
     <section id="simulateur" style={{
@@ -42,7 +42,7 @@ export default function SimulateurEtudes() {
           fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 300,
           color: '#fff', lineHeight: 1.2, marginBottom: 48
         }}>
-          {'Estimez '}<em style={{ fontStyle: 'italic', color: 'var(--bronze)' }}>{'le co\u00fbt r\u00e9el'}</em>
+          {'Estimez '}<em style={{ fontStyle: 'italic', color: 'var(--bronze)' }}>{'le coût réel'}</em>
         </h2>
 
         <div style={{
@@ -60,7 +60,7 @@ export default function SimulateurEtudes() {
                 <span style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 20, color: '#fff', fontWeight: 400
-                }}>{fmt(revenu)} {'\u20ac'}</span>
+                }}>{fmt(revenu)} {'€'}</span>
               </div>
               <input type="range" min={2000} max={15000} step={500}
                 value={revenu} onChange={e => setRevenu(+e.target.value)} style={sliderStyle} />
@@ -108,11 +108,11 @@ export default function SimulateurEtudes() {
                 fontFamily: "'Raleway', sans-serif", fontSize: 11, fontWeight: 500,
                 letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.40)',
                 marginBottom: 4
-              }}>Co\u00fbt total estim\u00e9</p>
+              }}>Coût total estimé</p>
               <p style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: 40, fontWeight: 300, color: '#fff'
-              }}>{fmt(coutTotal)} {'\u20ac'}</p>
+              }}>{fmt(coutTotal)} {'€'}</p>
               <p style={{
                 fontFamily: "'Raleway', sans-serif", fontSize: 13,
                 color: 'rgba(255,255,255,0.4)', marginTop: 4
@@ -124,11 +124,11 @@ export default function SimulateurEtudes() {
                 fontFamily: "'Raleway', sans-serif", fontSize: 11, fontWeight: 500,
                 letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.40)',
                 marginBottom: 4
-              }}>{"\u00c9pargne mensuelle n\u00e9cessaire"}</p>
+              }}>{"Épargne mensuelle nécessaire"}</p>
               <p style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: 32, fontWeight: 300, color: 'var(--bronze)'
-              }}>{fmt(epargneNecessaire)} {'\u20ac'}/mois</p>
+              }}>{fmt(epargneNecessaire)} {'€'}/mois</p>
             </div>
 
             {/* Bar */}
@@ -156,7 +156,7 @@ export default function SimulateurEtudes() {
               fontSize: 14, fontWeight: 600, letterSpacing: '0.06em',
               textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif",
               textDecoration: 'none', transition: 'all 0.3s'
-            }}>{"Anticiper maintenant \u2192"}</a>
+            }}>{"Anticiper maintenant →"}</a>
           </div>
         </div>
       </div>
