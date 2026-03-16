@@ -19,7 +19,7 @@ export default function HeroParrainage({ onScrollForm }) {
         <Eyebrow>PROGRAMME DE PARRAINAGE</Eyebrow>
         <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 400, color: '#fff', lineHeight: 1.1 }}>
           Recommandez VIVEO {"\u2014"}<br />
-          <em style={{ fontStyle: 'italic', color: '#C4976A' }}>et soyez r\u00e9compens\u00e9.</em>
+                    <em style={{ fontStyle: 'italic', color: '#C4976A' }}>et soyez récompensé.</em>
         </h1>
         <div style={{ display: 'flex', gap: 32, marginTop: 40, flexWrap: 'wrap' }}>
           {[['400\u20ac', 'pour un prospect parrain\u00e9'], ['800\u20ac', 'pour un client parrain\u00e9']].map(([montant, label]) => (
