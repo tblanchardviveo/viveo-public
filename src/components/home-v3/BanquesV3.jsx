@@ -6,6 +6,7 @@ const reseaux = [
   '\u2717 Objectifs commerciaux mensuels \u00e0 atteindre',
   '\u2717 Connaissance th\u00e9orique des programmes'
 ]
+
 const viveo = [
   '\u2713 Ind\u00e9pendant de tout promoteur',
   '\u2713 27 ans de n\u00e9gociation c\u00f4t\u00e9 promoteur',
@@ -20,7 +21,7 @@ export default function BanquesV3() {
     <section data-bg="#111C33" style={{ background: '#111C33', padding: '15vh 6vw' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
         <span style={{ width: 32, height: 1, background: '#A67C52' }} />
-        <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.28em', color: '#A67C52' }}>UNE QUESTION \u00c0 SE POSER</span>
+        <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.28em', color: '#A67C52' }}>{"UNE QUESTION \u00c0 SE POSER"}</span>
       </div>
 
       <h2 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 300, fontSize: 'clamp(32px,4.5vw,60px)', color: '#fff', lineHeight: 1.0, margin: 0 }}>
@@ -35,7 +36,7 @@ export default function BanquesV3() {
       <div style={{ display: 'flex', gap: 2, marginTop: 64, flexWrap: 'wrap' }}>
         {/* LEFT - Reseaux */}
         <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', borderRadius: '3px 0 0 3px', padding: '40px 36px' }}>
-          <div style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.20em', color: 'rgba(255,255,255,0.25)', marginBottom: 32 }}>LES R\u00c9SEAUX BANCAIRES & CGP</div>
+          <div style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.20em', color: 'rgba(255,255,255,0.25)', marginBottom: 32 }}>{"LES R\u00c9SEAUX BANCAIRES & CGP"}</div>
           {reseaux.map((r, i) => (
             <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 15, color: 'rgba(255,255,255,0.35)', lineHeight: 1.7, margin: '0 0 8px' }}>{r}</p>
           ))}
