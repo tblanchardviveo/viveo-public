@@ -21,24 +21,24 @@ export default function HeroV3() {
       {/* Background parallax */}
       <div style={{
         position: 'absolute', inset: 0,
-        backgroundImage: "url('/images/IMG_0602.png')",
+        backgroundImage: `url(${WP}/wp-content/uploads/2026/03/IMG_0668.png), url(${WP}/wp-content/uploads/2026/03/IMG_0602.png)`,
         backgroundSize: 'cover',
-        backgroundPosition: `center calc(25% + ${scrollY * 0.35}px)`
+        backgroundPosition: `center calc(35% + ${scrollY * 0.35}px)`
       }} />
       {/* Overlay 1 */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(170deg, rgba(17,28,51,0.0) 0%, rgba(17,28,51,0.15) 20%, rgba(17,28,51,0.65) 55%, rgba(17,28,51,0.95) 80%, rgba(17,28,51,1.00) 100%)'
+        background: 'linear-gradient(170deg, rgba(17,28,51,0.05) 0%, rgba(17,28,51,0.20) 25%, rgba(17,28,51,0.70) 55%, rgba(17,28,51,0.97) 80%, rgba(17,28,51,1.00) 100%)'
       }} />
       {/* Overlay 2 */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(to right, rgba(17,28,51,0.85) 0%, rgba(17,28,51,0.40) 40%, transparent 70%)'
+        background: 'radial-gradient(ellipse 60% 40% at 75% 25%, rgba(166,124,82,0.08) 0%, transparent 65%)'
       }} />
       {/* Overlay 3 */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse 50% 60% at 80% 30%, rgba(166,124,82,0.12) 0%, transparent 60%)'
+        background: 'linear-gradient(to right, rgba(17,28,51,0.30) 0%, transparent 50%)'
       }} />
 
       {/* Content */}
@@ -63,8 +63,8 @@ export default function HeroV3() {
         {/* H1 */}
         <h1 style={{
           fontFamily: "'Playfair Display',Georgia,serif",
-          fontSize: 'clamp(36px,5.5vw,72px)', fontWeight: 300, lineHeight: 1.1,
-          color: '#fff', letterSpacing: '-0.02em', margin: 0,
+          fontSize: 'clamp(56px, 10vw, 120px)', fontWeight: 300, lineHeight: 0.90,
+          color: '#fff', letterSpacing: '-0.025em', margin: 0,
           opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(20px)',
           transition: 'opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s'
         }}>
@@ -73,14 +73,14 @@ export default function HeroV3() {
 
         {/* Separator */}
         <div style={{
-          width: 48, height: 2, background: '#A67C52', margin: '28px 0',
-          opacity: loaded ? 1 : 0, transition: 'opacity 0.8s ease 0.4s'
+          width: loaded ? 48 : 0, height: 1, background: '#A67C52', margin: '28px 0',
+          transition: 'width 0.8s ease 0.5s'
         }} />
 
         {/* Subtitle */}
         <p style={{
-          fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 'clamp(14px,1.2vw,17px)',
-          lineHeight: 1.7, color: 'rgba(255,255,255,0.70)', maxWidth: 520, margin: '0 0 28px',
+          fontFamily: "'Raleway',sans-serif", fontWeight: 200, fontSize: 'clamp(16px,2vw,22px)',
+          lineHeight: 1.65, color: 'rgba(255,255,255,0.55)', maxWidth: 560, margin: '0 0 0',
           opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(12px)',
           transition: 'opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s'
         }}>
@@ -91,34 +91,36 @@ export default function HeroV3() {
 
         {/* Pills */}
         <div style={{
-          display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 32,
+          display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 32,
           opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(10px)',
-          transition: 'opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s'
+          transition: 'opacity 0.8s ease 0.65s, transform 0.8s ease 0.65s'
         }}>
           {pills.map((p, i) => (
             <span key={i} style={{
-              padding: '6px 16px', borderRadius: 20, fontSize: 12,
+              padding: '10px 18px', borderRadius: 2, fontSize: 11,
               fontFamily: "'Raleway',sans-serif", fontWeight: 500,
-              letterSpacing: '0.06em', textTransform: 'uppercase',
-              color: 'rgba(255,255,255,0.6)',
-              border: '1px solid rgba(255,255,255,0.15)',
-              background: 'rgba(255,255,255,0.04)'
+              letterSpacing: '0.10em', textTransform: 'uppercase',
+              color: '#fff',
+              border: '1px solid rgba(166,124,82,0.25)',
+              background: 'rgba(255,255,255,0.06)',
+              transition: `opacity 0.6s ease ${0.65 + i * 0.08}s, transform 0.6s ease ${0.65 + i * 0.08}s`,
+              opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(8px)'
             }}>{p}</span>
           ))}
         </div>
 
         {/* CTAs */}
         <div style={{
-          display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap',
+          display: 'flex', alignItems: 'center', gap: 40, flexWrap: 'wrap', marginTop: 44,
           opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(10px)',
-          transition: 'opacity 0.8s ease 0.7s, transform 0.8s ease 0.7s'
+          transition: 'opacity 0.8s ease 0.75s, transform 0.8s ease 0.75s'
         }}>
           <Link to="/programmes" style={{
             display: 'inline-block',
-            padding: '14px 32px',
+            padding: '16px 36px',
             background: 'linear-gradient(135deg,#A67C52,#C4976A)',
             color: '#fff', fontFamily: "'Raleway',sans-serif",
-            fontWeight: 600, fontSize: 13, letterSpacing: '0.06em',
+            fontWeight: 600, fontSize: 13, letterSpacing: '0.08em',
             textTransform: 'uppercase', textDecoration: 'none',
             borderRadius: 2, transition: 'transform 0.2s, filter 0.2s'
           }}
@@ -127,8 +129,8 @@ export default function HeroV3() {
           >{"D\u00e9couvrir nos programmes"}</Link>
           <a href={`${WP}/rdv-decouverte/`} style={{
             color: 'rgba(255,255,255,0.60)', fontFamily: "'Raleway',sans-serif",
-            fontWeight: 500, fontSize: 13, letterSpacing: '0.04em',
-            textDecoration: 'none', transition: 'color 0.2s'
+            fontWeight: 500, fontSize: 13, letterSpacing: '0.08em',
+            textTransform: 'uppercase', textDecoration: 'none', transition: 'color 0.2s'
           }}
           onMouseEnter={e => e.target.style.color = '#C4976A'}
           onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.60)'}
@@ -138,14 +140,14 @@ export default function HeroV3() {
 
       {/* Scroll indicator */}
       <div style={{
-        position: 'absolute', bottom: 24, right: 40, zIndex: 2,
+        position: 'absolute', bottom: 32, right: '6vw', zIndex: 2,
         display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8,
         opacity: loaded ? 0.5 : 0, transition: 'opacity 1s ease 1s'
       }}>
         <div style={{ width: 1, height: 40, background: 'rgba(255,255,255,0.15)', borderRadius: 1, overflow: 'hidden', position: 'relative' }}>
           <div style={{ width: 1, height: 16, background: '#A67C52', position: 'absolute', animation: 'scrollLine 1.8s ease-in-out infinite' }} />
         </div>
-        <span style={{ fontFamily: "'Raleway',sans-serif", fontSize: 9, letterSpacing: '0.22em', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase' }}>{"D\u00c9FILER"}</span>
+        <span style={{ fontFamily: "'Raleway',sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: '0.30em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase' }}>{"D\u00c9FILER"}</span>
       </div>
 
       <style>{`
