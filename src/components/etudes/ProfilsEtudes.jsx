@@ -4,32 +4,32 @@ const profils = [
   {
     title: 'Enfant en maternelle',
     icon: '\ud83c\udf92',
-    budget: '49 000 \u00e0 95 000 \u20ac',
-    detail: 'Vous avez 15 ans devant vous. C\u2019est le moment id\u00e9al pour commencer \u00e0 investir : m\u00eame un petit effort mensuel peut g\u00e9n\u00e9rer un capital cons\u00e9quent.'
+    budget: '49 000 à 95 000 €',
+    detail: 'Vous avez 15 ans devant vous. C’est le moment idéal pour commencer à investir : même un petit effort mensuel peut générer un capital conséquent.'
   },
   {
-    title: 'Enfant au coll\u00e8ge',
+    title: 'Enfant au collège',
     icon: '\ud83d\udcda',
-    budget: '49 000 \u00e0 135 000 \u20ac',
-    detail: 'Il reste 6 \u00e0 8 ans. L\u2019urgence monte, mais des solutions immobili\u00e8res existent encore : LMNP, nue-propri\u00e9t\u00e9 courte, SCPI.'
+    budget: '49 000 à 135 000 €',
+    detail: 'Il reste 6 à 8 ans. L’urgence monte, mais des solutions immobilières existent encore : LMNP, nue-propriété courte, SCPI.'
   },
   {
-    title: 'Enfant au lyc\u00e9e',
+    title: 'Enfant au lycée',
     icon: '\ud83c\udf93',
-    budget: '49 000 \u00e0 135 000 \u20ac',
-    detail: 'Le sup\u00e9rieur approche. Chaque ann\u00e9e compte. Un investissement bien calibr\u00e9 peut encore couvrir une grande partie du budget.'
+    budget: '49 000 à 135 000 €',
+    detail: 'Le supérieur approche. Chaque année compte. Un investissement bien calibré peut encore couvrir une grande partie du budget.'
   },
   {
     title: 'Famille avec 2+ enfants',
     icon: '\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66',
-    budget: '100 000 \u00e0 270 000 \u20ac',
-    detail: 'Le budget se multiplie avec chaque enfant. Une strat\u00e9gie patrimoniale globale devient indispensable pour \u00e9viter de sacrifier votre niveau de vie.'
+    budget: '100 000 à 270 000 €',
+    detail: 'Le budget se multiplie avec chaque enfant. Une stratégie patrimoniale globale devient indispensable pour éviter de sacrifier votre niveau de vie.'
   },
   {
     title: 'Parent solo',
     icon: '\ud83d\udcaa',
-    budget: '49 000 \u00e0 135 000 \u20ac',
-    detail: 'Revenus uniques, charges doubles. L\u2019anticipation est votre meilleur alli\u00e9 pour offrir les m\u00eames chances \u00e0 vos enfants.'
+    budget: '49 000 à 135 000 €',
+    detail: 'Revenus uniques, charges doubles. L’anticipation est votre meilleur allié pour offrir les mêmes chances à vos enfants.'
   }
 ]
 
@@ -52,7 +52,7 @@ export default function ProfilsEtudes() {
           fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 300,
           color: '#fff', lineHeight: 1.2, marginBottom: 48
         }}>
-          {'Quel budget '}<em style={{ fontStyle: 'italic', color: 'var(--bronze)' }}>selon votre profil\u00a0?</em>
+          {'Quel budget '}<em style={{ fontStyle: 'italic', color: 'var(--bronze)' }}>selon votre profil ?</em>
         </h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           {profils.map((p, i) => (
@@ -85,7 +85,7 @@ export default function ProfilsEtudes() {
                     color: 'rgba(255,255,255,0.4)', fontSize: 18,
                     transform: open === i ? 'rotate(180deg)' : 'rotate(0)',
                     transition: 'transform 0.3s'
-                  }}>{"\u25be"}</span>
+                  }}>{"▾"}</span>
                 </div>
               </button>
               {open === i && (
