@@ -3,10 +3,10 @@ import { useState, useEffect, useRef } from 'react'
 const C = { navy: '#111C33', bronze: '#A67C52' }
 
 const data = [
-  { val: 850, suffix: '+', label: 'Clients accompagn\u00e9s' },
-  { val: 27, suffix: ' ans', label: "D'exp\u00e9rience" },
+  { val: 850, suffix: '+', label: 'Clients accompagnés' },
+  { val: 27, suffix: ' ans', label: "D'expérience" },
   { val: 98, suffix: '%', label: 'Taux de satisfaction' },
-  { val: 120, suffix: 'M\u20ac', label: 'Patrimoine g\u00e9r\u00e9' },
+  { val: 120, suffix: 'M€', label: 'Patrimoine géré' },
 ]
 
 function Counter({ target, suffix }) {
