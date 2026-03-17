@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 const C = { navy: '#111C33', bronze: '#A67C52', bronzeLight: '#C4976A' }
 
 const team = [
-  { name: 'Thomas Blanchard', role: 'Fondateur & Directeur', bio: '27 ans d’expérience en gestion de patrimoine immobilier. Certifié CIF-ORIAS.', initials: 'TB' },
+  { name: 'Thomas Blanchard', role: 'Fondateur & Directeur', bio: '27 ans d’expérience en gestion de patrimoine immobilier.', initials: 'TB' },
   { name: 'Sophie Martin', role: 'Directrice Conseil', bio: 'Spécialiste fiscalité immobilière et stratégies de défiscalisation.', initials: 'SM' },
   { name: 'Marc Dupont', role: 'Responsable Programmes', bio: 'Sélection et analyse des programmes neufs sur tout le territoire.', initials: 'MD' },
 ]
