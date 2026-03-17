@@ -3,12 +3,12 @@ import { useState, useEffect, useRef } from 'react'
 const C = { navy: '#111C33', bronze: '#A67C52', bronzeLight: '#C4976A' }
 
 const engagements = [
-  { icon: '\u2705', title: 'Z\u00e9ro frais cach\u00e9s', desc: 'Tous nos honoraires sont communiqu\u00e9s d\u00e8s le premier rendez-vous.' },
-  { icon: '\u{1F512}', title: 'Confidentialit\u00e9 totale', desc: 'Vos donn\u00e9es patrimoniales sont prot\u00e9g\u00e9es et ne sont jamais partag\u00e9es.' },
-  { icon: '\u{1F4C4}', title: 'Conseil \u00e9crit', desc: 'Chaque recommandation est formalis\u00e9e par un rapport d\u00e9taill\u00e9.' },
-  { icon: '\u267B\uFE0F', title: 'Droit de r\u00e9tractation', desc: '30 jours pour changer d\u2019avis, sans condition ni p\u00e9nalit\u00e9.' },
-  { icon: '\u{1F4DE}', title: 'Disponibilit\u00e9 permanente', desc: 'Un interlocuteur d\u00e9di\u00e9 joignable du lundi au samedi.' },
-  { icon: '\u{1F3E0}', title: 'S\u00e9lection ind\u00e9pendante', desc: 'Programmes choisis sur crit\u00e8res objectifs, jamais sur commissions.' },
+  { icon: '✅', title: 'Zéro frais cachés', desc: 'Tous nos honoraires sont communiqués dès le premier rendez-vous.' },
+  { icon: '🔒', title: 'Confidentialité totale', desc: 'Vos données patrimoniales sont protégées et ne sont jamais partagées.' },
+  { icon: '📄', title: 'Conseil écrit', desc: 'Chaque recommandation est formalisée par un rapport détaillé.' },
+  { icon: '♻️', title: 'Droit de rétractation', desc: '30 jours pour changer d’avis, sans condition ni pénalité.' },
+  { icon: '📞', title: 'Disponibilité permanente', desc: 'Un interlocuteur dédié joignable du lundi au samedi.' },
+  { icon: '🏠', title: 'Sélection indépendante', desc: 'Programmes choisis sur critères objectifs, jamais sur commissions.' },
 ]
 
 export default function EngagementsApproche() {
