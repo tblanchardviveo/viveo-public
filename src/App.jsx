@@ -99,13 +99,7 @@ function Footer() {
             <span style={{ width: 32, height: 1, background: 'var(--bronze)', display: 'block' }} />
             <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--bronze)', fontFamily: "'Raleway', sans-serif" }}>EXPLORER</span>
           </div>
-          <Link to="/lmnp" style={fl} onMouseEnter={ho} onMouseLeave={hl}>LMNP</Link>
-          <Link to="/deficit-foncier" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"D\u00e9ficit Foncier"}</Link>
-          <Link to="/nue-propriete" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Nue-propri\u00e9t\u00e9"}</Link>
-          <Link to="/se-loger" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Se Loger</Link>
-          <Link to="/financement" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Financement</Link>
-          <Link to="/international" style={fl} onMouseEnter={ho} onMouseLeave={hl}>International</Link>
-          <Link to="/approche" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Notre Approche</Link><Link to="/parrainage" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Parrainage</Link><Link to="/calculateur" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Simulateur</Link><Link to="/retraite" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Pr\u00e9parer ma retraite"}</Link><Link to="/etudes-enfants" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Financer les \u00e9tudes"}</Link>
+          <Link to="/lmnp-gere" style={fl} onMouseEnter={ho} onMouseLeave={hl}>LMNP G\u00e9r\u00e9</Link>           <Link to="/lmnp" style={fl} onMouseEnter={ho} onMouseLeave={hl}>LMNP</Link>           <Link to="/deficit-foncier" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"D\u00e9ficit Foncier"}</Link>           <Link to="/nue-propriete" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Nue-propri\u00e9t\u00e9"}</Link>           <Link to="/monuments-historiques" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Monuments Historiques</Link>           <Link to="/loi-malraux" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Loi Malraux</Link>           <Link to="/loi-jeanbrun" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Loi Jeanbrun</Link>           <Link to="/loi-denormandie" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Loi Denormandie</Link>           <Link to="/se-loger" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Se Loger</Link>           <Link to="/financement" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Financement</Link>           <Link to="/international" style={fl} onMouseEnter={ho} onMouseLeave={hl}>International</Link>           <Link to="/approche-viveo" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Notre Approche</Link>           <Link to="/parrainage" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Parrainage</Link>           <Link to="/calculateur" style={fl} onMouseEnter={ho} onMouseLeave={hl}>Simulateur</Link>           <Link to="/retraite" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Pr\u00e9parer ma retraite"}</Link>           <Link to="/etudes-enfants" style={fl} onMouseEnter={ho} onMouseLeave={hl}>{"Financer les \u00e9tudes"}</Link>
         </div>
       </div>
       <div style={{ maxWidth: 1100, margin: '0 auto', marginTop: 48, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
@@ -137,7 +131,7 @@ export default function App() {
           <Route path="/avis" element={<AvisPage />} />
           <Route path="/se-loger" element={<SeLoger />} />
           <Route path="/investir" element={<Investir />} />
-          <Route path="/approche" element={<ApprocheViveo />} />
+          <Route path="/approche-viveo" element={<ApprocheViveo />} />
           <Route path="/financement" element={<Financement />} />
           <Route path="/international" element={<International />} />
                                   <Route path="/lmnp" element={<Lmnp />} />
