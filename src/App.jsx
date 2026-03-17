@@ -6,7 +6,7 @@ import Parrainage from './pages/Parrainage'
 import Calculateur from './pages/Calculateur'
 import NewsletterPage from './pages/NewsletterPage'
 import AvisPage from './pages/AvisPage'
-import HomePage from './pages/HomePage'
+
 import HomePageV3 from './pages/HomePageV3'
 import SeLoger from './pages/SeLoger'
 import Investir from './pages/Investir'
@@ -109,7 +109,7 @@ function Footer() {
         </div>
       </div>
       <div style={{ maxWidth: 1100, margin: '0 auto', marginTop: 48, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
-        <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif" }}>{"\u00a9 2025 VIVEO Patrimoine"}</span>
+        <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif" }}>{"\u00a9 2026 VIVEO Patrimoine"}</span>
         <a href={`${WP}/mentions-legales/`} style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif", textDecoration: 'none' }}>{"Mentions l\u00e9gales"}</a>
         <a href={`${WP}/politique-de-confidentialite/`} style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif", textDecoration: 'none' }}>{"Politique de confidentialit\u00e9"}</a>
       </div>
