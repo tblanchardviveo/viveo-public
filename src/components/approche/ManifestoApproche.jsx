@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from 'react'
 const C = { navy: '#111C33', bronze: '#A67C52', bronzeLight: '#C4976A' }
 
 const pillars = [
-  { icon: '\u{1F3AF}', title: 'Ind\u00e9pendance totale', desc: 'Aucun lien capitalistique avec les promoteurs. Nos recommandations sont guid\u00e9es uniquement par votre int\u00e9r\u00eat.' },
-  { icon: '\u{1F50D}', title: 'Transparence absolue', desc: 'Chaque frais, chaque commission, chaque d\u00e9tail est expliqu\u00e9 clairement avant toute signature.' },
-  { icon: '\u{1F91D}', title: 'Accompagnement durable', desc: 'Notre relation ne s\u2019arr\u00eate pas \u00e0 la vente. Suivi fiscal, locatif et patrimonial ann\u00e9e apr\u00e8s ann\u00e9e.' },
+  { icon: '🎯', title: 'Indépendance totale', desc: 'Aucun lien capitalistique avec les promoteurs. Nos recommandations sont guidées uniquement par votre intérêt.' },
+  { icon: '🔍', title: 'Transparence absolue', desc: 'Chaque frais, chaque commission, chaque détail est expliqué clairement avant toute signature.' },
+  { icon: '🤝', title: 'Accompagnement durable', desc: 'Notre relation ne s’arrête pas à la vente. Suivi fiscal, locatif et patrimonial année après année.' },
 ]
 
 export default function ManifestoApproche() {
@@ -23,10 +23,10 @@ export default function ManifestoApproche() {
       <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center', ...fade(0) }}>
         <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.2em', color: C.bronze }}>Notre manifeste</span>
         <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 300, fontSize: 'clamp(32px,5vw,56px)', color: C.navy, marginTop: 16, lineHeight: 1.15 }}>
-          Nous croyons qu\u2019un conseil<br /><em style={{ color: C.bronzeLight, fontStyle: 'italic' }}>doit servir vos int\u00e9r\u00eats, pas les n\u00f4tres.</em>
+          Nous croyons qu’un conseil<br /><em style={{ color: C.bronzeLight, fontStyle: 'italic' }}>doit servir vos intérêts, pas les nôtres.</em>
         </h2>
         <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 200, fontSize: 'clamp(15px,1.8vw,19px)', color: 'rgba(17,28,51,0.6)', marginTop: 24, maxWidth: 700, margin: '24px auto 0' }}>
-          Depuis 27 ans, Viveo Patrimoine d\u00e9fend une vision simple : placer l\u2019humain au c\u0153ur de chaque d\u00e9cision patrimoniale.
+          Depuis 27 ans, Viveo Patrimoine défend une vision simple : placer l’humain au cœur de chaque décision patrimoniale.
         </p>
       </div>
       <div style={{ display: 'flex', gap: 32, marginTop: 64, flexWrap: 'wrap', justifyContent: 'center' }}>
