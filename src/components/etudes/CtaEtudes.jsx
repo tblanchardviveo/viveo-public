@@ -41,13 +41,13 @@ export default function CtaEtudes() {
             textDecoration: 'none', transition: 'all 0.3s'
           }}>{"RDV découverte →"}</a>
 
-          <a href="tel:+33698639783" style={{
+          <a href="tel:+33967167065" style={{
             border: '1px solid rgba(255,255,255,0.15)',
             color: 'rgba(255,255,255,0.6)', borderRadius: 50,
             padding: '16px 32px', fontSize: 13, fontWeight: 400,
             fontFamily: "'Raleway', sans-serif",
             textDecoration: 'none', transition: 'all 0.3s'
-          }}>06 98 63 97 83</a>
+          }}>09 67 16 70 65</a>
         </div>
 
         <p style={{

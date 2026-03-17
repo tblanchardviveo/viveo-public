@@ -78,7 +78,7 @@ function buildEmailThomas(d) {
     <a href="https://viveo-admin.vercel.app/rdv" style="display:inline-block;background:linear-gradient(135deg,#A67C52,#C4976A);color:#fff;padding:14px 36px;border-radius:50px;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em;font-family:'Raleway',Arial,sans-serif">Voir dans VIVEO Admin &rarr;</a>
   </td></tr>
   <tr><td style="background:#111C33;padding:20px 32px;text-align:center">
-    <span style="font-family:'Raleway',Arial,sans-serif;font-size:12px;font-weight:300;color:rgba(255,255,255,0.4)">VIVEO Patrimoine &mdash; 06 98 63 97 83</span>
+    <span style="font-family:'Raleway',Arial,sans-serif;font-size:12px;font-weight:300;color:rgba(255,255,255,0.4)">VIVEO Patrimoine &mdash; 09 67 16 70 65</span>
   </td></tr>
 </table>
 </body></html>`;
@@ -125,7 +125,7 @@ function buildEmailProspect(d) {
   </td></tr>
   <tr><td style="background:#111C33;padding:24px 32px;text-align:center">
     <p style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);margin:0 0 4px;line-height:1.5">VIVEO Patrimoine &middot; Thomas Blanchard</p>
-    <p style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.35);margin:0 0 4px;line-height:1.5">06 98 63 97 83 &middot; 3 bis rue du G&eacute;n&eacute;ral de Gaulle, 59253 La Gorgue</p>
+    <p style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.35);margin:0 0 4px;line-height:1.5">09 67 16 70 65 &middot; 3 bis rue du G&eacute;n&eacute;ral de Gaulle, 59253 La Gorgue</p>
     <p style="font-size:11px;font-weight:300;color:rgba(255,255,255,0.3);margin:8px 0 0">Pour toute question, r&eacute;pondez simplement &agrave; cet email.</p>
   </td></tr>
 </table>

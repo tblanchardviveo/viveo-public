@@ -56,7 +56,7 @@ function buildEmailThomas(d) {
     <a href="https://viveo-admin.vercel.app/parrainages" style="display:inline-block;background:linear-gradient(135deg,#A67C52,#C4976A);color:#fff;padding:14px 36px;border-radius:50px;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Voir dans VIVEO Admin \u2192</a>
   </td></tr>
   <tr><td style="background:#111C33;padding:20px 32px;text-align:center">
-    <span style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.4)">VIVEO Patrimoine \u2014 06 98 63 97 83</span>
+    <span style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.4)">VIVEO Patrimoine \u2014 09 67 16 70 65</span>
   </td></tr></table></body></html>`;
 }
 
@@ -80,7 +80,7 @@ function buildEmailParrain(d) {
   </td></tr>
   <tr><td style="background:#111C33;padding:24px 32px;text-align:center">
     <p style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);margin:0 0 4px">VIVEO Patrimoine \u00b7 Thomas Blanchard</p>
-    <p style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.35);margin:0 0 4px">06 98 63 97 83 \u00b7 3 bis rue du G\u00e9n\u00e9ral de Gaulle, 59253 La Gorgue</p>
+    <p style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.35);margin:0 0 4px">09 67 16 70 65 \u00b7 3 bis rue du G\u00e9n\u00e9ral de Gaulle, 59253 La Gorgue</p>
     <p style="font-size:11px;font-weight:300;color:rgba(255,255,255,0.3);margin:8px 0 0">Pour toute question, r\u00e9pondez simplement \u00e0 cet email.</p>
   </td></tr></table></body></html>`;
 }
