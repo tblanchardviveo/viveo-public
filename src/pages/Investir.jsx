@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
+import LiensEtudesMarche from '../components/LiensEtudesMarche'
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 const eye = { display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }
@@ -89,6 +90,7 @@ export default function Investir() {
           <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV D\u00e9couverte \u2192'}</a>
         </div>
       </Sec>
+      <LiensEtudesMarche />
     </>
   )
 }
