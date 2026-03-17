@@ -26,6 +26,7 @@ import Retraite from './pages/Retraite'
     import MentionsLegales from './pages/MentionsLegales'
 import Blog from './pages/Blog'
 import BlogArticle from './pages/BlogArticle'
+import ScrollToTop from './components/ScrollToTop'
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
 function Header() {
@@ -120,6 +121,7 @@ export default function App() {
         @media (max-width: 768px) {
           .nav-hide-mobile { display: none !important; }
         }
+              <ScrollToTop />
       `}</style>
       <Header />
       <main style={{ minHeight: '60vh' }}>
