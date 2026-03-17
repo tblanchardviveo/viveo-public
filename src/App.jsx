@@ -95,7 +95,7 @@ function Footer() {
             <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 500 }}>Patrimoine</span>
           </div>
           <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.4)', marginTop: 8 }}>{"L'immobilier, l'esprit libre."}</p>
-          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', marginTop: 24, fontFamily: "'Raleway', sans-serif" }}>06 98 63 97 83</p>
+          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', marginTop: 24, fontFamily: "'Raleway', sans-serif" }}>09 67 16 70 65</p>
           <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.30)', marginTop: 4, fontFamily: "'Raleway', sans-serif" }}>{"3 bis rue du G\u00e9n\u00e9ral de Gaulle, 59253 La Gorgue"}</p>
         </div>
         <div style={{ flex: '1 1 35%', minWidth: 220 }}>
@@ -118,12 +118,8 @@ function Footer() {
 export default function App() {
   return (
     <BrowserRouter>
-      <style>{`
-        @media (max-width: 768px) {
-import ScrollToTop        }
-              <ScrollToTop />
-      `}</style>
-      <Header />
+                  <ScrollToTop />
+<Header />
       <main style={{ minHeight: '60vh' }}>
         <Routes>
                     <Route path="/" element={<HomePageV3 />} />
