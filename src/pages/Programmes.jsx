@@ -37,7 +37,7 @@ export default function Programmes() {
             27 ans d'expertise promoteur. Des programmes vérifiés, négociés. Pas un catalogue — une sélection d'expert.
           </p>
           <div style={{ display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap', animation: 'fadeUp 0.6s ease 0.3s both' }}>
-            {[['Se Loger', '/se-loger'], ['Investir', '/investir'], ["L'Approche VIVEO", '/approche']].map(([label, path]) => (
+            {[['Se Loger', '/se-loger'], ['Investir', '/investir'], ["L'Approche VIVEO", '/approche-viveo']].map(([label, path]) => (
               <Link key={label} to={path} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 99, padding: '8px 18px', fontFamily: "'Raleway', sans-serif", fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.65)', textDecoration: 'none', transition: 'all 0.2s' }}
                 onMouseEnter={e => { e.target.style.background = 'rgba(166,124,82,0.12)'; e.target.style.borderColor = '#A67C52'; e.target.style.color = '#C4976A' }}
                 onMouseLeave={e => { e.target.style.background = 'rgba(255,255,255,0.06)'; e.target.style.borderColor = 'rgba(255,255,255,0.12)'; e.target.style.color = 'rgba(255,255,255,0.65)' }}
@@ -100,8 +100,8 @@ export default function Programmes() {
                 </div>
                 {totalPages > 1 && (
                   <div style={{ display: 'flex', justifyContent: 'center', gap: 12, marginTop: 48 }}>
-                    <button disabled={page === 0} onClick={() => setPage(page - 1)} style={{ padding: '10px 24px', borderRadius: 50, border: '1px solid rgba(26,39,68,0.15)', background: '#fff', fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 500, color: 'var(--navy-deep)', cursor: page === 0 ? 'default' : 'pointer', opacity: page === 0 ? 0.4 : 1 }}>{"← Précédent"}</button>
-                    <button disabled={page >= totalPages - 1} onClick={() => setPage(page + 1)} style={{ padding: '10px 24px', borderRadius: 50, border: '1px solid rgba(26,39,68,0.15)', background: '#fff', fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 500, color: 'var(--navy-deep)', cursor: page >= totalPages - 1 ? 'default' : 'pointer', opacity: page >= totalPages - 1 ? 0.4 : 1 }}>{"Suivant →"}</button>
+                    <button disabled={page === 0} onClick={() => setPage(page - 1)} style={{ padding: '10px 24px', borderRadius: 2, border: '1px solid rgba(26,39,68,0.15)', background: '#fff', fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 500, color: 'var(--navy-deep)', cursor: page === 0 ? 'default' : 'pointer', opacity: page === 0 ? 0.4 : 1 }}>{"← Précédent"}</button>
+                    <button disabled={page >= totalPages - 1} onClick={() => setPage(page + 1)} style={{ padding: '10px 24px', borderRadius: 2, border: '1px solid rgba(26,39,68,0.15)', background: '#fff', fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 500, color: 'var(--navy-deep)', cursor: page >= totalPages - 1 ? 'default' : 'pointer', opacity: page >= totalPages - 1 ? 0.4 : 1 }}>{"Suivant →"}</button>
                   </div>
                 )}
               </>
