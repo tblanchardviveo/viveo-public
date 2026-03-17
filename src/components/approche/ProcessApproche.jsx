@@ -3,11 +3,11 @@ import { useState, useEffect, useRef } from 'react'
 const C = { navy: '#111C33', bronze: '#A67C52', bronzeLight: '#C4976A' }
 
 const steps = [
-  { num: '01', title: '\u00c9coute & Diagnostic', desc: 'Analyse compl\u00e8te de votre situation patrimoniale, fiscale et personnelle. Aucune recommandation avant de vous conna\u00eetre.' },
-  { num: '02', title: 'Strat\u00e9gie sur mesure', desc: 'Construction d\u2019un plan d\u2019investissement align\u00e9 sur vos objectifs : rendement, d\u00e9fiscalisation, transmission.' },
-  { num: '03', title: 'S\u00e9lection rigoureuse', desc: 'Choix des meilleurs programmes parmi 200+ r\u00e9f\u00e9rences, n\u00e9gociation des conditions, v\u00e9rification juridique.' },
-  { num: '04', title: 'Accompagnement complet', desc: 'Signature, financement, livraison, mise en location, d\u00e9clarations fiscales. Tout est g\u00e9r\u00e9.' },
-  { num: '05', title: 'Suivi p\u00e9renne', desc: 'Bilan annuel, ajustements strat\u00e9giques, optimisation continue de votre patrimoine.' },
+  { num: '01', title: 'Écoute & Diagnostic', desc: 'Analyse complète de votre situation patrimoniale, fiscale et personnelle. Aucune recommandation avant de vous connaître.' },
+  { num: '02', title: 'Stratégie sur mesure', desc: 'Construction d’un plan d’investissement aligné sur vos objectifs : rendement, défiscalisation, transmission.' },
+  { num: '03', title: 'Sélection rigoureuse', desc: 'Choix des meilleurs programmes parmi 200+ références, négociation des conditions, vérification juridique.' },
+  { num: '04', title: 'Accompagnement complet', desc: 'Signature, financement, livraison, mise en location, déclarations fiscales. Tout est géré.' },
+  { num: '05', title: 'Suivi pérenne', desc: 'Bilan annuel, ajustements stratégiques, optimisation continue de votre patrimoine.' },
 ]
 
 export default function ProcessApproche() {
@@ -25,7 +25,7 @@ export default function ProcessApproche() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 64, ...fade(0) }}>
           <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.2em', color: C.bronze }}>Notre processus</span>
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 300, fontSize: 'clamp(32px,5vw,52px)', color: C.navy, marginTop: 16 }}>5 \u00e9tapes vers<br /><em style={{ color: C.bronzeLight, fontStyle: 'italic' }}>votre r\u00e9ussite patrimoniale.</em></h2>
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 300, fontSize: 'clamp(32px,5vw,52px)', color: C.navy, marginTop: 16 }}>5 étapes vers<br /><em style={{ color: C.bronzeLight, fontStyle: 'italic' }}>votre réussite patrimoniale.</em></h2>
         </div>
         {steps.map((s, i) => (
           <div key={i} style={{ display: 'flex', gap: 32, marginBottom: 48, alignItems: 'flex-start', ...fade(0.12 * (i + 1)) }}>
