@@ -22,8 +22,8 @@ import LoiDenormandie from './pages/fiscal/LoiDenormandie'
 import LoiJeanbrun from './pages/fiscal/LoiJeanbrun'
 import LmnpGere from './pages/fiscal/LmnpGere'
 import Retraite from './pages/Retraite'
-import EtudesEnfants from './pages/EtudesEnfants'
-
+    import EtudesEnfants from './pages/EtudesEnfants'
+    import MentionsLegales from './pages/MentionsLegales'
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
 function Header() {
@@ -104,7 +104,7 @@ function Footer() {
       </div>
       <div style={{ maxWidth: 1100, margin: '0 auto', marginTop: 48, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
         <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif" }}>{"\u00a9 2026 VIVEO Patrimoine"}</span>
-        <a href={`${WP}/mentions-legales/`} style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif", textDecoration: 'none' }}>{"Mentions l\u00e9gales"}</a>
+                  <Link to="/mentions-legales" style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif", textDecoration: 'none' }}>Mentions légales</Link>
         <a href={`${WP}/politique-de-confidentialite/`} style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif", textDecoration: 'none' }}>{"Politique de confidentialit\u00e9"}</a>
       </div>
     </footer>
@@ -142,6 +142,7 @@ export default function App() {
                         <Route path="/loi-denormandie" element={<LoiDenormandie />} />
                         <Route path="/loi-jeanbrun" element={<LoiJeanbrun />} />
                       <Route path="/lmnp-gere" element={<LmnpGere />} />               <Route path="/retraite" element={<Retraite />} /> <Route path="/etudes-enfants" element={<EtudesEnfants />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
         </Routes>
       </main>
       <Footer />
