@@ -17,10 +17,10 @@ export default function CTAApproche() {
     <section ref={ref} style={{ padding: 'clamp(100px,14vw,200px) 6vw', background: `radial-gradient(ellipse 80% 60% at 50% 50%, ${C.navy} 0%, #0a1220 100%)`, textAlign: 'center' }}>
       <div style={{ maxWidth: 700, margin: '0 auto', ...fade(0) }}>
         <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 300, fontSize: 'clamp(32px,5vw,56px)', color: '#fff', lineHeight: 1.15 }}>
-          Pr\u00eat \u00e0 construire<br /><em style={{ color: C.bronzeLight, fontStyle: 'italic' }}>votre avenir patrimonial ?</em>
+          Prêt à construire<br /><em style={{ color: C.bronzeLight, fontStyle: 'italic' }}>votre avenir patrimonial ?</em>
         </h2>
         <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 200, fontSize: 'clamp(15px,1.8vw,19px)', color: 'rgba(255,255,255,0.5)', marginTop: 24 }}>
-          Prenez rendez-vous pour un premier \u00e9change gratuit et sans engagement.
+          Prenez rendez-vous pour un premier échange gratuit et sans engagement.
         </p>
         <a
           href="/contact"
