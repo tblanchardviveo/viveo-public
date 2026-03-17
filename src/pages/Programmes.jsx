@@ -37,11 +37,11 @@ export default function Programmes() {
             27 ans d'expertise promoteur. Des programmes vérifiés, négociés. Pas un catalogue — une sélection d'expert.
           </p>
           <div style={{ display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap', animation: 'fadeUp 0.6s ease 0.3s both' }}>
-            {[['Se Loger', '/se-loger/'], ['Investir', '/investir/'], ["L'Approche VIVEO", '/approche-viveo/']].map(([label, path]) => (
-              <a key={label} href={`${WP}${path}`} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 99, padding: '8px 18px', fontFamily: "'Raleway', sans-serif", fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.65)', textDecoration: 'none', transition: 'all 0.2s' }}
+            {[['Se Loger', '/se-loger'], ['Investir', '/investir'], ["L'Approche VIVEO", '/approche']].map(([label, path]) => (
+              <Link key={label} to={path} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 99, padding: '8px 18px', fontFamily: "'Raleway', sans-serif", fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.65)', textDecoration: 'none', transition: 'all 0.2s' }}
                 onMouseEnter={e => { e.target.style.background = 'rgba(166,124,82,0.12)'; e.target.style.borderColor = '#A67C52'; e.target.style.color = '#C4976A' }}
                 onMouseLeave={e => { e.target.style.background = 'rgba(255,255,255,0.06)'; e.target.style.borderColor = 'rgba(255,255,255,0.12)'; e.target.style.color = 'rgba(255,255,255,0.65)' }}
-              >{label}</a>
+              >{label}</Link>
             ))}
           </div>
         </div>
