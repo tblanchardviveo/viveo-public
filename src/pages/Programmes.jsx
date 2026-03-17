@@ -119,7 +119,7 @@ export default function Programmes() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 1, background: 'rgba(255,255,255,0.06)', borderRadius: 20, overflow: 'hidden' }}>
             {[
-              { badge: "27 ANS D'EXPÉRIENCE", title: "L'œil du professionnel côté promoteur", text: "Thomas Blanchard a travaillé pour Bouygues Immobilier, Nexity, Promogim, Demathieu & Bard. Il connaît les programmes de l'intérieur." },
+              { badge: "27 ANS D'EXPÉRIENCE", title: "L'œil du professionnel côté promoteur", text: "Le fondateur de VIVEO a travaillé pour Bouygues Immobilier, Nexity, Promogim, Demathieu & Bard. Il connaît les programmes de l'intérieur." },
               { badge: "INDÉPENDANCE TOTALE", title: "Aucune exclusivité, aucun conflit d'intérêt", text: "VIVEO n'est lié à aucun promoteur. Nous sélectionnons les programmes selon leur qualité réelle, pas selon les commissions proposées." },
               { badge: "ACCOMPAGNEMENT COMPLET", title: "De la recherche à la remise des clés", text: "Financement, fiscalité, suivi chantier, livraison — VIVEO reste à vos côtés à chaque étape, sans disparaître après la signature." }
             ].map((c, i) => (
