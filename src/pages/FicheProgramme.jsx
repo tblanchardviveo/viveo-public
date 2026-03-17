@@ -127,7 +127,7 @@ export default function FicheProgramme() {
           {p.dispositifs_fiscaux && p.dispositifs_fiscaux.length > 0 && (
             <div style={{ marginTop: 40 }}><Eyebrow>DISPOSITIFS FISCAUX</Eyebrow>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                {p.dispositifs_fiscaux.map(d => <a key={d} href={dispoLinks[d]} style={{ display: 'inline-block', padding: '10px 20px', border: '1.5px solid var(--bronze)', borderRadius: 50, color: 'var(--bronze)', fontSize: 13, fontWeight: 600, textDecoration: 'none', fontFamily: '"Raleway", sans-serif' }}>{d} &rarr;</a>)}
+                {p.dispositifs_fiscaux.map(d => <a key={d} href={dispoLinks[d]} style={{ display: 'inline-block', padding: '10px 20px', border: '1.5px solid var(--bronze)', borderRadius: 50, color: 'var(--bronze)', fontSize: 13, fontWeight: 600, textDecoration: 'none', fontFamily: '"Raleway", sans-serif' }}>{d} &rarr;</Link>)}
               </div>
             </div>)}
           {(p.latitude && p.longitude) && (
