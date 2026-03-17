@@ -25,7 +25,7 @@ export default function Blog() {
         <div style={{ textAlign: 'center', marginBottom: 60 }}>
           <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--bronze)' }}>VIVEO Patrimoine</span>
           <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(28px, 5vw, 42px)', color: '#fff', fontWeight: 400, marginTop: 12 }}>Notre Blog</h1>
-          <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 16, color: 'rgba(255,255,255,0.55)', marginTop: 12, maxWidth: 560, marginLeft: 'auto', marginRight: 'auto' }}>Conseils, analyses et actualites sur l'investissement immobilier.</p>
+          <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 16, color: 'rgba(255,255,255,0.55)', marginTop: 12, maxWidth: 560, marginLeft: 'auto', marginRight: 'auto' }}>Conseils, analyses et actualités sur l'investissement immobilier.</p>
         </div>
 
         {loading && <p style={{ color: 'rgba(255,255,255,0.5)', textAlign: 'center', fontFamily: "'Raleway', sans-serif" }}>Chargement...</p>}
