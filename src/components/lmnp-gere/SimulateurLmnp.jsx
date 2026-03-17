@@ -49,7 +49,7 @@ export default function SimulateurLmnp() {
         <div style={{ flex: '0 0 45%', minWidth: 300 }}>
           <Slider label="Budget d'acquisition TTC" value={budget} set={setBudget} min={80000} max={500000} step={5000} display={fmt(budget)} />
           <Slider label="Apport personnel" value={apport} set={setApport} min={0} max={150000} step={5000} display={fmt(apport)} noteText={"0\u20ac = financement total"} />
-          <Slider label="Dur\u00e9e du cr\u00e9dit" value={duree} set={setDuree} min={10} max={25} step={5} display={`${duree} ans`} />
+          <Slider label="Durée du crédit" value={duree} set={setDuree} min={10} max={25} step={5} display={`${duree} ans`} />
           <Slider label="Rendement locatif brut" value={rdt} set={setRdt} min={3.0} max={5.5} step={0.1} display={`${rdt.toFixed(1)}%`} noteText={"Taux constat\u00e9 sur nos programmes"} />
           <div style={{ marginBottom: 28 }}>
             <p style={lbl}>Votre TMI</p>

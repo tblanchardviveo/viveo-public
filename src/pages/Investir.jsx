@@ -58,7 +58,7 @@ export default function Investir() {
         <div style={{ display: 'flex', gap: 60, flexWrap: 'wrap', alignItems: 'flex-start' }}>
           <div style={{ flex: '1 1 40%', minWidth: 280 }}>
             <h2 style={h2Style('#111C33')}>{'Acqu\u00e9rir \u00e0 prix r\u00e9duit \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'r\u00e9cup\u00e9rer la pleine propri\u00e9t\u00e9.'}</em></h2>
-            <p style={pStyle('#555')}>{'D\u00e9cote de 30 \u00e0 40% \u00e0 l\u2019achat, aucune gestion locative, aucune fiscalit\u00e9 sur les revenus fonciers pendant la dur\u00e9e du d\u00e9membrement. Un investissement patrimonial long terme.'}</p>
+            <p style={pStyle('#555')}>{'D\u00e9cote de 30 \u00e0 40% \u00e0 l\u2019achat, aucune gestion locative, aucune fiscalit\u00e9 sur les revenus fonciers pendant la Durée du d\u00e9membrement. Un investissement patrimonial long terme.'}</p>
             <div style={{ marginTop: 24 }}>
               {['D\u00e9cote significative sur le prix d\u2019achat', 'Z\u00e9ro gestion, z\u00e9ro charges, z\u00e9ro fiscalit\u00e9 fonci\u00e8re', 'R\u00e9cup\u00e9ration automatique de la pleine propri\u00e9t\u00e9'].map((t, i) => <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>{'\u2713'} {t}</p>)}
             </div>

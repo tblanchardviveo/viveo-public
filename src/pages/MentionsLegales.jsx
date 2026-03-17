@@ -87,7 +87,7 @@ export default function MentionsLegales() {
             <div style={gridWrap}>
               <Cell label="Responsable du traitement">{"VIVEO Conseils & Patrimoine"}</Cell>
               <Cell label={"Finalit\u00e9"}>{"Gestion des demandes de contact et de rendez-vous"}</Cell>
-              <Cell label={"Dur\u00e9e de conservation"}>{"3 ans \u00e0 compter du dernier contact"}</Cell>
+              <Cell label={"Durée de conservation"}>{"3 ans \u00e0 compter du dernier contact"}</Cell>
               <Cell label="Contact"><a href="mailto:contact@viveo-patrimoine.fr" style={{ color: '#A67C52', textDecoration: 'none' }}>contact@viveo-patrimoine.fr</a></Cell>
             </div>
             <p style={{ ...txt, marginTop: 20 }}>{"Pour exercer vos droits ou introduire une r\u00e9clamation, vous pouvez \u00e9galement contacter la CNIL : "}<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style={{ color: '#A67C52' }}>www.cnil.fr</a></p>

@@ -9,7 +9,7 @@ const avantages = [
   {
     icon: '\ud83d\udcc8',
     title: 'Patrimoine qui se valorise',
-    desc: 'L\u2019immobilier prend de la valeur dans la dur\u00e9e, une double performance.'
+    desc: 'L\u2019immobilier prend de la valeur dans la Durée, une double performance.'
   },
   {
     icon: '\ud83d\udee1\ufe0f',

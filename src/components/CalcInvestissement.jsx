@@ -116,7 +116,7 @@ export default function CalcInvestissement({ onResult }) {
           <input type="number" value={apport} onChange={e => setApport(e.target.value)} placeholder="20 000" style={inputStyle} />
         </div>
         <div>
-          <label style={labelStyle}>{"Dur\u00e9e (ann\u00e9es)"}</label>
+          <label style={labelStyle}>{"Durée (ann\u00e9es)"}</label>
           <select value={duree} onChange={e => setDuree(e.target.value)} style={{ ...inputStyle, cursor: 'pointer' }}>
             {[10,15,20,25].map(n => <option key={n} value={n} style={{ background: '#1A2744' }}>{n} ans</option>)}
           </select>
