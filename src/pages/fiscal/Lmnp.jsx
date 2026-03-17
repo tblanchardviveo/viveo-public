@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useReveal } from '../../hooks/useReveal'
+import SimulateurLmnp from '../../components/lmnp-gere/SimulateurLmnp'
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 const eye = { display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }
@@ -77,6 +78,8 @@ export default function Lmnp() {
           ))}
         </div>
       </Sec>
+
+      <SimulateurLmnp />
 
       {/* Section 6 — CTA */}
       <Sec bg="#111C33">
