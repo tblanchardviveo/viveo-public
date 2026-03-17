@@ -21,9 +21,9 @@ export default function HeroV3() {
       {/* Background parallax */}
       <div style={{
         position: 'absolute', inset: 0,
-        backgroundImage: `url(/images/IMG_0602.png)`,
+        backgroundImage: "url('/images/IMG_0602.png')",
         backgroundSize: 'cover',
-        backgroundPosition: `center calc(25% + ${scrollY * 0.35}px)`
+        backgroundPosition: 'center 25%'
       }} />
       {/* Overlay 1 */}
       <div style={{
