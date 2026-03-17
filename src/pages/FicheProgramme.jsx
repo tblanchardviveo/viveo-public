@@ -36,7 +36,7 @@ export default function FicheProgramme() {
     setLoading(true)
     supabase.from('programmes').select('*').eq('slug', slug)
       .in('statut', ['Disponible', 'Bientot disponible']).single()
-      .then(({ data }) => { setProgramme(data); setLoading(false) })
+      .then(({ data }) => { setProgramme(data); setLoading(false) }).catch(() => setLoading(false))
   }, [slug])
 
   const handleSubmit = async (e) => {
