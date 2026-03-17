@@ -27,6 +27,7 @@ import Retraite from './pages/Retraite'
 import Blog from './pages/Blog'
 import BlogArticle from './pages/BlogArticle'
 import ScrollToTop from './components/ScrollToTop'
+import ChatbotWidget from './components/ChatbotWidget'
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
 function Header() {
@@ -119,8 +120,7 @@ export default function App() {
     <BrowserRouter>
       <style>{`
         @media (max-width: 768px) {
-          .nav-hide-mobile { display: none !important; }
-        }
+import ScrollToTop        }
               <ScrollToTop />
       `}</style>
       <Header />
@@ -150,6 +150,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <ChatbotWidget />
     </BrowserRouter>
   )
 }
