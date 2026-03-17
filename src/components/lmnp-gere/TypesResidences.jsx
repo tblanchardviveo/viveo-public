@@ -14,7 +14,7 @@ const cards = [
     stat: '+140%', statLabel: ' de seniors d\u2019ici 2050'
   },
   {
-    img: `${WP}/wp-content/uploads/2026/03/IMG_0659.png`,
+    img: `${WP}/wp-content/uploads/2026/03/IMG_0669.png`,
     badge: 'PRIORIT\u00c9 VIVEO', badgeBronze: true,
     title: 'R\u00e9sidences \u00e9tudiantes',
     text: "2,7 millions d'\u00e9tudiants pour seulement 350 000 places en r\u00e9sidences. Un taux d'\u00e9quipement de 12% seulement. Le d\u00e9ficit est chronique, structurel, national \u2014 et ne se r\u00e9sorbe pas.",
