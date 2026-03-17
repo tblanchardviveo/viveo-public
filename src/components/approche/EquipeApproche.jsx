@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from 'react'
 const C = { navy: '#111C33', bronze: '#A67C52', bronzeLight: '#C4976A' }
 
 const team = [
-  { name: 'Thomas Blanchard', role: 'Fondateur & Directeur', bio: '27 ans d\u2019exp\u00e9rience en gestion de patrimoine immobilier. Certifi\u00e9 CIF-ORIAS.', initials: 'TB' },
-  { name: 'Sophie Martin', role: 'Directrice Conseil', bio: 'Sp\u00e9cialiste fiscalit\u00e9 immobili\u00e8re et strat\u00e9gies de d\u00e9fiscalisation.', initials: 'SM' },
-  { name: 'Marc Dupont', role: 'Responsable Programmes', bio: 'S\u00e9lection et analyse des programmes neufs sur tout le territoire.', initials: 'MD' },
+  { name: 'Thomas Blanchard', role: 'Fondateur & Directeur', bio: '27 ans d’expérience en gestion de patrimoine immobilier. Certifié CIF-ORIAS.', initials: 'TB' },
+  { name: 'Sophie Martin', role: 'Directrice Conseil', bio: 'Spécialiste fiscalité immobilière et stratégies de défiscalisation.', initials: 'SM' },
+  { name: 'Marc Dupont', role: 'Responsable Programmes', bio: 'Sélection et analyse des programmes neufs sur tout le territoire.', initials: 'MD' },
 ]
 
 export default function EquipeApproche() {
@@ -21,8 +21,8 @@ export default function EquipeApproche() {
   return (
     <section ref={ref} style={{ padding: 'clamp(80px,12vw,160px) 6vw', background: '#fff' }}>
       <div style={{ textAlign: 'center', marginBottom: 64, ...fade(0) }}>
-        <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.2em', color: C.bronze }}>Notre \u00e9quipe</span>
-        <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 300, fontSize: 'clamp(32px,5vw,52px)', color: C.navy, marginTop: 16 }}>Des experts<br /><em style={{ color: C.bronzeLight, fontStyle: 'italic' }}>\u00e0 votre service.</em></h2>
+        <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.2em', color: C.bronze }}>Notre équipe</span>
+        <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 300, fontSize: 'clamp(32px,5vw,52px)', color: C.navy, marginTop: 16 }}>Des experts<br /><em style={{ color: C.bronzeLight, fontStyle: 'italic' }}>à votre service.</em></h2>
       </div>
       <div style={{ display: 'flex', gap: 32, flexWrap: 'wrap', justifyContent: 'center', maxWidth: 1000, margin: '0 auto' }}>
         {team.map((t, i) => (
