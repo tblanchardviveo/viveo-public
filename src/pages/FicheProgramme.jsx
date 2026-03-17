@@ -84,7 +84,7 @@ export default function FicheProgramme() {
       const formatTypologies = (t) => (!t || !t.length) ? '—' : [...t].sort().join(' · ')
       const formatSurface = (min, max) => (!min && !max) ? '—' : (min && max && min !== max) ? `${Math.round(min)} — ${Math.round(max)} m²` : `${Math.round(min || max)} m²`
       const formatPrix = (n) => n ? fmt(n) : '—'
-  const dispoLinks = { 'LMNP': '/lmnp-viveo.html', 'Deficit Foncier': '/deficit-foncier-viveo.html', 'Loi Denormandie': '/loi-denormandie-viveo.html', 'Loi Jeanbrun': '/loi-jeanbrun-viveo.html', 'Monuments Historiques': `${WP}/monuments-historiques/`, 'Loi Malraux': `${WP}/loi-malraux/`, 'Nue-propriete': `${WP}/nue-propriete/` }
+  const dispoLinks = { 'LMNP': '/lmnp', 'Deficit Foncier': '/deficit-foncier', 'Loi Denormandie': '/loi-denormandie', 'Loi Jeanbrun': '/loi-jeanbrun', 'Monuments Historiques': `/monuments-historiques`, 'Loi Malraux': `/loi-malraux`, 'Nue-propriete': `/nue-propriete` }
 
   return (
     <div>
