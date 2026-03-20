@@ -26,7 +26,7 @@ import Retraite from './pages/Retraite'
     import MentionsLegales from './pages/MentionsLegales'
 import Blog from './pages/Blog'
 import BlogArticle from './pages/BlogArticle'
-import DemoEspaceClient from './pages/DemoEspaceClient'
+import RdvDecouverte from './pages/RdvDecouverte' import DemoEspaceClient from './pages/DemoEspaceClient'
 import ScrollToTop from './components/ScrollToTop'
 import ChatbotWidget from './components/ChatbotWidget'
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
@@ -144,7 +144,7 @@ export default function App() {
                         <Route path="/loi-jeanbrun" element={<LoiJeanbrun />} />
                       <Route path="/lmnp-gere" element={<LmnpGere />} />               <Route path="/retraite" element={<Retraite />} /> <Route path="/etudes-enfants" element={<EtudesEnfants />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />               <Route path="/blog" element={<Blog />} />               <Route path="/blog/:slug" element={<BlogArticle />} />
-                        <Route path="/demo-espace-client" element={<DemoEspaceClient />} />
+                        <Route path="/rdv-decouverte" element={<RdvDecouverte />} />                     <Route path="/demo-espace-client" element={<DemoEspaceClient />} />
         </Routes>
       </main>
       <Footer />
