@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/app/:path*", "destination": "https://viveo-client-tau.vercel.app/app/:path*", "permanent": false },
+    { "source": "/pilotage/:path*", "destination": "https://viveo-admin.vercel.app/pilotage/:path*", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
