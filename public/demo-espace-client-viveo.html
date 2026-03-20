@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo Espace Client VIVEO</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a2e}
+.splash{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#1a1a2e,#16213e)}
+.splash h1{color:#fff;font-size:2rem;margin-bottom:10px}
+.splash .badge{display:inline-block;background:#b8913f;color:#fff;padding:6px 16px;border-radius:20px;font-size:0.85rem;margin-bottom:20px}
+.splash p{color:#ccc;max-width:600px;margin:0 auto}
+section{max-width:800px;margin:30px auto;padding:0 20px}
+.card{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.card h2{font-size:1.2rem;margin-bottom:12px;color:#1a1a2e}
+.card ul{padding-left:20px}
+.card li{margin-bottom:8px;line-height:1.5}
+.tour{counter-reset:step}
+.tour .step{position:relative;padding:16px 16px 16px 50px;background:#fff;border-radius:10px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.tour .step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:16px;background:#b8913f;color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem}
+.cta{text-align:center;padding:40px 20px}
+.cta a{display:inline-block;background:#b8913f;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem}
+.cta a:hover{opacity:0.9}
+</style>
+</head>
+<body>
+<div class="splash">
+<div class="badge">Demo interne</div>
+<h1>Espace Client VIVEO</h1>
+<p>Plateforme de suivi patrimonial pour les clients VIVEO Patrimoine</p>
+</div>
+<section>
+<div class="card">
+<h2>1. Tableau de bord</h2>
+<ul>
+<li>Vue globale du patrimoine immobilier et financier</li>
+<li>Indicateurs de performance en temps reel</li>
+<li>Alertes et notifications personnalisees</li>
+</ul>
+</div>
+<div class="card">
+<h2>2. Suivi des investissements</h2>
+<ul>
+<li>Detail de chaque investissement immobilier</li>
+<li>Suivi des loyers et rendements</li>
+<li>Historique des transactions</li>
+</ul>
+</div>
+<div class="card">
+<h2>3. Documents et reporting</h2>
+<ul>
+<li>Acces a tous vos documents contractuels</li>
+<li>Rapports trimestriels automatises</li>
+<li>Export PDF et Excel</li>
+</ul>
+</div>
+<div class="card">
+<h2>4. Simulation et projection</h2>
+<ul>
+<li>Simulateur de rendement patrimonial</li>
+<li>Projection fiscale personnalisee</li>
+<li>Scenarios de diversification</li>
+</ul>
+</div>
+</section>
+<section class="tour">
+<h2 style="text-align:center;margin-bottom:20px;font-size:1.4rem">Visite guidee — 7 etapes</h2>
+<div class="step">Connexion securisee a votre espace personnel</div>
+<div class="step">Decouverte du tableau de bord global</div>
+<div class="step">Consultation de vos investissements en cours</div>
+<div class="step">Acces a vos documents et rapports</div>
+<div class="step">Lancement d'une simulation patrimoniale</div>
+<div class="step">Parametrage de vos alertes et preferences</div>
+<div class="step">Prise de rendez-vous avec votre conseiller</div>
+</section>
+<div class="cta">
+<a href="https://viveo-patrimoine.fr/rdv-decouverte">Prendre un rendez-vous decouverte</a>
+</div>
+</body>
+</html>
