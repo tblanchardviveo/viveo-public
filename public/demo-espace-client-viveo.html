@@ -3,79 +3,352 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demo Espace Client VIVEO</title>
+<title>VIVEO — Votre espace client</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a2e}
-.splash{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#1a1a2e,#16213e)}
-.splash h1{color:#fff;font-size:2rem;margin-bottom:10px}
-.splash .badge{display:inline-block;background:#b8913f;color:#fff;padding:6px 16px;border-radius:20px;font-size:0.85rem;margin-bottom:20px}
-.splash p{color:#ccc;max-width:600px;margin:0 auto}
-section{max-width:800px;margin:30px auto;padding:0 20px}
-.card{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
-.card h2{font-size:1.2rem;margin-bottom:12px;color:#1a1a2e}
-.card ul{padding-left:20px}
-.card li{margin-bottom:8px;line-height:1.5}
-.tour{counter-reset:step}
-.tour .step{position:relative;padding:16px 16px 16px 50px;background:#fff;border-radius:10px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
-.tour .step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:16px;background:#b8913f;color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem}
-.cta{text-align:center;padding:40px 20px}
-.cta a{display:inline-block;background:#b8913f;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem}
-.cta a:hover{opacity:0.9}
+:root{--navy:#111C33;--navy2:#1A2744;--bronze:#A67C52;--bronze2:#C4976A;--cream:#F7F5F1;--white:#FFFFFF;--border:#E8E0D5;--muted:#7A7A8A;--success:#2D7D52;--warn:#B8860B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'Raleway',sans-serif;background:var(--cream);color:var(--navy);}
+#splash{position:fixed;inset:0;z-index:1000;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;}
+#splash.out{animation:fadeOut .7s forwards;}
+.s-eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:18px;}
+.s-logo{font-family:'Playfair Display',serif;font-size:58px;font-weight:700;color:#fff;letter-spacing:.06em;}
+.s-logo span{color:var(--bronze);}
+.s-divider{width:40px;height:1px;background:rgba(166,124,82,.5);margin:22px auto;}
+.s-headline{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:rgba(255,255,255,.7);line-height:1.5;max-width:480px;margin-bottom:8px;}
+.s-sub{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;max-width:380px;margin-bottom:40px;}
+.s-btn{background:linear-gradient(135deg,var(--bronze),var(--bronze2));color:#fff;border:none;border-radius:2px;padding:16px 48px;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;}
+#app{display:none;min-height:100vh;flex-direction:column;}
+.topbar{background:var(--navy);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.tb-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:.06em;}
+.tb-logo span{color:var(--bronze);}
+.tb-nav{display:flex;gap:4px;}
+.tn{padding:8px 16px;border-radius:4px;font-size:12px;font-weight:600;letter-spacing:.06em;cursor:pointer;color:rgba(255,255,255,.5);background:none;border:none;font-family:'Raleway',sans-serif;transition:all .2s;}
+.tn.active,.tn:hover{color:#fff;background:rgba(255,255,255,.08);}
+.tn.active{color:var(--bronze2);}
+.tb-user{display:flex;align-items:center;gap:10px;}
+.tb-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--bronze),var(--bronze2));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#fff;}
+.tb-name{font-size:12px;color:rgba(255,255,255,.6);}
+.content{flex:1;padding:32px;max-width:1100px;margin:0 auto;width:100%;}
+.section{display:none;}
+.section.active{display:block;animation:fadeUp .35s ease;}
+.hero-card{position:relative;border-radius:16px;overflow:hidden;margin-bottom:24px;height:300px;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,28,51,.92) 0%,rgba(17,28,51,.2) 60%,transparent 100%);}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:28px 32px;}
+.hero-badge{display:inline-block;background:rgba(166,124,82,.2);border:1px solid rgba(166,124,82,.4);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze2);margin-bottom:12px;}
+.hero-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:6px;}
+.hero-sub{font-size:13px;color:rgba(255,255,255,.6);display:flex;gap:20px;flex-wrap:wrap;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:18px;}
+.card{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:22px;}
+.card-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.card-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--navy);}
+.card-action{font-size:11px;color:var(--bronze);font-weight:600;cursor:pointer;}
+.kpi{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:20px 22px;}
+.kpi-label{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;}
+.kpi-value{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--navy);line-height:1;}
+.kpi-value.bronze{color:var(--bronze);}
+.kpi-value.green{color:var(--success);}
+.kpi-meta{font-size:11px;color:var(--muted);margin-top:5px;}
+.progress-track{height:7px;background:var(--border);border-radius:4px;overflow:hidden;margin:10px 0 6px;}
+.progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--navy),var(--bronze));width:0%;transition:width 1.4s cubic-bezier(.4,0,.2,1);}
+.timeline{position:relative;padding-left:28px;}
+.timeline::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:1.5px;background:var(--border);}
+.tl-item{position:relative;padding-bottom:20px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-dot{position:absolute;left:-24px;top:2px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;}
+.tl-dot.done{background:var(--navy);color:#fff;}
+.tl-dot.active{background:var(--bronze);color:#fff;box-shadow:0 0 0 4px rgba(166,124,82,.18);}
+.tl-dot.pending{background:var(--border);color:var(--muted);}
+.tl-title{font-size:13px;font-weight:600;color:var(--navy);}
+.tl-title.muted{color:var(--muted);font-weight:400;}
+.tl-date{font-size:11px;color:var(--muted);margin-top:2px;}
+.tl-photo{width:100%;height:72px;border-radius:8px;margin-top:8px;background:linear-gradient(135deg,var(--cream),var(--border));display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted);border:1px solid var(--border);}
+.map-wrap{border-radius:10px;overflow:hidden;height:160px;position:relative;}
+.map-label{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.92);padding:5px 11px;border-radius:6px;font-size:11px;font-weight:600;color:var(--navy);}
+.appel{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--border);}
+.appel:last-child{border-bottom:none;}
+.appel-pct{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);min-width:44px;}
+.appel-info{flex:1;}
+.appel-name{font-size:13px;font-weight:600;}
+.appel-date{font-size:11px;color:var(--muted);margin-top:2px;}
+.badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;}
+.bg{background:#E8F5E9;color:var(--success);}
+.bw{background:#FFF8E1;color:var(--warn);}
+.bb{background:rgba(166,124,82,.12);color:var(--bronze);}
+.bm{background:var(--cream);color:var(--muted);}
+.doc-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:8px;border:1px solid var(--border);margin-bottom:8px;cursor:pointer;transition:border-color .2s;}
+.doc-item:hover{border-color:var(--bronze);}
+.doc-icon{width:36px;height:36px;border-radius:8px;background:rgba(166,124,82,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;}
+.doc-name{font-size:13px;font-weight:600;color:var(--navy);}
+.doc-meta{font-size:11px;color:var(--muted);margin-top:2px;}
+.section-label{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin:18px 0 10px;}
+.bubble-wrap{display:flex;flex-direction:column;margin-bottom:12px;}
+.bubble-wrap.right{align-items:flex-end;}
+.bmeta{font-size:10px;font-weight:600;color:var(--muted);margin-bottom:4px;}
+.bubble{padding:12px 16px;border-radius:12px;font-size:13px;line-height:1.6;max-width:78%;}
+.bv{background:var(--navy);color:#fff;border-bottom-left-radius:3px;}
+.bc{background:var(--border);color:var(--navy);border-bottom-right-radius:3px;}
+.bnew{background:var(--navy2);color:#fff;border-bottom-left-radius:3px;border-left:3px solid var(--bronze);}
+.unread{display:inline-block;background:var(--bronze);color:#fff;font-size:9px;font-weight:700;border-radius:8px;padding:2px 7px;margin-left:6px;}
+.footer-cta{background:var(--navy);border-radius:16px;padding:40px;text-align:center;margin-top:28px;}
+.footer-cta h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:8px;}
+.footer-cta p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:24px;}
+.footer-btn{display:inline-block;background:linear-gradient(135deg,var(--bronze),var(--bronze2));color:#fff;text-decoration:none;border-radius:2px;padding:13px 34px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;}
+.tour-overlay{position:fixed;inset:0;z-index:500;background:rgba(17,28,51,.6);pointer-events:none;opacity:0;transition:opacity .3s;}
+.tour-overlay.on{opacity:1;}
+.tooltip{position:fixed;z-index:600;background:var(--white);border-radius:12px;box-shadow:0 20px 60px rgba(17,28,51,.2);padding:22px 24px;max-width:320px;border-top:3px solid var(--bronze);opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:auto;}
+.tooltip.on{opacity:1;transform:translateY(0);}
+.tt-step{font-size:10px;font-weight:600;color:var(--bronze);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+.tt-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.tt-text{font-size:12px;color:var(--muted);line-height:1.65;}
+.tt-row{display:flex;justify-content:space-between;align-items:center;margin-top:16px;}
+.tt-dots{display:flex;gap:5px;}
+.tt-dot{width:6px;height:6px;border-radius:50%;background:var(--border);}
+.tt-dot.on{background:var(--bronze);}
+.tt-skip{font-size:11px;color:var(--muted);background:none;border:none;cursor:pointer;font-family:'Raleway',sans-serif;text-decoration:underline;}
+.tt-next{background:var(--navy);color:#fff;border:none;border-radius:6px;padding:9px 20px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;font-family:'Raleway',sans-serif;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeOut{to{opacity:0;visibility:hidden;}}
 </style>
 </head>
 <body>
-<div class="splash">
-<div class="badge">Demo interne</div>
-<h1>Espace Client VIVEO</h1>
-<p>Plateforme de suivi patrimonial pour les clients VIVEO Patrimoine</p>
+
+<div id="splash">
+  <div class="s-eyebrow">Espace client</div>
+  <div class="s-logo">VIVEO<span>.</span></div>
+  <div class="s-divider"></div>
+  <div class="s-headline">Votre projet immobilier,<br>piloté avec clarté.</div>
+  <div class="s-sub">Documents, suivi de chantier, jalons VEFA, appels de fonds — tout ce qui compte, accessible à tout moment.</div>
+  <button class="s-btn" onclick="startApp()">Découvrir mon espace →</button>
 </div>
-<section>
-<div class="card">
-<h2>1. Tableau de bord</h2>
-<ul>
-<li>Vue globale du patrimoine immobilier et financier</li>
-<li>Indicateurs de performance en temps reel</li>
-<li>Alertes et notifications personnalisees</li>
-</ul>
+
+<div id="app">
+  <header class="topbar">
+    <div class="tb-logo">VIVEO<span>.</span></div>
+    <nav class="tb-nav">
+      <button class="tn active" onclick="showSec('suivi',this)">Mon projet</button>
+      <button class="tn" onclick="showSec('docs',this)">Documents</button>
+      <button class="tn" onclick="showSec('msgs',this)">Messagerie <span class="unread">1</span></button>
+    </nav>
+    <div class="tb-user">
+      <div class="tb-av">VE</div>
+      <div class="tb-name">Votre espace client</div>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <!-- MON PROJET -->
+    <div class="section active" id="section-suivi">
+      <div class="hero-card">
+        <svg width="100%" height="100%" viewBox="0 0 900 300" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7BBDD4"/><stop offset="100%" stop-color="#A8CDE0"/></linearGradient>
+            <linearGradient id="fac" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0EBE0"/><stop offset="100%" stop-color="#E0D8C8"/></linearGradient>
+          </defs>
+          <rect width="900" height="300" fill="url(#sky)"/>
+          <rect y="245" width="900" height="55" fill="#8AAA88" opacity=".7"/>
+          <rect y="255" width="900" height="45" fill="#7A9A78" opacity=".5"/>
+          <rect x="130" y="50" width="460" height="205" fill="url(#fac)" rx="2"/>
+          <rect x="150" y="65" width="65" height="50" fill="#CCE4F4" rx="2" opacity=".85"/>
+          <rect x="228" y="65" width="65" height="50" fill="#CCE4F4" rx="2" opacity=".85"/>
+          <rect x="306" y="65" width="65" height="50" fill="#D8EAF8" rx="2" opacity=".9"/>
+          <rect x="384" y="65" width="65" height="50" fill="#CCE4F4" rx="2" opacity=".85"/>
+          <rect x="462" y="65" width="65" height="50" fill="#CCE4F4" rx="2" opacity=".85"/>
+          <rect x="150" y="130" width="65" height="50" fill="#CCE4F4" rx="2" opacity=".85"/>
+          <rect x="228" y="130" width="65" height="50" fill="#D8EAF8" rx="2" opacity=".9"/>
+          <rect x="306" y="130" width="65" height="50" fill="#CCE4F4" rx="2" opacity=".85"/>
+          <rect x="384" y="130" width="65" height="50" fill="#CCE4F4" rx="2" opacity=".85"/>
+          <rect x="462" y="130" width="65" height="50" fill="#CCE4F4" rx="2" opacity=".85"/>
+          <rect x="150" y="195" width="65" height="58" fill="#C0D8EE" rx="2" opacity=".8"/>
+          <rect x="228" y="195" width="148" height="58" fill="#B8CEEA" rx="2" opacity=".8"/>
+          <rect x="384" y="195" width="65" height="58" fill="#C0D8EE" rx="2" opacity=".8"/>
+          <rect x="462" y="195" width="65" height="58" fill="#C0D8EE" rx="2" opacity=".8"/>
+          <rect x="600" y="95" width="210" height="160" fill="#EAE5D8" rx="2"/>
+          <rect x="615" y="110" width="55" height="44" fill="#CCE4F4" rx="2" opacity=".75"/>
+          <rect x="682" y="110" width="55" height="44" fill="#CCE4F4" rx="2" opacity=".75"/>
+          <rect x="615" y="165" width="55" height="44" fill="#CCE4F4" rx="2" opacity=".75"/>
+          <rect x="682" y="165" width="55" height="44" fill="#CCE4F4" rx="2" opacity=".75"/>
+          <ellipse cx="80" cy="220" rx="38" ry="48" fill="#5A8C5A" opacity=".65"/>
+          <rect x="77" y="252" width="6" height="28" fill="#7A6050" opacity=".5"/>
+          <ellipse cx="830" cy="228" rx="32" ry="40" fill="#5A8C5A" opacity=".65"/>
+          <ellipse cx="868" cy="236" rx="22" ry="30" fill="#4A7A4A" opacity=".6"/>
+        </svg>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-badge">Programme neuf — VEFA</div>
+          <div class="hero-title">Les Terrasses du Lac</div>
+          <div class="hero-sub">
+            <span>📍 Étaples-sur-Mer (62)</span>
+            <span>🏠 T3 · 68 m² · 3ème étage</span>
+            <span>📅 Livraison T4 2027</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="kpi"><div class="kpi-label">Prix d'acquisition</div><div class="kpi-value bronze" id="kpi-prix">0 €</div><div class="kpi-meta">dont PTZ : 78 000 €</div></div>
+        <div class="kpi"><div class="kpi-label">Avancement chantier</div><div class="kpi-value green" id="kpi-pct">0%</div><div class="kpi-meta">Mise hors d'eau réalisée</div></div>
+        <div class="kpi"><div class="kpi-label">Prochain jalon</div><div class="kpi-value" style="font-size:17px;margin-top:3px;">Menuiseries</div><div class="kpi-meta">Estimé mai 2026</div></div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-hd"><div class="card-title">Progression de votre acquisition</div></div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px;"><span>Réservation</span><span>Livraison</span></div>
+        <div class="progress-track"><div class="progress-fill" id="bar"></div></div>
+        <div style="text-align:right;font-size:11px;color:var(--bronze);font-weight:600;margin-top:5px;">62% — Vous y êtes presque</div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="card-hd"><div class="card-title">Suivi du chantier</div><div class="card-action">Voir photos →</div></div>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-dot done">✓</div><div class="tl-title">Permis de construire</div><div class="tl-date">Novembre 2024</div></div>
+            <div class="tl-item"><div class="tl-dot done">✓</div><div class="tl-title">Contrat de réservation signé</div><div class="tl-date">Janvier 2025</div></div>
+            <div class="tl-item"><div class="tl-dot done">✓</div><div class="tl-title">Ouverture de chantier</div><div class="tl-date">Mars 2025</div><div class="tl-photo">📸 Photo chantier — terrassement</div></div>
+            <div class="tl-item"><div class="tl-dot done">✓</div><div class="tl-title">Achèvement des fondations</div><div class="tl-date">Juin 2025</div></div>
+            <div class="tl-item"><div class="tl-dot done">✓</div><div class="tl-title">Mise hors d'eau</div><div class="tl-date">Décembre 2025</div><div class="tl-photo">📸 Vue aérienne — toiture posée</div></div>
+            <div class="tl-item"><div class="tl-dot active">→</div><div class="tl-title" style="color:var(--bronze);">Pose des menuiseries extérieures</div><div class="tl-date">En cours · Mai 2026</div></div>
+            <div class="tl-item"><div class="tl-dot pending">○</div><div class="tl-title muted">Achèvement des travaux</div><div class="tl-date">Estimé septembre 2027</div></div>
+            <div class="tl-item"><div class="tl-dot pending">○</div><div class="tl-title muted">Livraison de votre bien</div><div class="tl-date">T4 2027</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:18px;">
+            <div class="card-hd"><div class="card-title">Localisation</div></div>
+            <div class="map-wrap">
+              <svg width="100%" height="100%" viewBox="0 0 400 160" preserveAspectRatio="xMidYMid slice">
+                <rect width="400" height="160" fill="#D4E8F4"/>
+                <rect y="80" width="400" height="80" fill="#C0DFF0"/>
+                <line x1="0" y1="80" x2="400" y2="80" stroke="#AAC8DC" stroke-width="10"/>
+                <line x1="200" y1="0" x2="200" y2="160" stroke="#AAC8DC" stroke-width="6"/>
+                <line x1="0" y1="40" x2="400" y2="40" stroke="#BECEDE" stroke-width="3"/>
+                <line x1="100" y1="0" x2="100" y2="160" stroke="#BECEDE" stroke-width="3"/>
+                <line x1="300" y1="0" x2="300" y2="160" stroke="#BECEDE" stroke-width="3"/>
+                <rect x="25" y="10" width="60" height="28" rx="3" fill="#A4C4A0" opacity=".5"/>
+                <rect x="310" y="100" width="65" height="38" rx="3" fill="#A4C4A0" opacity=".5"/>
+                <circle cx="200" cy="80" r="22" fill="rgba(166,124,82,.15)"/>
+                <circle cx="200" cy="80" r="9" fill="var(--bronze)"/>
+                <circle cx="200" cy="80" r="4" fill="#fff"/>
+              </svg>
+              <div class="map-label">📍 Étaples-sur-Mer · 62630</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-hd"><div class="card-title">Appels de fonds</div><div class="card-action">Tout voir →</div></div>
+            <div class="appel"><div class="appel-pct">5%</div><div class="appel-info"><div class="appel-name">Réservation</div><div class="appel-date">Janv. 2025</div></div><span class="badge bg">Réglé</span></div>
+            <div class="appel"><div class="appel-pct">25%</div><div class="appel-info"><div class="appel-name">Ouverture de chantier</div><div class="appel-date">Mars 2025</div></div><span class="badge bg">Réglé</span></div>
+            <div class="appel"><div class="appel-pct">10%</div><div class="appel-info"><div class="appel-name">Fondations</div><div class="appel-date">Juin 2025</div></div><span class="badge bg">Réglé</span></div>
+            <div class="appel" style="background:rgba(166,124,82,.04);border-radius:8px;padding:11px 6px;margin:4px -6px;"><div class="appel-pct" style="color:var(--bronze);">20%</div><div class="appel-info"><div class="appel-name" style="color:var(--bronze);">Menuiseries ext.</div><div class="appel-date">Mai 2026</div></div><span class="badge bb">À venir</span></div>
+            <div class="appel"><div class="appel-pct" style="color:var(--muted);">30%</div><div class="appel-info"><div class="appel-name" style="color:var(--muted);">Achèvement travaux</div><div class="appel-date">2027</div></div><span class="badge bm">En attente</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-cta">
+        <h2>Un accompagnement de bout en bout.</h2>
+        <p>VIVEO vous suit de la signature à la remise des clés.<br>Des questions ? Votre conseiller répond sous 24h.</p>
+        <a href="https://www.viveo-patrimoine.fr" class="footer-btn">Contacter VIVEO →</a>
+      </div>
+    </div>
+
+    <!-- DOCUMENTS -->
+    <div class="section" id="section-docs">
+      <div class="card">
+        <div class="card-hd"><div class="card-title">Mes documents</div><div style="font-size:11px;color:var(--muted);">8 documents</div></div>
+        <div class="section-label">Acquisition</div>
+        <div class="doc-item"><div class="doc-icon">📄</div><div><div class="doc-name">Contrat de réservation</div><div class="doc-meta">Signé le 15 janv. 2025 · PDF · 2,4 Mo</div></div></div>
+        <div class="doc-item"><div class="doc-icon">📋</div><div><div class="doc-name">Notice descriptive</div><div class="doc-meta">Mise à jour mars 2025 · PDF · 4,1 Mo</div></div></div>
+        <div class="doc-item"><div class="doc-icon">🏠</div><div><div class="doc-name">Plan de votre T3 — Lot A201</div><div class="doc-meta">3ème étage · 68 m² · PDF · 1,8 Mo</div></div></div>
+        <div class="section-label">Financement</div>
+        <div class="doc-item"><div class="doc-icon">🏦</div><div><div class="doc-name">Offre de prêt — Crédit Agricole</div><div class="doc-meta">Acceptée le 28 fév. 2025 · PDF · 3,2 Mo</div></div></div>
+        <div class="doc-item"><div class="doc-icon">📊</div><div><div class="doc-name">Attestation PTZ — 78 000 €</div><div class="doc-meta">Émise le 15 mars 2025 · PDF · 0,8 Mo</div></div></div>
+        <div class="section-label">Chantier</div>
+        <div class="doc-item"><div class="doc-icon">📸</div><div><div class="doc-name">Photos chantier — décembre 2025</div><div class="doc-meta">Mise hors d'eau · 12 photos · ZIP · 18 Mo</div></div></div>
+        <div class="doc-item"><div class="doc-icon">📋</div><div><div class="doc-name">Compte-rendu réunion chantier</div><div class="doc-meta">Janvier 2026 · PDF · 1,1 Mo</div></div></div>
+      </div>
+    </div>
+
+    <!-- MESSAGERIE -->
+    <div class="section" id="section-msgs">
+      <div class="card">
+        <div class="card-hd"><div class="card-title">Messagerie VIVEO</div><div style="font-size:11px;color:var(--muted);">Réponse sous 24h ouvrées</div></div>
+        <div class="bubble-wrap"><div class="bmeta">Votre conseiller · VIVEO · 15 janv. 2025</div><div class="bubble bv">Bonjour, votre contrat de réservation est signé. Bienvenue dans la famille VIVEO — je reste disponible pour toute question.</div></div>
+        <div class="bubble-wrap right" style="margin-top:12px;"><div class="bmeta">Vous · 16 janv. 2025</div><div class="bubble bc">Merci. Quelles sont les prochaines étapes pour le financement ?</div></div>
+        <div class="bubble-wrap" style="margin-top:12px;"><div class="bmeta">Votre conseiller · VIVEO · 16 janv. 2025</div><div class="bubble bv">Je vous transmets demain le dossier complet. Le PTZ est confirmé à 78 000 € — excellent pour votre profil. Je vous appelle vendredi.</div></div>
+        <div class="bubble-wrap" style="margin-top:12px;"><div class="bmeta">Votre conseiller · VIVEO · 18 mars 2026 <span class="unread">Nouveau</span></div><div class="bubble bnew">Le chantier avance très bien. La pose des menuiseries démarrera en mai. Les dernières photos sont disponibles dans vos documents. Livraison toujours prévue T4 2027.</div></div>
+        <div style="display:flex;gap:10px;margin-top:18px;">
+          <input type="text" placeholder="Votre message…" style="flex:1;padding:11px 16px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:'Raleway',sans-serif;outline:none;background:var(--cream);color:var(--navy);">
+          <button style="background:var(--navy);color:#fff;border:none;border-radius:8px;padding:11px 20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Raleway',sans-serif;">Envoyer</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
-<div class="card">
-<h2>2. Suivi des investissements</h2>
-<ul>
-<li>Detail de chaque investissement immobilier</li>
-<li>Suivi des loyers et rendements</li>
-<li>Historique des transactions</li>
-</ul>
+
+<div class="tour-overlay" id="ov"></div>
+<div class="tooltip" id="tp">
+  <div class="tt-step" id="ts"></div>
+  <div class="tt-title" id="tt"></div>
+  <div class="tt-text" id="tx"></div>
+  <div class="tt-row">
+    <div class="tt-dots" id="td"></div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="tt-skip" onclick="endTour()">Passer</button>
+      <button class="tt-next" id="tn" onclick="next()">Suivant →</button>
+    </div>
+  </div>
 </div>
-<div class="card">
-<h2>3. Documents et reporting</h2>
-<ul>
-<li>Acces a tous vos documents contractuels</li>
-<li>Rapports trimestriels automatises</li>
-<li>Export PDF et Excel</li>
-</ul>
-</div>
-<div class="card">
-<h2>4. Simulation et projection</h2>
-<ul>
-<li>Simulateur de rendement patrimonial</li>
-<li>Projection fiscale personnalisee</li>
-<li>Scenarios de diversification</li>
-</ul>
-</div>
-</section>
-<section class="tour">
-<h2 style="text-align:center;margin-bottom:20px;font-size:1.4rem">Visite guidee — 7 etapes</h2>
-<div class="step">Connexion securisee a votre espace personnel</div>
-<div class="step">Decouverte du tableau de bord global</div>
-<div class="step">Consultation de vos investissements en cours</div>
-<div class="step">Acces a vos documents et rapports</div>
-<div class="step">Lancement d'une simulation patrimoniale</div>
-<div class="step">Parametrage de vos alertes et preferences</div>
-<div class="step">Prise de rendez-vous avec votre conseiller</div>
-</section>
-<div class="cta">
-<a href="https://viveo-patrimoine.fr/rdv-decouverte">Prendre un rendez-vous decouverte</a>
-</div>
+
+<script>
+var S=[
+  {s:'suivi',t:'Une présentation digne de votre bien',x:'Votre client arrive sur une vue architecturale de son programme — pas une liste. L\'effet est immédiat.',p:{top:'80px',right:'32px'}},
+  {s:'suivi',t:'Ses chiffres, en temps réel',x:'Prix d\'acquisition, avancement chantier, prochain jalon — tout s\'affiche avec une animation dès l\'ouverture.',p:{top:'340px',right:'32px'}},
+  {s:'suivi',t:'La progression en un coup d\'oeil',x:'Une barre animée qui lui dit exactement où il en est dans son acquisition. Clair, rassurant, professionnel.',p:{top:'450px',right:'32px'}},
+  {s:'suivi',t:'Le chantier, étape par étape',x:'Chaque jalon est tracé avec photos intégrées. Votre client voit son bien se construire. Plus d\'inquiétude, juste de la confiance.',p:{top:'530px',right:'32px'}},
+  {s:'suivi',t:'Localisation & appels de fonds',x:'Carte de situation et tableau complet des versements. Réglés, en cours, à venir — zéro surprise, zéro question.',p:{top:'530px',left:'32px'}},
+  {s:'docs',t:'Tous ses documents, au même endroit',x:'Contrat, plans, offre de prêt, photos de chantier — classés, accessibles en un clic, sans aller chercher dans ses emails.',p:{top:'120px',right:'32px'}},
+  {s:'msgs',t:'Une messagerie directe avec VIVEO',x:'Un fil de conversation professionnel. Votre client sait que vous le suivez. Traçabilité totale, réponse garantie 24h.',p:{top:'120px',right:'32px'}},
+];
+var i=0;
+function startApp(){
+  document.getElementById('splash').classList.add('out');
+  setTimeout(function(){
+    document.getElementById('app').style.display='flex';
+    anim(); setTimeout(tour,600);
+  },700);
+}
+function anim(){
+  var pr=document.getElementById('kpi-prix'),pc=document.getElementById('kpi-pct'),b=document.getElementById('bar');
+  var c=0,t1=setInterval(function(){c=Math.min(c+4800,287000);pr.textContent=c.toLocaleString('fr-FR')+' €';if(c>=287000)clearInterval(t1);},28);
+  var p=0,t2=setInterval(function(){p=Math.min(p+1,62);pc.textContent=p+'%';if(p>=62)clearInterval(t2);},22);
+  setTimeout(function(){if(b)b.style.width='62%';},300);
+}
+function tour(){i=0;render();document.getElementById('ov').classList.add('on');document.getElementById('tp').classList.add('on');}
+function render(){
+  var s=S[i];
+  var prev=i>0?S[i-1].s:null;
+  if(s.s!==prev){var b=document.querySelector('.tn[onclick*="'+s.s+'"]');if(b)showSec(s.s,b);}
+  document.getElementById('ts').textContent='Étape '+(i+1)+' / '+S.length;
+  document.getElementById('tt').textContent=s.t;
+  document.getElementById('tx').textContent=s.x;
+  var tp=document.getElementById('tp');
+  tp.style.top=s.p.top||'auto';tp.style.bottom=s.p.bottom||'auto';
+  tp.style.left=s.p.left||'auto';tp.style.right=s.p.right||'auto';
+  document.getElementById('td').innerHTML=S.map(function(_,k){return'<div class="tt-dot'+(k===i?' on':'')+'"></div>';}).join('');
+  document.getElementById('tn').textContent=i===S.length-1?'Terminer ✓':'Suivant →';
+}
+function next(){if(i<S.length-1){i++;render();}else endTour();}
+function endTour(){document.getElementById('ov').classList.remove('on');document.getElementById('tp').classList.remove('on');}
+function showSec(id,el){
+  document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active');});
+  document.querySelectorAll('.tn').forEach(function(n){n.classList.remove('active');});
+  var s=document.getElementById('section-'+id);if(s)s.classList.add('active');
+  if(el)el.classList.add('active');
+  if(id==='suivi')anim();
+}
+</script>
 </body>
 </html>
