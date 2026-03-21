@@ -26,7 +26,7 @@ export default function BanquesV3() {
 
       <h2 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 300, fontSize: 'clamp(32px,4.5vw,60px)', color: '#fff', lineHeight: 1.0, margin: 0 }}>
         Votre banquier vous conseille.<br />
-        <em style={{ color: '#C4976A', fontStyle: 'italic' }}>Pour qui travaille-t-il ?</em>
+                    <em style={{ color: '#C4976A', fontStyle: 'italic' }}>Pour qui travaille-t-il ?</em>
       </h2>
 
       <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 17, color: 'rgba(255,255,255,0.50)', maxWidth: 560, marginTop: 24, lineHeight: 1.7 }}>
