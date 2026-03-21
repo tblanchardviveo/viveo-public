@@ -1,11 +1,10 @@
 {
-  "redirects": [
-    { "source": "/app/:path*", "destination": "https://viveo-client-tau.vercel.app/app/:path*", "permanent": false },
-    { "source": "/pilotage/:path*", "destination": "https://viveo-admin.vercel.app/pilotage/:path*", "permanent": false },
-    { "source": "/partenaire", "destination": "https://viveo-client-tau.vercel.app/app/partenaire", "permanent": false },
-    { "source": "/partenaire/:path*", "destination": "https://viveo-client-tau.vercel.app/app/partenaire/:path*", "permanent": false }
-  ],
   "rewrites": [
+    { "source": "/app/assets/:path*", "destination": "https://viveo-client-tau.vercel.app/app/assets/:path*" },
+    { "source": "/app/:path*", "destination": "https://viveo-client-tau.vercel.app/app/:path*" },
+    { "source": "/pilotage/:path*", "destination": "https://viveo-admin.vercel.app/pilotage/:path*" },
+    { "source": "/partenaire", "destination": "https://viveo-client-tau.vercel.app/app/partenaire" },
+    { "source": "/partenaire/:path*", "destination": "https://viveo-client-tau.vercel.app/app/partenaire/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
