@@ -11,7 +11,7 @@ export default function RdvDecouverte() {
     e.preventDefault()
     if (!form.nom || !form.email) return
     try {
-      await fetch('/api/rdv-decouverte', {
+      await fetch('https://hook.eu1.make.com/ffvq0m0r3891jpiikk7cb3h2g3y9nq24', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
