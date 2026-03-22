@@ -30,6 +30,7 @@ const Blog = lazy(() => import('./pages/Blog'))
 const BlogArticle = lazy(() => import('./pages/BlogArticle'))
 const RdvDecouverte = lazy(() => import('./pages/RdvDecouverte'))
 const DemoEspaceClient = lazy(() => import('./pages/DemoEspaceClient'))
+const PolitiqueConfidentialite = lazy(() => import('./pages/PolitiqueConfidentialite'))
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
@@ -109,7 +110,8 @@ function Footer() {
       <div style={{ maxWidth: 1100, margin: '0 auto', marginTop: 48, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
         <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif" }}>{"© 2026 VIVEO Patrimoine"}</span>
         <Link to="/mentions-legales" style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif", textDecoration: 'none' }}>Mentions légales</Link>
-        <a href={`${WP}/politique-de-confidentialite/`} style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif", textDecoration: 'none' }}>{"Politique de confidentialité"}</a>
+        <Link to="/politique-de-confidentialite" style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', fontFamily: "'Raleway', sans-serif", textDecoration: 'none' }}>{"Politique de confidentialité"}</Link>1
+
       </div>
     </footer>
   )
@@ -149,7 +151,8 @@ export default function App() {
             <Route path="/lmnp-gere" element={<LmnpGere />} /> <Route path="/retraite" element={<Retraite />} /> <Route path="/etudes-enfants" element={<EtudesEnfants />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} /> <Route path="/blog" element={<Blog />} /> <Route path="/blog/:slug" element={<BlogArticle />} />
             <Route path="/rdv-decouverte" element={<RdvDecouverte />} /> <Route path="/demo-espace-client" element={<DemoEspaceClient />} />
-          </Routes>
+          <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
+            </Routes>
         </Suspense>
       </main>
       <Footer />
