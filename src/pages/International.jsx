@@ -25,8 +25,8 @@ export default function International() {
         <div style={{ position: 'absolute', inset: 0, background: heroOverlay }} />
         <div style={{ position: 'relative', zIndex: 1 }}>
           <div style={eye}><span style={eyeLine} /><span style={eyeText}>INTERNATIONAL</span></div>
-          <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{'Investir en France \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'depuis l\u2019\u00e9tranger.'}</em></h1>
-          <p style={pStyle()}>{'Belgique, Luxembourg, Suisse, Royaume-Uni \u2014 nous accompagnons les non-r\u00e9sidents dans leurs projets immobiliers en France, du financement transfrontalier \u00e0 la fiscalit\u00e9 internationale.'}</p>
+          <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{'Investir en France —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'depuis l’étranger.'}</em></h1>
+          <p style={pStyle()}>{'Belgique, Luxembourg, Suisse, Royaume-Uni — nous accompagnons les non-résidents dans leurs projets immobiliers en France, du financement transfrontalier à la fiscalité internationale.'}</p>
           <div style={{ display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap' }}>
             <span style={pill}>Belgique</span>
             <span style={pill}>Luxembourg</span>
@@ -39,24 +39,24 @@ export default function International() {
       {/* Section 2 - Accompagnement */}
       <Sec bg="#1A2744">
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>ACCOMPAGNEMENT</span></div>
-        <h2 style={h2Style()}>{'Un parcours d\u00e9di\u00e9 \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'aux non-r\u00e9sidents.'}</em></h2>
+        <h2 style={h2Style()}>{'Un parcours dédié —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'aux non-résidents.'}</em></h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, marginTop: 48 }}>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Financement transfrontalier</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Acc\u00e8s aux banques fran\u00e7aises et partenaires sp\u00e9cialis\u00e9s non-r\u00e9sidents.'}</p></div>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{'Fiscalit\u00e9 internationale'}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Conventions fiscales, imp\u00f4t sur le revenu foncier, plus-values \u2014 nous clarifions tout.'}</p></div>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{'Gestion \u00e0 distance'}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Signature \u00e9lectronique, visioconf\u00e9rence, gestion locative d\u00e9l\u00e9gu\u00e9e.'}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Financement transfrontalier</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Accès aux banques françaises et partenaires spécialisés non-résidents.'}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{'Fiscalité internationale'}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Conventions fiscales, impôt sur le revenu foncier, plus-values — nous clarifions tout.'}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{'Gestion à distance'}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Signature électronique, visioconférence, gestion locative déléguée.'}</p></div>
         </div>
       </Sec>
 
       {/* Section 3 - Zones */}
       <Sec bg="#F7F5F1">
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>ZONES CIBLES</span></div>
-        <h2 style={h2Style('#111C33')}>{'Des march\u00e9s s\u00e9lectionn\u00e9s \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'pour leur potentiel.'}</em></h2>
-        <p style={pStyle('#555')}>{'C\u00f4te d\u2019Azur, M\u00e9diterran\u00e9e, Alpes, C\u00f4te d\u2019Opale \u2014 des zones \u00e0 forte attractivit\u00e9 touristique et patrimoniale, accessibles depuis la Belgique et le Royaume-Uni.'}</p>
+        <h2 style={h2Style('#111C33')}>{'Des marchés sélectionnés —'}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'pour leur potentiel.'}</em></h2>
+        <p style={pStyle('#555')}>{'Côte d’Azur, Méditerranée, Alpes, Côte d’Opale — des zones à forte attractivité touristique et patrimoniale, accessibles depuis la Belgique et le Royaume-Uni.'}</p>
         <div style={{ marginTop: 24 }}>
-          {['\u00c0 2h de Bruxelles via le TGV','\u00c0 1h30 de Londres via l\u2019Eurotunnel','March\u00e9s \u00e0 forte demande locative','Valorisation patrimoniale long terme'].map((t,i) => <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>{'\u2713'} {t}</p>)}
+          {['À 2h de Bruxelles via le TGV','À 1h30 de Londres via l’Eurotunnel','Marchés à forte demande locative','Valorisation patrimoniale long terme'].map((t,i) => <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>{'✓'} {t}</p>)}
         </div>
         <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
-          {["C\u00f4te d'Azur","C\u00f4te d'Opale",'M\u00e9diterran\u00e9e','Alpes'].map((z,i) => <span key={i} style={{ padding: '10px 20px', borderRadius: 20, background: 'rgba(166,124,82,0.12)', color: '#A67C52', fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 13 }}>{z}</span>)}
+          {["Côte d'Azur","Côte d'Opale",'Méditerranée','Alpes'].map((z,i) => <span key={i} style={{ padding: '10px 20px', borderRadius: 20, background: 'rgba(166,124,82,0.12)', color: '#A67C52', fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 13 }}>{z}</span>)}
         </div>
       </Sec>
 
@@ -64,14 +64,14 @@ export default function International() {
       <Sec bg="#111C33">
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>VOS AVANTAGES</span></div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 20, marginTop: 32 }}>
-          {[['100% \u00e0 distance','Tout le parcours peut se faire en visio et signature \u00e9lectronique.'],['Interlocuteur unique','Un chef de projet d\u00e9di\u00e9 qui parle votre langue.'],['R\u00e9seau bancaire','Partenaires sp\u00e9cialis\u00e9s dans le financement des non-r\u00e9sidents.'],['Expertise fiscale','Ma\u00eetrise des conventions bilat\u00e9rales et de la fiscalit\u00e9 crois\u00e9e.']].map(([t,d],i) => <div key={i} style={{ background: '#F7F5F1', borderRadius: 8, padding: 28 }}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{t}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p></div>)}
+          {[['100% à distance','Tout le parcours peut se faire en visio et signature électronique.'],['Interlocuteur unique','Un chef de projet dédié qui parle votre langue.'],['Réseau bancaire','Partenaires spécialisés dans le financement des non-résidents.'],['Expertise fiscale','Maîtrise des conventions bilatérales et de la fiscalité croisée.']].map(([t,d],i) => <div key={i} style={{ background: '#F7F5F1', borderRadius: 8, padding: 28 }}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{t}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p></div>)}
         </div>
       </Sec>
 
       {/* CTA Final */}
       <Sec bg="#F7F5F1" style={{ textAlign: 'center' }}>
         <h2 style={h2Style('#111C33')}>{'Parlons de votre projet international.'}</h2>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV D\u00e9couverte \u2192'}</a>
+        <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV Découverte →'}</a>
       </Sec>
     </>
   )

@@ -56,8 +56,8 @@ export default function HeroHome() {
           opacity: 0, transform: 'translateY(20px)',
           animation: 'heroSub 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.5s forwards'
         }}>
-          {"27 ans d'exp\u00e9rience c\u00f4t\u00e9 promoteur."}<br />
-          {"Un conseil ind\u00e9pendant, sans compromis."}
+          {"27 ans d'expérience côté promoteur."}<br />
+          {"Un conseil indépendant, sans compromis."}
         </p>
         <div style={{
           display: 'flex', alignItems: 'center', gap: 40, marginTop: 48,
@@ -71,14 +71,14 @@ export default function HeroHome() {
             fontSize: 13, letterSpacing: '0.08em',
             textTransform: 'uppercase', textDecoration: 'none',
             transition: 'all 0.3s ease'
-          }}>{"Nos programmes \u2192"}</Link>
+          }}>{"Nos programmes →"}</Link>
           <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
             color: 'rgba(255,255,255,0.65)',
             fontFamily: "'Raleway', sans-serif", fontWeight: 500,
             fontSize: 13, letterSpacing: '0.08em',
             textTransform: 'uppercase', textDecoration: 'none',
             transition: 'color 0.2s'
-          }}>{"RDV D\u00e9couverte \u2192"}</a>
+          }}>{"RDV Découverte →"}</a>
         </div>
       </div>
       {/* Scroll indicator */}
@@ -87,7 +87,7 @@ export default function HeroHome() {
           fontFamily: "'Raleway', sans-serif", fontSize: 11,
           letterSpacing: '0.2em', textTransform: 'uppercase',
           color: 'rgba(255,255,255,0.35)'
-        }}>{"D\u00c9FILER"}</span>
+        }}>{"DÉFILER"}</span>
         <div style={{
           width: 1, height: 40, background: '#A67C52',
           animation: 'scrollLine 2s ease infinite', transformOrigin: 'top'

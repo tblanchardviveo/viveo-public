@@ -9,7 +9,7 @@ import CtaRetraite from '../components/retraite/CtaRetraite'
 export default function Retraite() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Pr\u00e9parer ma retraite | VIVEO Patrimoine'
+    document.title = 'Préparer ma retraite | VIVEO Patrimoine'
   }, [])
 
   return (

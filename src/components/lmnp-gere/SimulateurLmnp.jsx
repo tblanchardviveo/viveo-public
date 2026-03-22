@@ -6,7 +6,7 @@ const eyeText = {
   fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11,
   textTransform: 'uppercase', letterSpacing: '0.22em', color: '#111C33'
 }
-const fmt = v => v.toLocaleString('fr-FR') + ' \u20ac'
+const fmt = v => v.toLocaleString('fr-FR') + ' €'
 const lbl = { fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 13, color: '#111C33', marginBottom: 6 }
 const note = { fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 11, color: '#999', marginTop: 4 }
 
@@ -35,7 +35,7 @@ export default function SimulateurLmnp() {
   return (
     <section id="simulateur" style={{ background: '#F7F5F1', padding: '15vh 6vw' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-        <span style={eyeLine} /><span style={eyeText}>{"SIMULATEUR LMNP G\u00c9R\u00c9"}</span>
+        <span style={eyeLine} /><span style={eyeText}>{"SIMULATEUR LMNP GÉRÉ"}</span>
       </div>
       <h2 style={{
         fontFamily: "'Playfair Display',Georgia,serif",
@@ -43,14 +43,14 @@ export default function SimulateurLmnp() {
         color: '#111C33', margin: '0 0 48px'
       }}>
         {'Calculez votre investissement'}<br />
-        <em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'en temps r\u00e9el.'}</em>
+        <em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'en temps réel.'}</em>
       </h2>
       <div style={{ display: 'flex', gap: 56, flexWrap: 'wrap' }}>
         <div style={{ flex: '0 0 45%', minWidth: 300 }}>
           <Slider label="Budget d'acquisition TTC" value={budget} set={setBudget} min={80000} max={500000} step={5000} display={fmt(budget)} />
-          <Slider label="Apport personnel" value={apport} set={setApport} min={0} max={150000} step={5000} display={fmt(apport)} noteText={"0\u20ac = financement total"} />
+          <Slider label="Apport personnel" value={apport} set={setApport} min={0} max={150000} step={5000} display={fmt(apport)} noteText={"0€ = financement total"} />
           <Slider label="Durée du crédit" value={duree} set={setDuree} min={10} max={25} step={5} display={`${duree} ans`} />
-          <Slider label="Rendement locatif brut" value={rdt} set={setRdt} min={3.0} max={5.5} step={0.1} display={`${rdt.toFixed(1)}%`} noteText={"Taux constat\u00e9 sur nos programmes"} />
+          <Slider label="Rendement locatif brut" value={rdt} set={setRdt} min={3.0} max={5.5} step={0.1} display={`${rdt.toFixed(1)}%`} noteText={"Taux constaté sur nos programmes"} />
           <div style={{ marginBottom: 28 }}>
             <p style={lbl}>Votre TMI</p>
             <select value={tmi} onChange={e => setTmi(Number(e.target.value))} style={{
@@ -64,16 +64,16 @@ export default function SimulateurLmnp() {
         </div>
         <div style={{ flex: 1, minWidth: 300 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 12 }}>
-            <Card bg="#111C33" color="#C4976A" label="PRIX R\u00c9EL APR\u00c8S TVA" value={fmt(prixHT)} sub={`soit ${fmt(tvaRec)} \u00e9conomis\u00e9s`} />
-            <Card bg="rgba(166,124,82,0.12)" color="#111C33" label="LOYER MENSUEL GARANTI" value={fmt(loyerM)} sub="vers\u00e9 bail commercial" />
-            <Card bg="#fff" color="#111C33" label="MENSUALIT\u00c9 CR\u00c9DIT" value={fmt(mensualite)} sub={`sur ${duree} ans, hors assurance`} />
-            <Card bg={effort <= 0 ? '#111C33' : '#1a3a2a'} color={effort <= 0 ? '#C4976A' : '#7dcea0'} label="EFFORT NET MENSUEL" value={fmt(Math.abs(effort))} sub={effort > 0 ? 'Cash-flow positif !' : 'Votre effort r\u00e9el apr\u00e8s loyers'} />
-            <Card bg="rgba(166,124,82,0.12)" color="#111C33" label="\u00c9CONOMIE FISCALE /AN" value={`${ecoFisc.toLocaleString('fr-FR')} \u20ac/an`} sub="revenus neutralis\u00e9s par amortissement" />
+            <Card bg="#111C33" color="#C4976A" label="PRIX RÉEL APRÈS TVA" value={fmt(prixHT)} sub={`soit ${fmt(tvaRec)} économisés`} />
+            <Card bg="rgba(166,124,82,0.12)" color="#111C33" label="LOYER MENSUEL GARANTI" value={fmt(loyerM)} sub="versé bail commercial" />
+            <Card bg="#fff" color="#111C33" label="MENSUALITÉ CRÉDIT" value={fmt(mensualite)} sub={`sur ${duree} ans, hors assurance`} />
+            <Card bg={effort <= 0 ? '#111C33' : '#1a3a2a'} color={effort <= 0 ? '#C4976A' : '#7dcea0'} label="EFFORT NET MENSUEL" value={fmt(Math.abs(effort))} sub={effort > 0 ? 'Cash-flow positif !' : 'Votre effort réel après loyers'} />
+            <Card bg="rgba(166,124,82,0.12)" color="#111C33" label="ÉCONOMIE FISCALE /AN" value={`${ecoFisc.toLocaleString('fr-FR')} €/an`} sub="revenus neutralisés par amortissement" />
           </div>
           <Pie pLoyer={pLoyer} pFisc={pFisc} pEffort={pEffort} />
           <div style={{ textAlign: 'center', marginTop: 40 }}>
             <p style={{ fontFamily: "'Raleway',sans-serif", fontSize: 16, color: '#666' }}>
-              {"Ces chiffres vous int\u00e9ressent ? Parlons-en."}
+              {"Ces chiffres vous intéressent ? Parlons-en."}
             </p>
             <a href={`${WP}/rdv-decouverte/`} style={{
               display: 'inline-block', marginTop: 16,
@@ -81,7 +81,7 @@ export default function SimulateurLmnp() {
               color: '#fff', borderRadius: 2, padding: '18px 40px',
               fontFamily: "'Raleway',sans-serif", fontWeight: 600,
               fontSize: 14, textDecoration: 'none', textTransform: 'uppercase'
-            }}>{"Demander mon RDV D\u00e9couverte \u2192"}</a>
+            }}>{"Demander mon RDV Découverte →"}</a>
           </div>
         </div>
       </div>
@@ -127,7 +127,7 @@ function Pie({ pLoyer, pFisc, pEffort }) {
   }
   const items = [
     { color: '#A67C52', label: 'Loyer gestionnaire', pct: pLoyer },
-    { color: '#1A2744', label: '\u00c9conomie fiscale', pct: pFisc },
+    { color: '#1A2744', label: 'Économie fiscale', pct: pFisc },
     { color: '#F7F5F1', label: 'Effort personnel', pct: pEffort }
   ]
   return (

@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { supabase } from '../../supabase'
 
 const fallback = [
-  { texte: "Apr\u00e8s 3 refus de ma banque qui voulait me vendre son propre programme, VIVEO a trouv\u00e9 le bien en 2 semaines. La diff\u00e9rence ? Ils connaissaient le promoteur de l'int\u00e9rieur.", auteur: 'M. & Mme B., investisseurs LMNP, Lille' },
-  { texte: "Le suivi apr\u00e8s la signature m'a surpris. Je pensais ne plus avoir de nouvelles apr\u00e8s la r\u00e9servation. J'ai re\u00e7u un compte-rendu \u00e0 chaque appel de fonds, jusqu'\u00e0 la remise des cl\u00e9s.", auteur: 'Mme C., r\u00e9sidence principale, Roubaix' },
-  { texte: "J'avais consult\u00e9 4 CGP. VIVEO est le seul qui m'a expliqu\u00e9 pourquoi deux programmes que je voulais n'\u00e9taient pas adapt\u00e9s \u00e0 mon profil fiscal. Les autres voulaient juste signer.", auteur: 'M. D., investisseur D\u00e9ficit Foncier, Paris' }
+  { texte: "Après 3 refus de ma banque qui voulait me vendre son propre programme, VIVEO a trouvé le bien en 2 semaines. La différence ? Ils connaissaient le promoteur de l'intérieur.", auteur: 'M. & Mme B., investisseurs LMNP, Lille' },
+  { texte: "Le suivi après la signature m'a surpris. Je pensais ne plus avoir de nouvelles après la réservation. J'ai reçu un compte-rendu à chaque appel de fonds, jusqu'à la remise des clés.", auteur: 'Mme C., résidence principale, Roubaix' },
+  { texte: "J'avais consulté 4 CGP. VIVEO est le seul qui m'a expliqué pourquoi deux programmes que je voulais n'étaient pas adaptés à mon profil fiscal. Les autres voulaient juste signer.", auteur: 'M. D., investisseur Déficit Foncier, Paris' }
 ]
 
 export default function TemoignagesV3() {
@@ -36,9 +36,9 @@ export default function TemoignagesV3() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
         {items.map((t, i) => (
           <div key={i} style={{ background: '#fff', borderRadius: 3, padding: '40px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            {t.note && <div style={{ marginBottom: 12, color: '#A67C52', fontSize: 18, letterSpacing: 2 }}>{'\u2605'.repeat(t.note)}</div>}
+            {t.note && <div style={{ marginBottom: 12, color: '#A67C52', fontSize: 18, letterSpacing: 2 }}>{'★'.repeat(t.note)}</div>}
             <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 300, fontSize: 17, fontStyle: 'italic', color: '#111C33', lineHeight: 1.7, flex: 1 }}>
-              {'\u00ab'} {t.texte} {'\u00bb'}
+              {'«'} {t.texte} {'»'}
             </p>
             <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 13, color: '#A67C52', marginTop: 24 }}>{t.auteur}</p>
           </div>

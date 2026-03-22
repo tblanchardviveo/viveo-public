@@ -24,20 +24,20 @@ export default function Financement() {
         <div style={{ position: 'absolute', inset: 0, background: heroOverlay }} />
         <div style={{ position: 'relative', zIndex: 1 }}>
           <div style={eye}><span style={eyeLine} /><span style={eyeText}>FINANCEMENT</span></div>
-          <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{'Votre financement \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'sur mesure.'}</em></h1>
-          <p style={pStyle()}>{'Nous coordonnons l\u2019ensemble de votre montage financier : courtage, PTZ, pr\u00eat relais, financement transfrontalier. Un seul interlocuteur, z\u00e9ro stress.'}</p>
+          <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{'Votre financement —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'sur mesure.'}</em></h1>
+          <p style={pStyle()}>{'Nous coordonnons l’ensemble de votre montage financier : courtage, PTZ, prêt relais, financement transfrontalier. Un seul interlocuteur, zéro stress.'}</p>
         </div>
       </section>
 
       {/* Section 2 - Courtage */}
       <Sec bg="#1A2744">
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>COURTAGE</span></div>
-        <h2 style={h2Style()}>{'N\u00e9gocier les meilleures conditions \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'\u00e0 votre place.'}</em></h2>
-        <p style={pStyle()}>{'Gr\u00e2ce \u00e0 nos partenaires bancaires, nous obtenons des taux et conditions optimis\u00e9s pour chaque profil d\u2019emprunteur.'}</p>
+        <h2 style={h2Style()}>{'Négocier les meilleures conditions —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'à votre place.'}</em></h2>
+        <p style={pStyle()}>{'Grâce à nos partenaires bancaires, nous obtenons des taux et conditions optimisés pour chaque profil d’emprunteur.'}</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, marginTop: 48 }}>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Taux optimaux</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Acc\u00e8s aux meilleures offres bancaires gr\u00e2ce \u00e0 notre r\u00e9seau de partenaires.'}</p></div>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Montage complet</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Constitution du dossier, n\u00e9gociation, assurance emprunteur, d\u00e9l\u00e9gation.'}</p></div>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{'Suivi jusqu\u2019au d\u00e9blocage'}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Coordination avec le notaire et le promoteur pour un d\u00e9blocage fluide des fonds.'}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Taux optimaux</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Accès aux meilleures offres bancaires grâce à notre réseau de partenaires.'}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Montage complet</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Constitution du dossier, négociation, assurance emprunteur, délégation.'}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{'Suivi jusqu’au déblocage'}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Coordination avec le notaire et le promoteur pour un déblocage fluide des fonds.'}</p></div>
         </div>
       </Sec>
 
@@ -46,11 +46,11 @@ export default function Financement() {
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>DISPOSITIFS</span></div>
         <div style={{ display: 'flex', gap: 60, flexWrap: 'wrap', alignItems: 'flex-start' }}>
           <div style={{ flex: '1 1 40%', minWidth: 280 }}>
-            <h2 style={h2Style('#111C33')}>{'Des solutions adapt\u00e9es \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'\u00e0 chaque situation.'}</em></h2>
-            <p style={pStyle('#555')}>{'Premier achat, investissement locatif, r\u00e9sidence secondaire \u2014 chaque projet a son montage financier optimal.'}</p>
+            <h2 style={h2Style('#111C33')}>{'Des solutions adaptées —'}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'à chaque situation.'}</em></h2>
+            <p style={pStyle('#555')}>{'Premier achat, investissement locatif, résidence secondaire — chaque projet a son montage financier optimal.'}</p>
           </div>
           <div style={{ flex: '1 1 50%', minWidth: 260 }}>
-            {[['PTZ','Pr\u00eat \u00e0 Taux Z\u00e9ro pour les primo-acc\u00e9dants, sous conditions de ressources.'],['Pr\u00eat relais','Acqu\u00e9rir avant de vendre, avec un pont de financement s\u00e9curis\u00e9.'],['Cr\u00e9dit investisseur','Montage sp\u00e9cifique pour l\u2019investissement locatif : diff\u00e9r\u00e9, amortissement.'],['Financement transfrontalier','Solutions pour les r\u00e9sidents belges, luxembourgeois et suisses.']].map(([t,d],i) => <div key={i} style={{ display: 'flex', gap: 20, marginBottom: 28 }}><span style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 32, color: '#A67C52', fontWeight: 300 }}>{'0'+(i+1)}</span><div><h3 style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 16, color: '#111C33', marginBottom: 4 }}>{t}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p></div></div>)}
+            {[['PTZ','Prêt à Taux Zéro pour les primo-accédants, sous conditions de ressources.'],['Prêt relais','Acquérir avant de vendre, avec un pont de financement sécurisé.'],['Crédit investisseur','Montage spécifique pour l’investissement locatif : différé, amortissement.'],['Financement transfrontalier','Solutions pour les résidents belges, luxembourgeois et suisses.']].map(([t,d],i) => <div key={i} style={{ display: 'flex', gap: 20, marginBottom: 28 }}><span style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 32, color: '#A67C52', fontWeight: 300 }}>{'0'+(i+1)}</span><div><h3 style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 16, color: '#111C33', marginBottom: 4 }}>{t}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p></div></div>)}
           </div>
         </div>
       </Sec>
@@ -59,14 +59,14 @@ export default function Financement() {
       <Sec bg="#111C33">
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>POURQUOI NOUS</span></div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 20, marginTop: 32 }}>
-          {[['Ind\u00e9pendance','Nous ne sommes li\u00e9s \u00e0 aucune banque. Notre conseil est 100% objectif.'],['Rapidit\u00e9','R\u00e9ponse de principe en 48h, offre ferme en 2 semaines.'],['Transparence','Aucun frais cach\u00e9. Nos honoraires sont clairement pr\u00e9sent\u00e9s en amont.'],['Expertise','Sp\u00e9cialistes du neuf et du financement transfrontalier depuis 2018.']].map(([t,d],i) => <div key={i} style={{ background: '#F7F5F1', borderRadius: 8, padding: 28 }}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{t}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p></div>)}
+          {[['Indépendance','Nous ne sommes liés à aucune banque. Notre conseil est 100% objectif.'],['Rapidité','Réponse de principe en 48h, offre ferme en 2 semaines.'],['Transparence','Aucun frais caché. Nos honoraires sont clairement présentés en amont.'],['Expertise','Spécialistes du neuf et du financement transfrontalier depuis 2018.']].map(([t,d],i) => <div key={i} style={{ background: '#F7F5F1', borderRadius: 8, padding: 28 }}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{t}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p></div>)}
         </div>
       </Sec>
 
       {/* CTA Final */}
       <Sec bg="#F7F5F1" style={{ textAlign: 'center' }}>
         <h2 style={h2Style('#111C33')}>{'Simulons votre financement.'}</h2>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV D\u00e9couverte \u2192'}</a>
+        <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV Découverte →'}</a>
       </Sec>
     </>
   )

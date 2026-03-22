@@ -6,18 +6,18 @@ const Eyebrow = ({ children }) => (
 )
 
 const STEPS = [
-  { num: '01', title: 'Recommandez', desc: 'Partagez le nom et les coordonn\u00e9es de votre proche via le formulaire ci-dessous.' },
-  { num: '02', title: 'Nous contactons', desc: 'VIVEO prend contact avec votre filleul pour un rendez-vous d\u00e9couverte personnalis\u00e9.' },
-  { num: '03', title: 'Vous \u00eates r\u00e9compens\u00e9', desc: 'D\u00e8s la signature, recevez 400\u20ac (prospect) ou 800\u20ac (client) par virement.' }
+  { num: '01', title: 'Recommandez', desc: 'Partagez le nom et les coordonnées de votre proche via le formulaire ci-dessous.' },
+  { num: '02', title: 'Nous contactons', desc: 'VIVEO prend contact avec votre filleul pour un rendez-vous découverte personnalisé.' },
+  { num: '03', title: 'Vous êtes récompensé', desc: 'Dès la signature, recevez 400€ (prospect) ou 800€ (client) par virement.' }
 ]
 
 export default function StepsParrainage() {
   return (
     <section style={{ background: 'var(--navy-deep)', padding: 'clamp(60px, 8vw, 100px) clamp(20px, 4vw, 40px)' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-        <Eyebrow>{"COMMENT \u00c7A MARCHE"}</Eyebrow>
+        <Eyebrow>{"COMMENT ÇA MARCHE"}</Eyebrow>
         <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 400, color: '#fff', margin: '0 0 48px' }}>
-          {"Trois \u00e9tapes simples"}
+          {"Trois étapes simples"}
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 32 }}>
           {STEPS.map(s => (

@@ -34,11 +34,11 @@ export default function Calculateur() {
             <em style={{ fontStyle: 'italic', color: '#C4976A' }}>projet immobilier</em>
           </h1>
           <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 'clamp(14px, 2.5vw, 17px)', color: 'rgba(255,255,255,0.55)', maxWidth: 600, margin: '0 auto 40px', lineHeight: 1.6 }}>
-            {"Estimez vos mensualit\u00e9s, votre \u00e9ligibilit\u00e9 au PTZ, ou le rendement de votre investissement locatif."}
+            {"Estimez vos mensualités, votre éligibilité au PTZ, ou le rendement de votre investissement locatif."}
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 48 }}>
             <button onClick={() => setMode('residence')} style={tabStyle(mode === 'residence')}>
-              {"R\u00e9sidence principale"}
+              {"Résidence principale"}
             </button>
             <button onClick={() => setMode('investissement')} style={tabStyle(mode === 'investissement')}>
               Investissement
@@ -68,7 +68,7 @@ export default function Calculateur() {
             fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase',
             fontFamily: "'Raleway', sans-serif", textDecoration: 'none', transition: 'all 0.3s'
           }}>
-            {"Prendre rendez-vous \u2192"}
+            {"Prendre rendez-vous →"}
           </a>
         </div>
       </section>

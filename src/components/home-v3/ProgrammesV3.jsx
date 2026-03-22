@@ -25,11 +25,11 @@ export default function ProgrammesV3() {
             <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.28em', color: '#A67C52' }}>NOS PROGRAMMES</span>
           </div>
           <h2 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 300, fontSize: 'clamp(36px,4.5vw,58px)', color: '#111C33', lineHeight: 1.1, margin: 0 }}>
-            {"Une s\u00e9lection,"}<br />
+            {"Une sélection,"}<br />
             <em style={{ color: '#A67C52', fontStyle: 'italic' }}>pas un catalogue.</em>
           </h2>
           <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 17, color: '#666', lineHeight: 1.8, marginTop: 24 }}>
-            {"Nous ne r\u00e9f\u00e9ren\u00e7ons pas tous les programmes du march\u00e9. Nous s\u00e9lectionnons ceux qui m\u00e9ritent votre attention \u2014 et nous vous expliquons pourquoi."}
+            {"Nous ne référençons pas tous les programmes du marché. Nous sélectionnons ceux qui méritent votre attention — et nous vous expliquons pourquoi."}
           </p>
           <Link to="/programmes" style={{
             display: 'inline-block', marginTop: 32,
@@ -37,7 +37,7 @@ export default function ProgrammesV3() {
             color: '#A67C52', textTransform: 'uppercase', letterSpacing: '0.08em',
             textDecoration: 'none', transition: 'transform 0.2s'
           }} onMouseEnter={e => e.target.style.transform = 'translateX(4px)'} onMouseLeave={e => e.target.style.transform = 'none'}
-          >{"Voir tous les programmes \u2192"}</Link>
+          >{"Voir tous les programmes →"}</Link>
         </div>
 
         {/* RIGHT */}
@@ -65,15 +65,15 @@ export default function ProgrammesV3() {
                 <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 24, color: '#111C33', margin: '0 0 12px', fontWeight: 400 }}>{prog.nom}</h3>
                 <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#777', lineHeight: 1.7, margin: 0, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{prog.description}</p>
                 <div style={{ display: 'flex', gap: 24, marginTop: 20, borderTop: '1px solid rgba(17,28,51,0.06)', paddingTop: 16 }}>
-                  {prog.prix_min && <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 15, color: '#A67C52' }}>{"\u00e0 partir de "}{prog.prix_min.toLocaleString()}{"\u00a0\u20ac"}</span>}
+                  {prog.prix_min && <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 15, color: '#A67C52' }}>{"à partir de "}{prog.prix_min.toLocaleString()}{" €"}</span>}
                   {prog.date_livraison && <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 13, color: '#999' }}>Livraison {prog.date_livraison}</span>}
                 </div>
-                <Link to={`/programme/${prog.slug}`} style={{ display: 'inline-block', marginTop: 16, fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 13, color: '#111C33', textTransform: 'uppercase', textDecoration: 'none' }}>{"D\u00e9couvrir \u2192"}</Link>
+                <Link to={`/programme/${prog.slug}`} style={{ display: 'inline-block', marginTop: 16, fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 13, color: '#111C33', textTransform: 'uppercase', textDecoration: 'none' }}>{"Découvrir →"}</Link>
               </div>
             </div>
           )) : (
             <div style={{ background: '#111C33', borderRadius: 3, padding: '80px 40px', textAlign: 'center' }}>
-              <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontStyle: 'italic', fontSize: 20, color: 'rgba(255,255,255,0.30)' }}>{"Nouveau programme bient\u00f4t disponible"}</p>
+              <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontStyle: 'italic', fontSize: 20, color: 'rgba(255,255,255,0.30)' }}>{"Nouveau programme bientôt disponible"}</p>
             </div>
           )}
         </div>

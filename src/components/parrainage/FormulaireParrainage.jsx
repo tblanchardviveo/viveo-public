@@ -49,37 +49,37 @@ const FormulaireParrainage = forwardRef(function FormulaireParrainage(props, ref
           {"Parrainer un proche"}
         </h2>
         <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 14, fontWeight: 300, color: 'rgba(255,255,255,0.45)', margin: '0 0 40px', lineHeight: 1.7 }}>
-          {"Remplissez ce formulaire et notre \u00e9quipe prendra contact avec votre filleul sous 48\u00a0h."}
+          {"Remplissez ce formulaire et notre équipe prendra contact avec votre filleul sous 48 h."}
         </p>
 
         {status === 'success' ? (
           <div style={{ background: 'rgba(76,175,80,0.12)', border: '1px solid rgba(76,175,80,0.3)', borderRadius: 12, padding: '32px 24px', textAlign: 'center' }}>
-            <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 22, color: '#C4976A', margin: '0 0 8px' }}>{"Merci\u00a0!"}</p>
-            <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 14, color: 'rgba(255,255,255,0.6)', margin: 0 }}>{"Votre recommandation a bien \u00e9t\u00e9 envoy\u00e9e."}</p>
+            <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 22, color: '#C4976A', margin: '0 0 8px' }}>{"Merci !"}</p>
+            <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 14, color: 'rgba(255,255,255,0.6)', margin: 0 }}>{"Votre recommandation a bien été envoyée."}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
-            <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 600, color: '#C4976A', letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 20px' }}>{"Vos coordonn\u00e9es (parrain)"}</p>
+            <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 600, color: '#C4976A', letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 20px' }}>{"Vos coordonnées (parrain)"}</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 24 }}>
               <div><label style={labelStyle}>{"Nom complet *"}</label><input required style={inputStyle} value={form.parrain_nom} onChange={set('parrain_nom')} placeholder="Jean Dupont" /></div>
               <div><label style={labelStyle}>{"Email *"}</label><input required type="email" style={inputStyle} value={form.parrain_email} onChange={set('parrain_email')} placeholder="jean@email.com" /></div>
-              <div><label style={labelStyle}>{"T\u00e9l\u00e9phone"}</label><input style={inputStyle} value={form.parrain_tel} onChange={set('parrain_tel')} placeholder="06 00 00 00 00" /></div>
+              <div><label style={labelStyle}>{"Téléphone"}</label><input style={inputStyle} value={form.parrain_tel} onChange={set('parrain_tel')} placeholder="06 00 00 00 00" /></div>
             </div>
 
-            <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 600, color: '#C4976A', letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 20px' }}>{"Coordonn\u00e9es du filleul"}</p>
+            <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 13, fontWeight: 600, color: '#C4976A', letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 20px' }}>{"Coordonnées du filleul"}</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 24 }}>
               <div><label style={labelStyle}>{"Nom complet *"}</label><input required style={inputStyle} value={form.filleul_nom} onChange={set('filleul_nom')} placeholder="Marie Martin" /></div>
               <div><label style={labelStyle}>{"Email *"}</label><input required type="email" style={inputStyle} value={form.filleul_email} onChange={set('filleul_email')} placeholder="marie@email.com" /></div>
-              <div><label style={labelStyle}>{"T\u00e9l\u00e9phone *"}</label><input required style={inputStyle} value={form.filleul_tel} onChange={set('filleul_tel')} placeholder="06 00 00 00 00" /></div>
+              <div><label style={labelStyle}>{"Téléphone *"}</label><input required style={inputStyle} value={form.filleul_tel} onChange={set('filleul_tel')} placeholder="06 00 00 00 00" /></div>
             </div>
 
             <div style={{ marginBottom: 24 }}>
               <label style={labelStyle}>{"Votre relation"}</label>
               <select style={{ ...inputStyle, appearance: 'none' }} value={form.relation} onChange={set('relation')}>
-                <option value="">{"S\u00e9lectionnez..."}</option>
+                <option value="">{"Sélectionnez..."}</option>
                 <option value="ami">{"Ami(e)"}</option>
                 <option value="famille">{"Famille"}</option>
-                <option value="collegue">{"Coll\u00e8gue"}</option>
+                <option value="collegue">{"Collègue"}</option>
                 <option value="autre">{"Autre"}</option>
               </select>
             </div>
@@ -94,9 +94,9 @@ const FormulaireParrainage = forwardRef(function FormulaireParrainage(props, ref
               color: '#fff', border: 'none', borderRadius: 50, padding: '16px 40px',
               fontSize: 13, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase',
               fontFamily: "'Raleway', sans-serif", cursor: 'pointer', opacity: status === 'sending' ? 0.6 : 1
-            }}>{status === 'sending' ? 'Envoi en cours...' : "Envoyer la recommandation \u2192"}</button>
+            }}>{status === 'sending' ? 'Envoi en cours...' : "Envoyer la recommandation →"}</button>
 
-            {status === 'error' && <p style={{ color: '#ef5350', fontSize: 13, marginTop: 12, fontFamily: "'Raleway', sans-serif" }}>{"Une erreur est survenue. Veuillez r\u00e9essayer."}</p>}
+            {status === 'error' && <p style={{ color: '#ef5350', fontSize: 13, marginTop: 12, fontFamily: "'Raleway', sans-serif" }}>{"Une erreur est survenue. Veuillez réessayer."}</p>}
           </form>
         )}
       </div>

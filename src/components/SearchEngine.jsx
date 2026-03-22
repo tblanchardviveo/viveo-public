@@ -53,7 +53,7 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
   const toggleTypo = (t) => {
     setTypologies(prev => prev.includes(t) ? prev.filter(x => x !== t) : [...prev, t])
   }
-  const fmtBudget = (v) => new Intl.NumberFormat('fr-FR').format(v) + ' \u20ac'
+  const fmtBudget = (v) => new Intl.NumberFormat('fr-FR').format(v) + ' €'
 
   const handleSearch = async () => {
     setLoading(true)
@@ -75,7 +75,7 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
       onRechercheEffectuee(true)
     } catch (e) {
       console.error(e)
-      setError('Erreur lors de la recherche. Veuillez r\u00e9essayer.')
+      setError('Erreur lors de la recherche. Veuillez réessayer.')
       onResults([])
       onRechercheEffectuee(true)
     } finally {
@@ -101,10 +101,10 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
             <span style={labelStyle}>SECTEUR</span>
             <select value={secteur} onChange={e => setSecteur(e.target.value)} style={{ ...inputStyle, cursor: 'pointer' }}>
               <option value="">Tous les secteurs</option>
-              <option value="HDF">Nord {"\u2014"} Hauts-de-France</option>
-              <option value="IDF">{"\u00cele-de-France"}</option>
+              <option value="HDF">Nord {"—"} Hauts-de-France</option>
+              <option value="IDF">{"Île-de-France"}</option>
               <option value="GO">Grand Ouest</option>
-              <option value="RA">{"Rh\u00f4ne-Alpes"}</option>
+              <option value="RA">{"Rhône-Alpes"}</option>
               <option value="SE">Sud-Est</option>
               <option value="SO">Sud-Ouest</option>
             </select>
@@ -137,7 +137,7 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
 
       {/* LIGNE 4: BUDGET */}
       <div style={{ ...disabledStyle, marginBottom: 24 }}>
-        <span style={labelStyle}>BUDGET : {fmtBudget(budget[0])} {"\u2014"} {fmtBudget(budget[1])}</span>
+        <span style={labelStyle}>BUDGET : {fmtBudget(budget[0])} {"—"} {fmtBudget(budget[1])}</span>
         <div style={{ position: 'relative', height: 40, marginTop: 8 }}>
           <input type="range" min={50000} max={1500000} step={10000} value={budget[0]} onChange={e => { const v = Number(e.target.value); if (v <= budget[1]) setBudget([v, budget[1]]) }} style={{ position: 'absolute', width: '100%', top: 8, height: 4, accentColor: '#A67C52', background: 'transparent', zIndex: 2, pointerEvents: 'auto', appearance: 'none', WebkitAppearance: 'none' }} />
           <input type="range" min={50000} max={1500000} step={10000} value={budget[1]} onChange={e => { const v = Number(e.target.value); if (v >= budget[0]) setBudget([budget[0], v]) }} style={{ position: 'absolute', width: '100%', top: 8, height: 4, accentColor: '#A67C52', background: 'transparent', zIndex: 2, pointerEvents: 'auto', appearance: 'none', WebkitAppearance: 'none' }} />
@@ -158,8 +158,8 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
           <select value={dispositif} onChange={e => setDispositif(e.target.value)} style={{ ...inputStyle, cursor: 'pointer' }}>
             <option value="">Tous les dispositifs</option>
             <option value="LMNP">LMNP</option>
-            <option value="D\u00e9ficit Foncier">{"\u0044\u00e9ficit Foncier"}</option>
-            <option value="Nue-propri\u00e9t\u00e9">{"Nue-propri\u00e9t\u00e9"}</option>
+            <option value="Déficit Foncier">{"Déficit Foncier"}</option>
+            <option value="Nue-propriété">{"Nue-propriété"}</option>
             <option value="Monuments Historiques">Monuments Historiques</option>
             <option value="Loi Malraux">Loi Malraux</option>
             <option value="Loi Jeanbrun">Loi Jeanbrun</option>
@@ -172,7 +172,7 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
       <button onClick={handleSearch} disabled={disabled || loading} style={{ width: '100%', background: disabled ? 'rgba(255,255,255,0.1)' : 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 50, padding: '16px 48px', fontSize: 14, fontWeight: 600, letterSpacing: '0.04em', fontFamily: "'Raleway', sans-serif", cursor: disabled ? 'default' : 'pointer', opacity: disabled ? 0.4 : 1, transition: 'all 0.3s', border: 'none', padding: '16px 24px', fontSize: 14 }}
         onMouseEnter={e => { if (!disabled) { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 12px 40px rgba(166,124,82,0.35)' } }}
         onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = 'none' }}
-      >{loading ? 'Recherche en cours...' : 'Rechercher les programmes \u2192'}</button>
+      >{loading ? 'Recherche en cours...' : 'Rechercher les programmes →'}</button>
       {error && <p style={{ marginTop: 12, fontFamily: "'Raleway', sans-serif", fontSize: 13, color: 'rgba(255,80,80,0.8)', textAlign: 'center' }}>{error}</p>}
     </div>
   )

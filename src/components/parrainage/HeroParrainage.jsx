@@ -18,11 +18,11 @@ export default function HeroParrainage({ onScrollForm }) {
       <div style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto' }}>
         <Eyebrow>PROGRAMME DE PARRAINAGE</Eyebrow>
         <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 400, color: '#fff', lineHeight: 1.1 }}>
-          Recommandez VIVEO {"\u2014"}<br />
+          Recommandez VIVEO {"—"}<br />
           <em style={{ fontStyle: 'italic', color: '#C4976A' }}>et soyez récompensé.</em>
         </h1>
         <div style={{ display: 'flex', gap: 32, marginTop: 40, flexWrap: 'wrap' }}>
-          {[['400 \u20ac', '\u00b7 Vous êtes prospect VIVEO'], ['800 \u20ac', '\u00b7 Vous êtes client VIVEO']].map(([montant, label]) => (
+          {[['400 €', '· Vous êtes prospect VIVEO'], ['800 €', '· Vous êtes client VIVEO']].map(([montant, label]) => (
             <div key={label} style={{ background: 'rgba(166,124,82,0.12)', border: '1px solid rgba(166,124,82,0.3)', borderRadius: 16, padding: '24px 32px', textAlign: 'center', minWidth: 200 }}>
               <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 40, color: '#C4976A', display: 'block' }}>{montant}</span>
               <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 13, color: 'rgba(255,255,255,0.65)', marginTop: 8, display: 'block' }}>{label}</span>
@@ -34,7 +34,7 @@ export default function HeroParrainage({ onScrollForm }) {
           color: '#fff', border: 'none', borderRadius: 50, padding: '16px 36px',
           fontSize: 13, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase',
           fontFamily: "'Raleway', sans-serif", cursor: 'pointer'
-        }}>{"Parrainer un proche \u2192"}</button>
+        }}>{"Parrainer un proche →"}</button>
       </div>
     </section>
   )

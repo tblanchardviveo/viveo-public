@@ -5,29 +5,29 @@ const avisData = [
     nom: "Sophie M.",
     ville: "Lyon",
     note: 5,
-    texte: "Accompagnement remarquable du d\u00e9but \u00e0 la fin. L'\u00e9quipe Viveo a su trouver le programme id\u00e9al pour notre investissement locatif.",
+    texte: "Accompagnement remarquable du début à la fin. L'équipe Viveo a su trouver le programme idéal pour notre investissement locatif.",
     date: "Mars 2025"
   },
   {
     nom: "Thomas D.",
     ville: "Bordeaux",
     note: 5,
-    texte: "Tr\u00e8s satisfait de la r\u00e9activit\u00e9 et du professionnalisme. Notre r\u00e9sidence principale a \u00e9t\u00e9 trouv\u00e9e en moins de 2 semaines.",
-    date: "F\u00e9vrier 2025"
+    texte: "Très satisfait de la réactivité et du professionnalisme. Notre résidence principale a été trouvée en moins de 2 semaines.",
+    date: "Février 2025"
   },
   {
     nom: "Claire et Julien R.",
     ville: "Toulouse",
     note: 4,
-    texte: "Un vrai gain de temps gr\u00e2ce au moteur de recherche et aux simulateurs. On recommande vivement Viveo Patrimoine.",
+    texte: "Un vrai gain de temps grâce au moteur de recherche et aux simulateurs. On recommande vivement Viveo Patrimoine.",
     date: "Janvier 2025"
   },
   {
     nom: "Marc L.",
     ville: "Nantes",
     note: 5,
-    texte: "Le programme de parrainage est un vrai plus. J'ai parrain\u00e9 deux amis et tout le monde y a gagn\u00e9.",
-    date: "D\u00e9cembre 2024"
+    texte: "Le programme de parrainage est un vrai plus. J'ai parrainé deux amis et tout le monde y a gagné.",
+    date: "Décembre 2024"
   }
 ]
 
@@ -36,7 +36,7 @@ function StarRating({ note }) {
     <div style={{ display: 'flex', gap: 2 }}>
       {[1, 2, 3, 4, 5].map(i => (
         <span key={i} style={{ color: i <= note ? '#f59e0b' : '#d1d5db', fontSize: 18 }}>
-          {"\u2605"}
+          {"★"}
         </span>
       ))}
     </div>
@@ -68,7 +68,7 @@ export default function AvisClient() {
         color: 'rgba(255,255,255,0.5)',
         marginBottom: 40
       }}>
-        {"Avis v\u00e9rifi\u00e9s de nos clients accompagn\u00e9s"}
+        {"Avis vérifiés de nos clients accompagnés"}
       </p>
 
       <div style={{

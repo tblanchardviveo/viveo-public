@@ -31,7 +31,7 @@ function Counter({ end, suffix = '', duration = 2000 }) {
 export default function VeriteRetraite() {
   const stats = [
     { value: 47, suffix: '%', label: 'Perte moyenne de revenus', desc: 'entre le dernier salaire et la pension' },
-    { value: 1, suffix: '/2', label: 'Un retrait\u00e9 sur deux', desc: 'vit avec moins de 1 400\u20ac/mois' },
+    { value: 1, suffix: '/2', label: 'Un retraité sur deux', desc: 'vit avec moins de 1 400€/mois' },
     { value: 72, suffix: '%', label: 'Des actifs inquiets', desc: 'pour leur niveau de vie futur' }
   ]
 
@@ -45,7 +45,7 @@ export default function VeriteRetraite() {
           <span style={{
             fontFamily: "'Raleway', sans-serif", fontSize: 11, fontWeight: 600,
             letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--bronze)'
-          }}>{"La v\u00e9rit\u00e9 en chiffres"}</span>
+          }}>{"La vérité en chiffres"}</span>
         </div>
 
         <h2 style={{

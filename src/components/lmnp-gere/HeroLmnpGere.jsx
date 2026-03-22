@@ -18,9 +18,9 @@ export default function HeroLmnpGere() {
   }, [])
 
   const pills = [
-    '\u2713 TVA r\u00e9cup\u00e9r\u00e9e',
-    '\u2713 Loyers garantis',
-    '\u2713 Revenus d\u00e9fiscalis\u00e9s'
+    '✓ TVA récupérée',
+    '✓ Loyers garantis',
+    '✓ Revenus défiscalisés'
   ]
 
   return (
@@ -47,14 +47,14 @@ export default function HeroLmnpGere() {
         animation: 'fadeUp 1.2s ease both 0.15s'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-          <span style={eyeLine} /><span style={eyeText}>{'LMNP G\u00c9R\u00c9 \u00b7 R\u00c9SIDENCES SERVICES'}</span>
+          <span style={eyeLine} /><span style={eyeText}>{'LMNP GÉRÉ · RÉSIDENCES SERVICES'}</span>
         </div>
         <h1 style={{
           fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 300,
           fontSize: 'clamp(44px,7vw,96px)', lineHeight: 0.95,
           letterSpacing: '-0.02em', color: '#fff', margin: 0
         }}>
-          {'Investir l\u00e0 o\u00f9 la d\u00e9mographie'}<br />
+          {'Investir là où la démographie'}<br />
           <em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'travaille pour vous.'}</em>
         </h1>
         <div style={{ display: 'flex', gap: 16, marginTop: 32, flexWrap: 'wrap' }}>
@@ -76,12 +76,12 @@ export default function HeroLmnpGere() {
             fontFamily: "'Raleway',sans-serif", fontWeight: 600,
             fontSize: 14, letterSpacing: '0.06em',
             textTransform: 'uppercase', textDecoration: 'none'
-          }}>{'Simuler mon investissement \u2192'}</a>
+          }}>{'Simuler mon investissement →'}</a>
           <a href={`${WP}/rdv-decouverte/`} style={{
             fontFamily: "'Raleway',sans-serif", fontWeight: 500,
             fontSize: 14, color: 'rgba(255,255,255,0.65)',
             textDecoration: 'none', letterSpacing: '0.04em'
-          }}>{'Prendre RDV \u2192'}</a>
+          }}>{'Prendre RDV →'}</a>
         </div>
       </div>
       <style>{`@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}`}</style>

@@ -18,13 +18,13 @@ export default function MentionsLegales() {
       <section style={{ background: 'radial-gradient(ellipse 60% 80% at 100% 50%, rgba(166,124,82,0.07) 0%, transparent 60%), #111C33', padding: '80px 6vw 64px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
           <span style={{ width: 32, height: 1, background: '#A67C52', display: 'block' }} />
-          <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.22em', color: '#A67C52' }}>{"Informations l\u00e9gales"}</span>
+          <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.22em', color: '#A67C52' }}>{"Informations légales"}</span>
         </div>
         <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 300, fontSize: 'clamp(36px,5vw,64px)', lineHeight: 1.0, letterSpacing: '-0.02em', color: '#fff', margin: 0 }}>
-          Mentions <em style={{ fontStyle: 'italic', color: '#C4976A' }}>{"l\u00e9gales"}</em>
+          Mentions <em style={{ fontStyle: 'italic', color: '#C4976A' }}>{"légales"}</em>
         </h1>
         <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 200, fontSize: 14, color: 'rgba(255,255,255,0.35)', marginTop: 16, maxWidth: 480 }}>
-          {"Conform\u00e9ment aux articles 6-III et 19 de la Loi n\u00b02004-575 du 21 juin 2004"}
+          {"Conformément aux articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004"}
         </p>
       </section>
 
@@ -35,22 +35,22 @@ export default function MentionsLegales() {
           {/* 01 */}
           <div style={sec}>
             <div style={dot} />
-            <div style={ey}>{"01 \u2014 \u00c9DITEUR DU SITE"}</div>
+            <div style={ey}>{"01 — ÉDITEUR DU SITE"}</div>
             <h2 style={h2s}>{"VIVEO Conseils & Patrimoine"}</h2>
             <div style={gridWrap}>
               <Cell label="Forme juridique">SARL (EURL)</Cell>
-              <Cell label="Capital social">{"5 000 \u20ac"}</Cell>
-              <Cell label={"Si\u00e8ge social"}>{"3 bis Rue du G\u00e9n\u00e9ral de Gaulle \u2014 59253 La Gorgue"}</Cell>
-              <Cell label="RCS">{"Dunkerque n\u00b0991869900"}</Cell>
-              <Cell label={"N\u00b0 SIRET"}>991 869 900 00019</Cell>
-              <Cell label={"N\u00b0 TVA intracommunautaire"}>FR76991869900</Cell>
+              <Cell label="Capital social">{"5 000 €"}</Cell>
+              <Cell label={"Siège social"}>{"3 bis Rue du Général de Gaulle — 59253 La Gorgue"}</Cell>
+              <Cell label="RCS">{"Dunkerque n°991869900"}</Cell>
+              <Cell label={"N° SIRET"}>991 869 900 00019</Cell>
+              <Cell label={"N° TVA intracommunautaire"}>FR76991869900</Cell>
             </div>
             <div style={badge}>Carte Professionnelle Transactions</div>
             <div style={{ ...gridWrap, marginTop: 16 }}>
-              <Cell label={"R\u00e9f\u00e9rence Carte T"}>CPI59082025000000003</Cell>
-              <Cell label={"D\u00e9livr\u00e9e par"}>CCI Grand Lille</Cell>
-              <Cell label={"Validit\u00e9"}>{"Jusqu'au 11/12/2028"}</Cell>
-              <Cell label="RC Professionnelle">{"Allianz Actif Pro \u2014 n\u00b064579786"}</Cell>
+              <Cell label={"Référence Carte T"}>CPI59082025000000003</Cell>
+              <Cell label={"Délivrée par"}>CCI Grand Lille</Cell>
+              <Cell label={"Validité"}>{"Jusqu'au 11/12/2028"}</Cell>
+              <Cell label="RC Professionnelle">{"Allianz Actif Pro — n°64579786"}</Cell>
             </div>
             <p style={{ ...txt, marginTop: 20 }}>Directeur de la publication : Thomas Blanchard</p>
           </div>
@@ -59,11 +59,11 @@ export default function MentionsLegales() {
           {/* 02 */}
           <div style={sec}>
             <div style={dot} />
-            <div style={ey}>{"02 \u2014 H\u00c9BERGEMENT"}</div>
+            <div style={ey}>{"02 — HÉBERGEMENT"}</div>
             <h2 style={h2s}>Infrastructure technique</h2>
             <div style={gridWrap}>
-              <Cell label={"H\u00e9bergeur DNS"}>{"IONOS SE\n7 place de la Gare \u2014 57200 Sarreguemines"}</Cell>
-              <Cell label={"H\u00e9bergeur applicatif"}>{"Vercel Inc.\n340 Pine Street, Suite 701\nSan Francisco, CA 94104"}</Cell>
+              <Cell label={"Hébergeur DNS"}>{"IONOS SE\n7 place de la Gare — 57200 Sarreguemines"}</Cell>
+              <Cell label={"Hébergeur applicatif"}>{"Vercel Inc.\n340 Pine Street, Suite 701\nSan Francisco, CA 94104"}</Cell>
             </div>
           </div>
           <hr style={hr} />
@@ -71,36 +71,36 @@ export default function MentionsLegales() {
           {/* 03 */}
           <div style={sec}>
             <div style={dot} />
-            <div style={ey}>{"03 \u2014 PROPRI\u00c9T\u00c9 INTELLECTUELLE"}</div>
+            <div style={ey}>{"03 — PROPRIÉTÉ INTELLECTUELLE"}</div>
             <h2 style={h2s}>{"Droits & contenus"}</h2>
-            <p style={txt}>{"L'ensemble du contenu de ce site \u2014 textes, images, graphismes, logo, architecture visuelle \u2014 est la propri\u00e9t\u00e9 exclusive de VIVEO Conseils & Patrimoine. Toute reproduction, repr\u00e9sentation, modification ou exploitation, totale ou partielle, est strictement interdite sans autorisation \u00e9crite pr\u00e9alable."}</p>
-            <p style={txt}>{"Les marques et logos pr\u00e9sents sur ce site sont des marques d\u00e9pos\u00e9es. Leur utilisation sans autorisation constitue une contrefa\u00e7on sanctionn\u00e9e par les articles L.713-2 et suivants du Code de la propri\u00e9t\u00e9 intellectuelle."}</p>
+            <p style={txt}>{"L'ensemble du contenu de ce site — textes, images, graphismes, logo, architecture visuelle — est la propriété exclusive de VIVEO Conseils & Patrimoine. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, est strictement interdite sans autorisation écrite préalable."}</p>
+            <p style={txt}>{"Les marques et logos présents sur ce site sont des marques déposées. Leur utilisation sans autorisation constitue une contrefaçon sanctionnée par les articles L.713-2 et suivants du Code de la propriété intellectuelle."}</p>
           </div>
           <hr style={hr} />
 
           {/* 04 */}
           <div style={sec}>
             <div style={dot} />
-            <div style={ey}>{"04 \u2014 DONN\u00c9ES PERSONNELLES"}</div>
+            <div style={ey}>{"04 — DONNÉES PERSONNELLES"}</div>
             <h2 style={h2s}>Vos droits (RGPD)</h2>
-            <p style={txt}>{"Conform\u00e9ment au R\u00e8glement G\u00e9n\u00e9ral sur la Protection des Donn\u00e9es (RGPD \u2014 UE 2016/679) et \u00e0 la loi Informatique et Libert\u00e9s, vous disposez d'un droit d'acc\u00e8s, de rectification, de portabilit\u00e9 et de suppression de vos donn\u00e9es personnelles."}</p>
+            <p style={txt}>{"Conformément au Règlement Général sur la Protection des Données (RGPD — UE 2016/679) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de portabilité et de suppression de vos données personnelles."}</p>
             <div style={gridWrap}>
               <Cell label="Responsable du traitement">{"VIVEO Conseils & Patrimoine"}</Cell>
-              <Cell label={"Finalit\u00e9"}>{"Gestion des demandes de contact et de rendez-vous"}</Cell>
-              <Cell label={"Durée de conservation"}>{"3 ans \u00e0 compter du dernier contact"}</Cell>
+              <Cell label={"Finalité"}>{"Gestion des demandes de contact et de rendez-vous"}</Cell>
+              <Cell label={"Durée de conservation"}>{"3 ans à compter du dernier contact"}</Cell>
               <Cell label="Contact"><a href="mailto:contact@viveo-patrimoine.fr" style={{ color: '#A67C52', textDecoration: 'none' }}>contact@viveo-patrimoine.fr</a></Cell>
             </div>
-            <p style={{ ...txt, marginTop: 20 }}>{"Pour exercer vos droits ou introduire une r\u00e9clamation, vous pouvez \u00e9galement contacter la CNIL : "}<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style={{ color: '#A67C52' }}>www.cnil.fr</a></p>
+            <p style={{ ...txt, marginTop: 20 }}>{"Pour exercer vos droits ou introduire une réclamation, vous pouvez également contacter la CNIL : "}<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style={{ color: '#A67C52' }}>www.cnil.fr</a></p>
           </div>
           <hr style={hr} />
 
           {/* 05 */}
           <div style={sec}>
             <div style={dot} />
-            <div style={ey}>{"05 \u2014 COOKIES"}</div>
-            <h2 style={h2s}>{"Gestion des pr\u00e9f\u00e9rences"}</h2>
-            <p style={txt}>{"Ce site utilise des cookies techniques n\u00e9cessaires \u00e0 son bon fonctionnement. Aucun cookie publicitaire ou de tra\u00e7age tiers n'est d\u00e9pos\u00e9 sans votre consentement explicite."}</p>
-            <p style={txt}>{"Vous pouvez param\u00e9trer vos pr\u00e9f\u00e9rences \u00e0 tout moment via les param\u00e8tres de votre navigateur. Le refus de certains cookies peut affecter votre exp\u00e9rience de navigation."}</p>
+            <div style={ey}>{"05 — COOKIES"}</div>
+            <h2 style={h2s}>{"Gestion des préférences"}</h2>
+            <p style={txt}>{"Ce site utilise des cookies techniques nécessaires à son bon fonctionnement. Aucun cookie publicitaire ou de traçage tiers n'est déposé sans votre consentement explicite."}</p>
+            <p style={txt}>{"Vous pouvez paramétrer vos préférences à tout moment via les paramètres de votre navigateur. Le refus de certains cookies peut affecter votre expérience de navigation."}</p>
           </div>
         </div>
       </section>
@@ -110,9 +110,9 @@ export default function MentionsLegales() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
           <div>
             <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 600, fontSize: 14, color: '#fff', letterSpacing: '0.20em' }}>VIVEO</span>
-            <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 200, color: '#fff', opacity: 0.50 }}>{" \u00b7 Patrimoine"}</span>
+            <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 200, color: '#fff', opacity: 0.50 }}>{" · Patrimoine"}</span>
           </div>
-          <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 11, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em' }}>{"Derni\u00e8re mise \u00e0 jour : mars 2026"}</span>
+          <span style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 11, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em' }}>{"Dernière mise à jour : mars 2026"}</span>
         </div>
       </section>
     </>

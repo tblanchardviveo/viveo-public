@@ -27,7 +27,7 @@ export default function NewsletterPage() {
           margin: '0 auto',
           lineHeight: 1.7
         }}>
-          {"Recevez chaque mois nos meilleures opportunit\u00e9s immobili\u00e8res, conseils patrimoniaux et analyses de march\u00e9."}
+          {"Recevez chaque mois nos meilleures opportunités immobilières, conseils patrimoniaux et analyses de marché."}
         </p>
       </div>
       <NewsletterWidget />

@@ -30,7 +30,7 @@ export default function CtaHome() {
         <p style={{
           fontFamily: "'Raleway', sans-serif", fontWeight: 200,
           fontSize: 14, color: '#999', marginTop: 12, marginBottom: 48
-        }}>{"Teams ou FaceTime \u00b7 R\u00e9ponse sous 24h"}</p>
+        }}>{"Teams ou FaceTime · Réponse sous 24h"}</p>
         <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
           display: 'inline-block',
           background: 'linear-gradient(135deg, #A67C52, #C4976A)',
@@ -41,7 +41,7 @@ export default function CtaHome() {
           textTransform: 'uppercase', textDecoration: 'none',
           boxShadow: '0 8px 32px rgba(166,124,82,0.25)',
           transition: 'all 0.3s ease'
-        }}>{"Demander mon RDV D\u00e9couverte"}</a>
+        }}>{"Demander mon RDV Découverte"}</a>
       </div>
     </section>
   )

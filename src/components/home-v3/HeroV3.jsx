@@ -14,7 +14,7 @@ export default function HeroV3() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const pills = ['\u2713 Ind\u00e9pendant', '\u2713 27 ans promoteur', '\u2713 A\u2192Z']
+  const pills = ['✓ Indépendant', '✓ 27 ans promoteur', '✓ A→Z']
 
   return (
     <section style={{ height: '100vh', overflow: 'hidden', position: 'relative' }}>
@@ -84,9 +84,9 @@ export default function HeroV3() {
           opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(12px)',
           transition: 'opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s'
         }}>
-          {"27 ans d'exp\u00e9rience c\u00f4t\u00e9 promoteur."}<br />
-          {"Un conseil ind\u00e9pendant, sans exclusivit\u00e9,"}<br />
-          {"sans conflit d'int\u00e9r\u00eat."}
+          {"27 ans d'expérience côté promoteur."}<br />
+          {"Un conseil indépendant, sans exclusivité,"}<br />
+          {"sans conflit d'intérêt."}
         </p>
 
         {/* Pills */}
@@ -126,7 +126,7 @@ export default function HeroV3() {
           }}
           onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.filter = 'brightness(1.08)' }}
           onMouseLeave={e => { e.target.style.transform = 'none'; e.target.style.filter = 'none' }}
-          >{"D\u00e9couvrir nos programmes"}</Link>
+          >{"Découvrir nos programmes"}</Link>
           <a href={`${WP}/rdv-decouverte/`} style={{
             color: 'rgba(255,255,255,0.60)', fontFamily: "'Raleway',sans-serif",
             fontWeight: 500, fontSize: 13, letterSpacing: '0.08em',
@@ -134,7 +134,7 @@ export default function HeroV3() {
           }}
           onMouseEnter={e => e.target.style.color = '#C4976A'}
           onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.60)'}
-          >{"RDV D\u00e9couverte \u2192"}</a>
+          >{"RDV Découverte →"}</a>
         </div>
       </div>
 
@@ -147,7 +147,7 @@ export default function HeroV3() {
         <div style={{ width: 1, height: 40, background: 'rgba(255,255,255,0.15)', borderRadius: 1, overflow: 'hidden', position: 'relative' }}>
           <div style={{ width: 1, height: 16, background: '#A67C52', position: 'absolute', animation: 'scrollLine 1.8s ease-in-out infinite' }} />
         </div>
-        <span style={{ fontFamily: "'Raleway',sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: '0.30em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase' }}>{"D\u00c9FILER"}</span>
+        <span style={{ fontFamily: "'Raleway',sans-serif", fontSize: 10, fontWeight: 200, letterSpacing: '0.30em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase' }}>{"DÉFILER"}</span>
       </div>
 
       <style>{`

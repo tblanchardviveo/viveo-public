@@ -40,7 +40,7 @@ export default function SimulateurRetraite() {
           fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 300,
           color: '#fff', lineHeight: 1.2, marginBottom: 48
         }}>
-          {'Estimez '}<em style={{ fontStyle: 'italic', color: 'var(--bronze)' }}>{'votre \u00e9cart'}</em>
+          {'Estimez '}<em style={{ fontStyle: 'italic', color: 'var(--bronze)' }}>{'votre écart'}</em>
         </h2>
 
         <div style={{
@@ -58,7 +58,7 @@ export default function SimulateurRetraite() {
                 <span style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 20, color: '#fff', fontWeight: 400
-                }}>{fmt(salaire)} {'\u20ac'}</span>
+                }}>{fmt(salaire)} {'€'}</span>
               </div>
               <input type="range" min={1500} max={12000} step={100}
                 value={salaire} onChange={e => setSalaire(+e.target.value)}
@@ -71,7 +71,7 @@ export default function SimulateurRetraite() {
                 <span style={{
                   fontFamily: "'Raleway', sans-serif", fontSize: 13,
                   fontWeight: 400, color: 'rgba(255,255,255,0.5)'
-                }}>{"\u00c2ge actuel"}</span>
+                }}>{"Âge actuel"}</span>
                 <span style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 20, color: '#fff', fontWeight: 400
@@ -92,12 +92,12 @@ export default function SimulateurRetraite() {
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 24 }}>
               <div>
-                <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 4 }}>Pension estim{"\u00e9"}e</p>
-                <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 32, color: '#fff', fontWeight: 300 }}>{fmt(pension)} {'\u20ac'}</p>
+                <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 4 }}>Pension estim{"é"}e</p>
+                <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 32, color: '#fff', fontWeight: 300 }}>{fmt(pension)} {'€'}</p>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 4 }}>{"\u00c9cart mensuel"}</p>
-                <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 32, color: 'var(--bronze)', fontWeight: 300 }}>-{fmt(ecart)} {'\u20ac'}</p>
+                <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 4 }}>{"Écart mensuel"}</p>
+                <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 32, color: 'var(--bronze)', fontWeight: 300 }}>-{fmt(ecart)} {'€'}</p>
               </div>
             </div>
 
@@ -120,8 +120,8 @@ export default function SimulateurRetraite() {
               background: 'rgba(255,255,255,0.03)', borderRadius: 10,
               padding: '16px 20px', marginBottom: 24
             }}>
-              <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 12, color: 'rgba(255,255,255,0.4)', marginBottom: 4 }}>{"Manque \u00e0 gagner sur 20 ans de retraite"}</p>
-              <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: '#fff' }}>{fmt(ecartCumule)} {'\u20ac'}</p>
+              <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 12, color: 'rgba(255,255,255,0.4)', marginBottom: 4 }}>{"Manque à gagner sur 20 ans de retraite"}</p>
+              <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: '#fff' }}>{fmt(ecartCumule)} {'€'}</p>
             </div>
 
             <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
@@ -131,7 +131,7 @@ export default function SimulateurRetraite() {
               fontSize: 13, fontWeight: 600, letterSpacing: '0.06em',
               textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif",
               textDecoration: 'none'
-            }}>{"Anticiper maintenant \u2192"}</a>
+            }}>{"Anticiper maintenant →"}</a>
           </div>
         </div>
       </div>

@@ -58,20 +58,20 @@ export default function ChiffresHome() {
       }}>
         <div style={{ flex: 1, textAlign: 'center', padding: '0 40px' }}>
           <div style={numStyle}>{c27}</div>
-          <div style={labelStyle}>{"ANS D'EXP\u00c9RIENCE"}</div>
-          <div style={detailStyle}>{"c\u00f4t\u00e9 promoteur"}</div>
+          <div style={labelStyle}>{"ANS D'EXPÉRIENCE"}</div>
+          <div style={detailStyle}>{"côté promoteur"}</div>
         </div>
         <div style={sepStyle} />
         <div style={{ flex: 1, textAlign: 'center', padding: '0 40px' }}>
           <div style={numStyle}>{c100}%</div>
-          <div style={labelStyle}>{"IND\u00c9PENDANT"}</div>
-          <div style={detailStyle}>{"aucune exclusivit\u00e9 promoteur"}</div>
+          <div style={labelStyle}>{"INDÉPENDANT"}</div>
+          <div style={detailStyle}>{"aucune exclusivité promoteur"}</div>
         </div>
         <div style={sepStyle} />
         <div style={{ flex: 1, textAlign: 'center', padding: '0 40px' }}>
-          <div style={numStyle}>{"A\u2192Z"}</div>
+          <div style={numStyle}>{"A→Z"}</div>
           <div style={labelStyle}>ACCOMPAGNEMENT</div>
-          <div style={detailStyle}>{"de la recherche \u00e0 la remise des cl\u00e9s"}</div>
+          <div style={detailStyle}>{"de la recherche à la remise des clés"}</div>
         </div>
       </div>
     </section>

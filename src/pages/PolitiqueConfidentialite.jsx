@@ -21,26 +21,26 @@ export default function PolitiqueConfidentialite() {
     fText:{fontSize:10,color:'rgba(255,255,255,.2)'},
   }
   const articles = [
-    {num:'Article 01',title:'Responsable du traitement',content:"VIVEO Patrimoine \u2014 SARL au capital de 5 000 \u20ac\n3 bis rue du G\u00e9n\u00e9ral de Gaulle \u00b7 59253 La Gorgue\nSIRET : 991 869 900 00019\nEmail : contact@viveo-patrimoine.fr \u00b7 T\u00e9l : 09 67 16 70 65"},
-    {num:'Article 02',title:'Donn\u00e9es collect\u00e9es',content:"Donn\u00e9es d'identification (nom, pr\u00e9nom), de contact (email, t\u00e9l\u00e9phone, adresse), professionnelles et fiscales, de navigation (cookies analytiques GA4)."},
-    {num:'Article 03',title:'Finalit\u00e9s du traitement',content:"R\u00e9pondre \u00e0 vos demandes de contact et de rendez-vous, r\u00e9aliser votre \u00e9tude patrimoniale, vous proposer des programmes adapt\u00e9s, assurer le suivi de votre dossier VEFA, communications avec consentement."},
-    {num:'Article 04',title:'Base l\u00e9gale',content:"Consentement \u00b7 Ex\u00e9cution d'un contrat \u00b7 Int\u00e9r\u00eat l\u00e9gitime \u00b7 Obligations l\u00e9gales."},
-    {num:'Article 05',title:'Destinataires',content:"VIVEO Patrimoine. Transmission possible aux promoteurs immobiliers, banques, notaires et prestataires techniques dans la stricte limite du n\u00e9cessaire.\nVos donn\u00e9es ne sont jamais revendues."},
-    {num:'Article 06',title:'Dur\u00e9e de conservation',content:"Prospects : 3 ans \u00b7 Clients : 10 ans \u00b7 Navigation : 13 mois \u00b7 Communications : jusqu'au retrait du consentement."},
-    {num:'Article 07',title:'Vos droits',content:"Conform\u00e9ment au RGPD : acc\u00e8s, rectification, effacement, limitation, opposition, portabilit\u00e9, retrait du consentement.\nContact : contact@viveo-patrimoine.fr\nR\u00e9clamation : www.cnil.fr"},
-    {num:'Article 08',title:'Cookies',content:"Cookies n\u00e9cessaires (fonctionnement) et analytiques Google Analytics GA4 (soumis \u00e0 consentement). Gestion via les param\u00e8tres de votre navigateur."},
-    {num:'Article 09',title:'S\u00e9curit\u00e9',content:"Chiffrement HTTPS/TLS \u00b7 Acc\u00e8s limit\u00e9 \u00b7 H\u00e9bergement s\u00e9curis\u00e9 en Europe \u00b7 Sauvegardes r\u00e9guli\u00e8res."},
-    {num:'Article 10',title:'Modifications',content:"VIVEO Patrimoine se r\u00e9serve le droit de modifier cette politique. Date de mise \u00e0 jour en haut de page."},
+    {num:'Article 01',title:'Responsable du traitement',content:"VIVEO Patrimoine — SARL au capital de 5 000 €\n3 bis rue du Général de Gaulle · 59253 La Gorgue\nSIRET : 991 869 900 00019\nEmail : contact@viveo-patrimoine.fr · Tél : 09 67 16 70 65"},
+    {num:'Article 02',title:'Données collectées',content:"Données d'identification (nom, prénom), de contact (email, téléphone, adresse), professionnelles et fiscales, de navigation (cookies analytiques GA4)."},
+    {num:'Article 03',title:'Finalités du traitement',content:"Répondre à vos demandes de contact et de rendez-vous, réaliser votre étude patrimoniale, vous proposer des programmes adaptés, assurer le suivi de votre dossier VEFA, communications avec consentement."},
+    {num:'Article 04',title:'Base légale',content:"Consentement · Exécution d'un contrat · Intérêt légitime · Obligations légales."},
+    {num:'Article 05',title:'Destinataires',content:"VIVEO Patrimoine. Transmission possible aux promoteurs immobiliers, banques, notaires et prestataires techniques dans la stricte limite du nécessaire.\nVos données ne sont jamais revendues."},
+    {num:'Article 06',title:'Durée de conservation',content:"Prospects : 3 ans · Clients : 10 ans · Navigation : 13 mois · Communications : jusqu'au retrait du consentement."},
+    {num:'Article 07',title:'Vos droits',content:"Conformément au RGPD : accès, rectification, effacement, limitation, opposition, portabilité, retrait du consentement.\nContact : contact@viveo-patrimoine.fr\nRéclamation : www.cnil.fr"},
+    {num:'Article 08',title:'Cookies',content:"Cookies nécessaires (fonctionnement) et analytiques Google Analytics GA4 (soumis à consentement). Gestion via les paramètres de votre navigateur."},
+    {num:'Article 09',title:'Sécurité',content:"Chiffrement HTTPS/TLS · Accès limité · Hébergement sécurisé en Europe · Sauvegardes régulières."},
+    {num:'Article 10',title:'Modifications',content:"VIVEO Patrimoine se réserve le droit de modifier cette politique. Date de mise à jour en haut de page."},
   ]
   return (
     <div style={S.page}>
     <div style={S.header}>
       <div style={S.logo}>VIVEO<span style={S.logoSpan}>.</span></div>
-      <div style={S.sub}>Politique de confidentialit\u00e9 \u2014 Mise \u00e0 jour Mars 2026</div>
+      <div style={S.sub}>Politique de confidentialité — Mise à jour Mars 2026</div>
     </div>
     <div style={S.container}>
-      <h1 style={S.h1}>Politique de Confidentialit\u00e9</h1>
-      <p style={S.intro}>VIVEO Patrimoine s'engage \u00e0 prot\u00e9ger vos donn\u00e9es personnelles et \u00e0 respecter votre vie priv\u00e9e. Cette politique d\u00e9crit comment nous collectons, utilisons et prot\u00e9geons vos informations.</p>
+      <h1 style={S.h1}>Politique de Confidentialité</h1>
+      <p style={S.intro}>VIVEO Patrimoine s'engage à protéger vos données personnelles et à respecter votre vie privée. Cette politique décrit comment nous collectons, utilisons et protégeons vos informations.</p>
       {articles.map((a,i) => (
         <div key={i} style={{...S.art,...(i===articles.length-1?{borderBottom:'none'}:{})}}>
           <div style={S.artNum}>{a.num}</div>
@@ -48,11 +48,11 @@ export default function PolitiqueConfidentialite() {
           <div style={S.artBody}>{a.content}</div>
         </div>
       ))}
-      <div style={S.hl}>Pour exercer vos droits : <strong>contact@viveo-patrimoine.fr</strong> \u00b7 09 67 16 70 65 \u00b7 3 bis rue du G\u00e9n\u00e9ral de Gaulle, 59253 La Gorgue</div>
+      <div style={S.hl}>Pour exercer vos droits : <strong>contact@viveo-patrimoine.fr</strong> · 09 67 16 70 65 · 3 bis rue du Général de Gaulle, 59253 La Gorgue</div>
     </div>
     <div style={S.footer}>
       <div style={S.fLogo}>VIVEO<span style={{color:'rgba(166,124,82,.4)'}}>.</span></div>
-      <div style={S.fText}>Politique de confidentialit\u00e9 \u00b7 Mars 2026</div>
+      <div style={S.fText}>Politique de confidentialité · Mars 2026</div>
     </div>
     </div>
   )

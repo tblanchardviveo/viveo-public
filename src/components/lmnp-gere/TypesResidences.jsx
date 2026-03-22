@@ -8,24 +8,24 @@ const eyeText = {
 const cards = [
   {
     img: `${WP}/wp-content/uploads/2026/03/IMG_0662.png`,
-    badge: 'PRIORIT\u00c9 VIVEO', badgeBronze: true,
-    title: 'R\u00e9sidences seniors',
-    text: "4,8 millions de Fran\u00e7ais auront plus de 85 ans en 2050 (contre 2 millions aujourd'hui). Le besoin de logements services seniors va tripler. Nous en faisons notre priorit\u00e9 absolue.",
-    stat: '+140%', statLabel: ' de seniors d\u2019ici 2050'
+    badge: 'PRIORITÉ VIVEO', badgeBronze: true,
+    title: 'Résidences seniors',
+    text: "4,8 millions de Français auront plus de 85 ans en 2050 (contre 2 millions aujourd'hui). Le besoin de logements services seniors va tripler. Nous en faisons notre priorité absolue.",
+    stat: '+140%', statLabel: ' de seniors d’ici 2050'
   },
   {
     img: `${WP}/wp-content/uploads/2026/03/IMG_0669.png`,
-    badge: 'PRIORIT\u00c9 VIVEO', badgeBronze: true,
-    title: 'R\u00e9sidences \u00e9tudiantes',
-    text: "2,7 millions d'\u00e9tudiants pour seulement 350 000 places en r\u00e9sidences. Un taux d'\u00e9quipement de 12% seulement. Le d\u00e9ficit est chronique, structurel, national \u2014 et ne se r\u00e9sorbe pas.",
-    stat: '12%', statLabel: " taux d'\u00e9quipement seulement (S\u00e9nat)"
+    badge: 'PRIORITÉ VIVEO', badgeBronze: true,
+    title: 'Résidences étudiantes',
+    text: "2,7 millions d'étudiants pour seulement 350 000 places en résidences. Un taux d'équipement de 12% seulement. Le déficit est chronique, structurel, national — et ne se résorbe pas.",
+    stat: '12%', statLabel: " taux d'équipement seulement (Sénat)"
   },
   {
     img: `${WP}/wp-content/uploads/2026/03/IMG_0664.png`,
-    badge: 'S\u00c9LECTION STRICTE VIVEO', badgeBronze: false,
-    title: 'R\u00e9sidences de tourisme',
-    text: "Nous ne r\u00e9f\u00e9ren\u00e7ons que les gestionnaires dont la solidit\u00e9 financi\u00e8re, l'historique de paiement et le taux d'occupation sont v\u00e9rifi\u00e9s et document\u00e9s. La s\u00e9lectivit\u00e9 est notre seule r\u00e8gle.",
-    note: "Nous refusons les programmes dont le gestionnaire ne satisfait pas \u00e0 nos crit\u00e8res de solidit\u00e9."
+    badge: 'SÉLECTION STRICTE VIVEO', badgeBronze: false,
+    title: 'Résidences de tourisme',
+    text: "Nous ne référençons que les gestionnaires dont la solidité financière, l'historique de paiement et le taux d'occupation sont vérifiés et documentés. La sélectivité est notre seule règle.",
+    note: "Nous refusons les programmes dont le gestionnaire ne satisfait pas à nos critères de solidité."
   }
 ]
 
@@ -33,14 +33,14 @@ export default function TypesResidences() {
   return (
     <section style={{ background: '#111C33', padding: '15vh 6vw' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-        <span style={eyeLine} /><span style={eyeText}>{"TROIS MARCH\u00c9S \u00b7 UNE LOGIQUE COMMUNE"}</span>
+        <span style={eyeLine} /><span style={eyeText}>{"TROIS MARCHÉS · UNE LOGIQUE COMMUNE"}</span>
       </div>
       <h2 style={{
         fontFamily: "'Playfair Display',Georgia,serif",
         fontSize: 'clamp(32px,4vw,52px)', fontWeight: 300,
         lineHeight: 1.1, color: '#fff', margin: '0 0 56px'
       }}>
-        {"La demande d\u00e9passe l'offre."}<br />
+        {"La demande dépasse l'offre."}<br />
         <em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'Partout. Durablement.'}</em>
       </h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 2 }}>

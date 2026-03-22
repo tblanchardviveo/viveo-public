@@ -19,7 +19,7 @@ function Card({ c }) {
       {c.note && <p style={{ fontFamily: "'Raleway',sans-serif", fontSize: 12, fontWeight: 200, fontStyle: 'italic', color: 'var(--bronze)', marginBottom: 16 }}>{c.note}</p>}
       {c.lines.map(([l,v],i) => <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: `1px solid ${line}`, fontFamily: "'Raleway',sans-serif", fontSize: 14 }}><span style={{ fontWeight: 300, color: sub }}>{l}</span><span style={{ fontWeight: 500, color: l.includes('Total') ? (isDark ? 'var(--bronze-light)' : txt) : txt }}>{v}</span></div>)}
       <div style={{ background: isDark ? 'rgba(166,124,82,0.12)' : '#111C33', padding: '16px 20px', borderRadius: 2, marginTop: 16, border: isDark ? '1px solid rgba(166,124,82,0.25)' : 'none' }}>
-        <p style={{ fontFamily: "'Raleway',sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.40)', marginBottom: 4 }}>{"CO\u00dbT ANNUEL ESTIMÉ"}</p>
+        <p style={{ fontFamily: "'Raleway',sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.40)', marginBottom: 4 }}>{"COÛT ANNUEL ESTIMÉ"}</p>
         <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 32, fontWeight: 300, color: '#fff' }}>{c.total} {'€'}</p>
       </div>
       {c.cycles.map((cy,i) => <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 13, fontWeight: 300, color: isDark ? 'rgba(255,255,255,0.50)' : '#999', marginTop: i === 0 ? 8 : 2 }}>{cy}</p>)}

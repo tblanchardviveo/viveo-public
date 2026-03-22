@@ -8,11 +8,11 @@ const QUICK_REPLIES = [
 ]
 
 const BOT_RESPONSES = {
-  default: "Merci pour votre message ! Un conseiller VIVEO Patrimoine vous r\u00e9pondra dans les meilleurs d\u00e9lais. En attendant, n'h\u00e9sitez pas \u00e0 consulter nos programmes ou \u00e0 prendre rendez-vous.",
-  programme: "Nous proposons des programmes immobiliers neufs dans toute la France. Consultez notre catalogue sur la page Programmes ou contactez-nous pour un accompagnement personnalis\u00e9.",
-  lmnp: "Le LMNP (Loueur Meubl\u00e9 Non Professionnel) vous permet de g\u00e9n\u00e9rer des revenus locatifs avec des avantages fiscaux. D\u00e9couvrez notre page d\u00e9di\u00e9e ou prenez rendez-vous pour une simulation.",
-  rdv: "Excellent choix ! Prenez rendez-vous avec un de nos conseillers pour un bilan patrimonial gratuit et personnalis\u00e9. Cliquez sur 'Prendre RDV' en haut de page.",
-  fiscal: "Nous proposons plusieurs dispositifs : LMNP, D\u00e9ficit Foncier, Nue-Propri\u00e9t\u00e9, Loi Malraux, Monuments Historiques, Loi Denormandie et Loi Jeanbrun. Chaque dispositif r\u00e9pond \u00e0 un objectif diff\u00e9rent.",
+  default: "Merci pour votre message ! Un conseiller VIVEO Patrimoine vous répondra dans les meilleurs délais. En attendant, n'hésitez pas à consulter nos programmes ou à prendre rendez-vous.",
+  programme: "Nous proposons des programmes immobiliers neufs dans toute la France. Consultez notre catalogue sur la page Programmes ou contactez-nous pour un accompagnement personnalisé.",
+  lmnp: "Le LMNP (Loueur Meublé Non Professionnel) vous permet de générer des revenus locatifs avec des avantages fiscaux. Découvrez notre page dédiée ou prenez rendez-vous pour une simulation.",
+  rdv: "Excellent choix ! Prenez rendez-vous avec un de nos conseillers pour un bilan patrimonial gratuit et personnalisé. Cliquez sur 'Prendre RDV' en haut de page.",
+  fiscal: "Nous proposons plusieurs dispositifs : LMNP, Déficit Foncier, Nue-Propriété, Loi Malraux, Monuments Historiques, Loi Denormandie et Loi Jeanbrun. Chaque dispositif répond à un objectif différent.",
 }
 
 function getResponse(msg) {
@@ -85,7 +85,7 @@ export default function ChatbotWidget() {
         <button onClick={() => setOpen(false)} style={{
           background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)',
           fontSize: 20, cursor: 'pointer', padding: 4
-        }}>{"\u2715"}</button>
+        }}>{"✕"}</button>
       </div>
 
       {/* Messages */}
@@ -137,7 +137,7 @@ export default function ChatbotWidget() {
           padding: '10px 16px', borderRadius: 8, border: 'none',
           background: 'linear-gradient(135deg, #A67C52, #C4976A)',
           color: '#fff', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-        }}>{"\u2192"}</button>
+        }}>{"→"}</button>
       </div>
     </div>
   )

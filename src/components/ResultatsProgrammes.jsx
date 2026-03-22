@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const fmt = (n) => n ? new Intl.NumberFormat('fr-FR').format(Math.round(n)) + ' \u20ac' : ''
+const fmt = (n) => n ? new Intl.NumberFormat('fr-FR').format(Math.round(n)) + ' €' : ''
 
 export default function ResultatsProgrammes({ programmes = [], loading = false }) {
   if (loading) {
@@ -18,7 +18,7 @@ export default function ResultatsProgrammes({ programmes = [], loading = false }
       <div style={{ textAlign: 'center', padding: 60 }}>
         <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, color: '#fff', marginBottom: 8 }}>Aucun programme</p>
         <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 14, color: 'rgba(255,255,255,0.5)' }}>
-          {"Modifiez vos crit\u00e8res de recherche pour trouver des programmes correspondants."}
+          {"Modifiez vos critères de recherche pour trouver des programmes correspondants."}
         </p>
       </div>
     )
@@ -27,7 +27,7 @@ export default function ResultatsProgrammes({ programmes = [], loading = false }
   return (
     <div>
       <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 13, color: 'rgba(255,255,255,0.5)', marginBottom: 24, letterSpacing: '0.05em' }}>
-        {programmes.length} programme{programmes.length > 1 ? 's' : ''} {programmes.length > 1 ? 'correspondent' : 'correspond'} {"\u00e0 votre recherche"}
+        {programmes.length} programme{programmes.length > 1 ? 's' : ''} {programmes.length > 1 ? 'correspondent' : 'correspond'} {"à votre recherche"}
       </p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))', gap: 24 }}>
         {programmes.map((p, i) => (
@@ -71,7 +71,7 @@ export default function ResultatsProgrammes({ programmes = [], loading = false }
                 </h3>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>
-                    {p.typologies || ''}{p.surface_min ? ` \u00b7 d\u00e8s ${p.surface_min}m\u00b2` : ''}
+                    {p.typologies || ''}{p.surface_min ? ` · dès ${p.surface_min}m²` : ''}
                   </span>
                   {p.prix_min && (
                     <span style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, color: 'var(--bronze)' }}>

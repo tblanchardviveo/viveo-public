@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 const dispositifs = [
-  { num: '01', nom: 'LMNP G\u00e9r\u00e9', route: '/lmnp-gere' },
+  { num: '01', nom: 'LMNP Géré', route: '/lmnp-gere' },
   { num: '02', nom: 'LMNP', route: '/lmnp' },
-  { num: '03', nom: 'D\u00e9ficit Foncier', route: '/deficit-foncier' },
-  { num: '04', nom: 'Nue-propri\u00e9t\u00e9', route: '/nue-propriete' },
+  { num: '03', nom: 'Déficit Foncier', route: '/deficit-foncier' },
+  { num: '04', nom: 'Nue-propriété', route: '/nue-propriete' },
   { num: '05', nom: 'Monuments Historiques', route: '/monuments-historiques' },
   { num: '06', nom: 'Loi Malraux', route: '/loi-malraux' },
   { num: '07', nom: 'Loi Jeanbrun', route: '/loi-jeanbrun' },
@@ -31,7 +31,7 @@ export default function DispostifsV3() {
             <em style={{ color: '#C4976A', fontStyle: 'italic' }}>Pour le bon profil.</em>
           </h2>
           <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 17, color: 'rgba(255,255,255,0.50)', lineHeight: 1.8, marginTop: 24 }}>
-            {"LMNP, D\u00e9ficit Foncier, Nue-propri\u00e9t\u00e9, Monuments Historiques, Malraux, Jeanbrun, Denormandie. Selon votre TMI, vos revenus et vos objectifs, nous identifions le seul dispositif qui a du sens pour vous."}
+            {"LMNP, Déficit Foncier, Nue-propriété, Monuments Historiques, Malraux, Jeanbrun, Denormandie. Selon votre TMI, vos revenus et vos objectifs, nous identifions le seul dispositif qui a du sens pour vous."}
           </p>
           <Link to="/calculateur" style={{
             display: 'inline-block', marginTop: 32, padding: '14px 32px',
@@ -41,7 +41,7 @@ export default function DispostifsV3() {
             textTransform: 'uppercase', textDecoration: 'none',
             borderRadius: 2, transition: 'transform 0.2s'
           }} onMouseEnter={e => e.target.style.transform = 'translateY(-2px)'} onMouseLeave={e => e.target.style.transform = 'none'}
-          >{"Simuler mon investissement \u2192"}</Link>
+          >{"Simuler mon investissement →"}</Link>
         </div>
 
         {/* RIGHT */}
@@ -68,7 +68,7 @@ export default function DispostifsV3() {
                 color: '#C4976A', opacity: hov === i ? 1 : 0,
                 transform: hov === i ? 'translateX(0)' : 'translateX(-8px)',
                 transition: 'opacity 0.3s, transform 0.3s'
-              }}>{"\u2192"}</span>
+              }}>{"→"}</span>
             </div>
           ))}
         </div>

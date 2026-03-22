@@ -18,7 +18,7 @@ export default function CtaV3() {
       </p>
 
       <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 200, fontSize: 13, color: '#bbb', marginTop: 8, marginBottom: 56 }}>
-        {"Teams ou FaceTime \u00b7 R\u00e9ponse sous 24h \u00b7 Sans engagement"}
+        {"Teams ou FaceTime · Réponse sous 24h · Sans engagement"}
       </p>
 
       <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
@@ -31,7 +31,7 @@ export default function CtaV3() {
         boxShadow: '0 8px 40px rgba(166,124,82,0.22)',
         transition: 'transform 0.2s'
       }}>
-        {"R\u00e9server mon appel d\u00e9couverte"}
+        {"Réserver mon appel découverte"}
       </a>
     </section>
   )

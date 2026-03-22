@@ -26,12 +26,12 @@ export default function Investir() {
                       <div style={{ position: 'absolute', inset: 0, background: heroOverlay }} />
                       <div style={{ position: 'relative', zIndex: 1 }}>
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>INVESTIR</span></div>
-        <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{'Construire un patrimoine \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'intelligemment.'}</em></h1>
-        <p style={pStyle()}>{'LMNP, Nue-propri\u00e9t\u00e9, D\u00e9ficit foncier \u2014 nous structurons chaque investissement pour maximiser rendement et avantage fiscal, en toute s\u00e9r\u00e9nit\u00e9.'}</p>
+        <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{'Construire un patrimoine —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'intelligemment.'}</em></h1>
+        <p style={pStyle()}>{'LMNP, Nue-propriété, Déficit foncier — nous structurons chaque investissement pour maximiser rendement et avantage fiscal, en toute sérénité.'}</p>
         <div style={{ display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap' }}>
           <Link to="/lmnp" style={pill}>LMNP</Link>
-          <Link to="/nue-propriete" style={pill}>{'Nue-propri\u00e9t\u00e9'}</Link>
-          <Link to="/deficit-foncier" style={pill}>{'D\u00e9ficit foncier'}</Link>
+          <Link to="/nue-propriete" style={pill}>{'Nue-propriété'}</Link>
+          <Link to="/deficit-foncier" style={pill}>{'Déficit foncier'}</Link>
                                     <Link to="/lmnp-gere" style={pill}>LMNP Géré</Link>
             <Link to="/loi-jeanbrun" style={pill}>Jeanbrun</Link>
             <Link to="/loi-malraux" style={pill}>Malraux</Link>
@@ -44,23 +44,23 @@ export default function Investir() {
       {/* Section 2 - LMNP */}
       <Sec bg="#1A2744">
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>LMNP</span></div>
-        <h2 style={h2Style()}>{'Loueur Meubl\u00e9 Non Professionnel \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'des revenus optimis\u00e9s.'}</em></h2>
+        <h2 style={h2Style()}>{'Loueur Meublé Non Professionnel —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'des revenus optimisés.'}</em></h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, marginTop: 48 }}>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Amortissement comptable</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'R\u00e9duction de la base imposable gr\u00e2ce \u00e0 l\u2019amortissement du bien et du mobilier.'}</p></div>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{'R\u00e9gime BIC'}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Fiscalit\u00e9 avantageuse au r\u00e9el ou micro-BIC selon votre situation.'}</p></div>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Gestion locative</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Nous s\u00e9lectionnons des gestionnaires de confiance pour un revenu passif.'}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Amortissement comptable</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Réduction de la base imposable grâce à l’amortissement du bien et du mobilier.'}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{'Régime BIC'}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Fiscalité avantageuse au réel ou micro-BIC selon votre situation.'}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Gestion locative</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Nous sélectionnons des gestionnaires de confiance pour un revenu passif.'}</p></div>
         </div>
       </Sec>
 
       {/* Section 3 - Nue-propriete */}
       <Sec bg="#F7F5F1">
-        <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'NUE-PROPRI\u00c9T\u00c9'}</span></div>
+        <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'NUE-PROPRIÉTÉ'}</span></div>
         <div style={{ display: 'flex', gap: 60, flexWrap: 'wrap', alignItems: 'flex-start' }}>
           <div style={{ flex: '1 1 40%', minWidth: 280 }}>
-            <h2 style={h2Style('#111C33')}>{'Acqu\u00e9rir \u00e0 prix r\u00e9duit \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'r\u00e9cup\u00e9rer la pleine propri\u00e9t\u00e9.'}</em></h2>
-            <p style={pStyle('#555')}>{'D\u00e9cote de 30 \u00e0 40% \u00e0 l\u2019achat, aucune gestion locative, aucune fiscalit\u00e9 sur les revenus fonciers pendant la Durée du d\u00e9membrement. Un investissement patrimonial long terme.'}</p>
+            <h2 style={h2Style('#111C33')}>{'Acquérir à prix réduit —'}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'récupérer la pleine propriété.'}</em></h2>
+            <p style={pStyle('#555')}>{'Décote de 30 à 40% à l’achat, aucune gestion locative, aucune fiscalité sur les revenus fonciers pendant la Durée du démembrement. Un investissement patrimonial long terme.'}</p>
             <div style={{ marginTop: 24 }}>
-              {['D\u00e9cote significative sur le prix d\u2019achat', 'Z\u00e9ro gestion, z\u00e9ro charges, z\u00e9ro fiscalit\u00e9 fonci\u00e8re', 'R\u00e9cup\u00e9ration automatique de la pleine propri\u00e9t\u00e9'].map((t, i) => <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>{'\u2713'} {t}</p>)}
+              {['Décote significative sur le prix d’achat', 'Zéro gestion, zéro charges, zéro fiscalité foncière', 'Récupération automatique de la pleine propriété'].map((t, i) => <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>{'✓'} {t}</p>)}
             </div>
           </div>
           <div style={{ flex: '1 1 50%', minWidth: 260, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -71,23 +71,23 @@ export default function Investir() {
 
       {/* Section 4 - Deficit foncier */}
       <Sec bg="#111C33">
-        <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'D\u00c9FICIT FONCIER'}</span></div>
-        <h2 style={h2Style()}>{'R\u00e9duire ses imp\u00f4ts \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'par la r\u00e9novation.'}</em></h2>
+        <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'DÉFICIT FONCIER'}</span></div>
+        <h2 style={h2Style()}>{'Réduire ses impôts —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'par la rénovation.'}</em></h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 20, marginTop: 32 }}>
           {[
-            ['Travaux d\u00e9ductibles', 'Imp\u00fbtation sur le revenu global jusqu\u2019\u00e0 10 700\u00a0\u20ac/an'],
-            ['Patrimoine ancien', 'R\u00e9habilitation de biens de caract\u00e8re en centre-ville'],
-            ['Double levier', 'Valorisation du bien + avantage fiscal imm\u00e9diat'],
-            ['Report possible', 'D\u00e9ficit reportable sur 10 ans sur les revenus fonciers']
+            ['Travaux déductibles', 'Impûtation sur le revenu global jusqu’à 10 700 €/an'],
+            ['Patrimoine ancien', 'Réhabilitation de biens de caractère en centre-ville'],
+            ['Double levier', 'Valorisation du bien + avantage fiscal immédiat'],
+            ['Report possible', 'Déficit reportable sur 10 ans sur les revenus fonciers']
           ].map(([t, d], i) => <div key={i} style={{ background: '#F7F5F1', borderRadius: 8, padding: 28 }}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{t}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p></div>)}
         </div>
       </Sec>
 
       {/* CTA Final */}
       <Sec bg="#F7F5F1" style={{ textAlign: 'center' }}>
-        <h2 style={h2Style('#111C33')}>{'Parlons de votre strat\u00e9gie.'}</h2>
+        <h2 style={h2Style('#111C33')}>{'Parlons de votre stratégie.'}</h2>
         <div style={{ marginTop: 8 }}>
-          <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV D\u00e9couverte \u2192'}</a>
+          <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV Découverte →'}</a>
         </div>
       </Sec>
       <LiensEtudesMarche />

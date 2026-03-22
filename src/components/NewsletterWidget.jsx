@@ -38,10 +38,10 @@ export default function NewsletterWidget() {
           <span style={{ width: 32, height: 1, background: 'var(--bronze)', display: 'block' }} />
         </div>
         <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(22px, 4vw, 32px)', color: '#fff', fontWeight: 400, marginBottom: 12 }}>
-          {"Restez inform\u00e9"}
+          {"Restez informé"}
         </h2>
         <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 14, color: 'rgba(255,255,255,0.5)', marginBottom: 32, lineHeight: 1.6 }}>
-          {"Recevez nos nouveaux programmes, conseils patrimoniaux et opportunit\u00e9s d'investissement."}
+          {"Recevez nos nouveaux programmes, conseils patrimoniaux et opportunités d'investissement."}
         </p>
         <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
           <input
@@ -66,21 +66,21 @@ export default function NewsletterWidget() {
         </form>
         {status === 'success' && (
           <p style={{ marginTop: 16, fontFamily: "'Raleway', sans-serif", fontSize: 13, color: '#2ecc71' }}>
-            {"\u2713 Inscription confirm\u00e9e. Merci !"}
+            {"✓ Inscription confirmée. Merci !"}
           </p>
         )}
         {status === 'exists' && (
           <p style={{ marginTop: 16, fontFamily: "'Raleway', sans-serif", fontSize: 13, color: 'var(--bronze)' }}>
-            {"Cette adresse est d\u00e9j\u00e0 inscrite."}
+            {"Cette adresse est déjà inscrite."}
           </p>
         )}
         {status === 'error' && (
           <p style={{ marginTop: 16, fontFamily: "'Raleway', sans-serif", fontSize: 13, color: '#e74c3c' }}>
-            {"Une erreur est survenue. R\u00e9essayez."}
+            {"Une erreur est survenue. Réessayez."}
           </p>
         )}
         <p style={{ marginTop: 20, fontFamily: "'Raleway', sans-serif", fontSize: 11, color: 'rgba(255,255,255,0.25)' }}>
-          {"Pas de spam. D\u00e9sinscription en un clic."}
+          {"Pas de spam. Désinscription en un clic."}
         </p>
       </div>
     </section>

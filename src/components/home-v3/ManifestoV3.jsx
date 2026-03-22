@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 
 const allLines = [
-  { text: 'Nous avons pass\u00e9 27\u00a0ans', italic: false },
-  { text: '\u00e0 construire vos programmes.', italic: false },
+  { text: 'Nous avons passé 27 ans', italic: false },
+  { text: 'à construire vos programmes.', italic: false },
   { text: "Aujourd'hui, nous construisons", italic: false },
   { text: 'votre patrimoine.', italic: true }
 ]
@@ -62,7 +62,7 @@ export default function ManifestoV3() {
           color: 'rgba(166,124,82,0.50)', letterSpacing: '0.15em',
           marginTop: 48, textAlign: 'right',
           opacity: visible ? 1 : 0, transition: 'opacity 0.8s ease 0.6s'
-        }}>{"\u2014 L'\u00e9quipe VIVEO Patrimoine"}</p>
+        }}>{"— L'équipe VIVEO Patrimoine"}</p>
       </div>
     </section>
   )

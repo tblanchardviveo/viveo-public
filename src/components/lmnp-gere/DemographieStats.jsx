@@ -30,30 +30,30 @@ function useCounter(end, duration = 2000) {
 }
 
 const stats = [
-  { end: 50, suffix: '%', prefix: '+', label: 'DE PLACES SENIORS N\u00c9CESSAIRES D\u2019ICI 2050', source: 'Source : INSEE / Haut-Commissariat au Plan' },
-  { end: 250000, suffix: '', prefix: '', label: 'LOGEMENTS \u00c9TUDIANTS MANQUANTS EN FRANCE', source: 'Source : Rapport S\u00e9nat 2021', format: true },
-  { end: 98, suffix: '%', prefix: '', label: "TAUX D'OCCUPATION MOYEN R\u00c9SIDENCES G\u00c9R\u00c9ES", source: 'Source : Les Belles Ann\u00e9es 2024' }
+  { end: 50, suffix: '%', prefix: '+', label: 'DE PLACES SENIORS NÉCESSAIRES D’ICI 2050', source: 'Source : INSEE / Haut-Commissariat au Plan' },
+  { end: 250000, suffix: '', prefix: '', label: 'LOGEMENTS ÉTUDIANTS MANQUANTS EN FRANCE', source: 'Source : Rapport Sénat 2021', format: true },
+  { end: 98, suffix: '%', prefix: '', label: "TAUX D'OCCUPATION MOYEN RÉSIDENCES GÉRÉES", source: 'Source : Les Belles Années 2024' }
 ]
 
 export default function DemographieStats() {
   return (
     <section style={{ background: '#F7F5F1', padding: '15vh 6vw' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-        <span style={eyeLine} /><span style={eyeText}>LES DONN\u00c9ES INSEE</span>
+        <span style={eyeLine} /><span style={eyeText}>LES DONNÉES INSEE</span>
       </div>
       <h2 style={{
         fontFamily: "'Playfair Display',Georgia,serif",
         fontSize: 'clamp(36px,5vw,60px)', fontWeight: 300,
         lineHeight: 1.1, color: '#111C33', margin: 0
       }}>
-        {'Une d\u00e9mographie qui'}<br />
-        <em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'cr\u00e9e la demande.'}</em>
+        {'Une démographie qui'}<br />
+        <em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'crée la demande.'}</em>
       </h2>
       <p style={{
         fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 18,
         color: '#666', maxWidth: 600, marginTop: 20, lineHeight: 1.7
       }}>
-        {"En France, un habitant sur trois aura plus de 60 ans en 2050. La population \u00e9tudiante a \u00e9t\u00e9 multipli\u00e9e par 10 depuis les ann\u00e9es 1960. Ces deux r\u00e9alit\u00e9s cr\u00e9ent une demande structurelle que l'offre ne couvrira jamais seule."}
+        {"En France, un habitant sur trois aura plus de 60 ans en 2050. La population étudiante a été multipliée par 10 depuis les années 1960. Ces deux réalités créent une demande structurelle que l'offre ne couvrira jamais seule."}
       </p>
       <div style={{
         display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))',
@@ -70,12 +70,12 @@ export default function DemographieStats() {
           fontFamily: "'Playfair Display',Georgia,serif", fontStyle: 'italic',
           fontSize: 20, color: '#fff', lineHeight: 1.6, margin: 0
         }}>
-          {"\u00abLa France devra augmenter le nombre de places en h\u00e9bergement pour personnes \u00e2g\u00e9es de plus de 50% d'ici 2050 pour maintenir le niveau d'accueil actuel.\u00bb"}
+          {"«La France devra augmenter le nombre de places en hébergement pour personnes âgées de plus de 50% d'ici 2050 pour maintenir le niveau d'accueil actuel.»"}
         </p>
         <p style={{
           fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 13,
           color: 'rgba(255,255,255,0.45)', marginTop: 12
-        }}>{"INSEE Premi\u00e8re n\u00b01767 \u2014 Juillet 2019"}</p>
+        }}>{"INSEE Première n°1767 — Juillet 2019"}</p>
       </div>
     </section>
   )

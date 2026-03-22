@@ -83,10 +83,10 @@ export default function HeroRetraite() {
             color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, maxWidth: 480,
             marginBottom: 40
           }}>
-            {"La majorit\u00e9 des actifs fran\u00e7ais d\u00e9couvrent trop tard"}
-            {" l'\u00e9cart entre leur dernier salaire et leur pension."}
+            {"La majorité des actifs français découvrent trop tard"}
+            {" l'écart entre leur dernier salaire et leur pension."}
             <br />
-            {"Anticiper, c'est se lib\u00e9rer."}
+            {"Anticiper, c'est se libérer."}
           </p>
 
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -97,7 +97,7 @@ export default function HeroRetraite() {
               textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif",
               textDecoration: 'none', transition: 'all 0.3s',
               border: 'none', cursor: 'pointer'
-            }}>{"Simuler mon \u00e9cart \u2192"}</a>
+            }}>{"Simuler mon écart →"}</a>
           </div>
         </div>
 

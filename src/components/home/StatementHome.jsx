@@ -18,7 +18,7 @@ export default function StatementHome() {
             fontFamily: "'Raleway', sans-serif", fontWeight: 500,
             fontSize: 11, textTransform: 'uppercase',
             letterSpacing: '0.25em', color: '#A67C52'
-          }}>{"UNE APPROCHE DIFF\u00c9RENTE"}</span>
+          }}>{"UNE APPROCHE DIFFÉRENTE"}</span>
         </div>
         <h2 style={{
           fontFamily: "'Playfair Display', Georgia, serif",
@@ -27,7 +27,7 @@ export default function StatementHome() {
           letterSpacing: '-0.02em', maxWidth: 900
         }}>
           Pas un agent.<br />
-          {"Un expert c\u00f4t\u00e9"}<br />
+          {"Un expert côté"}<br />
           <em style={{ fontStyle: 'italic', color: '#A67C52' }}>promoteur.</em>
         </h2>
         <p style={{
@@ -35,7 +35,7 @@ export default function StatementHome() {
           fontSize: 'clamp(16px, 1.6vw, 20px)', color: '#555',
           maxWidth: 540, lineHeight: 1.8, marginTop: 40
         }}>
-          {"Bouygues Immobilier, Nexity, Promogim, Demathieu & Bard. Nous avons travaill\u00e9 pour eux. Aujourd\u2019hui, nous travaillons pour vous \u2014 avec une connaissance de l\u2019int\u00e9rieur que peu de conseillers peuvent revendiquer."}
+          {"Bouygues Immobilier, Nexity, Promogim, Demathieu & Bard. Nous avons travaillé pour eux. Aujourd’hui, nous travaillons pour vous — avec une connaissance de l’intérieur que peu de conseillers peuvent revendiquer."}
         </p>
       </div>
     </section>

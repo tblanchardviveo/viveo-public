@@ -12,7 +12,7 @@ export default function CtaRetraite() {
           <span style={{
             fontFamily: "'Raleway', sans-serif", fontSize: 11, fontWeight: 600,
             letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--bronze)'
-          }}>Passez {"\u00e0"} l'action</span>
+          }}>Passez {"à"} l'action</span>
           <span style={{ width: 40, height: 1, background: 'var(--bronze)', display: 'block' }} />
         </div>
 
@@ -21,15 +21,15 @@ export default function CtaRetraite() {
           fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 300,
           color: '#fff', lineHeight: 1.2, marginBottom: 20
         }}>
-          {'Chaque ann\u00e9e qui passe '}
-          <em style={{ fontStyle: 'italic', color: 'var(--bronze)' }}>{"co\u00fbte plus cher"}</em>
+          {'Chaque année qui passe '}
+          <em style={{ fontStyle: 'italic', color: 'var(--bronze)' }}>{"coûte plus cher"}</em>
         </h2>
 
         <p style={{
           fontFamily: "'Raleway', sans-serif", fontSize: 16, fontWeight: 300,
           color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, marginBottom: 48
         }}>
-          {'Un RDV de 30 minutes avec un conseiller VIVEO pour \u00e9tablir votre diagnostic retraite personnalis\u00e9. Sans engagement, sans surprise.'}
+          {'Un RDV de 30 minutes avec un conseiller VIVEO pour établir votre diagnostic retraite personnalisé. Sans engagement, sans surprise.'}
         </p>
 
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -39,7 +39,7 @@ export default function CtaRetraite() {
             fontSize: 14, fontWeight: 600, letterSpacing: '0.06em',
             textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif",
             textDecoration: 'none', transition: 'all 0.3s'
-          }}>{"RDV d\u00e9couverte \u2192"}</a>
+          }}>{"RDV découverte →"}</a>
 
           <a href="tel:+33967167065" style={{
             border: '1px solid rgba(255,255,255,0.15)',
@@ -55,7 +55,7 @@ export default function CtaRetraite() {
           fontWeight: 300, color: 'rgba(255,255,255,0.25)',
           marginTop: 32
         }}>
-          {"\u2713 Gratuit  \u00b7  \u2713 Sans engagement  \u00b7  \u2713 30 min"}
+          {"✓ Gratuit  ·  ✓ Sans engagement  ·  ✓ 30 min"}
         </p>
       </div>
     </section>

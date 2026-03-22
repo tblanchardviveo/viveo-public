@@ -1,8 +1,8 @@
 const etapes = [
-  { num: '01', titre: 'RDV D\u00c9COUVERTE', texte: "45 minutes en visio, gratuites et sans engagement. Nous posons les bonnes questions sur votre situation fiscale, patrimoniale et vos objectifs." },
-  { num: '02', titre: 'S\u00c9LECTION PERSONNALIS\u00c9E', texte: "Nous filtrons notre catalogue et identifions les 1 \u00e0 3 programmes qui correspondent vraiment \u00e0 votre profil." },
-  { num: '03', titre: 'ACCOMPAGNEMENT COMPLET', texte: "Financement, r\u00e9servation, suivi chantier, appels de fonds \u2014 notre \u00e9quipe coordonne tout jusqu'\u00e0 la livraison." },
-  { num: '04', titre: 'REMISE DES CL\u00c9S & AU-DEL\u00c0', texte: "Pr\u00e9-livraison, livraison, garanties d\u00e9cennale et biennale \u2014 nous restons \u00e0 vos c\u00f4t\u00e9s apr\u00e8s la signature." }
+  { num: '01', titre: 'RDV DÉCOUVERTE', texte: "45 minutes en visio, gratuites et sans engagement. Nous posons les bonnes questions sur votre situation fiscale, patrimoniale et vos objectifs." },
+  { num: '02', titre: 'SÉLECTION PERSONNALISÉE', texte: "Nous filtrons notre catalogue et identifions les 1 à 3 programmes qui correspondent vraiment à votre profil." },
+  { num: '03', titre: 'ACCOMPAGNEMENT COMPLET', texte: "Financement, réservation, suivi chantier, appels de fonds — notre équipe coordonne tout jusqu'à la livraison." },
+  { num: '04', titre: 'REMISE DES CLÉS & AU-DELÀ', texte: "Pré-livraison, livraison, garanties décennale et biennale — nous restons à vos côtés après la signature." }
 ]
 
 export default function ProcessusV3() {
@@ -10,12 +10,12 @@ export default function ProcessusV3() {
     <section data-bg="#111C33" style={{ background: '#111C33', padding: '15vh 6vw' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
         <span style={{ width: 32, height: 1, background: '#A67C52' }} />
-        <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.28em', color: '#A67C52' }}>{"NOTRE M\u00c9THODE"}</span>
+        <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.28em', color: '#A67C52' }}>{"NOTRE MÉTHODE"}</span>
       </div>
 
       <h2 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 300, fontSize: 'clamp(32px,4.5vw,58px)', color: '#fff', lineHeight: 1.1, margin: '0 0 64px' }}>
         Un parcours simple.<br />
-        <em style={{ color: '#C4976A', fontStyle: 'italic' }}>{"Un r\u00e9sultat sur mesure."}</em>
+        <em style={{ color: '#C4976A', fontStyle: 'italic' }}>{"Un résultat sur mesure."}</em>
       </h2>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 2 }}>

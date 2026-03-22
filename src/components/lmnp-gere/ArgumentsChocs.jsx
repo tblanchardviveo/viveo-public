@@ -6,19 +6,19 @@ const eyeText = {
 
 const args = [
   {
-    num: '01', pill: 'R\u00c9CUP\u00c9RATION DE TVA',
-    title: '20% du prix r\u00e9cup\u00e9r\u00e9s d\u00e8s la signature.',
-    text: "\u00c0 l'acquisition d'un bien en r\u00e9sidence g\u00e9r\u00e9e avec TVA, vous r\u00e9cup\u00e9rez int\u00e9gralement la TVA \u00e0 20% sur le prix de revient. Un bien affich\u00e9 \u00e0 200\u202f000\u20ac TTC vous revient r\u00e9ellement \u00e0 166\u202f667\u20ac HT. Cette r\u00e9cup\u00e9ration est imm\u00e9diate, l\u00e9gale, et d\u00e9finitive d\u00e8s lors que vous conservez le statut LMNP."
+    num: '01', pill: 'RÉCUPÉRATION DE TVA',
+    title: '20% du prix récupérés dès la signature.',
+    text: "À l'acquisition d'un bien en résidence gérée avec TVA, vous récupérez intégralement la TVA à 20% sur le prix de revient. Un bien affiché à 200 000€ TTC vous revient réellement à 166 667€ HT. Cette récupération est immédiate, légale, et définitive dès lors que vous conservez le statut LMNP."
   },
   {
     num: '02', pill: 'LOYERS GARANTIS BAIL COMMERCIAL',
-    title: 'Appartement vide ou occup\u00e9 \u2014 les loyers tombent.',
-    text: "Le bail commercial vous lie au gestionnaire de la r\u00e9sidence \u2014 pas au locataire final. Que votre appartement soit occup\u00e9, en travaux ou entre deux locataires, les loyers vous sont vers\u00e9s \u00e0 date fixe, chaque mois, sans exception. C'est la diff\u00e9rence fondamentale avec l'immobilier classique."
+    title: 'Appartement vide ou occupé — les loyers tombent.',
+    text: "Le bail commercial vous lie au gestionnaire de la résidence — pas au locataire final. Que votre appartement soit occupé, en travaux ou entre deux locataires, les loyers vous sont versés à date fixe, chaque mois, sans exception. C'est la différence fondamentale avec l'immobilier classique."
   },
   {
-    num: '03', pill: 'REVENUS D\u00c9FISCALIS\u00c9S 20-30 ANS',
-    title: 'Vous percevez. Vous ne payez pas d\u2019imp\u00f4t.',
-    text: "L'amortissement comptable du bien immobilier et du mobilier cr\u00e9e une charge d\u00e9ductible qui neutralise la quasi-totalit\u00e9 de vos revenus locatifs imposables. R\u00e9sultat : vous percevez des loyers nets d'imp\u00f4t pendant 20 \u00e0 30 ans selon votre situation fiscale."
+    num: '03', pill: 'REVENUS DÉFISCALISÉS 20-30 ANS',
+    title: 'Vous percevez. Vous ne payez pas d’impôt.',
+    text: "L'amortissement comptable du bien immobilier et du mobilier crée une charge déductible qui neutralise la quasi-totalité de vos revenus locatifs imposables. Résultat : vous percevez des loyers nets d'impôt pendant 20 à 30 ans selon votre situation fiscale."
   }
 ]
 
@@ -27,7 +27,7 @@ export default function ArgumentsChocs() {
     <section style={{ background: '#111C33', padding: '15vh 6vw' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
         <span style={eyeLine} />
-        <span style={eyeText}>{"CE QUE L\u2019IMMOBILIER CLASSIQUE NE PEUT PAS OFFRIR"}</span>
+        <span style={eyeText}>{"CE QUE L’IMMOBILIER CLASSIQUE NE PEUT PAS OFFRIR"}</span>
       </div>
       <h2 style={{
         fontFamily: "'Playfair Display',Georgia,serif",
@@ -35,7 +35,7 @@ export default function ArgumentsChocs() {
         lineHeight: 1.1, color: '#fff', letterSpacing: '-0.02em', margin: 0
       }}>
         {'Trois avantages.'}<br />
-        <em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'Aucun \u00e9quivalent.'}</em>
+        <em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'Aucun équivalent.'}</em>
       </h2>
       <div style={{ marginTop: 64 }}>
         {args.map((a, i) => (

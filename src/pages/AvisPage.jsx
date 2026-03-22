@@ -23,7 +23,7 @@ export default function AvisPage() {
           margin: '0 auto',
           lineHeight: 1.7
         }}>
-          {"D\u00e9couvrez les t\u00e9moignages de nos clients accompagn\u00e9s dans leur projet immobilier."}
+          {"Découvrez les témoignages de nos clients accompagnés dans leur projet immobilier."}
         </p>
       </div>
       <AvisClient />

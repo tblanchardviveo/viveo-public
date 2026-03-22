@@ -16,7 +16,7 @@ const heroOverlay = 'linear-gradient(160deg,rgba(17,28,51,0.15) 0%,rgba(17,28,51
 const imgCard = { width: '100%', height: 200, objectFit: 'cover', borderRadius: '8px 8px 0 0' }
 
 const tabsData = [
-  { id: 'premier-achat', title: 'Premier achat', subtitle: 'PTZ, dispositifs primo-accédants, accompagnement financement.', content: "Vous achetez pour la première fois ? VIVEO vous guide à chaque étape : identification du programme idéal, montage du dossier PTZ (Prêt à Taux Zéro), simulation de financement et coordination avec nos partenaires bancaires. Bénéficiez de frais de notaire réduits (2 à 3\u00a0%) et d'un accompagnement personnalisé jusqu'à la remise des clés.", points: ['Éligibilité PTZ vérifiée et optimisée', 'Frais de notaire réduits dans le neuf', 'Accompagnement financement de A à Z', 'Choix des matériaux et personnalisation'] },
+  { id: 'premier-achat', title: 'Premier achat', subtitle: 'PTZ, dispositifs primo-accédants, accompagnement financement.', content: "Vous achetez pour la première fois ? VIVEO vous guide à chaque étape : identification du programme idéal, montage du dossier PTZ (Prêt à Taux Zéro), simulation de financement et coordination avec nos partenaires bancaires. Bénéficiez de frais de notaire réduits (2 à 3 %) et d'un accompagnement personnalisé jusqu'à la remise des clés.", points: ['Éligibilité PTZ vérifiée et optimisée', 'Frais de notaire réduits dans le neuf', 'Accompagnement financement de A à Z', 'Choix des matériaux et personnalisation'] },
   { id: 'changement-vie', title: 'Changement de vie', subtitle: 'Vente + achat simultané, bridge loan, coordination notaires.', content: "Vous changez de région, agrandissez votre famille ou souhaitez un cadre de vie différent ? VIVEO coordonne la vente de votre bien actuel et l'acquisition de votre nouveau logement neuf. Nous gérons le calendrier, le prêt-relais et la synchronisation entre notaires pour une transition fluide et sans stress.", points: ['Coordination vente / achat simultané', 'Prêt-relais et bridge loan optimisés', 'Synchronisation des notaires', 'Zéro période sans logement'] },
   { id: 'construction-neuve', title: 'Construction neuve', subtitle: 'VEFA, garanties, suivi chantier, appels de fonds, livraison.', content: "Acheter en VEFA (Vente en l'État Futur d'Achèvement), c'est bénéficier d'un logement aux dernières normes énergétiques avec des garanties solides. VIVEO vous accompagne dans le suivi du chantier, le calendrier des appels de fonds et les étapes clés jusqu'à la livraison et la levée de réserves.", points: ['Garantie décennale et parfait achèvement', 'Suivi chantier et appels de fonds', 'Normes RT2020, basse consommation', 'Personnalisation des finitions'] }
 ]
@@ -49,9 +49,9 @@ export default function SeLoger() {
       <section style={{ position: 'relative', minHeight: '55vh', display: 'flex', alignItems: 'center', background: `${heroOverlay}, url('${WP}/wp-content/uploads/2025/01/salon-design-lumineux.jpg') center/cover` }}>
         <div style={{ position: 'relative', zIndex: 2, padding: 'clamp(100px,12vw,160px) clamp(20px,5vw,80px) clamp(60px,8vw,100px)' }}>
           <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(36px,5vw,64px)', fontWeight: 400, lineHeight: 1.1, color: '#fff', marginBottom: 16 }}>
-            {'Votre chez-vous \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>sans les complications.</em>
+            {'Votre chez-vous —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>sans les complications.</em>
           </h1>
-          <p style={pStyle()}>{'Résidence principale ou secondaire, neuf ou en VEFA \u2014 VIVEO vous accompagne de la recherche du programme jusqu\u2019à la remise des clés.'}</p>
+          <p style={pStyle()}>{'Résidence principale ou secondaire, neuf ou en VEFA — VIVEO vous accompagne de la recherche du programme jusqu’à la remise des clés.'}</p>
           <div style={{ display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap' }}>
             <span style={pillActive} onClick={() => scrollTo(secPrincipaleRef)}>{'RÉSIDENCE PRINCIPALE'}</span>
             <span style={pill} onClick={() => scrollTo(secSecondaireRef)}>{'RÉSIDENCE SECONDAIRE'}</span>
@@ -64,7 +64,7 @@ export default function SeLoger() {
       <Sec bg="#1A2744" id="residence-principale">
         <div ref={secPrincipaleRef} style={{ marginTop: -20 }} />
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'RÉSIDENCE PRINCIPALE'}</span></div>
-        <h2 style={h2Style()}>{'Acheter sa résidence principale \u2014'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{"le projet d\u2019une vie."}</em></h2>
+        <h2 style={h2Style()}>{'Acheter sa résidence principale —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{"le projet d’une vie."}</em></h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, marginTop: 48 }}>
           {tabsData.map((tab, i) => (
             <div key={tab.id} onClick={() => setActiveTab(i)} style={{ ...card(activeTab === i ? 'rgba(166,124,82,0.15)' : undefined), border: activeTab === i ? '1px solid rgba(166,124,82,0.4)' : '1px solid rgba(255,255,255,0.06)', cursor: 'pointer', transition: 'all 0.3s ease' }}>
@@ -76,8 +76,8 @@ export default function SeLoger() {
         <div style={{ marginTop: 40, padding: 36, background: 'rgba(255,255,255,0.03)', borderRadius: 12, border: '1px solid rgba(166,124,82,0.2)' }}>
           <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(22px,3vw,28px)', color: '#C4976A', marginBottom: 16 }}>{tabsData[activeTab].title}</h3>
           <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 15, color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, maxWidth: 700 }}>{tabsData[activeTab].content}</p>
-          <div style={{ marginTop: 24 }}>{tabsData[activeTab].points.map((pt, i) => (<p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: 'rgba(255,255,255,0.55)', marginBottom: 8 }}>{'\u2713'} {pt}</p>))}</div>
-          <Link to="/programmes" style={cta}>{'Voir les programmes \u2192'}</Link>
+          <div style={{ marginTop: 24 }}>{tabsData[activeTab].points.map((pt, i) => (<p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: 'rgba(255,255,255,0.55)', marginBottom: 8 }}>{'✓'} {pt}</p>))}</div>
+          <Link to="/programmes" style={cta}>{'Voir les programmes →'}</Link>
         </div>
       </Sec>
 
@@ -87,7 +87,7 @@ export default function SeLoger() {
         <div style={eye}><span style={eyeLine} /><span style={eyeText}>{'RÉSIDENCE SECONDAIRE'}</span></div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', marginTop: 16 }}>
           <div>
-            <h2 style={h2Style('#111C33')}>{"Votre pied-à-terre."}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{"Mer, montagne, campagne\u2026 ou en ville."}</em></h2>
+            <h2 style={h2Style('#111C33')}>{"Votre pied-à-terre."}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{"Mer, montagne, campagne… ou en ville."}</em></h2>
             <p style={pStyle('#555')}>{"Envie d'un refuge face à la mer sur la Côte d'Opale, d'un chalet au pied des pistes dans les Alpes, d'une maison de charme à la campagne ou d'un appartement vibrant en centre-ville ? VIVEO vous accompagne dans la recherche de votre résidence secondaire idéale, quel que soit le cadre de vie qui vous fait rêver."}</p>
             <p style={{ ...pStyle('#555'), marginTop: 12 }}>{"Nous sélectionnons des programmes neufs dans les destinations les plus prisées de France : littoral atlantique et méditerranéen, stations de montagne, villages de caractère et métropoles dynamiques. Chaque projet est étudié pour allier plaisir d'usage, confort au quotidien et valorisation patrimoniale à long terme."}</p>
           </div>
@@ -109,11 +109,11 @@ export default function SeLoger() {
         <div style={{ marginTop: 40, padding: 36, background: '#fff', borderRadius: 12, border: '1px solid rgba(166,124,82,0.15)' }}>
           <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(22px,3vw,28px)', color: '#A67C52', marginBottom: 16 }}>{"Pourquoi acheter dans le neuf pour votre résidence secondaire ?"}</h3>
           <div style={{ marginTop: 16 }}>
-            {['Frais de notaire réduits (2 à 3\u00a0% vs 7-8\u00a0% dans l\u2019ancien)', 'Garanties constructeur : décennale, parfait achèvement, biennale', 'Performances énergétiques aux dernières normes (RE2020)', 'Personnalisation des finitions et des matériaux avant livraison', 'Aucun travaux à prévoir pendant des années', 'Possibilité de louer en saisonnier pour amortir votre investissement'].map((pt, i) => (
-              <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>{'\u2713'} {pt}</p>
+            {['Frais de notaire réduits (2 à 3 % vs 7-8 % dans l’ancien)', 'Garanties constructeur : décennale, parfait achèvement, biennale', 'Performances énergétiques aux dernières normes (RE2020)', 'Personnalisation des finitions et des matériaux avant livraison', 'Aucun travaux à prévoir pendant des années', 'Possibilité de louer en saisonnier pour amortir votre investissement'].map((pt, i) => (
+              <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>{'✓'} {pt}</p>
             ))}
           </div>
-          <Link to="/programmes" style={cta}>{'Découvrir nos programmes \u2192'}</Link>
+          <Link to="/programmes" style={cta}>{'Découvrir nos programmes →'}</Link>
         </div>
       </Sec>
 
@@ -136,7 +136,7 @@ export default function SeLoger() {
       {/* CTA Final */}
       <Sec bg="#F7F5F1">
         <h2 style={h2Style('#111C33')}>Parlons de votre projet.</h2>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV Découverte \u2192'}</a>
+        <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV Découverte →'}</a>
       </Sec>
     </>
   )

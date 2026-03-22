@@ -56,7 +56,7 @@ export default function ChiffresV3() {
         <div>
           <div style={numStyle}>{c1}</div>
           <div style={labelStyle}>ANS</div>
-          <div style={detailStyle}>{"d'exp\u00e9rience c\u00f4t\u00e9 promoteur"}</div>
+          <div style={detailStyle}>{"d'expérience côté promoteur"}</div>
         </div>
         <div style={sep} />
         {/* 100% */}
@@ -65,21 +65,21 @@ export default function ChiffresV3() {
             <span style={numStyle}>{c2}</span>
             <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 'clamp(40px,6vw,80px)', color: 'rgba(255,255,255,0.40)', marginTop: 16 }}>%</span>
           </div>
-          <div style={labelStyle}>{"IND\u00c9PENDANT"}</div>
-          <div style={detailStyle}>{"aucune exclusivit\u00e9 promoteur"}</div>
+          <div style={labelStyle}>{"INDÉPENDANT"}</div>
+          <div style={detailStyle}>{"aucune exclusivité promoteur"}</div>
         </div>
         <div style={sep} />
         {/* A->Z */}
         <div style={{ opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(20px)', transition: 'opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s' }}>
-          <div style={numStyle}>A<span style={{ color: '#C4976A' }}>{"\u2192Z"}</span></div>
+          <div style={numStyle}>A<span style={{ color: '#C4976A' }}>{"→Z"}</span></div>
           <div style={labelStyle}>ACCOMPAGNEMENT</div>
-          <div style={detailStyle}>{"de la recherche \u00e0 la remise des cl\u00e9s"}</div>
+          <div style={detailStyle}>{"de la recherche à la remise des clés"}</div>
         </div>
       </div>
 
       {/* Bottom text */}
       <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 200, fontSize: 17, color: 'rgba(255,255,255,0.25)', maxWidth: 600, marginTop: 80, lineHeight: 1.7 }}>
-        {"Ces chiffres ne sont pas des arguments marketing. Ce sont 27 ans de chantiers, de promoteurs, de n\u00e9gociations et de clients accompagn\u00e9s jusqu'au bout."}
+        {"Ces chiffres ne sont pas des arguments marketing. Ce sont 27 ans de chantiers, de promoteurs, de négociations et de clients accompagnés jusqu'au bout."}
       </p>
 
       {/* Retraite encart */}
@@ -90,14 +90,14 @@ export default function ChiffresV3() {
         justifyContent: 'space-between', gap: 24, flexWrap: 'wrap'
       }}>
         <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 15, color: 'rgba(255,255,255,0.55)' }}>
-          {"Vous ne savez pas combien vous toucherez \u00e0 la retraite\u00a0?"}
+          {"Vous ne savez pas combien vous toucherez à la retraite ?"}
         </span>
         <Link to="/retraite" style={{
           fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 13,
           textTransform: 'uppercase', color: '#C4976A', letterSpacing: '0.08em',
           textDecoration: 'none', transition: 'color 0.2s', whiteSpace: 'nowrap'
         }} onMouseEnter={e => e.target.style.color = '#fff'} onMouseLeave={e => e.target.style.color = '#C4976A'}
-        >{"Calculez maintenant \u2192"}</Link>
+        >{"Calculez maintenant →"}</Link>
       </div>
     </section>
   )
