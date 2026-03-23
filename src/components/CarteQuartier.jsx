@@ -15,9 +15,9 @@ const pillStyle = (active) => ({
   display: 'inline-flex', alignItems: 'center', gap: 6,
   padding: '8px 18px', borderRadius: 50, fontSize: 13, fontWeight: 500,
   fontFamily: '"Raleway", sans-serif', cursor: 'pointer', transition: 'all 0.2s',
-  border: active ? '1.5px solid var(--bronze)' : '1.5px solid #E5E3E0',
-  background: active ? 'rgba(166,124,82,0.08)' : '#fff',
-  color: active ? 'var(--bronze)' : 'var(--navy)',
+  border: active ? '1.5px solid var(--bronze)' : '1.5px solid rgba(255,255,255,0.2)',
+  background: active ? 'rgba(166,124,82,0.15)' : 'rgba(255,255,255,0.08)',
+  color: active ? 'var(--bronze)' : 'rgba(255,255,255,0.7)',
 })
 
 const parsePoi = (item) => {
@@ -49,7 +49,7 @@ export default function CarteQuartier({ latitude, longitude, nom_programme, poi 
         <iframe
           title="carte quartier"
                         src={`https://www.openstreetmap.org/export/embed.html?bbox=${longitude-0.01},${latitude-0.01},${longitude+0.01},${latitude+0.01}&layer=mapnik&marker=${latitude},${longitude}`}
-          style={{ width: '100%', height: 320, border: '1.5px solid #E5E3E0', borderRadius: 12 }}
+          style={{ width: '100%', height: 320, border: '1.5px solid rgba(255,255,255,0.2)', borderRadius: 12 }}
         />
       )}
 
@@ -76,10 +76,10 @@ export default function CarteQuartier({ latitude, longitude, nom_programme, poi 
                 style={{
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                   padding: '12px 0',
-                  borderBottom: i < currentItems.length - 1 ? '1px solid rgba(26,39,68,0.06)' : 'none',
+                  borderBottom: i < currentItems.length - 1 ? '1px solid rgba(255,255,255,0.1)' : 'none',
                 }}
               >
-                <span style={{ fontSize: 14, color: 'var(--navy)', fontFamily: '"Raleway", sans-serif' }}>
+                <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', fontFamily: '"Raleway", sans-serif' }}>
                   {item.name}
                 </span>
                 {item.dist !== null && (
