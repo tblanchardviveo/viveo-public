@@ -48,7 +48,7 @@ export default function CarteQuartier({ latitude, longitude, nom_programme, poi 
       {hasCoords && (
         <iframe
           title="carte quartier"
-          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAF-pzcNWC0rRmKVRHrGtRlKT1ro2gXlHw&q=${latitude},${longitude}&zoom=15&maptype=roadmap`}
+          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAVk5IkxXQYCzTKfRUkBbTIVLw_zQVCZSc&q=${latitude},${longitude}&zoom=15&maptype=roadmap`}
           style={{ width: '100%', height: 320, border: '1.5px solid #E5E3E0', borderRadius: 12 }}
         />
       )}
