@@ -61,7 +61,7 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
     try {
       let query = supabase.from('programmes').select('*')
         .in('statut', ['Disponible', 'Bientot disponible'])
-      if (projet) query = query.eq('type_projet', projet)
+      if (projet) query = query.contains('vocation', [projet === 'se_loger' ? 'RP' : 'INV'])
       if (secteur) query = query.eq('secteur', secteur)
       if (ville) query = query.or(`ville.ilike.%${ville}%,code_postal.ilike.%${ville}%`)
       if (typologies.length > 0) query = query.contains('typologies_disponibles', typologies)
@@ -157,7 +157,7 @@ export default function SearchEngine({ onResults, onRechercheEffectuee }) {
           <span style={labelStyle}>DISPOSITIF FISCAL</span>
           <select value={dispositif} onChange={e => setDispositif(e.target.value)} style={{ ...inputStyle, cursor: 'pointer' }}>
             <option value="">Tous les dispositifs</option>
-            <option value="LMNP">LMNP</option>
+            <option value="LMNP">LMNP</option>             <option value="LMNP Géré">LMNP Géré</option>
             <option value="Déficit Foncier">{"Déficit Foncier"}</option>
             <option value="Nue-propriété">{"Nue-propriété"}</option>
             <option value="Monuments Historiques">Monuments Historiques</option>
