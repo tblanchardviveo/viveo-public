@@ -23,7 +23,7 @@ export default function CTAApproche() {
           Prenez rendez-vous pour un premier échange gratuit et sans engagement.
         </p>
         <a
-          href="/contact"
+          href="/rdv-decouverte"
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
           style={{
