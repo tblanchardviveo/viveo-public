@@ -1,0 +1,360 @@
+/* ===========================================
+   VIVEO PATRIMOINE - CHARTE GRAPHIQUE CSS
+   Version 1.0 - Mars 2026
+   Alignée sur la charte WordPress Astra/Oak
+   =========================================== */
+
+/* --- IMPORTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+
+/* --- VARIABLES CHARTE --- */
+:root {
+    --viveo-accent: #A67C52;
+    --viveo-accent-light: #c4a47a;
+    --viveo-dark: #1E293B;
+    --viveo-text: #334155;
+    --viveo-text-light: #64748b;
+    --viveo-bg: #ffffff;
+    --viveo-bg-alt: #f8f6f3;
+    --viveo-border: #e2e0dc;
+    --viveo-font-body: Arial, Helvetica, sans-serif;
+    --viveo-font-heading: 'Playfair Display', Georgia, serif;
+}
+
+/* --- RESET & BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: var(--viveo-font-body);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--viveo-text);
+    background: var(--viveo-bg);
+    line-height: 1.7;
+}
+
+/* --- TYPOGRAPHIE --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--viveo-font-heading);
+    font-weight: 600;
+    color: var(--viveo-dark);
+    line-height: 1.3;
+}
+h1 { font-size: clamp(1.8rem, 4vw, 2.25rem); }
+h2 { font-size: 1.875rem; margin-bottom: 12px; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+a { color: var(--viveo-accent); text-decoration: none; transition: color 0.3s; }
+a:hover { color: var(--viveo-accent-light); }
+
+/* --- HERO SECTION --- */
+.hero {
+    background: var(--viveo-bg);
+    color: var(--viveo-dark);
+    padding: 80px 20px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--viveo-border);
+}
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.eyebrow-line { width: 40px; height: 1px; background: var(--viveo-accent); }
+.eyebrow-text {
+    color: var(--viveo-accent);
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-family: var(--viveo-font-body);
+}
+.hero h1 { color: var(--viveo-dark); margin-bottom: 20px; }
+.hero h1 em { color: var(--viveo-accent); font-style: normal; }
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--viveo-text-light);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+/* --- HERO STATS --- */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--viveo-accent);
+    font-family: var(--viveo-font-heading);
+}
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--viveo-text-light);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- SECTIONS --- */
+.section { padding: 70px 20px; }
+.section-dark { background: var(--viveo-bg-alt); }
+.section-inner { max-width: 900px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { color: var(--viveo-dark); }
+.section-header p {
+    color: var(--viveo-text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* --- INTRO BLOCK --- */
+.intro-block {
+    background: var(--viveo-bg);
+    border-left: 3px solid var(--viveo-accent);
+    padding: 30px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    margin-bottom: 30px;
+}
+.intro-block p { line-height: 1.8; color: var(--viveo-text); font-size: 1rem; }
+
+/* --- POINTS GRID / CARDS --- */
+.points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+.point-card {
+    background: var(--viveo-bg);
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border-top: 2px solid var(--viveo-accent);
+    transition: box-shadow 0.3s;
+}
+.point-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.point-label {
+    font-size: 0.7rem;
+    color: var(--viveo-accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    font-family: var(--viveo-font-body);
+}
+.point-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--viveo-dark);
+    margin-bottom: 10px;
+    font-family: var(--viveo-font-heading);
+}
+.point-text { font-size: 0.9rem; color: var(--viveo-text-light); line-height: 1.7; }
+
+/* --- PROFIL BAR --- */
+.profil-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: var(--viveo-bg);
+    border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+    margin-bottom: 15px;
+    border-left: 2px solid var(--viveo-border);
+}
+.profil-label {
+    font-size: 0.75rem;
+    color: var(--viveo-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    min-width: 100px;
+}
+.profil-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.profil-tag {
+    background: var(--viveo-bg-alt);
+    border: 1px solid var(--viveo-border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.85rem;
+    color: var(--viveo-dark);
+}
+
+/* --- CTA SECTION --- */
+.cta-section {
+    background: var(--viveo-bg-alt);
+    color: var(--viveo-dark);
+    padding: 70px 20px;
+    text-align: center;
+    border-top: 1px solid var(--viveo-border);
+}
+.cta-inner { max-width: 600px; margin: 0 auto; }
+.cta-title {
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-family: var(--viveo-font-heading);
+    color: var(--viveo-dark);
+}
+.cta-title em { color: var(--viveo-accent); font-style: normal; }
+.cta-subtitle {
+    color: var(--viveo-text-light);
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--viveo-accent);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-family: var(--viveo-font-body);
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+.cta-btn:hover {
+    background: var(--viveo-accent-light);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(166,124,82,0.3);
+}
+
+/* --- DISPOSITIFS CARDS (merite-fiscale) --- */
+.dispositifs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+.dispositif-card {
+    background: var(--viveo-bg);
+    border: 1px solid var(--viveo-border);
+    border-radius: 8px;
+    padding: 28px;
+    transition: box-shadow 0.3s;
+}
+.dispositif-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.dispositif-card .card-tag {
+    font-size: 0.7rem;
+    color: var(--viveo-accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+.dispositif-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+.dispositif-card p {
+    font-size: 0.9rem;
+    color: var(--viveo-text-light);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+.dispositif-card a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--viveo-accent);
+}
+
+/* --- TABLEAU COMPARATIF --- */
+.comparatif-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+.comparatif-table th {
+    background: var(--viveo-bg-alt);
+    color: var(--viveo-text-light);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid var(--viveo-border);
+    font-family: var(--viveo-font-body);
+    font-weight: 600;
+}
+.comparatif-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--viveo-border);
+    color: var(--viveo-text);
+}
+.comparatif-table tr:hover { background: var(--viveo-bg-alt); }
+
+/* --- FORMULAIRES / SIMULATEURS --- */
+.form-group { margin-bottom: 20px; }
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--viveo-dark);
+    margin-bottom: 6px;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--viveo-border);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: var(--viveo-font-body);
+    color: var(--viveo-text);
+    background: var(--viveo-bg);
+    transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--viveo-accent);
+}
+
+/* --- RESULTAT SIMULATEUR --- */
+.result-card {
+    background: var(--viveo-bg-alt);
+    border: 1px solid var(--viveo-border);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+}
+.result-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--viveo-accent);
+    font-family: var(--viveo-font-heading);
+}
+.result-label {
+    font-size: 0.8rem;
+    color: var(--viveo-text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero { padding: 60px 16px 40px; }
+    .hero-stats { gap: 30px; }
+    .stat-value { font-size: 1.8rem; }
+    .section { padding: 50px 16px; }
+    .points-grid { grid-template-columns: 1fr; }
+    .dispositifs-grid { grid-template-columns: 1fr; }
+    .profil-bar { flex-direction: column; align-items: flex-start; }
+    .comparatif-table { font-size: 0.8rem; }
+    .comparatif-table th, .comparatif-table td { padding: 10px 8px; }
+}

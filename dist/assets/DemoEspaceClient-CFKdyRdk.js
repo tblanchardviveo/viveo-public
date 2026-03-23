@@ -1,0 +1,1 @@
+import{j as e}from"./index-BuZZQfO1.js";function i(){return e.jsx("div",{style:{position:"fixed",inset:0,zIndex:9999,background:"#fff"},children:e.jsx("iframe",{src:"/demo-espace-client-viveo.html",title:"Demo Espace Client VIVEO",style:{width:"100%",height:"100%",border:"none"}})})}export{i as default};

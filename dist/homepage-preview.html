@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIVEO Patrimoine — L'immobilier neuf, l'esprit libre.</title>
+//fonts.googleapis.com">
+//fonts.gstatic.com" crossorigin>
+//fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1A2744;
+  --navy-deep: #111C33;
+  --bronze: #A67C52;
+  --bronze-light: #C4976A;
+  --bronze-pale: rgba(166,124,82,0.12);
+  --cream: #F7F5F1;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--navy-deep); color: #fff; font-family: 'Raleway', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Eyebrow */
+.eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.eyebrow-line { width: 40px; height: 1px; background: var(--bronze); }
+.eyebrow-text { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bronze); }
+
+/* ═══════════════════════════════════════ HERO */
+.hero {
+  position: relative; min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 0 40px 10vh; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: url('https://www.viveo-patrimoine.fr/hero.jpg') center/cover no-repeat;
+}
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(to bottom, rgba(17,28,51,0.30) 0%, rgba(17,28,51,0.75) 55%, rgba(17,28,51,0.95) 100%),
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(166,124,82,0.12) 0%, transparent 60%);
+}
+.hero-content { position: relative; z-index: 2; max-width: 760px; }
+.hero h1 {
+  font-family: 'Playfair Display', serif; font-size: clamp(48px, 7vw, 88px);
+  font-weight: 400; line-height: 1.05; color: #fff; margin-bottom: 24px;
+  animation: fadeUp 0.8s var(--ease) 0.1s both;
+}
+.hero h1 em { font-style: italic; }
+.hero-sub {
+  font-family: 'Raleway', sans-serif; font-weight: 300;
+  font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.70);
+  max-width: 620px; line-height: 1.7; margin-bottom: 40px;
+  animation: fadeUp 0.8s var(--ease) 0.25s both;
+}
+.hero-btns {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  animation: fadeUp 0.8s var(--ease) 0.4s both;
+}
+.btn-bronze {
+  display: inline-block; background: linear-gradient(135deg, #A67C52, #C4976A);
+  color: #fff; border-radius: 50px; padding: 18px 40px; font-family: 'Raleway', sans-serif;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.04em; border: none; cursor: pointer;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.btn-bronze:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(166,124,82,0.35); }
+.btn-outline {
+  display: inline-block; background: transparent; border: 1px solid rgba(255,255,255,0.40);
+  color: rgba(255,255,255,0.85); border-radius: 50px; padding: 18px 40px;
+  font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 600;
+  letter-spacing: 0.04em; cursor: pointer; transition: all 0.3s var(--ease);
+}
+.btn-outline:hover { border-color: var(--bronze); color: var(--bronze-light); }
+.scroll-indicator {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  z-index: 2; text-align: center; animation: fadeUp 0.8s var(--ease) 0.6s both;
+}
+.scroll-indicator svg { animation: bounce 2s ease-in-out infinite; margin-bottom: 8px; }
+.scroll-indicator span {
+  display: block; font-family: 'Raleway', sans-serif; font-size: 11px;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--bronze);
+}
+
+/* ═══════════════════════════════════════ PILIERS */
+.piliers { background: var(--navy-deep); padding: 100px 40px; }
+.piliers .inner { max-width: 1100px; margin: 0 auto; }
+.piliers h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400; color: #fff; margin-bottom: 16px; line-height: 1.15;
+}
+.piliers h2 em { font-style: italic; }
+.piliers-sub {
+  font-weight: 300; font-size: 16px; color: rgba(255,255,255,0.55);
+  max-width: 560px; line-height: 1.7; margin-bottom: 56px;
+}
+.piliers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
+.pilier-card {
+  background: rgba(255,255,255,0.03); padding: 48px 36px; border-radius: 20px;
+  transition: background 0.3s var(--ease);
+}
+.pilier-card:hover { background: rgba(255,255,255,0.06); }
+.pilier-number {
+  font-family: 'Playfair Display', serif; font-size: 72px;
+  color: var(--bronze-light); line-height: 1; margin-bottom: 16px;
+}
+.pilier-icon { margin-bottom: 20px; }
+.pilier-pill {
+  display: inline-block; background: var(--bronze-pale); border: 1px solid rgba(166,124,82,0.25);
+  border-radius: 99px; padding: 6px 16px; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze-light);
+  margin-bottom: 20px;
+}
+.pilier-title {
+  font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400;
+  color: #fff; line-height: 1.3; margin-bottom: 16px;
+}
+.pilier-text { font-weight: 300; font-size: 14px; color: rgba(255,255,255,0.50); line-height: 1.7; }
+
+/* ═══════════════════════════════════════ PROGRAMMES */
+.programmes { background: var(--cream); padding: 100px 40px; }
+.programmes .inner { max-width: 1100px; margin: 0 auto; }
+.programmes h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400; color: var(--navy-deep); margin-bottom: 16px; line-height: 1.15;
+}
+.programmes h2 em { font-style: italic; }
+.programmes-sub {
+  font-weight: 300; font-size: 16px; color: #888; max-width: 520px;
+  line-height: 1.7; margin-bottom: 56px;
+}
+.programmes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-bottom: 48px; }
+.prog-card {
+  background: #fff; border-radius: 20px; overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06); transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.prog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.10); }
+.prog-img {
+  height: 220px;
+  background: linear-gradient(135deg, var(--navy) 0%, rgba(166,124,82,0.3) 100%);
+  position: relative; display: flex; align-items: flex-end; padding: 20px;
+}
+.prog-badge {
+  position: absolute; top: 16px; left: 16px; background: var(--bronze);
+  color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 6px 14px; border-radius: 99px;
+}
+.prog-body { padding: 28px; }
+.prog-location {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--bronze); margin-bottom: 8px;
+}
+.prog-name {
+  font-family: 'Playfair Display', serif; font-size: 24px;
+  font-weight: 400; color: var(--navy-deep); margin-bottom: 12px;
+}
+.prog-price { font-weight: 300; font-size: 14px; color: #888; margin-bottom: 20px; }
+.prog-cta {
+  font-size: 13px; font-weight: 600; color: var(--bronze);
+  letter-spacing: 0.04em; transition: color 0.2s;
+}
+.prog-cta:hover { color: var(--navy-deep); }
+.programmes .center-cta { text-align: center; }
+.btn-outline-navy {
+  display: inline-block; background: transparent; border: 1px solid var(--navy-deep);
+  color: var(--navy-deep); border-radius: 50px; padding: 16px 36px;
+  font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 600;
+  letter-spacing: 0.04em; cursor: pointer; transition: all 0.3s var(--ease);
+}
+.btn-outline-navy:hover { background: var(--navy-deep); color: #fff; }
+
+/* ═══════════════════════════════════════ DISPOSITIFS */
+.dispositifs { background: var(--navy); padding: 100px 40px; }
+.dispositifs .inner { max-width: 1100px; margin: 0 auto; }
+.dispositifs h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400; color: #fff; margin-bottom: 16px; line-height: 1.15;
+}
+.dispositifs h2 em { font-style: italic; }
+.dispositifs-pills {
+  display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px;
+}
+.dispo-pill {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 99px; padding: 12px 24px; font-size: 13px; font-weight: 500;
+  color: #fff; cursor: pointer; transition: all 0.3s var(--ease);
+}
+.dispo-pill:hover { background: var(--bronze-pale); border-color: var(--bronze); color: var(--bronze-light); }
+.dispositifs-text {
+  font-weight: 300; font-size: 15px; color: rgba(255,255,255,0.50);
+  max-width: 600px; line-height: 1.7; margin-bottom: 40px;
+}
+.dispositifs .btn-bronze { margin-top: 8px; }
+
+/* ═══════════════════════════════════════ PROCESSUS */
+.processus { background: var(--navy-deep); padding: 100px 40px; }
+.processus .inner { max-width: 1100px; margin: 0 auto; }
+.processus h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400; color: #fff; margin-bottom: 16px; line-height: 1.15;
+}
+.processus h2 em { font-style: italic; }
+.processus-sub {
+  font-weight: 300; font-size: 16px; color: rgba(255,255,255,0.50);
+  max-width: 520px
+; line-height: 1.7; margin-bottom: 56px;
+}
+.timeline { display: flex; gap: 0; }
+.step {
+  flex: 1; padding: 40px 32px; position: relative;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.step:last-child { border-right: none; }
+.step-number {
+  font-family: 'Playfair Display', serif; font-size: 64px;
+  color: var(--bronze-light); opacity: 0.3; line-height: 1; margin-bottom: 20px;
+}
+.step-title {
+  font-family: 'Playfair Display', serif; font-size: 20px;
+  font-weight: 400; color: #fff; margin-bottom: 12px;
+}
+.step-text { font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.50); line-height: 1.7; }
+
+/* ═══════════════════════════════════════ CTA FINAL */
+.cta-final { background: var(--cream); padding: 120px 40px; text-align: center; }
+.cta-final h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400; color: var(--navy-deep); line-height: 1.15; margin-bottom: 20px;
+}
+.cta-final h2 em { font-style: italic; }
+.cta-final-text {
+  font-weight: 300; font-size: 15px; color: #666; max-width: 580px;
+  margin: 0 auto 36px; line-height: 1.7;
+}
+.cta-final .btn-bronze { padding: 20px 56px; font-size: 15px; }
+.cta-final-note {
+  margin-top: 20px; font-size: 12px; color: #999;
+}
+
+/* ═══════════════════════════════════════ FOOTER */
+.footer {
+  background: var(--navy-deep); padding: 40px; text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-logo { display: flex; align-items: baseline; justify-content: center; gap: 0; margin-bottom: 8px; }
+.footer-logo .v { font-family: 'Playfair Display', serif; font-size: 22px; color: #fff; font-weight: 400; }
+.footer-logo .dot { color: var(--bronze); margin: 0 8px; font-size: 18px; }
+.footer-logo .p { font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bronze); font-weight: 500; }
+.footer-tagline { font-weight: 300; font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); }
+
+/* ═══════════════════════════════════════ RESPONSIVE */
+@media (max-width: 768px) {
+  .hero { padding: 0 24px 10vh; }
+  .hero h1 { font-size: clamp(36px, 8vw, 52px); }
+  .hero-btns { flex-direction: column; }
+  .hero-btns a { width: 100%; text-align: center; }
+  .piliers, .programmes, .dispositifs, .processus { padding: 64px 24px; }
+  .cta-final { padding: 80px 24px; }
+  .piliers-grid { grid-template-columns: 1fr; gap: 16px; }
+  .programmes-grid { grid-template-columns: 1fr; }
+  .timeline { flex-direction: column; }
+  .step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .step:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">VIVEO PATRIMOINE &mdash; CONSEIL IMMOBILIER IND&Eacute;PENDANT</span>
+    </div>
+    <h1>L'immobilier neuf,<br><em>l'esprit libre.</em></h1>
+    <p class="hero-sub">27 ans d'exp&eacute;rience c&ocirc;t&eacute; promoteur. Un conseil ind&eacute;pendant, sans exclusivit&eacute;, sans conflit d'int&eacute;r&ecirc;t. VIVEO s&eacute;lectionne les meilleurs programmes pour votre projet &mdash; et vous accompagne de A &agrave; Z.</p>
+    <div class="hero-btns">
+      <a href="/programmes" class="btn-bronze">D&eacute;couvrir nos programmes &rarr;</a>
+      <a href="https://viveopromotion-t3jrcqwfw3.live-website.com/rdv-decouverte/" class="btn-outline" target="_blank" rel="noopener">Prendre RDV D&eacute;couverte</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A67C52" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <span>D&eacute;filer</span>
+  </div>
+</section>
+
+<!-- ═══════════════ PILIERS ═══════════════ -->
+<section class="piliers">
+  <div class="inner">
+    <div class="eyebrow fade-up"><span class="eyebrow-line"></span><span class="eyebrow-text">POURQUOI VIVEO</span></div>
+    <h2 class="fade-up">Pas un agent. <em>Un expert c&ocirc;t&eacute; promoteur.</em></h2>
+    <p class="piliers-sub fade-up">La diff&eacute;rence entre acheter bien et acheter au bon prix tient souvent &agrave; celui qui vous conseille.</p>
+    <div class="piliers-grid">
+      <div class="pilier-card fade-up">
+        <div class="pilier-number">27</div>
+        <div class="pilier-pill">C&Ocirc;T&Eacute; PROMOTEUR</div>
+        <div class="pilier-title">ANS D'EXP&Eacute;RIENCE</div>
+        <p class="pilier-text">Bouygues Immobilier, Nexity, Promogim, Demathieu &amp; Bard. Nous connaissons les programmes de l'int&eacute;rieur &mdash; avant m&ecirc;me qu'ils soient commercialis&eacute;s.</p>
+      </div>
+      <div class="pilier-card fade-up">
+        <div class="pilier-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">ircle cx="24" cy="24" r="23" stroke="#A67C52" stroke-width="1.5" opacity="0.4"/><path d="M16 30l8-12 8 12" stroke="#C4976A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>e x1="24" y1="18" x2="24" y2="32" stroke="#C4976A" stroke-width="1.5"/>e x1="14" y1="30" x2="34" y2="30" stroke="#C4976A" stroke-width="1.5"/></svg>
+        </div>
+        <div class="pilier-pill">IND&Eacute;PENDANCE TOTALE</div>
+        <div class="pilier-title">Aucune exclusivit&eacute;,<br>aucun conflit d'int&eacute;r&ecirc;t</div>
+        <p class="pilier-text">Nous ne sommes li&eacute;s &agrave; aucun promoteur. Nos recommandations reposent sur la qualit&eacute; r&eacute;elle des programmes, pas sur les commissions propos&eacute;es.</p>
+      </div>
+      <div class="pilier-card fade-up">
+        <div class="pilier-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">ircle cx="24" cy="24" r="23" stroke="#A67C52" stroke-width="1.5" opacity="0.4"/><path d="M14 34V20l10-8 10 8v14" stroke="#C4976A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 34v-8h8v8" stroke="#C4976A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="pilier-pill">ACCOMPAGNEMENT A&rarr;Z</div>
+        <div class="pilier-title">De la recherche<br>&agrave; la remise des cl&eacute;s</div>
+        <p class="pilier-text">Financement, fiscalit&eacute;, suivi chantier, livraison &mdash; notre &eacute;quipe reste disponible &agrave; chaque &eacute;tape, sans dispara&icirc;tre apr&egrave;s la signature.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROGRAMMES ═══════════════ -->
+<section class="programmes">
+  <div class="inner">
+    <div class="eyebrow fade-up"><span class="eyebrow-line"></span><span class="eyebrow-text">S&Eacute;LECTION DU MOMENT</span></div>
+    <h2 class="fade-up">Des programmes <em>v&eacute;rifi&eacute;s, n&eacute;goci&eacute;s, s&eacute;lectionn&eacute;s.</em></h2>
+    <p class="programmes-sub fade-up">Chaque programme est analys&eacute; par notre &eacute;quipe avant d'int&eacute;grer notre s&eacute;lection.</p>
+    <div class="programmes-grid">
+      <div class="prog-card fade-up">
+        <div class="prog-img"><span class="prog-badge">LMNP</span></div>
+        <div class="prog-body">
+          <div class="prog-location">ROUBAIX &middot; HAUTS-DE-FRANCE</div>
+          <div class="prog-name">L'Angora</div>
+          <div class="prog-price">&Agrave; partir de 168&nbsp;900&nbsp;&euro;</div>
+          <a href="#" class="prog-cta">D&eacute;couvrir &rarr;</a>
+        </div>
+      </div>
+      <div class="prog-card fade-up">
+        <div class="prog-img" style="background: linear-gradient(135deg, #1A2744 0%, rgba(196,151,106,0.25) 100%);"><span class="prog-badge">LMNP</span></div>
+        <div class="prog-body">
+          <div class="prog-location">DUNKERQUE &middot; HAUTS-DE-FRANCE</div>
+          <div class="prog-name">Les Balcons des Gables</div>
+          <div class="prog-price">&Agrave; partir de 145&nbsp;000&nbsp;&euro;</div>
+          <a href="#" class="prog-cta">D&eacute;couvrir &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="center-cta fade-up">
+      <a href="/programmes" class="btn-outline-navy">Voir tous nos programmes &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DISPOSITIFS ═══════════════ -->
+<section class="dispositifs">
+  <div class="inner">
+    <div class="eyebrow fade-up"><span class="eyebrow-line"></span><span class="eyebrow-text">INVESTIR AVEC VIVEO</span></div>
+    <h2 class="fade-up">7 dispositifs fiscaux.<br><em>Un seul conseiller.</em></h2>
+    <div class="dispositifs-pills fade-up">
+      <span class="dispo-pill">LMNP</span>
+      <span class="dispo-pill">D&eacute;ficit Foncier</span>
+      <span class="dispo-pill">Nue-propri&eacute;t&eacute;</span>
+      <span class="dispo-pill">Monuments Historiques</span>
+      <span class="dispo-pill">Loi Malraux</span>
+      <span class="dispo-pill">Loi Jeanbrun</span>
+      <span class="dispo-pill">Loi Denormandie</span>
+    </div>
+    <p class="dispositifs-text fade-up">Selon votre profil, votre TMI et vos objectifs, nous identifions le dispositif le plus adapt&eacute; &agrave; votre situation &mdash; et nous vous accompagnons dans sa mise en &oelig;uvre.</p>
+    <a href="/calculateur" class="btn-bronze fade-up">Simuler mon investissement &rarr;</a>
+  </div>
+</section>
+
+<!-- ═══════════════ PROCESSUS ═══════════════ -->
+<section class="processus">
+  <div class="inner">
+    <div class="eyebrow fade-up"><span class="eyebrow-line"></span><span class="eyebrow-text">COMMENT &Ccedil;A MARCHE</span></div>
+    <h2 class="fade-up">Un parcours simple.<br><em>Un r&eac
+sultat sur mesure.</em></h2>
+    <p class="processus-sub fade-up">Quatre &eacute;tapes cl&eacute;s pour concr&eacute;tiser votre projet en toute s&eacute;r&eacute;nit&eacute;.</p>
+    <div class="timeline fade-up">
+      <div class="step">
+        <div class="step-number">01</div>
+        <div class="step-title">RDV D&eacute;couverte</div>
+        <p class="step-text">45 minutes en visio pour comprendre votre projet, votre budget et vos objectifs. Gratuit, sans engagement.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <div class="step-title">S&eacute;lection personnalis&eacute;e</div>
+        <p class="step-text">Nous identifions les programmes qui correspondent exactement &agrave; votre profil parmi notre catalogue.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <div class="step-title">Accompagnement complet</div>
+        <p class="step-text">Financement, r&eacute;servation, suivi chantier &mdash; notre &eacute;quipe coordonne chaque &eacute;tape pour vous.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">04</div>
+        <div class="step-title">Remise des cl&eacute;s</div>
+        <p class="step-text">Nous restons &agrave; vos c&ocirc;t&eacute;s jusqu'&agrave; la livraison et au-del&agrave;, pour les garanties et la gestion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA FINAL ═══════════════ -->
+<section class="cta-final">
+  <h2 class="fade-up">Votre projet immobilier commence<br><em>par une conversation.</em></h2>
+  <p class="cta-final-text fade-up">45 minutes en visioconf&eacute;rence pour faire le point sur votre situation, votre capacit&eacute; d'emprunt et les meilleures opportunit&eacute;s du moment. Gratuit, sans engagement, 100% personnalis&eacute;.</p>
+  <a href="https://viveopromotion-t3jrcqwfw3.live-website.com/rdv-decouverte/" class="btn-bronze fade-up" target="_blank" rel="noopener">Demander mon RDV D&eacute;couverte &rarr;</a>
+  <p class="cta-final-note fade-up">R&eacute;ponse sous 24h &middot; Visio Teams ou FaceTime</p>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="footer-logo">
+    <span class="v">VIVEO</span>
+    <span class="dot">&middot;</span>
+    <span class="p">Patrimoine</span>
+  </div>
+  <p class="footer-tagline">L'immobilier, l'esprit libre.</p>
+  <p class="footer-copy">&copy; 2026 VIVEO Patrimoine</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const siblings = Array.from(el.parentElement.children).filter(c => c.classList.contains('fade-up'));
+        const idx = siblings.indexOf(el);
+        el.style.transitionDelay = (idx * 0.1) + 's';
+        el.classList.add('visible');
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+});
+</script>
+</body>
+</html>
