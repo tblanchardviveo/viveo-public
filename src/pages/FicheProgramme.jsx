@@ -119,10 +119,10 @@ export default function FicheProgramme() {
       <div style={{ display: 'flex', maxWidth: 1100, margin: '0 auto', padding: '60px 32px', gap: 48, flexWrap: 'wrap' }}>
         {/* GAUCHE */}
         <div style={{ flex: '1 1 500px' }}>
-          {p.description && <><Eyebrow>LE PROGRAMME</Eyebrow><p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(255,255,255,0.85)', , fontFamily: '"Raleway", sans-serif' }} dangerouslySetInnerHTML={{ __html: parseMarkdown(p.description) }} /></>}
+          {p.description && <><Eyebrow>LE PROGRAMME</Eyebrow><p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(255,255,255,0.85)', fontFamily: '"Raleway", sans-serif' }} dangerouslySetInnerHTML={{ __html: parseMarkdown(p.description) }} /></>}
           {p.points_forts && p.points_forts.length > 0 && (
             <div style={{ marginTop: 40 }}><Eyebrow>POINTS FORTS</Eyebrow>
-              {p.points_forts.map((pt, i) => <p key={i} style={{ fontSize: 14, lineHeight: 2, color: 'rgba(255,255,255,0.85)', , fontFamily: '"Raleway", sans-serif' }}><span style={{ color: 'var(--bronze)', marginRight: 8 }}>✓</span> {pt}</p>)}
+              {p.points_forts.map((pt, i) => <p key={i} style={{ fontSize: 14, lineHeight: 2, color: 'rgba(255,255,255,0.85)', fontFamily: '"Raleway", sans-serif' }}><span style={{ color: 'var(--bronze)', marginRight: 8 }}>✓</span> {pt}</p>)}
             </div>)}
           {p.dispositifs_fiscaux && p.dispositifs_fiscaux.length > 0 && (
             <div style={{ marginTop: 40 }}><Eyebrow>DISPOSITIFS FISCAUX</Eyebrow>
