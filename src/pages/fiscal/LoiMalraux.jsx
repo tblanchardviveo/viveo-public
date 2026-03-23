@@ -82,7 +82,7 @@ export default function LoiMalraux() {
       <Sec bg="#111C33">
         <h2 style={h2Style()}>{'Parlons de votre stratégie.'}</h2>
         <p style={pStyle()}>{'Découvrons ensemble les opérations Malraux sélectionnées par VIVEO et calculons votre réduction d’impôt précise.'}</p>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>Demander mon RDV Découverte &rarr;</a>
+        <a href={'/rdv-decouverte'} style={cta}>Demander mon RDV Découverte &rarr;</a>
       </Sec>
     </>
   )

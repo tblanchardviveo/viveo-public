@@ -72,7 +72,7 @@ export default function HeroHome() {
             textTransform: 'uppercase', textDecoration: 'none',
             transition: 'all 0.3s ease'
           }}>{"Nos programmes →"}</Link>
-          <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
+          <a href={'/rdv-decouverte'} target="_blank" rel="noopener noreferrer" style={{
             color: 'rgba(255,255,255,0.65)',
             fontFamily: "'Raleway', sans-serif", fontWeight: 500,
             fontSize: 13, letterSpacing: '0.08em',

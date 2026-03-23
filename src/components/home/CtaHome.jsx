@@ -31,7 +31,7 @@ export default function CtaHome() {
           fontFamily: "'Raleway', sans-serif", fontWeight: 200,
           fontSize: 14, color: '#999', marginTop: 12, marginBottom: 48
         }}>{"Teams ou FaceTime · Réponse sous 24h"}</p>
-        <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
+        <a href={'/rdv-decouverte'} target="_blank" rel="noopener noreferrer" style={{
           display: 'inline-block',
           background: 'linear-gradient(135deg, #A67C52, #C4976A)',
           color: '#fff', borderRadius: 2,

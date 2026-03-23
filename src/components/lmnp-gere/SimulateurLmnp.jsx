@@ -75,7 +75,7 @@ export default function SimulateurLmnp() {
             <p style={{ fontFamily: "'Raleway',sans-serif", fontSize: 16, color: '#666' }}>
               {"Ces chiffres vous intéressent ? Parlons-en."}
             </p>
-            <a href={`${WP}/rdv-decouverte/`} style={{
+            <a href={'/rdv-decouverte'} style={{
               display: 'inline-block', marginTop: 16,
               background: 'linear-gradient(135deg,#A67C52,#C4976A)',
               color: '#fff', borderRadius: 2, padding: '18px 40px',

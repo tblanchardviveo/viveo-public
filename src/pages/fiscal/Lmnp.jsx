@@ -85,7 +85,7 @@ export default function Lmnp() {
       <Sec bg="#111C33">
         <h2 style={h2Style()}>{'Vos premiers loyers défiscalisés —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'dès cette année.'}</em></h2>
         <p style={pStyle()}>Prenons le temps d’analyser votre situation et de structurer votre investissement LMNP optimisé.</p>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>Demander mon RDV Découverte &rarr;</a>
+        <a href={'/rdv-decouverte'} style={cta}>Demander mon RDV Découverte &rarr;</a>
       </Sec>
     </>
   )

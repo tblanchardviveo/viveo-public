@@ -73,7 +73,7 @@ export default function LoiJeanbrun() {
       <Sec bg="#111C33" style={{ textAlign: 'center' }}>
         <h2 style={h2Style()}>{'Parlons de votre stratégie.'}</h2>
         <p style={pStyle()}>{'Découvrons ensemble les opérations Jeanbrun sélectionnées par VIVEO et calculons votre réduction d’impôt précise.'}</p>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>Demander mon RDV Découverte &rarr;</a>
+        <a href={'/rdv-decouverte'} style={cta}>Demander mon RDV Découverte &rarr;</a>
       </Sec>
     </>
   )

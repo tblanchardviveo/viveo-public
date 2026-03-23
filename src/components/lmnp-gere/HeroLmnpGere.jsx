@@ -77,7 +77,7 @@ export default function HeroLmnpGere() {
             fontSize: 14, letterSpacing: '0.06em',
             textTransform: 'uppercase', textDecoration: 'none'
           }}>{'Simuler mon investissement →'}</a>
-          <a href={`${WP}/rdv-decouverte/`} style={{
+          <a href={'/rdv-decouverte'} style={{
             fontFamily: "'Raleway',sans-serif", fontWeight: 500,
             fontSize: 14, color: 'rgba(255,255,255,0.65)',
             textDecoration: 'none', letterSpacing: '0.04em'

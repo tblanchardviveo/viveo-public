@@ -127,7 +127,7 @@ export default function HeroV3() {
           onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.filter = 'brightness(1.08)' }}
           onMouseLeave={e => { e.target.style.transform = 'none'; e.target.style.filter = 'none' }}
           >{"Découvrir nos programmes"}</Link>
-          <a href={`${WP}/rdv-decouverte/`} style={{
+          <a href={'/rdv-decouverte'} style={{
             color: 'rgba(255,255,255,0.60)', fontFamily: "'Raleway',sans-serif",
             fontWeight: 500, fontSize: 13, letterSpacing: '0.08em',
             textTransform: 'uppercase', textDecoration: 'none', transition: 'color 0.2s'

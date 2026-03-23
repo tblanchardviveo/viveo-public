@@ -21,7 +21,7 @@ export default function CtaV3() {
         {"Teams ou FaceTime · Réponse sous 24h · Sans engagement"}
       </p>
 
-      <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
+      <a href={'/rdv-decouverte'} target="_blank" rel="noopener noreferrer" style={{
         display: 'inline-block',
         background: 'linear-gradient(135deg, #A67C52, #C4976A)',
         borderRadius: 2, padding: '20px 60px',

@@ -33,7 +33,7 @@ export default function CtaEtudes() {
         </p>
 
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
+          <a href={'/rdv-decouverte'} target="_blank" rel="noopener noreferrer" style={{
             background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)',
             color: '#fff', borderRadius: 50, padding: '16px 40px',
             fontSize: 14, fontWeight: 600, letterSpacing: '0.06em',

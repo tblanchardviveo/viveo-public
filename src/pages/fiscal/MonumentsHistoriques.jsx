@@ -82,7 +82,7 @@ export default function MonumentsHistoriques() {
       <Sec bg="#111C33">
         <h2 style={h2Style()}>{'Parlons de votre stratégie.'}</h2>
         <p style={pStyle()}>{'Accédez aux opérations Monuments Historiques sélectionnées par VIVEO Patrimoine et optimisez votre fiscalité dès cette année.'}</p>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>Demander mon RDV Découverte &rarr;</a>
+        <a href={'/rdv-decouverte'} style={cta}>Demander mon RDV Découverte &rarr;</a>
       </Sec>
     </>
   )

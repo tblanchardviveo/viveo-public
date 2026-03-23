@@ -124,7 +124,7 @@ export default function SimulateurRetraite() {
               <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: '#fff' }}>{fmt(ecartCumule)} {'€'}</p>
             </div>
 
-            <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
+            <a href={'/rdv-decouverte'} target="_blank" rel="noopener noreferrer" style={{
               display: 'block', textAlign: 'center',
               background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)',
               color: '#fff', borderRadius: 50, padding: '14px 32px',

@@ -82,7 +82,7 @@ export default function DeficitFoncier() {
       <Sec bg="#111C33">
         <h2 style={h2Style()}>{'Réduire ses impôts —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'dès cette année.'}</em></h2>
         <p style={pStyle()}>Parlons de votre stratégie Déficit Foncier et identifions ensemble le bien idéal pour votre profil.</p>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>Demander mon RDV Découverte &rarr;</a>
+        <a href={'/rdv-decouverte'} style={cta}>Demander mon RDV Découverte &rarr;</a>
       </Sec>
     </>
   )

@@ -149,7 +149,7 @@ export default function SimulateurEtudes() {
               {pctRevenu}% de vos revenus
             </p>
 
-            <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
+            <a href={'/rdv-decouverte'} target="_blank" rel="noopener noreferrer" style={{
               display: 'block', textAlign: 'center', marginTop: 32,
               background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)',
               color: '#fff', borderRadius: 50, padding: '16px 40px',
