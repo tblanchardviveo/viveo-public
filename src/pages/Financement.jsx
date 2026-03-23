@@ -66,7 +66,7 @@ export default function Financement() {
       {/* CTA Final */}
       <Sec bg="#F7F5F1" style={{ textAlign: 'center' }}>
         <h2 style={h2Style('#111C33')}>{'Simulons votre financement.'}</h2>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV Découverte →'}</a>
+        <a href={'/rdv-decouverte'} style={cta}>{'Demander mon RDV Découverte →'}</a>
       </Sec>
     </>
   )

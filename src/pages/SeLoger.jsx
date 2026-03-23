@@ -136,7 +136,7 @@ export default function SeLoger() {
       {/* CTA Final */}
       <Sec bg="#F7F5F1">
         <h2 style={h2Style('#111C33')}>Parlons de votre projet.</h2>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV Découverte →'}</a>
+        <a href={'/rdv-decouverte'} style={cta}>{'Demander mon RDV Découverte →'}</a>
       </Sec>
     </>
   )

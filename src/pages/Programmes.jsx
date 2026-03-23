@@ -150,7 +150,7 @@ export default function Programmes() {
           <p style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300, fontSize: 15, color: '#666', lineHeight: 1.7, marginBottom: 40 }}>
             45 minutes pour faire le point sur votre situation, votre budget et vos options. VIVEO vous accompagne de A à Z.
           </p>
-          <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 50, padding: '18px 40px', fontSize: 14, fontWeight: 600, letterSpacing: '0.04em', fontFamily: "'Raleway', sans-serif", textDecoration: 'none', transition: 'all 0.3s' }}
+          <a href={'/rdv-decouverte'} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 50, padding: '18px 40px', fontSize: 14, fontWeight: 600, letterSpacing: '0.04em', fontFamily: "'Raleway', sans-serif", textDecoration: 'none', transition: 'all 0.3s' }}
             onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 12px 40px rgba(166,124,82,0.35)' }}
             onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = 'none' }}
           >{"Demander mon RDV Découverte →"}</a>

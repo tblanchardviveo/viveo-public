@@ -62,7 +62,7 @@ export default function Calculateur() {
           <p style={{ fontFamily: "'Raleway', sans-serif", fontSize: 15, color: 'rgba(255,255,255,0.5)', marginBottom: 32, lineHeight: 1.6 }}>
             {"Nos conseillers analysent votre situation et vous proposent les meilleures solutions."}
           </p>
-          <a href={`${WP}/rdv-decouverte/`} target="_blank" rel="noopener noreferrer" style={{
+          <a href={'/rdv-decouverte'} target="_blank" rel="noopener noreferrer" style={{
             display: 'inline-block', background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)',
             color: '#fff', borderRadius: 50, padding: '14px 36px', fontSize: 13,
             fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase',

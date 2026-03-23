@@ -71,7 +71,7 @@ export default function International() {
       {/* CTA Final */}
       <Sec bg="#F7F5F1" style={{ textAlign: 'center' }}>
         <h2 style={h2Style('#111C33')}>{'Parlons de votre projet international.'}</h2>
-        <a href={`${WP}/rdv-decouverte/`} style={cta}>{'Demander mon RDV Découverte →'}</a>
+        <a href={'/rdv-decouverte'} style={cta}>{'Demander mon RDV Découverte →'}</a>
       </Sec>
     </>
   )
