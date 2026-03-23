@@ -132,7 +132,7 @@ export default function FicheProgramme() {
             </div>)}
           {(p.latitude && p.longitude) && (
             <div style={{ marginTop: 40 }}><Eyebrow>LOCALISATION</Eyebrow>
-              <iframe title="carte" src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAF-pzcNWC0rRmKVRHrGtRlKT1ro2gXlHw&q=${p.latitude},${p.longitude}&zoom=15&maptype=roadmap`} style={{ width: '100%', height: 300, border: '1.5px solid #E5E3E0', borderRadius: 12 }} />
+              <iframe title="carte" src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAVk5IkxXQYCzTKfRUkBbTIVLw_zQVCZSc&q=${p.latitude},${p.longitude}&zoom=15&maptype=roadmap`} style={{ width: '100%', height: 300, border: '1.5px solid #E5E3E0', borderRadius: 12 }} />
             </div>)}
 
                     {p.ville && (
