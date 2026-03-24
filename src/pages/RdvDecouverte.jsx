@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import RdvGauche from '../components/rdv/RdvGauche';
 
-const WEBHOOK='https://hook.eu1.make.com/ffvq0m0r3891jpiikk7cb3h2g3y9nq24';
+const WEBHOOK='https://hook.eu1.make.com/roc0nqisnjanoip0deovdrrtyfaf3186';
 const LEADS_API='https://viveo-admin.vercel.app/api/leads';
 const PROJETS=[{id:'rp',e:'🏠',t:'Résidence principale',d:'Devenir propriétaire de ma résidence'},{id:'loc',e:'📈',t:'Investissement locatif',d:'Générer des revenus et réduire mes impôts'},{id:'rs',e:'🌊',t:'Résidence secondaire',d:'Un bien de plaisir sur le littoral ou en montagne'},{id:'sg',e:'🏛️',t:'Stratégie globale',d:"Optimiser l'ensemble de mon patrimoine"}];
 const FORMATS=[{id:'pres',e:'🤝',t:'Présentiel',d:'La Gorgue'},{id:'visio',e:'💻',t:'Visio',d:'En ligne'},{id:'tel',e:'📞',t:'Téléphone',d:'Rappel direct'}];
@@ -33,7 +33,7 @@ export default function RdvDecouverte(){
   const submit=async()=>{
     if(!rgpd){setErr('Veuillez accepter la politique de confidentialité.');return;}
     const now=new Date();
-    const payload={...f,projet:PROJETS.find(p=>p.id===projet)?.t||projet,format_rdv:FORMATS.find(x=>x.id===format)?.t||format,disponibilites:dispos.join(' · '),message:msg,date:now.toLocaleDateString('fr-FR'),heure:now.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})};
+    const payload={...f,projet:PROJETS.find(p=>p.id===projet)?.t||projet,format_rdv:FORMATS.find(x=>x.id===format)?.t||format,disponibilites:dispos.join(' · '),type:'rdv',message:msg,date:now.toLocaleDateString('fr-FR'),heure:now.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})};
     try{
       await Promise.all([
         fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}),
