@@ -28,10 +28,10 @@ const FormulaireParrainage = forwardRef(function FormulaireParrainage(props, ref
     e.preventDefault()
     setStatus('sending')
     try {
-      const res = await fetch('https://hook.eu1.make.com/hn6vosbw8m2tygwwlg46mn5ozayxdx31', {
+      const res = await fetch('https://hook.eu1.make.com/roc0nqisnjanoip0deovdrrtyfaf3186', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+        body: JSON.stringify({...form, type: 'parrainage'})
       })
       if (!res.ok) throw new Error('Erreur serveur')
       setStatus('success')
