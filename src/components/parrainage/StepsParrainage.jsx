@@ -8,7 +8,7 @@ const Eyebrow = ({ children }) => (
 const STEPS = [
   { num: '01', title: 'Recommandez', desc: 'Partagez le nom et les coordonnées de votre proche via le formulaire ci-dessous.' },
   { num: '02', title: 'Nous contactons', desc: 'VIVEO prend contact avec votre filleul pour un rendez-vous découverte personnalisé.' },
-  { num: '03', title: 'Vous êtes récompensé', desc: 'Dès la signature, recevez 400€ (prospect) ou 800€ (client) par virement.' }
+  { num: '03', title: 'Vous êtes récompensé', desc: 'Dès la signature, recevez 400€ (prospect) ou 800€ (client) selon programme de parrainage.' }
 ]
 
 export default function StepsParrainage() {
