@@ -31,6 +31,7 @@ const BlogArticle = lazy(() => import('./pages/BlogArticle'))
 const RdvDecouverte = lazy(() => import('./pages/RdvDecouverte'))
 const DemoEspaceClient = lazy(() => import('./pages/DemoEspaceClient'))
 const PolitiqueConfidentialite = lazy(() => import('./pages/PolitiqueConfidentialite'))
+const DiagnosticWidget = lazy(() => import('./pages/DiagnosticWidget'))
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
@@ -152,6 +153,7 @@ export default function App() {
             <Route path="/mentions-legales" element={<MentionsLegales />} /> <Route path="/blog" element={<Blog />} /> <Route path="/blog/:slug" element={<BlogArticle />} />
             <Route path="/rdv-decouverte" element={<RdvDecouverte />} /> <Route path="/demo-espace-client" element={<DemoEspaceClient />} />
           <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
+                        <Route path="/diagnostic" element={<DiagnosticWidget />} />
             </Routes>
         </Suspense>
       </main>
