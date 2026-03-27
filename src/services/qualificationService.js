@@ -1,25 +1,15 @@
 import { supabase } from '../supabase';
 import { QUALIFICATION_SYSTEM_PROMPT } from '../prompts/qualificationPrompt';
 
-const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
-
 export async function qualifyProspect(profileData) {
-  const apiKey = import.meta.env.VITE_ANTHROPIC_API_KEY;
-  if (!apiKey) throw new Error('Clé API Anthropic manquante');
-
   const userMessage = buildUserMessage(profileData);
 
-  const response = await fetch(ANTHROPIC_API_URL, {
+  const response = await fetch('/api/qualify', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1024,
       system: QUALIFICATION_SYSTEM_PROMPT,
       messages: [{ role: 'user', content: userMessage }]
     })
