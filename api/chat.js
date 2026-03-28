@@ -8,6 +8,7 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   console.log('API KEY present:', !!process.env.ANTHROPIC_API_KEY);
+  console.log('Key first 10:', process.env.ANTHROPIC_API_KEY?.substring(0,10));
   console.log('Request body:', JSON.stringify(req.body));
 
   if (req.method === 'OPTIONS') return res.status(200).end();
