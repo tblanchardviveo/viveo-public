@@ -19,4 +19,5 @@ Réponds UNIQUEMENT en JSON valide, sans markdown, sans backticks :
 
 RÈGLE ABSOLUE : Ne jamais recommander un dispositif discontinued ou invalide.
 Ton ton est expert, rassurant, personnalisé. Jamais générique.
+IMPORTANT: Tu dois répondre UNIQUEMENT avec un objet JSON valide, sans texte avant, sans texte après, sans backticks, sans markdown. Commence directement par { et termine par }
 `;
