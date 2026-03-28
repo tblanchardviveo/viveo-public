@@ -1,108 +1,125 @@
-import { useState } from 'react';
-import { qualifyProspect } from '../services/qualificationService';
-import ResultCard from '../components/ResultCard';
+import { useState } from 'react'
+import { qualifyProspect } from '../services/qualificationService'
+import ResultCard from '../components/ResultCard'
 
-const FIELDS = [
-  { key: 'prenom', label: 'Prénom', type: 'text', placeholder: 'Votre prénom' },
-  { key: 'revenus', label: 'Revenus annuels (€)', type: 'number', placeholder: '60000' },
-  { key: 'situation', label: 'Situation familiale', type: 'select',
-    options: ['Célibataire', 'Marié(e)', 'Pacsé(e)', 'Divorcé(e)', 'Veuf/ve'] },
-  { key: 'objectif', label: 'Objectif principal', type: 'select',
-    options: ['Réduire mes impôts', 'Préparer ma retraite', 'Constituer un patrimoine', 'Générer des revenus complémentaires', 'Protéger ma famille'] },
-  { key: 'horizon', label: "Horizon d'investissement", type: 'select',
-    options: ['Court terme (< 5 ans)', 'Moyen terme (5-10 ans)', 'Long terme (> 10 ans)'] },
-  { key: 'tmi', label: 'Tranche marginale (%)', type: 'select',
-    options: ['0', '11', '30', '41', '45'] },
-  { key: 'epargne', label: 'Épargne mensuelle (€)', type: 'number', placeholder: '500' },
-  { key: 'patrimoine', label: 'Patrimoine existant', type: 'select',
-    options: ['< 100 000€', '100 000€ - 300 000€', '300 000€ - 500 000€', '500 000€ - 1M€', '> 1M€'] }
-];
+const STEPS = [
+  { key: 'tmi', label: 'Quelle est votre tranche marginale d\'imposition ?',
+    options: ['0 %', '11 %', '30 %', '41 %', '45 %'] },
+  { key: 'objectif', label: 'Quel est votre objectif principal ?',
+    options: ['Réduire mes impôts', 'Préparer ma retraite', 'Constituer un patrimoine', 'Générer des revenus complémentaires'] },
+  { key: 'horizon', label: 'Quel est votre horizon d\'investissement ?',
+    options: ['Court terme (< 5 ans)', 'Moyen terme (5–10 ans)', 'Long terme (> 10 ans)'] },
+  { key: 'budget', label: 'Quel est votre budget d\'investissement ?',
+    options: ['< 100 000 €', '100 000 – 300 000 €', '300 000 – 500 000 €', '> 500 000 €'] },
+  { key: 'experience', label: 'Quelle est votre expérience en investissement locatif ?',
+    options: ['Aucune expérience', 'Un premier investissement', 'Investisseur confirmé', 'Patrimoine locatif constitué'] },
+]
+
+const S = {
+  page:  { minHeight: '100vh', background: '#F7F5F1', padding: '80px 24px 60px', fontFamily: "'Raleway', sans-serif" },
+  wrap:  { maxWidth: 560, margin: '0 auto' },
+  logo:  { textAlign: 'center', marginBottom: 40 },
+  logoT: { fontFamily: "'Playfair Display', Georgia, serif", fontSize: 22, color: '#111C33', letterSpacing: 4 },
+  logoDot: { color: '#A67C52' },
+  progress: { height: 3, background: 'rgba(166,124,82,0.15)', borderRadius: 2, marginBottom: 40, overflow: 'hidden' },
+  progressBar: (pct) => ({ height: '100%', width: `${pct}%`, background: 'linear-gradient(90deg,#A67C52,#C4976A)', borderRadius: 2, transition: 'width .4s ease' }),
+  card:  { background: '#fff', borderRadius: 16, padding: '40px 36px', boxShadow: '0 4px 32px rgba(17,28,51,0.07)', border: '1px solid rgba(166,124,82,0.1)' },
+  step:  { fontFamily: "'Raleway', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: '#A67C52', marginBottom: 12 },
+  q:     { fontFamily: "'Playfair Display', Georgia, serif", fontSize: 22, color: '#111C33', marginBottom: 28, lineHeight: 1.4 },
+  opt:   (sel) => ({
+    display: 'block', width: '100%', textAlign: 'left', padding: '14px 18px', marginBottom: 10,
+    border: `1.5px solid ${sel ? '#A67C52' : 'rgba(17,28,51,0.12)'}`,
+    background: sel ? 'rgba(166,124,82,0.06)' : '#fff', borderRadius: 8, cursor: 'pointer',
+    fontFamily: "'Raleway', sans-serif", fontSize: 14,
+    color: sel ? '#A67C52' : '#111C33', fontWeight: sel ? 600 : 400,
+    transition: 'all .15s ease',
+  }),
+  btn:   { width: '100%', padding: '16px', border: 'none', borderRadius: 8, cursor: 'pointer',
+    background: 'linear-gradient(135deg,#A67C52 0%,#C4976A 100%)', color: '#fff',
+    fontSize: 14, fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase',
+    fontFamily: "'Raleway', sans-serif", marginTop: 8 },
+  back:  { background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(17,28,51,0.4)',
+    fontSize: 13, fontFamily: "'Raleway', sans-serif", marginTop: 12, display: 'block', margin: '12px auto 0' },
+  err:   { color: '#c0392b', fontSize: 13, textAlign: 'center', marginTop: 12 },
+}
 
 export default function DiagnosticWidget() {
-  const [form, setForm] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState(null);
+  const [step, setStep]       = useState(0)
+  const [answers, setAnswers] = useState({})
+  const [loading, setLoading] = useState(false)
+  const [result, setResult]   = useState(null)
+  const [error, setError]     = useState(null)
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); setError(null); setResult(null);
-    try {
-      const res = await qualifyProspect(form);
-      setResult(res);
-    } catch (err) {
-      setError(err.message);
-    } finally { setLoading(false); }
-  };
+  const current = STEPS[step]
+  const pct     = ((step) / STEPS.length) * 100
 
-  const page = { minHeight: '100vh', background: '#F7F5F0', padding: '80px 24px 60px' };
-  const wrap = { maxWidth: 560, margin: '0 auto' };
-  const title = {
-    fontFamily: "'Playfair Display', Georgia, serif", fontSize: 32,
-    color: 'var(--navy-deep, #111C33)', textAlign: 'center', marginBottom: 8
-  };
-  const sub = {
-    fontFamily: "'Raleway', sans-serif", fontSize: 14, color: 'rgba(17,28,51,0.55)',
-    textAlign: 'center', marginBottom: 40
-  };
-  const inputStyle = {
-    width: '100%', padding: '12px 16px', borderRadius: 8,
-    border: '1px solid rgba(17,28,51,0.12)', fontSize: 14,
-    fontFamily: "'Raleway', sans-serif", background: '#fff',
-    outline: 'none', boxSizing: 'border-box'
-  };
-  const labelStyle = {
-    fontFamily: "'Raleway', sans-serif", fontSize: 12, fontWeight: 600,
-    letterSpacing: '.08em', textTransform: 'uppercase',
-    color: 'rgba(17,28,51,0.5)', marginBottom: 6, display: 'block'
-  };
-  const btn = {
-    width: '100%', padding: '16px', border: 'none', borderRadius: 2, cursor: 'pointer',
-    background: loading ? 'rgba(166,124,82,0.5)' : 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)',
-    color: '#fff', fontSize: 14, fontWeight: 600, letterSpacing: '.06em',
-    textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif", marginTop: 24
-  };
+  const select = async (val) => {
+    const updated = { ...answers, [current.key]: val }
+    setAnswers(updated)
+    if (step < STEPS.length - 1) {
+      setStep(step + 1)
+    } else {
+      setLoading(true); setError(null)
+      try {
+        const payload = {
+          tmi:       updated.tmi?.replace(' %', ''),
+          objectif:  updated.objectif,
+          horizon:   updated.horizon,
+          revenus:   updated.budget,
+          patrimoine: updated.experience,
+        }
+        const res = await qualifyProspect(payload)
+        setResult(res)
+      } catch (e) {
+        setError(e.message)
+        setLoading(false)
+      }
+    }
+  }
+
+  const reset = () => { setStep(0); setAnswers({}); setResult(null); setError(null); setLoading(false) }
 
   return (
-    <div style={page}>
-      <div style={wrap}>
-        <h1 style={title}>Diagnostic Patrimonial</h1>
-        <p style={sub}>Recevez votre recommandation fiscale personnalisée en 30 secondes</p>
-        {!result ? (
-          <form onSubmit={handleSubmit}>
-            {FIELDS.map(f => (
-              <div key={f.key} style={{ marginBottom: 16 }}>
-                <label style={labelStyle}>{f.label}</label>
-                {f.type === 'select' ? (
-                  <select style={inputStyle} value={form[f.key] || ''}
-                    onChange={e => setForm({ ...form, [f.key]: e.target.value })} required>
-                    <option value="">Sélectionner...</option>
-                    {f.options.map(o => <option key={o} value={o}>{o}</option>)}
-                  </select>
-                ) : (
-                  <input style={inputStyle} type={f.type} placeholder={f.placeholder}
-                    value={form[f.key] || ''}
-                    onChange={e => setForm({ ...form, [f.key]: e.target.value })} required />
-                )}
-              </div>
-            ))}
-            <button type="submit" disabled={loading} style={btn}>
-              {loading ? 'Analyse en cours...' : 'Obtenir mon diagnostic →'}
-            </button>
-            {error && <p style={{ color: '#c0392b', fontSize: 13, marginTop: 12, textAlign: 'center' }}>{error}</p>}
-          </form>
-        ) : (
+    <div style={S.page}>
+      <div style={S.wrap}>
+        <div style={S.logo}>
+          <span style={S.logoT}>VIVEO<span style={S.logoDot}>.</span></span>
+        </div>
+
+        {!result && !loading && (
+          <>
+            <div style={S.progress}><div style={S.progressBar(pct)} /></div>
+            <div style={S.card}>
+              <p style={S.step}>Question {step + 1} / {STEPS.length}</p>
+              <p style={S.q}>{current.label}</p>
+              {current.options.map(o => (
+                <button key={o} style={S.opt(answers[current.key] === o)} onClick={() => select(o)}>{o}</button>
+              ))}
+              {step > 0 && <button style={S.back} onClick={() => setStep(step - 1)}>← Retour</button>}
+            </div>
+          </>
+        )}
+
+        {loading && (
+          <div style={{ ...S.card, textAlign: 'center', padding: '60px 36px' }}>
+            <p style={{ fontFamily: "'Playfair Display',serif", fontSize: 20, color: '#111C33', marginBottom: 12 }}>Analyse en cours…</p>
+            <p style={{ fontSize: 13, color: 'rgba(17,28,51,0.5)' }}>Notre IA analyse votre profil patrimonial</p>
+          </div>
+        )}
+
+        {result && (
           <>
             <ResultCard result={result} />
-            <div style={{ textAlign: 'center', marginTop: 16 }}>
-              <button onClick={() => { setResult(null); setForm({}); }}
-                style={{ ...btn, background: 'transparent', color: '#A67C52', border: '1px solid #A67C52' }}>
-                Refaire un diagnostic
+            <div style={{ textAlign: 'center', marginTop: 8 }}>
+              <button onClick={reset} style={{ background: 'none', border: '1px solid #A67C52', color: '#A67C52', borderRadius: 8, padding: '10px 24px', cursor: 'pointer', fontSize: 13, fontFamily: "'Raleway',sans-serif" }}>
+                Refaire le diagnostic
               </button>
             </div>
           </>
         )}
+
+        {error && <p style={S.err}>{error}</p>}
       </div>
     </div>
-  );
+  )
 }
