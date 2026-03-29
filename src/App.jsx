@@ -36,6 +36,8 @@ const WidgetChatbot = lazy(() => import('./pages/WidgetChatbot'))
 const WidgetDiagnostic = lazy(() => import('./pages/WidgetDiagnostic'))
 const WidgetContact = lazy(() => import('./pages/WidgetContact'))
 const WidgetPtz = lazy(() => import('./pages/WidgetPtz'))
+const Souscrire = lazy(() => import('./pages/Souscrire'))
+const Bienvenue = lazy(() => import('./pages/Bienvenue'))
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
@@ -67,6 +69,7 @@ function Header() {
             <Link to="/se-loger" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Se Loger</Link>
             <Link to="/investir" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Investir</Link>
             <Link to="/approche-viveo" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Notre Approche</Link><Link to="/financement" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Financement</Link><Link to="/parrainage" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Parrainage</Link><Link to="/calculateur" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Calculateur</Link><Link to="/international" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>International</Link><Link to="/blog" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Blog</Link><Link to="/diagnostic" style={{ ...linkStyle, color: '#C4976A', fontWeight: 600 }} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#fff'} onMouseLeave={e => e.target.style.color='#C4976A'}>Diagnostic gratuit</Link>
+            <Link to="/souscrire" className="nav-hide-mobile" style={{ padding: '8px 18px', borderRadius: 20, fontSize: 11, fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', border: '1px solid rgba(196,151,106,0.5)', color: '#C4976A', background: 'transparent', textDecoration: 'none', whiteSpace: 'nowrap' }}>Essai gratuit 14j</Link>
             <a href="https://viveo-patrimoine.fr/partenaire" style={{ padding: '8px 18px', borderRadius: 20, fontSize: 11, fontWeight: 600, letterSpacing: '.08em', textTransform: 'uppercase', border: '1px solid #A67C52', color: '#A67C52', background: 'transparent', textDecoration: 'none', whiteSpace: 'nowrap', marginRight: 12 }}>Espace partenaire</a>
             <a href={'/rdv-decouverte'} target="_blank" rel="noopener noreferrer" style={{ background: 'linear-gradient(135deg, #A67C52 0%, #C4976A 100%)', color: '#fff', borderRadius: 2, padding: '10px 24px', fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Raleway', sans-serif", textDecoration: 'none', transition: 'all 0.3s var(--ease)' }}>{"Prendre RDV →"}</a>
             {isMobile && <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4, marginLeft: 8, display: 'flex', alignItems: 'center' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A67C52" strokeWidth="2" strokeLinecap="round">{menuOpen ? <><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></> : <><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></>}</svg></button>}
@@ -124,7 +127,7 @@ function Footer() {
 
 function AppContent() {
   const { pathname } = useLocation()
-  const isWidget = pathname.startsWith('/widget/')
+  const isWidget = pathname.startsWith('/widget/') || pathname === '/souscrire' || pathname === '/bienvenue'
   const fallback = isWidget
     ? <div />
     : <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F7F5F0' }}>
@@ -171,6 +174,8 @@ function AppContent() {
             <Route path="/widget/diagnostic" element={<WidgetDiagnostic />} />
             <Route path="/widget/contact" element={<WidgetContact />} />
             <Route path="/widget/ptz" element={<WidgetPtz />} />
+            <Route path="/souscrire" element={<Souscrire />} />
+            <Route path="/bienvenue" element={<Bienvenue />} />
           </Routes>
         </Suspense>
       </main>
