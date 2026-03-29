@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import ChatbotWidget from './components/ChatbotWidget'
 
@@ -32,6 +32,10 @@ const RdvDecouverte = lazy(() => import('./pages/RdvDecouverte'))
 const DemoEspaceClient = lazy(() => import('./pages/DemoEspaceClient'))
 const PolitiqueConfidentialite = lazy(() => import('./pages/PolitiqueConfidentialite'))
 const DiagnosticWidget = lazy(() => import('./pages/DiagnosticWidget'))
+const WidgetChatbot = lazy(() => import('./pages/WidgetChatbot'))
+const WidgetDiagnostic = lazy(() => import('./pages/WidgetDiagnostic'))
+const WidgetContact = lazy(() => import('./pages/WidgetContact'))
+const WidgetPtz = lazy(() => import('./pages/WidgetPtz'))
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
@@ -118,17 +122,21 @@ function Footer() {
   )
 }
 
-export default function App() {
+function AppContent() {
+  const { pathname } = useLocation()
+  const isWidget = pathname.startsWith('/widget/')
+  const fallback = isWidget
+    ? <div />
+    : <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F7F5F0' }}>
+        <div style={{ fontFamily: 'Playfair Display,serif', fontSize: 20, color: '#A67C52', letterSpacing: '.06em' }}>VIVEO<span style={{ color: '#111C33' }}>.</span></div>
+      </div>
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
-      <Header />
-      <main style={{ minHeight: '60vh' }}>
-        <Suspense fallback={
-          <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F7F5F0' }}>
-            <div style={{ fontFamily: 'Playfair Display,serif', fontSize: 20, color: '#A67C52', letterSpacing: '.06em' }}>VIVEO<span style={{ color: '#111C33' }}>.</span></div>
-          </div>
-        }>
+      {!isWidget && <Header />}
+      <main style={isWidget ? {} : { minHeight: '60vh' }}>
+        <Suspense fallback={fallback}>
           <Routes>
             <Route path="/" element={<HomePageV3 />} />
             <Route path="/programmes" element={<Programmes />} />
@@ -149,16 +157,33 @@ export default function App() {
             <Route path="/monuments-historiques" element={<MonumentsHistoriques />} />
             <Route path="/loi-denormandie" element={<LoiDenormandie />} />
             <Route path="/loi-jeanbrun" element={<LoiJeanbrun />} />
-            <Route path="/lmnp-gere" element={<LmnpGere />} /> <Route path="/retraite" element={<Retraite />} /> <Route path="/etudes-enfants" element={<EtudesEnfants />} />
-            <Route path="/mentions-legales" element={<MentionsLegales />} /> <Route path="/blog" element={<Blog />} /> <Route path="/blog/:slug" element={<BlogArticle />} />
-            <Route path="/rdv-decouverte" element={<RdvDecouverte />} /> <Route path="/demo-espace-client" element={<DemoEspaceClient />} />
-          <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
-                        <Route path="/diagnostic" element={<DiagnosticWidget />} />
-            </Routes>
+            <Route path="/lmnp-gere" element={<LmnpGere />} />
+            <Route path="/retraite" element={<Retraite />} />
+            <Route path="/etudes-enfants" element={<EtudesEnfants />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogArticle />} />
+            <Route path="/rdv-decouverte" element={<RdvDecouverte />} />
+            <Route path="/demo-espace-client" element={<DemoEspaceClient />} />
+            <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
+            <Route path="/diagnostic" element={<DiagnosticWidget />} />
+            <Route path="/widget/chatbot" element={<WidgetChatbot />} />
+            <Route path="/widget/diagnostic" element={<WidgetDiagnostic />} />
+            <Route path="/widget/contact" element={<WidgetContact />} />
+            <Route path="/widget/ptz" element={<WidgetPtz />} />
+          </Routes>
         </Suspense>
       </main>
-      <Footer />
-      <ChatbotWidget />
+      {!isWidget && <Footer />}
+      {!isWidget && <ChatbotWidget />}
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   )
 }
