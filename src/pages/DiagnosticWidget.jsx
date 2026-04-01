@@ -70,6 +70,7 @@ export default function DiagnosticWidget() {
         }
         const res = await qualifyProspect(payload)
         setResult(res)
+        setLoading(false)
       } catch (e) {
         setError(e.message)
         setLoading(false)
