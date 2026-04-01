@@ -25,9 +25,10 @@ export async function qualifyProspect(profileData) {
 
   let result;
   try {
-    result = JSON.parse(raw);
+    const cleaned = raw.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim()
+    result = JSON.parse(cleaned)
   } catch {
-    throw new Error('Réponse IA invalide (JSON attendu)');
+    throw new Error('Réponse IA invalide (JSON attendu)')
   }
 
   await saveQualification(profileData, result);
