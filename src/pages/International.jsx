@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
+import LanguageSwitcher from '../components/LanguageSwitcher'
 
-const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 const eye = { display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }
 const eyeLine = { width: 32, height: 1, background: '#A67C52' }
 const eyeText = { fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.22em', color: '#A67C52' }
@@ -18,60 +18,66 @@ function Sec({ children, bg, style }) {
 }
 
 export default function International() {
+  const { t } = useTranslation()
+
   return (
     <>
+      <LanguageSwitcher />
+
       {/* Hero */}
       <section style={{ position: 'relative', backgroundImage: "url('/images/IMG_0498.png')", backgroundSize: 'cover', backgroundPosition: 'center', padding: '120px 6vw 80px' }}>
         <div style={{ position: 'absolute', inset: 0, background: heroOverlay }} />
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <div style={eye}><span style={eyeLine} /><span style={eyeText}>INTERNATIONAL</span></div>
-          <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{'Investir en France —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'depuis l’étranger.'}</em></h1>
-          <p style={pStyle()}>{'Belgique, Luxembourg, Suisse, Royaume-Uni — nous accompagnons les non-résidents dans leurs projets immobiliers en France, du financement transfrontalier à la fiscalité internationale.'}</p>
+          <div style={eye}><span style={eyeLine} /><span style={eyeText}>{t('eye_international')}</span></div>
+          <h1 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 'clamp(42px,7vw,80px)', fontWeight: 300, lineHeight: 1, color: '#fff', letterSpacing: '-0.02em' }}>{t('hero_h1_1')}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{t('hero_h1_2')}</em></h1>
+          <p style={pStyle()}>{t('hero_p')}</p>
           <div style={{ display: 'flex', gap: 12, marginTop: 32, flexWrap: 'wrap' }}>
-            <span style={pill}>Belgique</span>
-            <span style={pill}>Luxembourg</span>
-            <span style={pill}>Suisse</span>
-            <span style={pill}>Royaume-Uni</span>
+            {[t('pill_1'), t('pill_2'), t('pill_3'), t('pill_4')].map((p, i) => <span key={i} style={pill}>{p}</span>)}
           </div>
         </div>
       </section>
 
       {/* Section 2 - Accompagnement */}
       <Sec bg="#1A2744">
-        <div style={eye}><span style={eyeLine} /><span style={eyeText}>ACCOMPAGNEMENT</span></div>
-        <h2 style={h2Style()}>{'Un parcours dédié —'}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{'aux non-résidents.'}</em></h2>
+        <div style={eye}><span style={eyeLine} /><span style={eyeText}>{t('eye_accompagnement')}</span></div>
+        <h2 style={h2Style()}>{t('accomp_h2_1')}<br /><em style={{ fontStyle: 'italic', color: '#C4976A' }}>{t('accomp_h2_2')}</em></h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, marginTop: 48 }}>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>Financement transfrontalier</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Accès aux banques françaises et partenaires spécialisés non-résidents.'}</p></div>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{'Fiscalité internationale'}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Conventions fiscales, impôt sur le revenu foncier, plus-values — nous clarifions tout.'}</p></div>
-          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{'Gestion à distance'}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{'Signature électronique, visioconférence, gestion locative déléguée.'}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{t('card1_title')}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{t('card1_text')}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{t('card2_title')}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{t('card2_text')}</p></div>
+          <div style={card()}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#fff', marginBottom: 12 }}>{t('card3_title')}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{t('card3_text')}</p></div>
         </div>
       </Sec>
 
       {/* Section 3 - Zones */}
       <Sec bg="#F7F5F1">
-        <div style={eye}><span style={eyeLine} /><span style={eyeText}>ZONES CIBLES</span></div>
-        <h2 style={h2Style('#111C33')}>{'Des marchés sélectionnés —'}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{'pour leur potentiel.'}</em></h2>
-        <p style={pStyle('#555')}>{'Côte d’Azur, Méditerranée, Alpes, Côte d’Opale — des zones à forte attractivité touristique et patrimoniale, accessibles depuis la Belgique et le Royaume-Uni.'}</p>
+        <div style={eye}><span style={eyeLine} /><span style={eyeText}>{t('eye_zones')}</span></div>
+        <h2 style={h2Style('#111C33')}>{t('zones_h2_1')}<br /><em style={{ fontStyle: 'italic', color: '#A67C52' }}>{t('zones_h2_2')}</em></h2>
+        <p style={pStyle('#555')}>{t('zones_p')}</p>
         <div style={{ marginTop: 24 }}>
-          {['À 2h de Bruxelles via le TGV','À 1h30 de Londres via l’Eurotunnel','Marchés à forte demande locative','Valorisation patrimoniale long terme'].map((t,i) => <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>{'✓'} {t}</p>)}
+          {[t('bullet_1'), t('bullet_2'), t('bullet_3'), t('bullet_4')].map((txt, i) => <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontSize: 14, color: '#555', marginBottom: 8 }}>✓ {txt}</p>)}
         </div>
         <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
-          {["Côte d'Azur","Côte d'Opale",'Méditerranée','Alpes'].map((z,i) => <span key={i} style={{ padding: '10px 20px', borderRadius: 20, background: 'rgba(166,124,82,0.12)', color: '#A67C52', fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 13 }}>{z}</span>)}
+          {[t('zone_1'), t('zone_2'), t('zone_3'), t('zone_4')].map((z, i) => <span key={i} style={{ padding: '10px 20px', borderRadius: 20, background: 'rgba(166,124,82,0.12)', color: '#A67C52', fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 13 }}>{z}</span>)}
         </div>
       </Sec>
 
       {/* Section 4 - Avantages */}
       <Sec bg="#111C33">
-        <div style={eye}><span style={eyeLine} /><span style={eyeText}>VOS AVANTAGES</span></div>
+        <div style={eye}><span style={eyeLine} /><span style={eyeText}>{t('eye_avantages')}</span></div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 20, marginTop: 32 }}>
-          {[['100% à distance','Tout le parcours peut se faire en visio et signature électronique.'],['Interlocuteur unique','Un chef de projet dédié qui parle votre langue.'],['Réseau bancaire','Partenaires spécialisés dans le financement des non-résidents.'],['Expertise fiscale','Maîtrise des conventions bilatérales et de la fiscalité croisée.']].map(([t,d],i) => <div key={i} style={{ background: '#F7F5F1', borderRadius: 8, padding: 28 }}><h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{t}</h3><p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{d}</p></div>)}
+          {[[t('adv1_title'), t('adv1_text')], [t('adv2_title'), t('adv2_text')], [t('adv3_title'), t('adv3_text')], [t('adv4_title'), t('adv4_text')]].map(([title, desc], i) => (
+            <div key={i} style={{ background: '#F7F5F1', borderRadius: 8, padding: 28 }}>
+              <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, color: '#111C33', marginBottom: 8 }}>{title}</h3>
+              <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#555', lineHeight: 1.7 }}>{desc}</p>
+            </div>
+          ))}
         </div>
       </Sec>
 
       {/* CTA Final */}
       <Sec bg="#F7F5F1" style={{ textAlign: 'center' }}>
-        <h2 style={h2Style('#111C33')}>{'Parlons de votre projet international.'}</h2>
-        <a href={'/rdv-decouverte'} style={cta}>{'Demander mon RDV Découverte →'}</a>
+        <h2 style={h2Style('#111C33')}>{t('cta_h2')}</h2>
+        <a href="/rdv-decouverte" style={cta}>{t('cta_btn')}</a>
       </Sec>
     </>
   )
