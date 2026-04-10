@@ -37,7 +37,9 @@ export default function RdvDecouverte(){
     try{
       await Promise.all([
         fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}),
-        fetch(LEADS_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nom:f.nom,prenom:f.prenom,email:f.email,telephone:f.telephone,code_postal:f.code_postal,ville:f.ville,projet:PROJETS.find(p=>p.id===projet)?.t||projet,source_programme:'RDV Découverte'})})
+        fetch(LEADS_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nom:f.nom,prenom:f.prenom,email:f.email,telephone:f.telephone,code_postal:f.code_postal,ville:f.ville,projet:PROJETS.find(p=>p.id===projet)?.t||projet,source_programme:'RDV Découverte'})}),
+        fetch('https://n8n.viveo-patrimoine.fr/webhook/rdv-decouverte',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prenom:f.prenom,nom:f.nom,email:f.email,telephone:f.telephone,message:msg})}),
+        fetch('https://n8n.viveo-patrimoine.fr/webhook/sequence-rdv',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prenom:f.prenom,nom:f.nom,email:f.email,telephone:f.telephone,message:msg})})
       ]);
     }catch(e){}
     setSent(true);
