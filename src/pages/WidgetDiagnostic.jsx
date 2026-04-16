@@ -39,10 +39,16 @@ export default function WidgetDiagnostic() {
   const submitLead = async () => {
     if (!contact.email.trim()) { setErr('Email requis'); return }
     try {
-      await fetch(`${BASE}/api/widget-lead`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...contact, cabinet_id: cabinetId, type_widget: 'diagnostic', dispositif_recommande: result?.dispositif || '', source: 'widget' })
-      })
+      await Promise.all([
+        fetch(`${BASE}/api/widget-lead`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...contact, cabinet_id: cabinetId, type_widget: 'diagnostic', dispositif_recommande: result?.dispositif || '', source: 'widget' })
+        }),
+        fetch('https://n8n.viveo-patrimoine.fr/webhook/nouveau-lead', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prenom: contact.prenom, nom: contact.nom, email: contact.email, telephone: contact.telephone, message: '' })
+        })
+      ])
       setSent(true)
     } catch { setErr('Erreur envoi') }
   }

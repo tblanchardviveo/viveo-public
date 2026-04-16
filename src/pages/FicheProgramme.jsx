@@ -44,15 +44,22 @@ export default function FicheProgramme() {
     setSending(true)
     setError(null)
     try {
-      const res = await fetch('/api/rdv-demande', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          programme_id: programme?.id || null,
-          programme_nom: programme?.nom || null
+      const [res] = await Promise.all([
+        fetch('/api/rdv-demande', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...formData,
+            programme_id: programme?.id || null,
+            programme_nom: programme?.nom || null
+          })
+        }),
+        fetch('https://n8n.viveo-patrimoine.fr/webhook/nouveau-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prenom: formData.prenom, nom: formData.nom, email: formData.email, telephone: formData.telephone, message: formData.message })
         })
-      })
+      ])
       const json = await res.json()
       if (!res.ok) {
         setError(json.error || 'Une erreur est survenue')

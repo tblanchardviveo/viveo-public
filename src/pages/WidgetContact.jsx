@@ -18,10 +18,16 @@ export default function WidgetContact() {
     if (!form.prenom.trim() || !form.email.trim()) { setErr('Prénom et email requis'); return }
     setErr(''); setLoading(true)
     try {
-      const r = await fetch(`${BASE}/api/widget-lead`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, cabinet_id: cabinetId, type_widget: 'contact', source: 'widget' })
-      })
+      const [r] = await Promise.all([
+        fetch(`${BASE}/api/widget-lead`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...form, cabinet_id: cabinetId, type_widget: 'contact', source: 'widget' })
+        }),
+        fetch('https://n8n.viveo-patrimoine.fr/webhook/nouveau-lead', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prenom: form.prenom, nom: form.nom, email: form.email, telephone: form.telephone, message: form.message })
+        })
+      ])
       if (!r.ok) throw new Error()
       setSent(true)
     } catch { setErr('Erreur lors de l\'envoi. Veuillez réessayer.') }
