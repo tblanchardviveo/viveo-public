@@ -35,14 +35,14 @@ export default function BanquesV3() {
 
       <div style={{ display: 'flex', gap: 2, marginTop: 64, flexWrap: 'wrap' }}>
         {/* LEFT - Reseaux */}
-        <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', borderRadius: '3px 0 0 3px', padding: '40px 36px' }}>
+        <div style={{ flex: 1, minWidth: 280, background: 'rgba(255,255,255,0.03)', borderRadius: '3px 0 0 3px', padding: '40px 36px' }}>
           <div style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.20em', color: 'rgba(255,255,255,0.25)', marginBottom: 32 }}>{"LES RÉSEAUX BANCAIRES & CGP"}</div>
           {reseaux.map((r, i) => (
             <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 15, color: 'rgba(255,255,255,0.35)', lineHeight: 1.7, margin: '0 0 8px' }}>{r}</p>
           ))}
         </div>
         {/* RIGHT - VIVEO */}
-        <div style={{ flex: 1, background: 'rgba(166,124,82,0.08)', border: '1px solid rgba(166,124,82,0.20)', borderRadius: '0 3px 3px 0', padding: '40px 36px' }}>
+        <div style={{ flex: 1, minWidth: 280, background: 'rgba(166,124,82,0.08)', border: '1px solid rgba(166,124,82,0.20)', borderRadius: '0 3px 3px 0', padding: '40px 36px' }}>
           <div style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.20em', color: '#C4976A', marginBottom: 32 }}>VIVEO PATRIMOINE</div>
           {viveo.map((v, i) => (
             <p key={i} style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 15, color: 'rgba(255,255,255,0.80)', lineHeight: 1.7, margin: '0 0 8px' }}>{v}</p>

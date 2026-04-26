@@ -63,7 +63,7 @@ export default function HeroV3() {
         {/* H1 */}
         <h1 style={{
           fontFamily: "'Playfair Display',Georgia,serif",
-          fontSize: 'clamp(56px, 10vw, 120px)', fontWeight: 300, lineHeight: 0.90,
+          fontSize: 'clamp(29px, 10vw, 120px)', fontWeight: 300, lineHeight: 0.90,
           color: '#fff', letterSpacing: '-0.025em', margin: 0,
           opacity: loaded ? 1 : 0, transform: loaded ? 'none' : 'translateY(20px)',
           transition: 'opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s'

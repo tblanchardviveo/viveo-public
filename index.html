@@ -36,6 +36,11 @@
             margin: 0;
       color: var(--text);
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    @media (max-width: 768px) {
+      .nav-hide-mobile { display: none !important; }
     }
     img { max-width:100%; display:block; }
     a { text-decoration:none; color:inherit; }

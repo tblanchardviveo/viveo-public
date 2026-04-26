@@ -47,8 +47,8 @@ export default function RdvDecouverte(){
   };
 
   if(sent) return(
-    <div style={{display:'flex',minHeight:'100vh'}}>
-      <div style={{flex:'0 0 45%',maxWidth:520}}><RdvGauche/></div>
+    <div className="rdv-layout" style={{display:'flex',minHeight:'100vh'}}>
+      <div className="rdv-gauche" style={{flex:'0 0 45%',maxWidth:520}}><RdvGauche/></div>
       <div style={{flex:1,background:'#F7F5F0',display:'flex',alignItems:'center',justifyContent:'center',padding:40}}>
         <div style={{textAlign:'center',maxWidth:440}}>
           <div style={{width:72,height:72,borderRadius:'50%',background:'linear-gradient(135deg,#A67C52,#C4976A)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:32,margin:'0 auto 24px'}}>✦</div>
@@ -71,12 +71,22 @@ export default function RdvDecouverte(){
   );
 
   return(
-    <div style={{display:'flex',minHeight:'100vh',fontFamily:'Raleway,sans-serif'}}>
+    <div className="rdv-layout" style={{display:'flex',minHeight:'100vh',fontFamily:'Raleway,sans-serif'}}>
+      <style>{`
+        @media (max-width: 768px) {
+          .rdv-layout { flex-direction: column !important; }
+          .rdv-gauche { flex: none !important; max-width: 100% !important; width: 100% !important; position: relative !important; height: auto !important; overflow-y: visible !important; }
+          .rdv-droite { padding: 32px 20px !important; }
+        }
+        @media (max-width: 600px) {
+          .rdv-projets-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       <div style={{position:'fixed',top:0,left:0,right:0,height:2,background:'#E0D8CE',zIndex:100}}>
         <div style={{height:'100%',width:pct+'%',background:'linear-gradient(90deg,#A67C52,#C4976A)',transition:'width 0.4s ease'}}/>
       </div>
-      <div style={{flex:'0 0 45%',maxWidth:520,position:'sticky',top:0,height:'100vh',overflowY:'auto'}}><RdvGauche/></div>
-      <div style={{flex:1,background:'#F7F5F0',padding:'60px 48px 48px',overflowY:'auto'}}>
+      <div className="rdv-gauche" style={{flex:'0 0 45%',maxWidth:520,position:'sticky',top:0,height:'100vh',overflowY:'auto'}}><RdvGauche/></div>
+      <div className="rdv-droite" style={{flex:1,background:'#F7F5F0',padding:'60px 48px 48px',overflowY:'auto'}}>
         <div style={{maxWidth:500,margin:'0 auto'}}>
           <div style={{display:'flex',gap:8,marginBottom:32}}>
             {[1,2,3].map(n=><div key={n} style={{width:8,height:8,borderRadius:'50%',background:step>=n?'#111C33':'#D4C8B8'}}/>)}
@@ -86,7 +96,7 @@ export default function RdvDecouverte(){
             <div>
               <h2 style={{fontFamily:'Playfair Display,serif',fontSize:24,color:'#111C33',marginBottom:8}}>Votre projet</h2>
               <p style={{color:'#6B7280',fontSize:14,marginBottom:24}}>Quel est l'objectif principal de votre démarche ?</p>
-              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12,marginBottom:32}}>
+              <div className="rdv-projets-grid" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12,marginBottom:32}}>
                 {PROJETS.map(p=>(
                   <div key={p.id} onClick={()=>setProjet(p.id)} style={{border:projet===p.id?'2px solid #111C33':'2px solid #E0D8CE',borderRadius:12,padding:'16px 14px',cursor:'pointer',background:projet===p.id?'rgba(17,28,51,0.04)':'#fff',transition:'all 0.2s'}}>
                     <div style={{fontSize:24,marginBottom:6}}>{p.e}</div>

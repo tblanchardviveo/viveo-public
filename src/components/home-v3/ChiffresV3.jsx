@@ -32,7 +32,7 @@ export default function ChiffresV3() {
 
   const numStyle = {
     fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 200,
-    fontSize: 'clamp(100px, 18vw, 220px)', lineHeight: 0.85,
+    fontSize: 'clamp(48px, 18vw, 220px)', lineHeight: 0.85,
     color: '#ffffff', letterSpacing: '-0.04em'
   }
   const labelStyle = {
