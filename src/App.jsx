@@ -59,13 +59,13 @@ function Header() {
   return (
     <>
       <header style={{ position: 'sticky', top: 0, zIndex: 100, background: 'var(--navy-deep)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.06)', height: 72 }}>
-        <div style={{ width: '100%', padding: '0 32px', display: 'flex', alignItems: 'center', height: '100%', boxSizing: 'border-box', gap: 32 }}>
+        <div style={{ width: '100%', padding: '0 32px', display: 'flex', alignItems: 'center', height: '100%', boxSizing: 'border-box', gap: 0 }}>
           <Link to="/" style={{ display: 'flex', alignItems: 'baseline', gap: 0, textDecoration: 'none' }}>
             <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 22, color: '#fff', fontWeight: 400 }}>VIVEO</span>
             <span style={{ color: 'var(--bronze)', margin: '0 8px', fontSize: 18 }}>{"·"}</span>
             <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 500 }}>Patrimoine</span>
           </Link>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1 }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 20, flex: 1, marginLeft: 24 }}>
             <Link to="/programmes" style={linkStyle} onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Programmes</Link>
             <Link to="/se-loger" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Se Loger</Link>
             <Link to="/investir" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Investir</Link>
