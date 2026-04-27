@@ -45,8 +45,8 @@ const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 function Header() {
   const linkStyle = {
     fontFamily: "'Raleway', sans-serif",
-    fontSize: 12, color: 'rgba(255,255,255,0.6)',
-    letterSpacing: '0.08em', textTransform: 'uppercase',
+    fontSize: 10, color: 'rgba(255,255,255,0.6)',
+    letterSpacing: '0.05em', textTransform: 'uppercase',
     fontWeight: 500, textDecoration: 'none', transition: 'color 0.2s'
   }
   const [menuOpen, setMenuOpen] = useState(false)
@@ -59,13 +59,13 @@ function Header() {
   return (
     <>
       <header style={{ position: 'sticky', top: 0, zIndex: 100, background: 'var(--navy-deep)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.06)', height: 72 }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%', overflow: 'hidden' }}>
+        <div style={{ width: '100%', maxWidth: 1280, margin: '0 auto', padding: '0 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%', boxSizing: 'border-box' }}>
           <Link to="/" style={{ display: 'flex', alignItems: 'baseline', gap: 0, textDecoration: 'none' }}>
             <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 22, color: '#fff', fontWeight: 400 }}>VIVEO</span>
             <span style={{ color: 'var(--bronze)', margin: '0 8px', fontSize: 18 }}>{"·"}</span>
             <span style={{ fontFamily: "'Raleway', sans-serif", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 500 }}>Patrimoine</span>
           </Link>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: 16, flexShrink: 0 }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 20, flexShrink: 0 }}>
             <Link to="/programmes" style={linkStyle} onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Programmes</Link>
             <Link to="/se-loger" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Se Loger</Link>
             <Link to="/investir" style={linkStyle} className="nav-hide-mobile" onMouseEnter={e => e.target.style.color='#C4976A'} onMouseLeave={e => e.target.style.color='rgba(255,255,255,0.6)'}>Investir</Link>
