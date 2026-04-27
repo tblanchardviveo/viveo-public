@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { supabase } from '../supabase'
+import InternalLinks from '../components/InternalLinks'
 
 // Simple markdown-to-HTML converter
 function markdownToHtml(md) {
@@ -70,6 +71,7 @@ export default function BlogArticle() {
           <Link to="/blog" style={{ fontFamily: "'Raleway', sans-serif", fontSize: 14, color: 'var(--bronze)', textDecoration: 'none', fontWeight: 600 }}>← Tous les articles</Link>
         </div>
       </div>
+      <InternalLinks context='article' />
       <style>{`
         [dangerouslySetInnerHTML] h2, .blog-content h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; color: #fff; font-weight: 400; margin: 40px 0 16px; }
         [dangerouslySetInnerHTML] h3, .blog-content h3 { font-family: 'Raleway', sans-serif; font-size: 18px; color: var(--bronze); font-weight: 600; margin: 32px 0 12px; letter-spacing: 0.04em; }

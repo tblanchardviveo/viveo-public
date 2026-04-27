@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SearchEngine from '../components/SearchEngine'
+import InternalLinks from '../components/InternalLinks'
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 const PER_PAGE = 12
@@ -156,6 +157,8 @@ export default function Programmes() {
           >{"Demander mon RDV Découverte →"}</a>
         </div>
       </section>
+
+      <InternalLinks context='dispositif' />
     </>
   )
 }

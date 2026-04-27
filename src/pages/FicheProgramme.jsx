@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { supabase } from '../supabase'
 import CarteQuartier from '../components/CarteQuartier'
+import InternalLinks from '../components/InternalLinks'
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 const Eyebrow = ({ children }) => (
@@ -225,6 +226,7 @@ export default function FicheProgramme() {
           </div>
         </div>
       )}
+      <InternalLinks context='programme' dispositif={p.dispositif_fiscal || 'LMNP'} />
     </div>
   )
 }
