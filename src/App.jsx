@@ -2,6 +2,7 @@ import { useState, useEffect, lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import ChatbotWidget from './components/ChatbotWidget'
+import FloatingDiagnostic from './components/FloatingDiagnostic'
 
 const Programmes = lazy(() => import('./pages/Programmes'))
 const FicheProgramme = lazy(() => import('./pages/FicheProgramme'))
@@ -180,6 +181,7 @@ function AppContent() {
         </Suspense>
       </main>
       {!isWidget && <Footer />}
+      {!isWidget && <FloatingDiagnostic />}
       {!isWidget && <ChatbotWidget />}
     </>
   )
