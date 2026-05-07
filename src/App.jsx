@@ -9,6 +9,10 @@ const FicheProgramme = lazy(() => import('./pages/FicheProgramme'))
 const Parrainage = lazy(() => import('./pages/Parrainage'))
 const Calculateur = lazy(() => import('./pages/Calculateur'))
 const SimulateurPTZ = lazy(() => import('./pages/SimulateurPTZ'))
+const SimulateurTVA = lazy(() => import('./pages/SimulateurTVA'))
+const SimulateurCredit = lazy(() => import('./pages/SimulateurCredit'))
+const SimulateurLMNP = lazy(() => import('./pages/SimulateurLMNP'))
+const SimulateurRendement = lazy(() => import('./pages/SimulateurRendement'))
 const NewsletterPage = lazy(() => import('./pages/NewsletterPage'))
 const AvisPage = lazy(() => import('./pages/AvisPage'))
 const HomePageV3 = lazy(() => import('./pages/HomePageV3'))
@@ -149,6 +153,10 @@ function AppContent() {
             <Route path="/parrainage" element={<Parrainage />} />
             <Route path="/calculateur" element={<Calculateur />} />
             <Route path="/simulateur-ptz" element={<SimulateurPTZ />} />
+            <Route path="/simulateur-tva" element={<SimulateurTVA />} />
+            <Route path="/simulateur-credit" element={<SimulateurCredit />} />
+            <Route path="/simulateur-lmnp" element={<SimulateurLMNP />} />
+            <Route path="/simulateur-rendement" element={<SimulateurRendement />} />
             <Route path="/newsletter" element={<NewsletterPage />} />
             <Route path="/avis" element={<AvisPage />} />
             <Route path="/se-loger" element={<SeLoger />} />
