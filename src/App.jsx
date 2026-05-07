@@ -8,6 +8,7 @@ const Programmes = lazy(() => import('./pages/Programmes'))
 const FicheProgramme = lazy(() => import('./pages/FicheProgramme'))
 const Parrainage = lazy(() => import('./pages/Parrainage'))
 const Calculateur = lazy(() => import('./pages/Calculateur'))
+const SimulateurPTZ = lazy(() => import('./pages/SimulateurPTZ'))
 const NewsletterPage = lazy(() => import('./pages/NewsletterPage'))
 const AvisPage = lazy(() => import('./pages/AvisPage'))
 const HomePageV3 = lazy(() => import('./pages/HomePageV3'))
@@ -147,6 +148,7 @@ function AppContent() {
             <Route path="/programme/:slug" element={<FicheProgramme />} />
             <Route path="/parrainage" element={<Parrainage />} />
             <Route path="/calculateur" element={<Calculateur />} />
+            <Route path="/simulateur-ptz" element={<SimulateurPTZ />} />
             <Route path="/newsletter" element={<NewsletterPage />} />
             <Route path="/avis" element={<AvisPage />} />
             <Route path="/se-loger" element={<SeLoger />} />
