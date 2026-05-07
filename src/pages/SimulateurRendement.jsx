@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import InternalLinks from '../components/InternalLinks';
 
 const NAVY = '#111C33', BRONZE = '#A67C52', CREAM = '#F7F5F1';
 const fmtE = n => new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 }).format(n) + ' €';

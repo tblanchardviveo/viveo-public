@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import InternalLinks from '../components/InternalLinks';
 
 const NAVY = '#111C33';
 const BRONZE = '#A67C52';
