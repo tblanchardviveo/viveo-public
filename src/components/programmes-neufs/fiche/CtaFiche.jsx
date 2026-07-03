@@ -18,7 +18,7 @@ export default function CtaFiche({ prog }) {
   }
   return (
     <div style={S.box}>
-      <div style={S.h}>Étudier ce programme avec Thomas</div>
+      <div style={S.h}>Étudier ce programme avec VIVEO</div>
       <p style={S.p}>Simulation personnalisée, analyse fiscale complète et stratégie financement inclus — réponse sous 24h.</p>
       <button style={S.btn}
         onMouseEnter={e=>e.currentTarget.style.opacity='.85'}
