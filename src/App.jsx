@@ -45,6 +45,7 @@ const WidgetContact = lazy(() => import('./pages/WidgetContact'))
 const WidgetPtz = lazy(() => import('./pages/WidgetPtz'))
 const Souscrire = lazy(() => import('./pages/Souscrire'))
 const Bienvenue = lazy(() => import('./pages/Bienvenue'))
+const ProgrammesNeufs = lazy(() => import('./pages/ProgrammesNeufs'))
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
 
@@ -189,6 +190,7 @@ function AppContent() {
             <Route path="/widget/ptz" element={<WidgetPtz />} />
             <Route path="/souscrire" element={<Souscrire />} />
             <Route path="/bienvenue" element={<Bienvenue />} />
+            <Route path="/programmes-neufs" element={<ProgrammesNeufs />} />
           </Routes>
         </Suspense>
       </main>

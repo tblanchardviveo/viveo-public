@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
+import {useLocation} from 'react-router-dom';
 import RdvGauche from '../components/rdv/RdvGauche';
 
 const WEBHOOK='https://hook.eu1.make.com/roc0nqisnjanoip0deovdrrtyfaf3186';
@@ -20,6 +21,8 @@ export default function RdvDecouverte(){
   const [f,setF]=useState({prenom:'',nom:'',email:'',telephone:'',code_postal:'',ville:''});
   const [sent,setSent]=useState(false);
   const [err,setErr]=useState('');
+  const loc=useLocation();
+  useEffect(()=>{const p=loc.state?.programme||sessionStorage.getItem('rdv_programme');if(p){setMsg('Intéressé par le programme : '+p);sessionStorage.removeItem('rdv_programme');}}, []);
 
   const pct=step===1?33:step===2?66:100;
   const tD=(id)=>setDispos(d=>d.includes(id)?d.filter(x=>x!==id):[...d,id]);
