@@ -5,10 +5,10 @@ import { supabase } from '../../supabase'
 export default function ProgrammesV3() {
   const [progs, setProgs] = useState([])
   useEffect(() => {
-    supabase.from('programmes')
-      .select('id, nom, ville, slug, prix_min, badge_1, photo_url, description, date_livraison, typologies')
-      .eq('actif', true)
-      .order('created_at', { ascending: false })
+    supabase.from('nx_programmes')
+      .select('id, libelle, ville, code_postal, zone_fiscale, nb_lots_libres, statut')
+      .eq('statut', 'actif')
+      .order('ville')
       .limit(3)
       .then(({ data }) => { if (data) setProgs(data) })
   }, [])
@@ -31,7 +31,7 @@ export default function ProgrammesV3() {
           <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 17, color: '#666', lineHeight: 1.8, marginTop: 24 }}>
             {"Nous ne référençons pas tous les programmes du marché. Nous sélectionnons ceux qui méritent votre attention — et nous vous expliquons pourquoi."}
           </p>
-          <Link to="/programmes" style={{
+          <Link to="/programmes-neufs" style={{
             display: 'inline-block', marginTop: 32,
             fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 13,
             color: '#A67C52', textTransform: 'uppercase', letterSpacing: '0.08em',
@@ -54,21 +54,20 @@ export default function ProgrammesV3() {
             >
               <div style={{
                 height: 260, position: 'relative',
-                backgroundImage: prog.photo_url ? `url(${prog.photo_url})` : 'linear-gradient(135deg, #111C33, #A67C52)',
+                background: 'linear-gradient(135deg, #111C33, #A67C52)',
                 backgroundSize: 'cover', backgroundPosition: 'center'
               }}>
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(17,28,51,0.80) 0%, transparent 50%)' }} />
-                {prog.badge_1 && <span style={{ position: 'absolute', top: 16, left: 16, background: '#A67C52', borderRadius: 2, padding: '6px 12px', fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 10, textTransform: 'uppercase', color: '#fff' }}>{prog.badge_1}</span>}
+                {prog.zone_fiscale && <span style={{ position: 'absolute', top: 16, left: 16, background: '#A67C52', borderRadius: 2, padding: '6px 12px', fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 10, textTransform: 'uppercase', color: '#fff' }}>{prog.zone_fiscale}</span>}
                 <span style={{ position: 'absolute', bottom: 16, left: 20, fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.70)' }}>{prog.ville}</span>
               </div>
               <div style={{ padding: '28px 28px 32px' }}>
-                <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 24, color: '#111C33', margin: '0 0 12px', fontWeight: 400 }}>{prog.nom}</h3>
-                <p style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 14, color: '#777', lineHeight: 1.7, margin: 0, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{prog.description}</p>
-                <div style={{ display: 'flex', gap: 24, marginTop: 20, borderTop: '1px solid rgba(17,28,51,0.06)', paddingTop: 16 }}>
-                  {prog.prix_min && <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 15, color: '#A67C52' }}>{"à partir de "}{prog.prix_min.toLocaleString()}{" €"}</span>}
-                  {prog.date_livraison && <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 13, color: '#999' }}>Livraison {prog.date_livraison}</span>}
+                <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 24, color: '#111C33', margin: '0 0 12px', fontWeight: 400 }}>{prog.libelle}</h3>
+                <div style={{ display: 'flex', gap: 24, borderTop: '1px solid rgba(17,28,51,0.06)', paddingTop: 16 }}>
+                  {prog.nb_lots_libres > 0 && <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 15, color: '#2D7D52' }}>{prog.nb_lots_libres} lot{prog.nb_lots_libres > 1 ? 's' : ''} disponible{prog.nb_lots_libres > 1 ? 's' : ''}</span>}
+                  {prog.code_postal && <span style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 300, fontSize: 13, color: '#999' }}>{prog.code_postal}</span>}
                 </div>
-                <Link to={`/programme/${prog.slug}`} style={{ display: 'inline-block', marginTop: 16, fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 13, color: '#111C33', textTransform: 'uppercase', textDecoration: 'none' }}>{"Découvrir →"}</Link>
+                <Link to={`/programmes-neufs/${prog.id}`} style={{ display: 'inline-block', marginTop: 16, fontFamily: "'Raleway',sans-serif", fontWeight: 600, fontSize: 13, color: '#111C33', textTransform: 'uppercase', textDecoration: 'none' }}>{"Découvrir →"}</Link>
               </div>
             </div>
           )) : (
