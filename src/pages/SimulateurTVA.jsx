@@ -12,8 +12,8 @@ const DEPTS = [
   '01 - Ain','02 - Aisne','03 - Allier','04 - Alpes-de-Haute-Provence','05 - Hautes-Alpes',
   '06 - Alpes-Maritimes','07 - Ardèche','08 - Ardennes','09 - Ariège','10 - Aube',
   '11 - Aude','12 - Aveyron','13 - Bouches-du-Rhône','14 - Calvados','15 - Cantal',
-  '16 - Charente','17 - Charente-Maritime','18 - Cher','19 - Corrèze','21 - Côte-d'Or',
-  '22 - Côtes-d'Armor','23 - Creuse','24 - Dordogne','25 - Doubs','26 - Drôme',
+  '16 - Charente','17 - Charente-Maritime','18 - Cher','19 - Corrèze',"21 - Côte-d'Or",
+  "22 - Côtes-d'Armor",'23 - Creuse','24 - Dordogne','25 - Doubs','26 - Drôme',
   '27 - Eure','28 - Eure-et-Loir','29 - Finistère','30 - Gard','31 - Haute-Garonne',
   '32 - Gers','33 - Gironde','34 - Hérault','35 - Ille-et-Vilaine','36 - Indre',
   '37 - Indre-et-Loire','38 - Isère','39 - Jura','40 - Landes','41 - Loir-et-Cher',
@@ -27,7 +27,7 @@ const DEPTS = [
   '77 - Seine-et-Marne','78 - Yvelines','79 - Deux-Sèvres','80 - Somme','81 - Tarn',
   '82 - Tarn-et-Garonne','83 - Var','84 - Vaucluse','85 - Vendée','86 - Vienne',
   '87 - Haute-Vienne','88 - Vosges','89 - Yonne','90 - Territoire de Belfort','91 - Essonne',
-  '92 - Hauts-de-Seine','93 - Seine-Saint-Denis','94 - Val-de-Marne','95 - Val-d'Oise',
+  '92 - Hauts-de-Seine','93 - Seine-Saint-Denis','94 - Val-de-Marne',"95 - Val-d'Oise",
   '971 - Guadeloupe','972 - Martinique','973 - Guyane','974 - La Réunion','976 - Mayotte',
 ];
 
@@ -63,7 +63,7 @@ export default function SimulateurTVA() {
   const [dept, setDept] = useState('75 - Paris');
 
   const res = useMemo(() => {
-    if (zone === 'hors') return { eligible: false, raison: 'Le bien n'est pas situé en Zone ANRU ou QPV.' };
+    if (zone === 'hors') return { eligible: false, raison: 'Le bien n\'est pas situé en Zone ANRU ou QPV.' };
     const plafond = PLAFONDS[foyer] || PLAFONDS[8];
     if (revenu > plafond) {
       return { eligible: false, raison: `Revenus (${fmt(revenu)}) dépassent le plafond de ${fmt(plafond)} pour ${foyer} personne(s).` };
