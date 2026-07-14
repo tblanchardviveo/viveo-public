@@ -1,11 +1,10 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useLocation, Navigate, useParams } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import ChatbotWidget from './components/ChatbotWidget'
 import FloatingDiagnostic from './components/FloatingDiagnostic'
 
 const Programmes = lazy(() => import('./pages/Programmes'))
-const FicheProgramme = lazy(() => import('./pages/FicheProgramme'))
 const Parrainage = lazy(() => import('./pages/Parrainage'))
 const Calculateur = lazy(() => import('./pages/Calculateur'))
 const SimulateurPTZ = lazy(() => import('./pages/SimulateurPTZ'))
@@ -45,10 +44,10 @@ const WidgetContact = lazy(() => import('./pages/WidgetContact'))
 const WidgetPtz = lazy(() => import('./pages/WidgetPtz'))
 const Souscrire = lazy(() => import('./pages/Souscrire'))
 const Bienvenue = lazy(() => import('./pages/Bienvenue'))
-const ProgrammesNeufs = lazy(() => import('./pages/ProgrammesNeufs'))
 const FicheProgrammeNeufs = lazy(() => import('./pages/FicheProgrammeNeufs'))
 
 const WP = 'https://viveopromotion-t3jrcqwfw3.live-website.com'
+function RedirectPNId() { const { id } = useParams(); return <Navigate to={`/programmes/${id}`} replace /> }
 
 function Header() {
   const linkStyle = {
@@ -152,7 +151,8 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<HomePageV3 />} />
             <Route path="/programmes" element={<Programmes />} />
-            <Route path="/programme/:slug" element={<FicheProgramme />} />
+            <Route path="/programme/:slug" element={<Navigate to="/programmes" replace />} />
+            <Route path="/programmes/:id" element={<FicheProgrammeNeufs />} />
             <Route path="/parrainage" element={<Parrainage />} />
             <Route path="/calculateur" element={<Calculateur />} />
             <Route path="/simulateur-ptz" element={<SimulateurPTZ />} />
@@ -191,8 +191,8 @@ function AppContent() {
             <Route path="/widget/ptz" element={<WidgetPtz />} />
             <Route path="/souscrire" element={<Souscrire />} />
             <Route path="/bienvenue" element={<Bienvenue />} />
-            <Route path="/programmes-neufs" element={<ProgrammesNeufs />} />
-            <Route path="/programmes-neufs/:id" element={<FicheProgrammeNeufs />} />
+            <Route path="/programmes-neufs" element={<Navigate to="/programmes" replace />} />
+            <Route path="/programmes-neufs/:id" element={<RedirectPNId />} />
           </Routes>
         </Suspense>
       </main>

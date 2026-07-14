@@ -57,7 +57,7 @@ export default function FicheProgrammeNeufs() {
   return (
     <div style={S.page}>
       <div style={S.nav}>
-        <button style={S.back} onClick={()=>navigate('/programmes-neufs')}>← Retour aux programmes</button>
+        <button style={S.back} onClick={()=>navigate('/programmes')}>← Retour aux programmes</button>
       </div>
       <HeaderFiche prog={prog} prixMin={prixMin} fiscalites={fiscalites} livraisonLabel={livraisonLabel} />
       <div style={S.wrap}>
