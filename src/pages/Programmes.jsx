@@ -26,7 +26,7 @@ export default function Programmes() {
   useEffect(() => {
     Promise.all([
       supabase.from('nx_programmes').select('id,libelle,ville,code_postal,region,zone_fiscale,nb_lots_libres,promoteur_id').eq('statut','actif').order('ville'),
-      supabase.from('nx_lots').select('programme_id,prix_ht_immobilier,fiscalites,nb_pieces,statut,famille').eq('statut','libre'),
+      supabase.from('nx_lots').select('programme_id,prix_ht_immobilier,fiscalites,nb_pieces,statut,famille'),
       supabase.from('nx_promoteurs').select('id,nom'),
     ]).then(([{data:progs},{data:ls},{data:promots}]) => {
       const ld = ls || []

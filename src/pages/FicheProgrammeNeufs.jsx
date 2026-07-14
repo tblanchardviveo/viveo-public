@@ -37,7 +37,7 @@ export default function FicheProgrammeNeufs() {
         .eq('id', id).single(),
       supabase.from('nx_lots')
         .select('id,code_lot,famille,nature,nb_pieces,etage,surface_habitable,fiscalites,statut,prix_ttc_20,prix_ttc_10,prix_ttc_55,prix_ht_immobilier,date_livraison_label,date_livraison_estimee')
-        .eq('programme_id', id).eq('statut','libre').order('prix_ht_immobilier'),
+        .eq('programme_id', id).order('prix_ht_immobilier'),
     ]).then(([{data:p,error:e},{data:ls}]) => {
       if (e || !p) { setError('Programme introuvable'); setLoading(false); return }
       setProg(p); setLots(ls||[]); setLoading(false)
