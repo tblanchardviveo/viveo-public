@@ -24,24 +24,29 @@ const S = {
 export default function FicheProgrammeNeufs() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [prog, setProg]     = useState(null)
-  const [lots, setLots]     = useState([])
+  const [prog, setProg]       = useState(null)
+  const [lots, setLots]       = useState([])
   const [loading, setLoading] = useState(true)
-  const [error, setError]   = useState(null)
+  const [error, setError]     = useState(null)
 
   useEffect(() => {
     if (!id) return
-    Promise.all([
-      supabase.from('nx_programmes')
-        .select('id,libelle,ville,code_postal,region,zone_fiscale,latitude,longitude,type_chauffage,nb_lots_libres,nb_lots_total')
-        .eq('id', id).single(),
-      supabase.from('nx_lots')
-        .select('id,code_lot,famille,nature,nb_pieces,etage,surface_habitable,fiscalites,statut,prix_ttc_20,prix_ttc_10,prix_ttc_55,prix_ht_immobilier,date_livraison_label,date_livraison_estimee')
-        .eq('programme_id', id).order('prix_ht_immobilier'),
-    ]).then(([{data:p,error:e},{data:ls}]) => {
-      if (e || !p) { setError('Programme introuvable'); setLoading(false); return }
-      setProg(p); setLots(ls||[]); setLoading(false)
-    })
+    supabase.from('nx_programmes')
+      .select('id,libelle,ville,code_postal,region,zone_fiscale,latitude,longitude,type_chauffage,nb_lots_libres,nb_lots_total')
+      .eq('id', id).single()
+      .then(({ data: p, error: e }) => {
+        if (e || !p) { setError('Programme introuvable'); setLoading(false); return }
+        setProg(p)
+        supabase.from('nx_lots')
+          .select('id,code_lot,famille,nature,nb_pieces,etage,surface_habitable,fiscalites,statut,prix_ttc_20,prix_ttc_10,prix_ttc_55,prix_ht_immobilier,date_livraison_label,date_livraison_estimee')
+          .eq('programme_id', id)
+          .order('prix_ht_immobilier')
+          .then(({ data: ls, error: le }) => {
+            if (le) console.error('[FicheProgramme] lots error:', le.message, le.code, le.details)
+            setLots(ls || [])
+            setLoading(false)
+          })
+      })
   }, [id])
 
   if (loading) return <div style={S.load}>Chargement...</div>
