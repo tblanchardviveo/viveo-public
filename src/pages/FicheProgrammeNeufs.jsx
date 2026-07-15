@@ -19,6 +19,8 @@ const S = {
   col:  { display:'flex', flexDirection:'column', gap:24 },
   load: { textAlign:'center', padding:120, fontFamily:'Playfair Display,serif', fontSize:18, color:'#A67C52' },
   err:  { textAlign:'center', padding:80, fontFamily:'Raleway,sans-serif', fontSize:16, color:'#DC2626' },
+  lerr: { background:'#FEF2F2', border:'1px solid #FECACA', borderRadius:8, padding:'10px 14px',
+          fontFamily:'Raleway,sans-serif', fontSize:12, color:'#DC2626', marginBottom:12 },
 }
 
 export default function FicheProgrammeNeufs() {
@@ -28,6 +30,7 @@ export default function FicheProgrammeNeufs() {
   const [lots, setLots]       = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError]     = useState(null)
+  const [lotsErr, setLotsErr] = useState(null)
 
   useEffect(() => {
     if (!id) return
@@ -42,7 +45,10 @@ export default function FicheProgrammeNeufs() {
           .eq('programme_id', id)
           .order('prix_ht_immobilier')
           .then(({ data: ls, error: le }) => {
-            if (le) console.error('[FicheProgramme] lots error:', le.message, le.code, le.details)
+            if (le) {
+              console.error('[FicheProgramme] lots error:', le.message, le.code, le.details)
+              setLotsErr(`Erreur lots : ${le.message} (code ${le.code})`)
+            }
             setLots(ls || [])
             setLoading(false)
           })
@@ -70,6 +76,7 @@ export default function FicheProgrammeNeufs() {
         <div style={{height:28}} />
         <div style={S.grid}>
           <div style={S.col}>
+            {lotsErr && <div style={S.lerr}>{lotsErr}</div>}
             <TableauLotsFiche lots={lots} />
             <AnalyseFiscale prog={prog} fiscalites={fiscalites} prixMin={prixMin} />
             <LocalisationFiche prog={prog} />
